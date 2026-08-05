@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板 v2
+  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
+  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
+  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
+  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
+  Light-first，dark mode 为 prefers-color-scheme fallback
+-->
+
+<style>
+  /* ============ LIGHT-FIRST THEME ============ */
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+
+    /* Semantic palette — terracotta & sage */
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .anim {
+    animation: fadeUp 0.45s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+  .anim-scale {
+    animation: fadeScale 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER — Newspaper masthead ============ */
+  .masthead {
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+  }
+  .masthead::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+  .masthead h1 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-bright);
+  }
+  .masthead .date-line {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 24px 0 20px;
+  }
+  .section + .section {
+    border-top: 1px dashed var(--border-bright);
+  }
+
+  /* Section labels — vary color per section */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+
+  /* ============ NEWS ITEMS ============ */
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hero item — focal story gets more visual weight */
+  .item--hero {
+    background: var(--surface-elevated);
+    border-left: 3px solid var(--rose);
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .item__tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+
+  .item__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text-bright);
+  }
+  .item__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .item__title a:hover { text-decoration: underline; }
+
+  .item__body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+
+  .item__src {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .masthead h1 { font-size: 24px; }
+    .masthead { padding: 24px 12px 20px; }
+    .item { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年8月5日 · 星期三 · 每日中文日报</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:2"><div class="item__title"><a href="https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/">谷歌AI高层巨震：Jeff Dean出走创办Discovery Loop，Hassabis卸任DeepMind CEO</a></div><div class="item__body">8月4日（美国时间），谷歌迎来27年来最重磅的AI领导层变动：首席科学家、第30号员工Jeff Dean与谷歌高级研究员Sanjay Ghemawat共同离职，联合DeepMind副总裁Oriol Vinyals、Google Brain联合创始人Quoc Le创办独立公益公司（public benefit corporation）Discovery Loop，专注用AI自动化科学与工程研究，谷歌将投资入股并担任其云服务商。同一天，DeepMind CEO Demis Hassabis卸任CEO改任总裁，DeepMind领导层随之改组，谷歌股价当日下跌近4%。Dean是TensorFlow、MapReduce等关键基础设施的缔造者，被视为谷歌AI技术路线的灵魂人物；此番出走被业界解读为谷歌AI帝国权力交接的标志性事件，也意味着继OpenAI、Anthropic之后，顶级AI人才争夺战进一步白热化。</div><div class="item__src">TechCrunch</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:3"><span class="dot"></span>全球热点</h2>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--sage">中国</span><div class="item__title"><a href="https://news.cctv.com/2026/08/05/ARTIPDweomnXYOQgVAASgmPh260805.shtml">商务部宣布对应用DNA科学公司等6家美国实体采取反制措施</a></div><div class="item__body">8月5日，商务部公布《关于对应用DNA科学公司等6家美国实体采取反制措施的决定》（商务部令2026年第2号，部长王文涛签署），自公布之日起施行。公告指出，美国近期以所谓"强迫劳动"为由制裁中国企业，严重违反国际法和国际关系基本准则；应用DNA科学公司（Applied DNA Sciences）等6家美国实体协助美方实施相关行为，中方决定冻结其在我国境内的动产、不动产及其他各类财产，并禁止我国境内组织、个人与其进行交易、合作等活动。同日商务部还发布了针对一家美国合规性测试公司的反制决定。这是继7月底之后的又一轮反制动作，中美围绕"强迫劳动"指控的制裁与反制裁博弈持续升级。</div><div class="item__src">央视新闻</div></div>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--sage">中国</span><div class="item__title"><a href="https://m.thepaper.cn/newsDetail_forward_33724988">美国FCC宣布禁止进口中国先进移动机器人，波及扫地机器人</a></div><div class="item__body">据NBC当地时间8月4日报道，美国联邦通信委员会（FCC）近期将"境外生产的先进移动机器人"列入受管制设备与服务清单（Covered List），禁止进口中国等国的人形机器人、四足机器狗等先进移动机器人，并波及已进入美国家庭的智能扫地机器人与割草机器人——相关设备因无法获得FCC认证将难以进入美国市场。消息8月5日冲上微博热搜，网友普遍评论"竞争不过就禁"的剧本再次上演。新规对宇树科技、小米等中国人形机器人玩家以及扫地机器人出口企业构成直接冲击，有清洁电器企业向第一财经回应称正在评估影响。</div><div class="item__src">澎湃新闻</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--sage">中国</span><div class="item__title"><a href="https://news.cctv.com/2026/08/04/ARTIl31Y3geKr1V36f4prtsX260804.shtml">我国成功发射卫星互联网低轨23组卫星，长征八号甲再立新功</a></div><div class="item__body">北京时间8月4日16时52分，我国在海南商业航天发射场使用长征八号甲遥十运载火箭，成功将卫星互联网低轨23组卫星发射升空，卫星顺利进入预定轨道，发射任务圆满成功。这是长征八号甲火箭的又一次成功飞行，也是我国低轨卫星互联网星座组网提速的标志性一步——该星座对标SpaceX星链，今年已多次密集发射组网卫星。人民日报、新华社等媒体当晚至8月5日密集报道，相关话题在社交媒体引发航天爱好者热议，被视为我国商业航天"组网冲刺"的最新注脚。</div><div class="item__src">央视新闻</div></div>
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--teal">美国</span><div class="item__title"><a href="https://therecord.media/iran-cyberattacks-water-treatment">伊朗黑客攻击蔓延至美国12州供水系统，FBI发布紧急警告</a></div><div class="item__body">美国供水系统遭遇的网络攻击仍在扩散：据The Record报道，截至8月4日，已有至少12个州（一周前为7个）的水务及污水处理设施报告遭到针对运营技术（OT）系统的网络攻击，南达科他州与佐治亚州为最新确认的受害者，密歇根州受损最严重。伊朗被列为头号嫌疑对象但尚未获官方确认，特朗普公开表示"不认为是伊朗干的"。FBI与NSA上周已发布紧急警告，称伊朗关联黑客持续攻击联网OT设备，手段包括篡改控制参数、禁用警报系统让操作员"失明"。FBI建议水务系统断开互联网、加装断路保护并演练人工切换操作。</div><div class="item__src">The Record</div></div>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--gold">中东</span><div class="item__title"><a href="https://www.news.cn/world/20260805/573e93b412754f499d8aae24a742e761/c.html">胡塞武装导弹袭击沙特油轮"Wafa"号，红海航运警报再响</a></div><div class="item__body">也门胡塞武装8月5日宣布，使用弹道导弹对红海北部延布港附近的沙特油轮"Wafa"号实施打击，称导弹"准确命中目标"，并扬言将继续执行对沙特的"海上封锁"，落实"以封锁对封锁"战略。胡塞武装宣称，自7月末对沙特实施海上封锁以来，已累计袭击8艘沙特油轮，并在红海和阿拉伯海迫使29艘沙特油轮掉头或改道。尽管美伊正就霍尔木兹海峡进行谈判，但红海方向的胡塞武装袭击仍在持续，全球航运保险费率高企、绕行好望角的局面短期难以缓解。</div><div class="item__src">新华社</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social anim" style="--i:9"><span class="dot"></span>微博 / 热搜话题</h2>
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--rose">热搜</span><div class="item__title"><a href="https://www.bjnews.com.cn/detail-1785942110169291.html">人贩"梅姨"真实姓名首曝光：谢家梅，案件进入审查起诉阶段</a></div><div class="item__body">8月5日晚，"梅姨"案迎来重大进展：被拐儿童钟彬的父亲钟丁酉向新京报证实，人贩"梅姨"的真实姓名是谢家梅。钟丁酉8月3日收到广州市增城区人民检察院出具的《被害人诉讼权利义务告知书》，显示"谢家梅拐卖儿童案"已于7月31日由广州市公安局增城分局移送增城区检察院审查起诉；另一名被拐者申聪也确认已收到告知书，表示开庭时会到现场"亲眼看看她长啥模样"。"梅姨"曾冒名"潘冬梅"潜逃多年，系广东系列拐卖儿童案关键人物，真实姓名曝光迅速登顶微博热搜。</div><div class="item__src">新京报</div></div>
+    <div class="item a" style="--i:11"><span class="item__tag item__tag--rose">热搜</span><div class="item__title">两部门预拨3.3亿元中央救灾资金，支持8省市防汛抢险救灾</div><div class="item__body">8月5日，财政部、应急管理部紧急预拨3.3亿元中央自然灾害救灾资金，支持黑龙江、辽宁、吉林、重庆、四川、贵州、云南、陕西8省（市）开展防汛抢险救灾工作，重点用于受灾群众转移安置、应急抢险救援、损毁基础设施修复等。当前正值"七下八上"防汛关键期，东北松花江流域与西南地区多轮强降雨叠加，多地出现内涝、山洪和地质灾害。应急管理部要求各地统筹用好救灾资金，全力保障受灾群众基本生活，该话题同日登上微博热搜。</div><div class="item__src">新华社</div></div>
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--rose">热搜</span><div class="item__title"><a href="https://news.qq.com/rain/a/20260805A06UCH00">泰航拒载22名中国乘客风波：机场致歉并惩处"拉眼角"安保人员</a></div><div class="item__body">泰国航空TG674航班（7月29日23时许曼谷飞北京）拒载22名中国乘客事件持续发酵。素万那普国际机场还原经过：部分中国粉丝尾随同机中国艺人进入无权限的贵宾室被劝离，随后22名乘客在登机口被要求退出廊桥、托运行李被强行卸下，其中12人同意卸载，10人拒绝配合并与工作人员发生冲突。更引发众怒的是，执勤安保人员被拍到做出"拉眼角"的歧视性手势。8月4日晚，机场公开致歉，承认部分安保人员执勤言行不当，已对涉事人员作出惩处。8月5日"被泰航拒载中国乘客发声"冲上微博热搜，当事人讲述事发经过引发广泛讨论。</div><div class="item__src">腾讯新闻</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:13"><span class="dot"></span>科技新闻</h2>
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://www.wired.com/story/meta-ran-ads-that-contained-ai-generated-child-sexual-abuse-imagery/">Meta被曝投放50多条含AI生成儿童性虐待内容的广告</a></div><div class="item__body">Wired披露，过去9个月里，Meta旗下Facebook、Instagram、Messenger、Threads的广告系统投放了50多条含AI生成儿童性虐待素材（CSAM）的付费广告，画面包含未成年人的性化形象并配以暗示性文案。研究人员通过Meta官方广告库数据核实了这些广告，指其明显违反平台自身的儿童安全政策。报道指出，AI生成内容绕过了传统的哈希匹配检测机制，暴露出Meta审核体系的重大漏洞，广告还疑似被灰产用来引流。Meta尚未正式回应，该报道已在美国引发对平台责任与AI内容监管的激烈讨论。</div><div class="item__src">Wired</div></div>
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://techcrunch.com/2026/08/05/psa-apples-private-relay-can-leak-your-real-ip-address/">研究人员警告：Apple Private Relay可泄露用户真实IP地址</a></div><div class="item__body">TechCrunch发布安全提示：苹果的隐私代理服务Private Relay（Safari私有中继）存在真实IP泄露漏洞，攻击者可通过特定手段绕过代理隧道获取用户真实IP地址，使苹果宣传的"隐藏IP"隐私承诺形同虚设。Private Relay是iCloud+订阅用户的核心隐私功能，将流量经苹果与第三方节点双层转发，理论上网站只能看到模糊化IP；研究发现部分协议与DNS解析路径未走代理，导致真实位置暴露。目前苹果尚未发布修复方案，安全社区建议用户谨慎依赖该功能，企业用户应加强端点防护。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://techcrunch.com/2026/08/05/lucid-motors-just-delayed-its-affordable-ev-now-what/">Lucid Motors再次推迟平价电动车，交付时间表生变</a></div><div class="item__body">美国高端电动车品牌Lucid Motors宣布推迟其平价车型的上市时间，具体交付时间表生变。Lucid原计划以3万美元级车型下探主流市场，对冲旗舰Air轿车销量疲软，但持续亏损与现金消耗迫使公司不断调整节奏。该公司此前已多次依靠沙特主权基金PIF注资续命，市场担心平价车型再度跳票将动摇投资者信心。分析认为，Lucid面临的不仅是产品工程问题，还有特斯拉价格战与Rivian等对手挤压下的生存压力，"以价换量"战略进一步承压。</div><div class="item__src">TechCrunch</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance anim" style="--i:17"><span class="dot"></span>财经要闻</h2>
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--gold">财经</span><div class="item__title"><a href="https://www.mysuncoast.com/2026/08/03/25-states-sue-over-trump-administrations-latest-tariffs-citing-supreme-court-ruling/">美国25个州起诉特朗普政府新关税，要求退还已缴税款</a></div><div class="item__body">8月3日（周一），美国25个州联合起诉特朗普政府最新一轮关税，指控其以新关税为"借口"变相替换最高法院今年2月裁定违法的IEEPA关税，并请求法院判令退还各州进口商已缴纳的税款。此前，最高法院裁定IEEPA不能作为加征关税的法律依据，迫使白宫向进口商退还约1000亿美元"解放日"关税。据美联社报道，诉讼由民主党主政州主导，宾夕法尼亚州等多州加入。分析称此案可能再次将关税权力之争推向最高法院，为全球贸易格局增添新的不确定性。</div><div class="item__src">美联社</div></div>
+    <div class="item a" style="--i:19"><span class="item__tag item__tag--gold">财经</span><div class="item__title"><a href="https://futures.hexun.com/2026-08-05/224771700.html">特朗普称霍尔木兹海峡协议"最早周三达成"，油价回落美股创新高</a></div><div class="item__body">美伊局势出现重大缓和信号：8月4日，美国财长贝森特称美伊最快周二或周三达成重启霍尔木兹海峡的协议，Axios报道美、伊、阿曼正接近敲定临时协议，美方目标周三正式宣布。特朗普随后放话：海峡"最快明天就会完全开放"，并重申"伊朗绝不可能拥有核武器"。受此影响，国际油价大幅回落，WTI交投于76美元/桶附近；美股周二全线暴涨，道指大涨逾900点创两个月最大单日涨幅，标普500首次收于7700点上方，双双创历史新高。若协议落地，全球能源价格与航运成本有望显著缓解。</div><div class="item__src">和讯/东方财富</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:20"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:21"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/FareedKhan-dev/kimi-k3-in-c">kimi-k3-in-c：2.78万亿参数大模型在单CPU上跑推理</a></div><div class="item__body">开发者FareedKhan-dev发布开源项目kimi-k3-in-c：用纯C99（无BLAS、无框架、无GPU）在单颗CPU、8.24GB内存中运行2.78万亿参数的Kimi K3大模型推理，发布以来已在GitHub收获超2500星。项目通过极致量化与内存映射技术，把"千亿级推理需要多卡A100"的常识彻底改写，被开发者社区称为"教科书级优化示范"。它与此前登顶Hacker News的8美元ESP32训练项目一道，折射出端侧、低资源AI推理这一轮开源浪潮，适合对模型量化与推理引擎感兴趣的开发者研究。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:22"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer">FDE入门指南开源走红：前沿部署工程师成AI时代新职业</a></div><div class="item__body">开源项目《FDE-the-Guidance-Book-of-Forward-Deployed-Engineer》一周内收获超3300星，以范冰《增长黑客》原书框架为蓝本，系统梳理"前沿部署工程师"（Forward-Deployed Engineer）的从零入门路径：如何理解客户需求、在客户环境部署调试AI产品、把现场反馈变成产品迭代。FDE是OpenAI、Anthropic等公司近年力推的新工种，被视为"AI时代的解决方案架构师"，需求与薪资双高。项目包含大量真实案例、面试题与项目清单，中文友好，被不少开发者称为"转行AI应用层的实用手册"。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:23"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/KKKKhazix/human-writing">human-writing：让AI写的中文"像具体的人在说话"</a></div><div class="item__body">中文开源社区新项目human-writing发布三天即获超1000星，定位为"让AI写的中文读起来像一个具体的人"：提供通用创作与改稿Skill，开箱即用，可挂载到Claude、Cursor等支持Skill的AI工具。项目通过注入人格化写作规则（句式节奏、口语颗粒度、冗余控制）解决中文AI文本"AI味重"的通病，支持文章、小红书文案、公众号推文等场景一键改写。对内容创作者与中文AI应用开发者而言，是一个低成本提升输出质感的有趣工具。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:24"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/leonickson1/VirtualMacOniPad">VirtualMacOniPad：在iPad上跑macOS虚拟机，圆"iPad变Mac"的梦</a></div><div class="item__body">开源项目VirtualMacOniPad让iPad原生运行macOS虚拟机成为现实：借助虚拟化技术，iPad可启动完整macOS，直接在设备上运行Xcode、Terminal等专业应用，摆脱iPadOS限制。项目要求iPad Pro（M1/M2）或iPad Air（M1）且系统停留在iPadOS 16至16.3.1（利用旧版系统的虚拟化漏洞），更像"技术爱好者的大玩具"而非通用方案。尽管门槛苛刻、风险自负，项目发布后仍在极客圈迅速传播，印证了"iPad Pro是台电脑"这一执念的生命力。</div><div class="item__src">GitHub</div></div>
+  </section>
+
+  <footer class="foot anim" style="--i:25">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>
