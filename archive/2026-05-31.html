@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
 <style>
-#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;width:100%}
-#claw-top .claw-bar{display:flex;align-items:center;gap:8px;padding:10px 12px;width:100%;box-sizing:border-box}
-#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:4px;white-space:nowrap;flex-shrink:0}
-#claw-top .claw-tab{flex:1;text-align:center;border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:9px 10px;border-radius:8px;cursor:pointer;white-space:nowrap}
+#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
+#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
+#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
+#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
 #claw-top .claw-tab:hover{background:#f0f0f0}
 #claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
-#claw-top .claw-latest{margin-left:4px;font-size:13px;color:#888;text-decoration:none;white-space:nowrap;flex-shrink:0;padding:9px 6px}
+#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
 #claw-top .claw-latest:hover{color:#111}
 #claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
 #claw-drop.open{display:block}
@@ -16,6 +16,7 @@
 #claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
 #claw-drop a:hover{background:#f5f5f5;color:#111}
 #claw-drop a.cur{background:#eee;color:#111;font-weight:600}
+@media (max-width:480px){#claw-top{margin:-8px -8px 0}}
 @media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
 </style><div id="claw-top">
   <div class="claw-bar">
@@ -60,6 +61,8 @@
   });
 })();
 </script>
+
+
 
 
 
