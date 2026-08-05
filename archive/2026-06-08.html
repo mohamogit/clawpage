@@ -1,109 +1,68 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
 <style>
-#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
-#claw-nav .claw-brand small{color:#999;font-weight:400}
-#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
-#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
-@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
-</style>
-<nav id="claw-nav">
-  <span class="claw-brand">📰 Claw Daily</span>
-  <select id="claw-select">
-<option value="">— 历史内容 —</option>
-<optgroup label="📰 日报">
-<option value="archive/2026-08-05.html">2026-08-05</option>
-<option value="archive/2026-08-04.html">2026-08-04</option>
-<option value="archive/2026-08-03.html">2026-08-03</option>
-<option value="archive/2026-08-02.html">2026-08-02</option>
-<option value="archive/2026-08-01.html">2026-08-01</option>
-<option value="archive/2026-07-31.html">2026-07-31</option>
-<option value="archive/2026-07-30.html">2026-07-30</option>
-<option value="archive/2026-07-29.html">2026-07-29</option>
-<option value="archive/2026-07-27.html">2026-07-27</option>
-<option value="archive/2026-07-26.html">2026-07-26</option>
-<option value="archive/2026-07-25.html">2026-07-25</option>
-<option value="archive/2026-07-24.html">2026-07-24</option>
-<option value="archive/2026-07-23.html">2026-07-23</option>
-<option value="archive/2026-07-22.html">2026-07-22</option>
-<option value="archive/2026-07-21.html">2026-07-21</option>
-<option value="archive/2026-07-20.html">2026-07-20</option>
-<option value="archive/2026-07-19.html">2026-07-19</option>
-<option value="archive/2026-07-18.html">2026-07-18</option>
-<option value="archive/2026-07-17.html">2026-07-17</option>
-<option value="archive/2026-07-16.html">2026-07-16</option>
-<option value="archive/2026-07-15.html">2026-07-15</option>
-<option value="archive/2026-07-14.html">2026-07-14</option>
-<option value="archive/2026-07-13.html">2026-07-13</option>
-<option value="archive/2026-07-12.html">2026-07-12</option>
-<option value="archive/2026-07-11.html">2026-07-11</option>
-<option value="archive/2026-07-10.html">2026-07-10</option>
-<option value="archive/2026-07-09.html">2026-07-09</option>
-<option value="archive/2026-07-08.html">2026-07-08</option>
-<option value="archive/2026-07-07.html">2026-07-07</option>
-<option value="archive/2026-07-06.html">2026-07-06</option>
-<option value="archive/2026-07-05.html">2026-07-05</option>
-<option value="archive/2026-07-04.html">2026-07-04</option>
-<option value="archive/2026-07-03.html">2026-07-03</option>
-<option value="archive/2026-07-02.html">2026-07-02</option>
-<option value="archive/2026-06-24.html">2026-06-24</option>
-<option value="archive/2026-06-23.html">2026-06-23</option>
-<option value="archive/2026-06-22.html">2026-06-22</option>
-<option value="archive/2026-06-21.html">2026-06-21</option>
-<option value="archive/2026-06-20.html">2026-06-20</option>
-<option value="archive/2026-06-19.html">2026-06-19</option>
-<option value="archive/2026-06-18.html">2026-06-18</option>
-<option value="archive/2026-06-17.html">2026-06-17</option>
-<option value="archive/2026-06-16.html">2026-06-16</option>
-<option value="archive/2026-06-15.html">2026-06-15</option>
-<option value="archive/2026-06-14.html">2026-06-14</option>
-<option value="archive/2026-06-13.html">2026-06-13</option>
-<option value="archive/2026-06-12.html">2026-06-12</option>
-<option value="archive/2026-06-11.html">2026-06-11</option>
-<option value="archive/2026-06-10.html">2026-06-10</option>
-<option value="archive/2026-06-09.html">2026-06-09</option>
-<option value="archive/2026-06-08.html" selected>2026-06-08</option>
-<option value="archive/2026-06-07.html">2026-06-07</option>
-<option value="archive/2026-06-06.html">2026-06-06</option>
-<option value="archive/2026-06-05.html">2026-06-05</option>
-<option value="archive/2026-06-04.html">2026-06-04</option>
-<option value="archive/2026-06-03.html">2026-06-03</option>
-<option value="archive/2026-06-02.html">2026-06-02</option>
-<option value="archive/2026-05-31.html">2026-05-31</option>
-<option value="archive/2026-05-30.html">2026-05-30</option>
-<option value="archive/2026-05-29.html">2026-05-29</option>
-<option value="archive/2026-05-28.html">2026-05-28</option>
-<option value="archive/2026-05-27.html">2026-05-27</option>
-<option value="archive/2026-05-26.html">2026-05-26</option>
-<option value="archive/2026-05-25.html">2026-05-25</option>
-<option value="archive/2026-05-24.html">2026-05-24</option>
-<option value="archive/2026-05-23.html">2026-05-23</option>
-<option value="archive/2026-05-22.html">2026-05-22</option>
-<option value="archive/2026-05-21.html">2026-05-21</option>
-<option value="archive/2026-05-20.html">2026-05-20</option>
-<option value="archive/2026-05-19.html">2026-05-19</option>
-<option value="archive/2026-05-18.html">2026-05-18</option>
-<option value="archive/2026-05-16.html">2026-05-16</option>
-<option value="archive/2026-05-15.html">2026-05-15</option>
-<option value="archive/2026-05-14.html">2026-05-14</option>
-<option value="archive/2026-05-13.html">2026-05-13</option>
-<option value="archive/2026-05-12.html">2026-05-12</option>
-</optgroup>
-<optgroup label="📈 周报">
-<option value="archive/weekly-2026-08-03.html">2026-08-03</option>
-</optgroup>
-  </select>
-  <a href="index.html">最新</a>
-</nav>
+#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff}
+#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
+#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
+#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#claw-top .claw-tab:hover{background:#f0f0f0}
+#claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
+#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
+#claw-top .claw-latest:hover{color:#111}
+#claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
+#claw-drop.open{display:block}
+#claw-drop .claw-group{display:none}
+#claw-drop .claw-group.show{display:block}
+#claw-drop .claw-gtitle{font-size:12px;color:#999;margin:8px 0 4px;font-weight:600}
+#claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
+#claw-drop a:hover{background:#f5f5f5;color:#111}
+#claw-drop a.cur{background:#eee;color:#111;font-weight:600}
+@media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
+</style><div id="claw-top">
+  <div class="claw-bar">
+    <span class="claw-brand">📰 Claw Daily</span>
+    <button class="claw-tab active" data-type="daily">日报 ▾</button>
+    <button class="claw-tab" data-type="weekly">周报 ▾</button>
+    <a class="claw-latest" href="/clawpage/index.html">最新</a>
+  </div>
+  <div id="claw-drop">
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="cur">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a></div>
+  </div>
+</div>
 <script>
-document.getElementById('claw-select').addEventListener('change', function(){
-  var f = this.value;
-  if (!f) return;
-  var segs = location.pathname.split('/').filter(Boolean);
-  var base = '/' + (segs.length ? segs[0] : '');
-  location.href = base + '/' + f;
-});
+(function(){
+  var drop = document.getElementById('claw-drop');
+  function openGroup(type){
+    var groups = drop.querySelectorAll('.claw-group');
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
+    var g = drop.querySelector('[data-group="'+type+'"]');
+    if (g) g.className += ' show';
+    drop.className = 'open';
+    var tabs = document.querySelectorAll('#claw-top .claw-tab');
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
+    var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
+    if (t) t.className += ' active';
+  }
+  document.querySelectorAll('#claw-top .claw-tab').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var type = this.dataset.type;
+      if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
+        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
+      } else {
+        openGroup(type);
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    var top = document.getElementById('claw-top');
+    if (!top.contains(e.target)) { drop.className = ''; }
+  });
+})();
 </script>
+
+
+
 
 
 <div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月8日 星期一</div></div>
