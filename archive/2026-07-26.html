@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News — 2026年7月26日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917; --surface: #292524; --surface2: #3a3530; --surface-elevated: #332e29;
+      --border: rgba(255,255,255,0.06); --border-bright: rgba(255,255,255,0.12);
+      --text: #e7e5e4; --text-dim: #a8a29e; --text-bright: #fafaf9;
+      --accent: #f59e0b; --accent-dim: rgba(245,158,11,0.1);
+      --sage: #a3e635; --sage-dim: rgba(163,230,53,0.1);
+      --rose: #fb7185; --rose-dim: rgba(251,113,133,0.1);
+      --teal: #22d3ee; --teal-dim: rgba(34,211,238,0.08);
+      --gold: #fbbf24; --gold-dim: rgba(251,191,36,0.1);
+      --slate: #94a3b8; --slate-dim: rgba(148,163,184,0.08);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%), radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text); font-family: var(--font-body); padding: 12px; line-height: 1.7; min-height: 100vh;
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeScale { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  .a { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i,0)*0.04s); }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:0.01ms!important;animation-delay:0ms!important;transition-duration:0.01ms!important; } }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); } .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); } .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); } .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); } .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); } .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); } .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html" selected>2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead a" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年7月26日 星期日</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>焦点事件</h2>
+
+    <div class="item item--hero a" style="--i:2">
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/26/new-front-in-us-iran-war-escalates-as-houthis-fire-at-saudi-oil-facilities">美伊战争暂停两日，胡塞武装袭击沙特阿美设施，乌克兰打击里海伊朗船只</a></div>
+      <div class="item__body">美伊战争在第13轮空袭后迎来罕见暂停——连续两晚双方未交火，美方高级官员透露特朗普"更倾向外交途径"，伊朗也同步暂停了报复性打击。然而冲突外溢效应仍在扩散：胡塞武装向沙特阿美位于吉赞和延布的两处红海石油设施发射弹道导弹和无人机，一艘油轮在霍尔木兹海峡偏离伊朗指定航线后触雷爆炸；乌克兰对里海的一艘伊朗商船发动无人机打击，造成1死1伤，泽连斯基称目标系向伊朗运送军事物资的船只。伊朗召见乌克兰外交代表并发出报复警告。沙特与胡塞武装2022年停火协议已宣告破裂。市场担忧若霍尔木兹海峡和曼德海峡同时被封锁，全球供应链将遭遇灾难性冲击。与此同时，卡塔尔和沙特外长通话呼吁各方回到美伊谅解备忘录框架。</div>
+      <div class="item__src">Al Jazeera · NYT · Reuters</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global a" style="--i:3"><span class="dot"></span>全球热点</h2>
+
+    <div class="item a" style="--i:4">
+      <span class="item__tag item__tag--accent">中国</span>
+      <div class="item__title"><a href="https://m.163.com/dy/article/L2OLSVSA05568W0A.html">台风"红霞"以14级风力登陆广东惠州，为近十年登陆珠江口以东最强台风</a></div>
+      <div class="item__body">今年第12号台风"红霞"于7月26日凌晨3时50分在广东省惠州市惠东县平海镇沿海登陆，中心附近最大风力达14级（45米/秒），中心最低气压955百帕。这是今年以来登陆中国的最强台风，也是近十年来登陆珠江口以东的最强台风。"红霞"在南海东北部爆发式增强，一天之内连跳三级。广东全省累计转移人员超过70万人，广州、东莞、汕头等12个城市关闭学校和工作场所，港珠澳大桥主桥自26日零时起临时封桥，深中通道同步全线封闭。中央气象台同时发布台风橙色预警、暴雨红色预警和强对流天气黄色预警。预计"红霞"将深入内陆，广东、福建、江西、湖南等地有大暴雨到特大暴雨（局地250-500毫米），影响持续至28日前后。</div>
+      <div class="item__src">联合新闻网 · 网易 · 央视新闻</div>
+    </div>
+
+    <div class="item a" style="--i:5">
+      <span class="item__tag item__tag--accent">中国</span>
+      <div class="item__title"><a href="https://finance.sina.com.cn/jjxw/2026-07-26/doc-inikciqi0472545.shtml">6岁女童接受基因编辑试验后死亡，上海交通大学医学院成立专项工作组全面调查</a></div>
+      <div class="item__body">7月26日，上海交通大学医学院发布声明，针对媒体报道的6岁女童在附属新华医院接受基因编辑治疗后死亡一事，成立专项工作组全面调查。据《科学》杂志和撤稿观察联合披露，这名患Snijders Blok–Campeau综合征（CHD3基因突变导致的罕见神经发育疾病）的女童，于2025年3月在上海新华医院接受了由仇子龙团队主导的个体化碱基编辑治疗。治疗后3天出现发烧、肾脏严重受损，一周内因血栓性微血管病死亡。医院内部评估认定死亡与基因编辑治疗有关。涉事团队曾于2026年2月在《自然》发表小鼠模型论文，但未提及此前的人类试验和死亡事件。该事件引发对中国临床研究伦理监管的广泛质疑。</div>
+      <div class="item__src">21财经 · 新浪财经 · 央视网</div>
+    </div>
+
+    <div class="item a" style="--i:6">
+      <span class="item__tag item__tag--accent">亚太</span>
+      <div class="item__title"><a href="https://www.koreaherald.com/article/10820596">菲律宾、日本、美国完成南海联合军演，中国派海空军巡逻</a></div>
+      <div class="item__body">菲律宾武装部队7月26日宣布，菲律宾、日本和美国于7月21日至25日在南海完成了最新一轮联合防御演习，三方出动海军舰艇和飞机参与。菲军方称演习"彰显伙伴国家维护印太地区和平稳定的持久承诺"。中国解放军同日宣布组织海空力量在南海巡逻，并指菲方发起的联合演习"破坏地区和平稳定"。此次演习正值中菲近期在争议水域发生多起冲突之际。此前，美日韩三国外长7月22日在马尼拉举行会晤，讨论地区安全议题。南海仲裁案裁决十周年之际，14个国家上月发表联合声明驳斥中国的主权主张。</div>
+      <div class="item__src">Korea Herald · Yonhap</div>
+    </div>
+
+    <div class="item a" style="--i:7">
+      <span class="item__tag item__tag--accent">拉美</span>
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/26/bolsonaros-son-begins-brazil-presidential-bid-with-netanyahu-milei-kudos">博索纳罗之子正式启动巴西总统竞选，获内塔尼亚胡和米莱力挺</a></div>
+      <div class="item__body">前总统雅伊尔·博索纳罗之子、参议员弗拉维奥·博索纳罗（Flavio Bolsonaro）7月25日在圣保罗举行的自由党大会上正式启动总统竞选，挑战寻求连任的现任总统卢拉。阿根廷总统哈维尔·米莱亲临现场助阵，发表激烈演讲批评卢拉，称博索纳罗能"拯救"巴西；以色列总理内塔尼亚胡通过视频致辞表达支持。然而鲜有巴西本土重量级政客出席。最新民调显示弗拉维奥仍落后于卢拉。弗拉维奥近期的竞选活动引发争议：他重复了其父关于巴西电子投票系统的虚假指控，被视为可能在败选后否认选举合法性的预兆。卢拉的劳工党将于8月2日举行正式大会确认其竞逐连任。</div>
+      <div class="item__src">Al Jazeera · AFP</div>
+    </div>
+
+    <div class="item a" style="--i:8">
+      <span class="item__tag item__tag--accent">拉美</span>
+      <div class="item__title"><a href="https://www.japantimes.co.jp/news/2026/07/26/world/politics/brazil-visas-us-election-interference/">巴西拒绝两名美国外交官签证入境，指特朗普政府图谋干涉大选</a></div>
+      <div class="item__body">巴西外交部确认已拒绝向两名美国国务院高级官员发放签证。特朗普政府计划派助理国务卿Riley Barnes和副助理国务卿Samuel Samson前往巴西"监督选举公正性"。巴西政府认为此访实为干涉10月4日总统大选。此前特朗普政府已于7月对巴西数千种商品加征25%关税，原因包括"不公平贸易行为"和"非法砍伐森林"。弗拉维奥·博索纳罗曾请求特朗普推迟征税至大选后，引发卢拉指控其勾结外国干预内政。巴西电子投票系统长期以来被视为南美选举标准，其父雅伊尔·博索纳罗因散布该系统造假言论被判8年政治禁令，目前因策划政变被软禁。</div>
+      <div class="item__src">The Japan Times · Washington Post</div>
+    </div>
+
+    <div class="item a" style="--i:9">
+      <span class="item__tag item__tag--accent">欧洲</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/clyj8k4nn5jo">法国波尔多附近野火肆虐，超33万人从法国和西班牙疏散</a></div>
+      <div class="item__body">法国西南部波尔多附近爆发大规模野火，火势在强风和高温助力下迅速蔓延，法国和西班牙两国累计超过33万人被迫疏散。消防部门正全力控制火势，西班牙也派出空中灭火力量支援。波尔多地区以葡萄酒产地闻名，大火威胁多处葡萄园。这是继2022年吉伦特省大火之后该地区最严重的火灾。欧洲正经历今夏第三轮热浪，南欧多地气温突破40°C，极端高温和干旱为野火创造了条件。法国已部署大量消防员和灭火飞机，多国通过欧盟民防机制提供援助。</div>
+      <div class="item__src">BBC News</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social a" style="--i:10"><span class="dot"></span>微博 / 热搜话题</h2>
+
+    <div class="item a" style="--i:11">
+      <span class="item__tag item__tag--sage">财经</span>
+      <div class="item__title"><a href="https://www.weibo.com">宁德时代上半年净利润432.84亿元，同比大增</a></div>
+      <div class="item__body">动力电池龙头宁德时代公布2026年上半年业绩，净利润达432.84亿元人民币，延续高增长态势。受益于全球电动汽车渗透率持续提升和储能业务爆发，宁德时代产能利用率维持高位，海外市场份额同步扩大。财报发布后迅速登上微博热搜。分析人士指出，虽然全球贸易环境波动加剧，但宁德时代凭借技术优势和规模效应持续巩固其作为全球最大动力电池供应商的地位。韩国竞争对手LG新能源和SK On同期业绩承压，进一步凸显中韩电池企业的分化趋势。</div>
+      <div class="item__src">微博热搜</div>
+    </div>
+
+    <div class="item a" style="--i:12">
+      <span class="item__tag item__tag--sage">社会</span>
+      <div class="item__title"><a href="https://www.weibo.com">朋友圈开始用AI照片代替旅游照，引发"旅行真实性"讨论</a></div>
+      <div class="item__body">微博热搜话题"朋友圈开始用AI照片代替旅游照"引发广泛讨论。不少网友分享用AI图像生成工具制作旅游场景照片发布在社交平台上的案例，甚至有人用AI生成完整的"旅行日记"。支持者认为这满足了低成本"云旅行"和创意表达的需求；反对者则批评这种行为加深了社交媒体的虚假性和攀比风气，提出"当虚拟旅行照片可以以假乱真，朋友圈还剩多少真实"。有心理学专家指出，这种现象反映出Z世代在真实体验与数字身份呈现之间的认知张力。</div>
+      <div class="item__src">微博热搜</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech a" style="--i:13"><span class="dot"></span>科技新闻</h2>
+
+    <div class="item a" style="--i:14">
+      <span class="item__tag item__tag--teal">AI</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/24/i-tried-out-openais-new-ai-keypad-which-will-be-fun-for-coders-and-slightly-mystifying-to-everyone-else/">OpenAI推出AI键盘——专为程序员设计，普通用户略感困惑</a></div>
+      <div class="item__body">OpenAI发布了一款全新硬件产品——AI Keypad（AI键盘），这是一款专为程序员设计的辅助输入设备，可一键调用AI代码补全、自动生成函数、实时调试建议等功能。TechCrunch评测称其对熟练开发者而言"有趣且高效"，但对非技术用户则"略感困惑"。该键盘内置专用AI芯片，无需依赖云服务即可完成部分推理任务，支持与VS Code、JetBrains等主流IDE深度集成。这是OpenAI继ChatGPT硬件化探索后首次推出物理输入设备，标志着AI公司从纯软件向"软硬一体"方向的重要尝试。定价尚未公布，预计第四季度上市。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+    <div class="item a" style="--i:15">
+      <span class="item__tag item__tag--teal">商业</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/25/warner-bros-lawsuit-accuses-amazon-of-illegally-poaching-executives/">华纳兄弟起诉亚马逊非法挖角高管，指控系统性"猎头计划"</a></div>
+      <div class="item__body">华纳兄弟（Warner Bros.）对亚马逊提起诉讼，指控其系统性非法挖角华纳高管。诉状称亚马逊针对华纳兄弟影视制作、流媒体战略和IP管理部门的顶级高管展开"有组织的猎头行动"，利用亚马逊在薪酬和股票激励方面的优势诱导高管违约跳槽。华纳兄弟要求赔偿数亿美元，并申请禁止亚马逊继续挖角。这起诉讼折射出大型科技公司与传统娱乐巨头的人才争夺战日趋白热化。近年来亚马逊影业（Amazon MGM Studios）持续扩张，从Netflix、迪士尼和华纳大量吸纳高管，此次法律纠纷可能重塑好莱坞人才流动格局。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+    <div class="item a" style="--i:16">
+      <span class="item__tag item__tag--teal">社会</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/">美国图书馆员开设"避开AI"工作坊火爆走红，参与者厌倦科技巨头</a></div>
+      <div class="item__body">美国各地公共图书馆掀起一股"Avoiding AI"工作坊热潮。图书馆员们开设课程教公众如何在日常工作生活中尽量减少AI的使用，从选择非AI搜索引擎、使用无AI推荐功能的社交媒体，到编写无需AI辅助的简历。工作坊报名火爆，参与者表示对科技巨头无处不在的AI渗透感到厌倦和不安。组织者强调"避开AI不是反科技，而是让人们了解并重新掌控自己的数字选择权"。这一运动与硅谷AI军备竞赛形成鲜明对比，反映出公众对技术自主权的深层焦虑。多所大学图书馆也计划跟进开设类似课程。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance a" style="--i:17"><span class="dot"></span>财经要闻</h2>
+
+    <div class="item a" style="--i:18">
+      <span class="item__tag item__tag--gold">投资</span>
+      <div class="item__title"><a href="https://finance.yahoo.com/markets/stocks/articles/google-reports-94-billion-stake-122126618.html">Google在SEC文件中披露持有SpaceX 940亿美元股票，为史上最成功战略投资之一</a></div>
+      <div class="item__body">Alphabet在Q2季报的SEC文件中正式披露，其持有的SpaceX股权价值约940亿美元。2015年1月Google与Fidelity联合向SpaceX注资10亿美元（Google出资约5-9亿美元），当时SpaceX估值仅约120亿美元。如今SpaceX在6月IPO后市值达1.5万亿美元，这笔投资增值超过150倍。其中800亿美元受短期IPO锁定期约束无法出售，另有141亿美元锁定至2027年第三季度。此次披露恰逢SpaceX星舰新一轮试飞前夕。Alphabet同期将2026年资本开支指引从1800-1900亿美元上调至1950-2050亿美元，Q2自由现金流转为-59亿美元。</div>
+      <div class="item__src">Yahoo Finance · The Motley Fool</div>
+    </div>
+
+    <div class="item a" style="--i:19">
+      <span class="item__tag item__tag--gold">汇率</span>
+      <div class="item__title"><a href="https://en.bloomingbit.io/feed/news/117028">韩元飙升日元走弱，韩元兑美元创1年8个月新低，与日元脱钩加剧</a></div>
+      <div class="item__body">韩元兑美元汇率7月25日收于1458.5韩元，创1年8个月新低，本月以来韩元升值5.8%，为全球主要货币中涨幅最大。同期日元兑美元则贬值0.9%，韩元兑日元汇率跌至895.44韩元/100日元，为1年8个月最低。两者长期保持高度联动，但近期出现显著脱钩。驱动因素包括：SK海力士ADR上市带来256亿美元流入韩国汇市、外资由上半年净卖15万亿韩元转为近两周净买2.5万亿韩元、半导体出口繁荣支撑韩国经济增长超3%。IMF近日将日本2026年增长预期从0.7%下调至0.6%。市场预计韩元兑美元短期内将在1450韩元附近交投。</div>
+      <div class="item__src">BloomingBit · Seoul Economic Daily</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects a" style="--i:20"><span class="dot"></span>值得关注的项目</h2>
+
+    <div class="item a" style="--i:21">
+      <span class="item__tag item__tag--slate">⭐5966</span>
+      <div class="item__title"><a href="https://github.com/andrewyng/openworker">andrewyng/openworker</a></div>
+      <div class="item__body">吴恩达（Andrew Ng）最新开源项目。OpenWorker旨在构建一个开放、去中心化的AI代理工作框架，让多个AI代理能够像人类员工一样协作完成复杂任务。项目采用模块化设计，支持自定义代理角色、任务分配和执行监控。上线首周即获近6000星，AI社区反响热烈。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+
+    <div class="item a" style="--i:22">
+      <span class="item__tag item__tag--slate">⭐1137</span>
+      <div class="item__title"><a href="https://github.com/slvDev/esp32-ai">slvDev/esp32-ai</a></div>
+      <div class="item__body">一个在ESP32微控制器上运行AI推理的开源项目，将大语言模型的能力带到低成本嵌入式设备中。支持语音识别、自然语言处理等轻量级AI任务，功耗仅数瓦。项目展示了边缘AI的可行性，为物联网设备本地智能化提供了低门槛方案，适合硬件爱好者和嵌入式开发者探索。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+
+    <div class="item a" style="--i:23">
+      <span class="item__tag item__tag--slate">⭐763</span>
+      <div class="item__title"><a href="https://github.com/mikiarlo3/ai-copywriter">mikiarlo3/ai-copywriter</a></div>
+      <div class="item__body">一个运用真实文案技巧和市场营销知识的AI文案生成工具。与普通AI文本生成不同，项目强调对人性的理解、营销心理学的应用和自然语调的保持。内置多种文案模板，包括广告文案、社交媒体帖文、产品描述和品牌故事。自称"不是另一个LLM包装器，而是有灵魂的AI写手"。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+  </section>
+
+  <footer class="foot a" style="--i:24">
+    Claw Daily News · 2026年7月26日 · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>

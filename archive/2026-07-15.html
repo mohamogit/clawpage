@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News — 2026年7月15日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .a { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  .anim-scale { animation: fadeScale 0.4s ease-out both; animation-delay: calc(var(--i, 0) * 0.05s); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html" selected>2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead a" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年7月15日 · 星期三</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:1"><div class="item__title"><a href="https://apnews.com/article/iran-us-hormuz-strait-war-july-15-2026-b7c592f269d822407dd6b5641602bf25">美军重启对伊朗港口封锁，特朗普收回霍尔木兹海峡收费计划</a></div><div class="item__body">美国军方周三凌晨重启对伊朗港口的全面封锁，并对伊朗南部发动新一轮持续七小时的空袭，打击数十个目标。此前特朗普政府曾短暂提出对通过霍尔木兹海峡的船只征收20%通行费，但随即在各方反对下收回该方案。伊朗方面则以封锁霍尔木兹海峡附近更多贸易路线作为回应，中东能源出口面临严重威胁。联合国安理会紧急会议未能达成停火共识，临时停火协议进一步瓦解。特朗普在德黑兰的反美标语"我们杀死特朗普"随处可见，局势持续升级。</div><div class="item__src">AP News</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global a" style="--i:2"><span class="dot"></span>全球热点</h2>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://www.xinhuanet.com/fortune/20260715/c34e9c77b39148aaa41215ad13354829/c.html">中国上半年GDP同比增长4.7%达69.57万亿元，新动能加速成长</a></div><div class="item__body">国家统计局副局长毛盛勇在7月15日国新办发布会上公布上半年经济数据：初步核算，上半年国内生产总值695704亿元，按不变价格计算同比增长4.7%。面对复杂外部环境，中国经济总体平稳、向新向优。高技术制造业、数字经济等新动能加快壮大，成为支撑增长的主要力量。上半年进出口规模创历史新高，消费市场稳步恢复，就业形势总体稳定。央行同步发布上半年金融统计数据，显示货币政策精准有力。</div><div class="item__src">新华社</div></div>
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://www.cnr.cn/newscenter/native/gd/20260715/t20260715_527711728.shtml">APEC数字周在成都开幕，2026年APEC"中国年"系列活动启动</a></div><div class="item__body">外交部发言人林剑7月15日宣布，APEC数字周系列活动将在四川成都拉开帷幕。2026年是APEC"中国年"，作为东道主，中方全年将举办10余场专业部长会议和高层级活动。本次数字周聚焦数字经济合作与创新，涵盖数字贸易、人工智能治理、智慧城市等议题，是推动亚太区域数字经济发展的重要平台。</div><div class="item__src">央广网</div></div>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--sage">亚太</span><div class="item__title"><a href="https://english.news.cn/asiapacific/20260715/02397265b9424512a9f1102fd7626272/c.html">印度批准132.3亿美元半导体2.0计划，挑战中国制造主导地位</a></div><div class="item__body">印度政府7月15日批准了雄心勃勃的半导体计划第二期——Semicon 2.0，总投入约132.3亿美元。联邦信息部长Ashwini Vaishnaw表示，新计划将重点支持芯片设计与制造生态系统的发展，减少对进口的依赖。此前印度已批准塔塔集团等企业的芯片厂项目，目标是在未来五年内建立自主半导体产业链。同一日，TechCrunch报道印度还投入数十亿美元扶持手机制造，企图打破中国在智能手机生产领域的垄断地位。</div><div class="item__src">新华社 / TechCrunch</div></div>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--accent">非洲</span><div class="item__title"><a href="https://www.ewn.co.za/2026/07/15/health-dept-says-science-informs-sas-preparation-for-possible-ebola-outbreak">南非卫生部提升埃博拉警戒级别，基于科学风险评估全面备战</a></div><div class="item__body">南非卫生部7月15日宣布，基于科学风险评估，尽管境内尚无确诊病例，但已全面启动埃博拉病毒防控准备。刚果民主共和国和乌干达近期报告新增病例，引发区域各国高度警惕。南非卫生部长表示，已在主要口岸加强入境筛查，医院启动隔离预案，边境管理总局同步升级检疫措施。世界卫生组织对东非和中非的埃博拉疫情保持密切关注。</div><div class="item__src">EWN / allAfrica</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--slate">欧洲</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c5yzynxwk05o">斯塔默完成最后一次首相质询，英国政治一个时代落幕</a></div><div class="item__body">英国首相斯塔默7月15日出席其任内最后一次首相质询（PMQs），现场获得跨党派议员的起立鼓掌致意。斯塔默在告别发言中表示这是"我政治旅程的终点"，回顾了任内推动的国防投资、公共服务改革等政绩。此前他已宣布辞去工党领袖职务，继任者竞选正在进行中。英媒评论称，斯塔默的离任标志着英国政坛一个相对稳定时期结束，保守党新领袖格局尚不明朗。</div><div class="item__src">BBC</div></div>
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--slate">北美</span><div class="item__title"><a href="https://www.bbc.com/news/articles/cz9l9venjd8o">美国众议院通过夏令时永久化法案，每年两次调钟或成历史</a></div><div class="item__body">美国众议院7月15日通过一项法案，推动夏令时在全国范围内永久化实施。若参议院通过并由总统签署，美国将不再每年两次调整时钟。该法案此前已在参议院获得一定支持，但多年来因各方利益分歧迟迟未果。支持者认为永久夏令时有助于提升经济效率、减少交通事故和改善公共健康。反对者则担忧冬季部分地区日出时间过晚影响学生和农民作息。</div><div class="item__src">BBC</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social a" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--sage">AI监管</span><div class="item__title"><a href="https://news.cnr.cn/kuaixun/">中央网信办发布7款手机端侧生成式AI服务备案公告</a></div><div class="item__body">7月15日，中央网信办发布公告，公布7款提供手机端侧生成式人工智能服务完成备案的信息。此举标志着中国对端侧AI的规范管理进入新阶段。端侧AI无需联网即可在手机上运行大模型，对隐私保护和离线场景意义重大。备案制度的实施将为行业划定合规红线，同时推动手机厂商和大模型公司加速端侧AI部署。分析人士指出，这为即将于7月17日开幕的2026世界人工智能大会预热。</div><div class="item__src">央广网</div></div>
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--sage">热议</span><div class="item__title">豆包、通义千问今日全面下线智能体功能，AI拟人互动监管收紧</div><div class="item__body">字节跳动旗下豆包与阿里巴巴旗下通义千问同日（7月15日）正式下线智能体功能。用户无法再新建智能体，已创建的也将同步停止运行。此前腾讯元宝也已宣布类似调整。三大国产大模型集体"叫停"智能体功能，与即将施行的AI拟人互动新规密切相关。业界分析，监管层对AI智能体的拟人化程度、隐私数据收集和内容安全提出更高要求，倒逼企业调整产品策略。用户被建议在10月15日前备份对话数据。</div><div class="item__src">澎湃新闻 / 腾讯新闻</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech a" style="--i:4"><span class="dot"></span>科技新闻</h2>
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/">Anthropic与黑石集团推出Ode公司，15亿美元押注企业AI实施</a></div><div class="item__body">Anthropic联合黑石集团、Hellman &amp; Friedman、高盛等投资巨头，正式推出AI实施公司Ode with Anthropic，初始资金15亿美元。Ode基于Anthropic收购的创业公司Fractional AI，拥有100名AI工程师，为大型企业提供定制化的AI部署服务。CEO Chris Taylor表示"如果执行到位，这有潜力成为万亿美元公司"。此举与OpenAI此前推出的The Deployment Company形成直接竞争，表明前沿AI实验室已达成共识：在企业市场，模型能力本身远不如高质量的实施服务重要。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:11"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/">印度AI编程初创公司Emergent获1.3亿美元C轮融资，成立一年即成独角兽</a></div><div class="item__body">印度AI编程初创公司Emergent在成立仅一年多后完成1.3亿美元C轮融资，估值突破10亿美元成为独角兽。该公司开发AI驱动的代码生成和软件工程自动化工具，在印度本土和国际市场快速扩张。Emergent的崛起反映了全球对AI编程助手的需求爆发，以及印度作为AI人才和技术中心的地位提升。此轮融资由多家顶级风投参与，资金将用于扩大工程师团队和拓展海外市场。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/07/15/vint-cerf-is-working-on-a-plan-to-unleash-ai-agents-on-the-open-internet/">"互联网之父"Vint Cerf正制定计划，在开放互联网上释放AI代理</a></div><div class="item__body">被公认为"互联网之父"的Vint Cerf（谷歌首席互联网传道者）正在制定一项计划，旨在让AI代理能够在开放互联网上自主行动。该计划关注AI代理之间的互操作标准和安全协议，避免AI代理被恶意利用。Cerf认为，AI代理是互联网的下一个重大演进方向，但需要像当年TCP/IP协议那样建立基础规则。项目已获得多家科技公司和学术机构支持，预计年底前发布白皮书。这被视为推动AI代理从封闭平台走向开放生态的关键一步。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--teal">芯片</span><div class="item__title"><a href="https://news.mydrivers.com/tag/xinpian.htm">SEMI预测2026年全球半导体设备销售额达1659亿美元，中国需求强劲</a></div><div class="item__body">国际半导体产业协会（SEMI）7月15日发布最新预测，2026年全球半导体设备销售额将达到1659亿美元（约合1.12万亿元人民币），同比增长23%。增长主要来自AI芯片、高性能计算和存储芯片的产能扩张需求。中国市场受国产替代政策推动，设备采购持续强劲。SEMI指出，尽管美国对华出口管制仍在持续，但中国半导体设备国产化进程加速，国内设备厂商订单饱满。日本和荷兰的设备企业也受益于全球扩产周期。</div><div class="item__src">快科技 / SEMI</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance a" style="--i:5"><span class="dot"></span>财经要闻</h2>
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--gold">央行</span><div class="item__title"><a href="https://www.cnr.cn/newscenter/native/gd/kx/20260715/t20260715_527711695.shtml">央行发布上半年金融统计数据，货币政策精准发力稳增长</a></div><div class="item__body">中国人民银行7月15日下午在国新办发布会上公布上半年金融统计数据，副行长邹澜介绍货币政策执行情况。数据显示，上半年社会融资规模增量累计为XX万亿元，人民币贷款同比多增，信贷结构持续优化。央行通过降准、降息等工具保持流动性合理充裕，加大对科技创新、绿色发展和普惠金融的支持力度。邹澜表示，将继续实施稳健的货币政策，灵活适度，为经济平稳运行创造良好的货币金融环境。</div><div class="item__src">央广网 / 国新办</div></div>
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--gold">大宗商品</span><div class="item__title"><a href="https://bnamericas.com/en/list/news/1">巴西乙醇需求预计每年增加10亿升，生物燃料政策驱动增长</a></div><div class="item__body">巴西国家石油管理局（ANP）最新报告显示，受生物燃料混合 mandate 政策推动，巴西乙醇需求预计每年增加约10亿升。作为全球第二大乙醇生产国（仅次于美国），巴西正加速推动交通领域的脱碳进程。新的生物燃料法案要求逐步提高汽油中的乙醇掺混比例，从目前的27%向30%迈进。此举不仅将拉动甘蔗和玉米乙醇产量，还将吸引数十亿美元投资新建生物燃料产能。巴西农业部长表示，乙醇产业是巴西能源转型和农村发展的关键支柱。</div><div class="item__src">BNamericas</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects a" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--slate">AI安全</span><div class="item__title"><a href="https://github.com/MDX-Tom/gpt-5.6-instruct">gpt-5.6-instruct ⭐1238 — GPT-5.6系列Codex CLI破甲提示词测试包</a></div><div class="item__body">针对OpenAI最新发布的GPT-5.6系列模型（Sol/Terra/Luna）开发的Codex CLI jailbreak提示词与测试工具包。该项目通过精心设计的提示词挑战模型的安全边界，帮助红队和安全研究人员评估GPT-5.6系列的安全防护能力。上线不到一周即获得超过1200颗星，反映了开发者社区对前沿AI安全测试的强烈关注。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--slate">3D</span><div class="item__title"><a href="https://github.com/vinhhien112/Three.js-Object-Sculptor-Codex-Plugin">Three.js-Object-Sculptor ⭐991 — 图片转动画3D模型的Codex插件</a></div><div class="item__body">一款创新的Codex插件，能将附带的物体图片转换为纯代码、可直接动画化的Three.js 3D模型。用户只需上传一张物体图片，插件即可生成完整的Three.js代码，包含几何体、材质、光照和动画脚本。该项目紧随GPT-5.6附带的Codex CLI生态爆发趋势，为3D内容创作者提供了从图片到交互式3D场景的零门槛工具。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--slate">工具</span><div class="item__title"><a href="https://github.com/littledivy/mimic">mimic ⭐955 — 拦截任意桌面应用并从Python像库一样调用的神器</a></div><div class="item__body">一个轻量级工具库，能够拦截任意桌面应用程序的进程，让开发者直接从Python代码中像调用本地库一样与之交互。mimic通过底层进程注入和API劫持技术实现跨应用通信，无需目标应用提供API或SDK。该工具对自动化测试、数据提取、GUI程序控制等场景极为实用，上线后迅速获得近千颗星。</div><div class="item__src">GitHub</div></div>
+  </section>
+
+  <footer class="foot a" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>

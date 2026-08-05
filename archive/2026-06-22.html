@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html" selected>2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月22日 星期一</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://cn.weforum.org/press/2026/06/world-economic-forum-announces-new-minds-cohort-amid-ai-adoption-surge-cn/">世界经济论坛公布第三批"AI应用之星"名单，超半数案例来自中国</a></h3>
+<p class="news-content">2026年6月2日，世界经济论坛发布"AI应用之星"计划第三批入选名单，表彰依托人工智能及前沿技术破解全球性复杂难题的机构。本次当选的26家先锋机构从数百份申请中脱颖而出，来自12个行业和28个国家。这些组织在能源、科研、医疗等领域落地应用人工智能解决方案，为各行各业与社会大众创造可规模化、可量化的积极成效。世界经济论坛执行董事兼首席技术官Stephan Mergenthaler表示："人工智能与各类技术融合，正全方位重塑企业经营与社会运作模式。"入选项目涵盖六大影响领域，包括效率提升与科技创新、可持续的地球能源体系、优质医疗、学习技能培育文化、可信信息治理以及韧性基础设施供应链。</p>
+<div class="news-source">来源: World Economic Forum</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cdxd00lg599o">英国首相斯塔默突然宣布辞职，安迪·伯纳姆有望继任</a></h3>
+<p class="news-content">2026年6月22日，英国首相基尔·斯塔默突然宣布辞职，震惊英国政坛。斯塔默在唐宁街10号发表声明称，将辞去工党领袖和首相职务。这一决定发生在地方选举之后，工党表现不佳，党内对其领导能力产生质疑。目前，曼彻斯特市长安迪·伯纳姆被视为最有希望接替斯塔默的候选人。政治分析人士认为，此次辞职反映了英国工党内部深层次的路线分歧和信任危机。斯塔默曾在2024年带领工党取得压倒性胜利，但仅执政不到两年便面临下台危机，显示英国政坛的复杂性和不稳定性。</p>
+<div class="news-source">来源: BBC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://sputniknews.cn/20260607/1071737480.html">伊朗指责美国违反停火机制，中东地区面临严重威胁</a></h3>
+<p class="news-content">2026年6月7日，伊朗外交部发表声明，指责美国违反与伊朗的停火机制，使中东地区面临严重威胁。据悉，美国中央司令部通报称在无人机袭击背景下，美军对位于戈鲁克和格什姆岛的伊朗雷达站发动了打击，伊朗随后对美军在地区基地作出回应攻击。这一紧张局势引发了国际社会对中东和平前景的担忧。同日，美国与伊朗就结束战争达成最终协议的首轮谈判在卡塔尔与巴基斯坦的调解下结束，斡旋国表示谈判取得了"令人鼓舞的进展"，为地区和平带来一线希望。</p>
+<div class="news-source">来源: Russia Sputnik</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/zhongwen/articles/c30yzqz7013o/simp">美国-伊朗谈判取得突破性进展，调解方称进展令人鼓舞</a></h3>
+<p class="news-content">2026年6月21日，美国与伊朗就结束战争达成最终协议的首轮谈判在多哈结束，由卡塔尔与巴基斯坦担任调解方。谈判双方围绕核问题、地区安全等多个关键议题展开深入讨论。调解方表示，本轮谈判取得了"令人鼓舞的进展"，为达成全面协议奠定了良好基础。这是自中东局势紧张以来，双方首次进行如此高规格的直接谈判，国际社会对和平前景普遍持乐观态度。分析人士认为，此次谈判的成功将有助于稳定中东局势，为地区经济发展创造有利环境。</p>
+<div class="news-source">来源: BBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://zhuanlan.zhihu.com/p/2047972685263681137">南非将主办2026年金砖国家峰会，法国大幅增加国防预算</a></h3>
+<p class="news-content">2026年6月9日，南非总统拉马福萨宣布，南非将在2026年下半年主办金砖国家领导人峰会，重点讨论全球经济治理、气候变化和南南合作等议题。同日，法国总统马克龙表示，法国将在2027年之前将国防预算提高到GDP的2%，以应对日益复杂的国际安全环境。这两项重大举措分别反映了多极化世界格局下新兴国际力量与传统强国的不同战略取向，预示着国际关系格局的深刻变化。</p>
+<div class="news-source">来源: 知乎专栏</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.v2ex.com">V2EX热榜：恋与深空敖尹公开引发热议</a></h3>
+<p class="news-content">V2EX社区今日热榜显示，《恋与深空》游戏中敖尹角色的公开引发广泛关注，相关话题获得2546.1万热度值。与此同时，"一组数看懂链博会新亮点"话题获得354.1万热度，"红魔平板居然有水冷"话题获得324.9万热度。在生活讨论区，"突然想离婚了"和"大家有没有特别想吃，但吃到后大失所望的食物"等话题引发网友热烈讨论，反映了当前社会热点和公众关注焦点。</p>
+<div class="news-source">来源: V2EX</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.s.weibo.com/top/summary/">微博热搜：红魔平板水冷技术引发科技圈关注</a></h3>
+<p class="news-content">微博热搜榜显示，红魔平板搭载的水冷散热技术成为科技圈关注焦点，该创新设计解决了移动设备散热难题。与此同时，链博会（全球产业链供应链博览会）相关话题持续发酵，展示了中国在产业链创新方面的最新成果。生活类话题中，"坐了朋友的电车，感觉我的小油车已是上时代产物"反映了新能源汽车对传统汽车的冲击，"从来没有这么反感过一座城市"等话题引发网友对城市生活的深度思考。</p>
+<div class="news-source">来源: 微博</div>
+</div>
+PLACEHOLDER_WEIBO
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://zhuanlan.zhihu.com/p/2047355813451273354">2026年6月第23周GitHub热门开源项目盘点：AI Agent生态持续爆发</a></h3>
+<p class="news-content">本周GitHub涨星总数超过9.3万，AI Agent生态呈现爆发式增长，从Agent性能优化、设计语言到记忆引擎，一条完整的AI Agent开发链正在逐步形成。其中，LLM Token压缩器headroom以单周+14,272星登顶成为本周最大黑马。同时，本地AI工作台项目也备受关注，支持一键本地部署，解决了企业和个人开发者最头疼的数据隐私问题，AI基础设施和端侧自托管工具呈现爆发式增长趋势。</p>
+<div class="news-source">来源: 知乎</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://blog.csdn.net/n6581478/article/details/161834776">GitHub热门项目盘点：AI Agent基础设施和端侧部署成为主流趋势</a></h3>
+<p class="news-content">2026年6月第一周的开源生态呈现两大亮点：AI Agent基础设施和端侧自托管工具的爆发式增长。odysseus项目作为本地AI工作台，单周增长3.7万星，主要解决数据隐私问题。同时，AI Agent开发相关的工具链日益完善，从底层推理优化到上层应用开发，形成了完整的生态系统。这一趋势表明，开发者对本地化、私有化AI解决方案的需求正在快速增长，反映了技术社区对数据安全和隐私保护的高度关注。</p>
+<div class="news-source">来源: CSDN博客</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://juejin.cn/post/7628837737668100134">2026年GitHub最火爆的十个开源AI项目：正在重塑开发者工作方式</a></h3>
+<p class="news-content">2026年最受关注的十大开源AI项目正在深刻改变开发者的工作模式。这些项目涵盖了从底层架构到上层应用的完整链路，包括大模型推理优化、AI Agent开发框架、端侧部署工具等多个维度。这些项目的共同特点是高度关注性能优化、用户体验和数据安全。数据显示，这些项目的活跃度和贡献度持续攀升，反映了开源AI生态系统的蓬勃发展。中国开发者社区在其中扮演了重要角色，贡献了多个具有国际影响力的开源项目，推动了全球AI技术的进步。</p>
+<div class="news-source">来源: 掘金</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://cleverai.app/zh/blog/ai%E6%96%B0%E9%97%BB-ai%E5%92%8C%E5%A4%A7%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E9%94%AE%E5%8F%91%E5%B1%95-2026%E5%B9%B46%E6%9C%881%E6%97%A5">AI和LLMs关键发展：2026年6月AI领域重要突破</a></h3>
+<p class="news-content">2026年6月，人工智能和大型语言模型领域出现多项重要发展。AI继续重塑各行各业，重新定义人们对技术的理解。基于AI的决策制定系统日益成熟，在医疗、金融、教育等领域展现出巨大潜力。同时，具身智能领域首份行业标准YD/T 6770-2026正式实施，为行业构建统一基准测试框架，标志着具身智能从实验室走向产业化。这些进展不仅突显了创新的快速步伐，还强调了AI对我们日常生活和商业战略的日益深远影响。</p>
+<div class="news-source">来源: CleverAI</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/macro/rptid/833629599460/index.phtml">2026年6月全球宏观经济报告：英国超越日本成为第四大经济体</a></h3>
+<p class="news-content">最新全球宏观经济报告显示，英国已经超越日本成为世界第四大经济体。这一变化反映了国际经济格局的深刻调整。报告指出，中国、东盟、墨西哥、尼日利亚等新兴市场受假期和季节性因素影响，一季度GDP环比出现下降。2月下旬美国宣布援引IEEEPA关税违法且退返的政策，有利于全球贸易回暖，一定程度抵消了3月霍尔木兹海峡被封的利空影响。全球经济发展呈现区域分化特点，发达国家与新兴市场国家面临不同的挑战和机遇。</p>
+<div class="news-source">来源: 新浪财经</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://xueqiu.com/5392941286/392022242">2026年6月股市前瞻：政策密集窗口与产业催化四重叠加</a></h3>
+<p class="news-content">进入6月，全球资本市场将迎来政策密集窗口、海外决议窗口、产业催化窗口、流动性窗口四重叠加的复杂局面。市场整体节奏、板块轮动、资金偏好将由多个重磅事件主导。数据显示，5月29日收盘时，被新调整纳入MSCI指数的19只A股中，有11只是AI算力、光通信、芯片、PCB个股，显示科技板块受到国际资本的高度关注。投资者需要密切关注政策变化、产业趋势和流动性状况，合理配置资产结构。</p>
+<div class="news-source">来源: 雪球</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://m.jrj.com.cn/madapter/stock/2026/06/01145357286558.shtml">2026年6月资本市场大事表：美伊谈判开启，通胀数据即将公布</a></h3>
+<p class="news-content">2026年6月资本市场将迎来多个重大事件，其中包括美伊在瑞士开启谈判、美联储最看重的通胀指标5月PCE价格指数将于6月25日公布等重要时间节点。数据显示，下周A股将有49家公司有限售股份解禁，合计解禁数量27.63亿股，对市场流动性将产生一定影响。国际局势变化、货币政策调整以及企业基本面表现将成为影响市场走势的关键因素。投资者需要密切关注这些重大事件的时间节点和可能带来的市场波动，做好风险管理。</p>
+<div class="news-source">来源: 金融界</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/alchaincyf/loop-engineering-orange-book">Loop Engineering橙皮书系列：别再问我什么是Loop Engineering</a></h3>
+<p class="news-content">该项目是一个以中英双语呈现的Loop Engineering（循环工程）完整指南，目前获得743个星标。Loop Engineering是一种先进的技术方法论，专注于优化系统循环和可持续性。该项目的亮点在于将复杂的技术概念以通俗易懂的方式呈现，为开发者提供实用的工程实践指导。项目支持PDF格式下载，免费开源，是理解现代工程方法论的重要参考资料，特别适合对系统优化和可持续发展感兴趣的开发者学习参考。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/dongshuyan/compass-skills">司南：个性化AI任务总控Skills系统</a></h3>
+<p class="news-content">司南项目是一个面向AI Agent的个性化任务总控Skills系统，目前获得464个星标。该项目为AI Agent提供个人化任务管理和执行框架，通过灵活的技能编排系统实现复杂任务的自动化处理。司南系统的设计理念是将AI任务分解为可组合的技能模块，支持动态调度和优化。该项目体现了AI Agent技术从简单向复杂、从通用向个性化发展的趋势，为构建更智能的AI助手系统提供了重要技术支撑。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/leyten/shard">Shard：跨GPU机器的LLM管道并行推理框架</a></h3>
+<p class="news-content">Shard项目是一个创新的LLM推理框架，能够将大型语言模型的推理任务分布到多台独立机器的GPU上进行并行处理，目前获得313个星标。该项目解决了LLM推理中的性能瓶颈问题，通过智能的负载均衡和数据分片技术，大幅提升了推理效率。Shard的架构设计考虑了分布式计算环境下的网络延迟、数据同步等关键问题，为企业级AI应用提供了高性能的解决方案，是当前AI基础设施领域的重要技术创新。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/SubBoost/subboost">SubBoost：Clash/Mihomo订阅转换、增强和管理工具</a></h3>
+<p class="news-content">SubBoost是一个强大的Clash/Mihomo代理订阅管理工具，目前获得267个星标。该项目通过可视化界面提供一键链式代理、精确分流、防DNS泄露和多订阅聚合等高级功能。SubBoost解决了用户在使用复杂代理配置时遇到的痛点，提供了直观易用的管理界面。该项目支持多种代理协议，具有良好的兼容性和扩展性，是网络隐私和访问管理领域的重要工具，受到开发者和隐私关注者的广泛欢迎。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+</div>
+
+</div></body></html>

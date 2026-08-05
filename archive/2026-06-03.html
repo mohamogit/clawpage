@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html" selected>2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月3日 星期二</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<div class="news-title"><a href="https://www.nbcnews.com/world/iran/iran-attacks-kuwait-strikes-us-ceasefire-peace-talks-trump-rcna348213">伊朗攻击科威特机场，与美国交换军事打击考验停火协议</a></div>
+<div class="news-content">伊朗在波斯湾发动新一轮致命袭击，与美国进行军事打击交换，这是两国自4月8日停火以来最严重的冲突升级之一。科威特官方表示，一名机场人员在伊朗无人机袭击中丧生，另有63人受伤，航班一度暂停。美国中央司令称其部队在霍尔木兹海峡附近击落了伊朗无人机，并对伊朗格什姆岛进行了自卫打击。此次冲突严重威胁到中断的和平谈判，美国和以色列与伊朗-真主党冲突的谈判陷入僵局，全球能源供应因霍尔木兹海峡的封锁而受到严重影响。</div>
+<div class="news-source">来源：NBC News | 2026年6月3日</div>
+</div>
+<div class="news-item highlight-box">
+<div class="news-title"><a href="https://www.bbc.com/news/articles/c0e2vqd3j1vo">乌克兰无人机袭击圣彼得堡，普京经济论坛开幕前突发</a></div>
+<div class="news-content">乌克兰对俄罗斯圣彼得堡地区发动打击，距离普京旗舰经济论坛开幕仅几小时。当地当局称防空系统击落了59架无人机，圣彼得堡三个不同地区遭袭，但无人死亡。这一袭击发生在被誉为"俄罗斯达沃斯"的圣彼得堡经济论坛开幕前夕，该论坛旨在吸引外国投资。这是乌克兰首次能够在俄罗斯境内定期打击目标，其国防部门表示这是针对关键基础设施和设施的打击。此次袭击反映出俄乌冲突已持续四年，乌克兰国防产业蓬勃发展。</div>
+<div class="news-source">来源：BBC News | 2026年6月3日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<div class="news-title"><a href="https://www.france24.com/en/live-news/20260603-drone-strikes-close-kuwait-airport-as-iran-and-us-clash-in-gulf">科威特机场遇袭，美伊海湾冲突升级</a></div>
+<div class="news-content">科威特国际机场遭到伊朗无人机袭击，一名人员死亡，63人受伤。科威特外交部谴责这次针对重要民用基础设施的袭击称其"再次针对性命和民用设施"。随着巴林也抱怨受到伊朗无人机袭击，阿联酋正团结海湾邻国反对德黑兰。此次冲突凸显了4月8日脆弱停火协议面临的严峻考验。</div>
+<div class="news-source">来源：France 24 | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-06-03/us-iran-exchange-military-strikes-to-put-fresh-strains-on-ceasefire">美伊军事打击加剧，停火协议压力增大</a></div>
+<div class="news-content">美国和伊朗再次发生军事冲突，科威特和巴林成为冲突的牺牲品。这是4月初停火以来最严重的冲突升级。特朗普政府正在努力缓解黎巴嫩紧张局势，以延长与伊朗的谈判。双方已就暂时停火两个月并重新开放霍尔木兹海峡的粗略框架达成一致，但关于最后细节的谈判陷入僵局。</div>
+<div class="news-source">来源：Bloomberg | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="https://www.cnbc.com/2026/06/03/us-iran-war-escalates-peace-talks-stalemate-.html">美伊战争加剧，停火协议濒临破裂</a></div>
+<div class="news-content">美国中央司令部周二表示，美军击退了多枚伊朗弹道导弹和无人机，并进行了防御性打击。伊朗向邻国发射了多枚弹道导弹，但未击中目标。三个月来，该地区冲突已陷入僵局。特朗普声称谈判仍在继续，但伊朗方面表示正在考虑美方提议的战争暂停协议，已有几天没有与华盛顿沟通。</div>
+<div class="news-source">来源：CNBC | 2026年6月3日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<div class="news-title"><a href="#">#伊朗导弹爆炸现场画面#</a></div>
+<div class="news-content">科威特机场遭伊朗无人机袭击后，现场画面在微博广泛传播。据科威特官方消息，袭击造成一名印度籍工作人员死亡，63人受伤，机场1号航站楼严重受损，所有航班一度暂停。此次袭击发生在美伊冲突加剧的背景下，引发国际社会广泛关注。</div>
+<div class="news-source">来源：微博热搜 | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="#">#问界回应浙江台州M9事故#</a></div>
+<div class="news-content">问界官方就浙江台州M9事故发布声明，称正在积极配合相关部门调查，并对事故中的消费者表达慰问。此次事故引发了消费者对新能源汽车安全性的广泛关注，相关话题在微博和小红书上持续发酵。</div>
+<div class="news-source">来源：小红书热搜 | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="#">#被恶意仅退款2.36万卖家发声#</a></div>
+<div class="news-content">河北商家杨园园遭遇恶意仅退款23600元，决定带着丈夫、销售经理和2岁孩子一起去上海追回货款。商家表示拥有全部聊天记录、物流信息、卸车电话录音等证据，呼吁法律惩治此类行为。此事引发电商平台退款机制争议。</div>
+<div class="news-source">来源：微博热搜 | 2026年6月3日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<div class="news-title"><a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus - 39,819 stars</a></div>
+<div class="news-content">开源AI工作空间项目Odysseus获得广泛关注，该项目提供了一个自托管的AI环境。随着人工智能技术的快速发展，开发者对本地化、可控的AI工具需求不断增长，该项目可能是解决AI隐私和成本问题的重要尝试。</div>
+<div class="news-source">来源：GitHub Trending | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="https://github.com/Gloridust/WechatOnCloud">Gloridust/WechatOnCloud - 1,866 stars</a></div>
+<div class="news-content">云微WOC项目支持微信云端连接，用户可以自由远程使用微信。该项目解决了多设备登录限制问题，在开发者社区中获得关注。随着远程工作需求增长，类似的云端服务解决方案市场需求旺盛。</div>
+<div class="news-source">来源：GitHub Trending | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="https://github.com/Sophomoresty/gemini-web2api">Sophomoresty/gemini-web2api - 1,326 stars</a></div>
+<news-content>该项目将Google Gemini网络服务转换为OpenAI兼容的API，无需认证，支持跨平台，单文件部署。随着AI服务接口标准化需求增长，这类转换工具为开发者提供了更多选择，降低了技术栈切换成本。</news-content>
+<div class="news-source">来源：GitHub Trending | 2026年6月3日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<div class="news-title"><a href="#">霍尔木兹海峡局势影响全球油价</a></div>
+<div class="news-content">由于伊朗封锁霍尔木兹海峡，全球约20%的石油运输受阻，油价持续上涨。专家警告，如果局势持续恶化，可能引发全球能源危机。美国已封锁伊朗多个港口，自4月13日以来已阻止6艘商船并重新定向122艘船只。</div>
+<div class="news-source">来源：综合财经报道 | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="#">科威特机场袭击影响区域航空业</a></div>
+<div class="news-content">科威特国际机场遇袭后，航班一度全部暂停，虽然已恢复科威特航空运营，但此次袭击可能影响中东地区航空业复苏进程。科威特作为重要航空枢纽，其运营稳定性对区域经济至关重要。</div>
+<div class="news-source">来源：综合财经报道 | 2026年6月3日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<div class="news-title"><a href="https://github.com/b-nnett/goose">b-nnett/goose - 1,292 stars</a></div>
+<div class="news-content">Goose项目是一个Swift版本的Goose爬虫概念验证项目，展示了用Swift实现网页抓取的能力。随着Apple生态系统的普及，Swift在Web开发领域的应用不断扩大，该项目为开发者提供了新的技术选择。</div>
+<div class="news-source">来源：GitHub Trending | 2026年6月3日</div>
+</div>
+<div class="news-item">
+<div class="news-title"><a href="https://github.com/MatinSenPai/SenPaiScanner">MatinSenPai/SenPaiScanner - 936 stars</a></div>
+<div class="news-content">SenPaiScanner是一个用Golang编写的轻量级Cloudflare IP扫描器。随着网络安全需求增长，这类工具为开发者提供了云基础设施监控的解决方案，帮助企业更好地理解和保护其网络资产。</div>
+<div class="news-source">来源：GitHub Trending | 2026年6月3日</div>
+</div>
+</div>
+
+</div></body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html" selected>2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月6日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cvgzgyjk2weo">美伊在波斯湾最新交火，脆弱停火再受考验</a></h3>
+<p class="news-content">美国与伊朗在波斯湾地区爆发最新一轮军事冲突，美国中央司令部宣布击落了四架伊朗"单向攻击无人机"，这些无人机被指对地区海上交通构成"直接威胁"。作为回应，伊朗向科威特和巴林的美军基地发射了七枚弹道导弹，其中六枚被拦截。此次交火发生在两国停火协议生效两个月后，凸显了中东地区持续的不稳定局势。伊朗外交部谴责美国袭击是"公然违反停火协议"，而美国则坚持行动属于自卫。这一事件发生在美伊停火谈判停滞之际，据报道特朗普总统要求修改协议条款。此次冲突对全球油价产生直接影响，因霍尔木兹海峡通过全球20%的石油和液化天然气运输。</p>
+<div class="news-source">来源: BBC</div>
+</div>
+
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cedp3lee059o">特朗普迫切希望结束战争，但伊朗拒绝让步</a></h3>
+<p class="news-content">美国和伊朗双方都表示不愿重返自4月8日宣布停火以来的战争状态，但军事摩擦仍在持续。美国保持在海湾地区的强大海空力量，伊朗则利用停火时间重组军队并修复受损设施。分析认为，以色列总理内塔尼亚胡对黎巴嫩的强硬立场进一步限制了特朗普的谈判空间，因为内塔尼亚胡从一开始就不赞成与德黑兰达成任何协议。伊朗持续支持其在黎巴嫩盟友真主党，并暗示更广泛的协议必须包括结束以色列的进攻行动。霍尔木兹海峡的重新开放可能是 serious 谈判的前提条件，但伊朗可能要求解除制裁或解冻资产作为交换。特朗普面临的政治困境在于，他对停火的强硬态度在国内面临共和党鹰派的压力，同时需要展示某种胜利以避免选情受损。</p>
+<div class="news-source">来源: BBC</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cy828e64vp8o">约旦河西岸发生枪击事件，巴勒斯坦婴儿死亡</a></h3>
+<p class="news-content">一名七个月大的巴勒斯坦男婴在约旦河西岸希伯伦地区被以军枪击身亡，其父母也受伤。巴勒斯坦卫生部门确认婴儿名为萨姆·法赫德·阿布·海卡尔。以军声称士兵"看到车辆向他们加速"而开火，三名巴勒斯坦人受伤并被送医。事件发生在停火协议后巴以地区持续紧张背景下，自2023年10月加沙战争爆发以来，已有超过1000名巴勒斯坦人在约旦河西岸死亡。</p>
+<div class="news-source">来源: BBC</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.thehindu.com/news/international/us-military-says-it-shot-down-iranian-drones-launched-toward-strait-of-hormuz/article71067819.ece">美军击落伊朗导弹，霍尔木兹海峡局势持续紧张</a></h3>
+<p class="news-content">美国军方宣布于6月5日击落了伊朗向霍尔木兹海峡及海湾阿拉伯盟友发射的弹道导弹和无人机，同时袭击了伊朗沿海监视雷达站点。此次交火进一步动摇了美国与伊朗之间脆弱的停火协议。分析指出，随着特朗普政府加大对伊朗的压力以达成结束冲突的协议，地区安全局势持续恶化。</p>
+<div class="news-source">来源: The Hindu</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.abc.net.au/news/2026-06-06/trump-to-accelerate-development-of-ai-for-war/106767300">白宫加速推动AI用于战争作战领域</a></h3>
+<p class="news-content">特朗普政府宣布将加速人工智能在国家安全领域的应用开发，包括"情报和战争作战领域"。特朗普在国家安全备忘录中要求国防部长赫格塞在90天内更新现有武器系统自主性指令，确保AI系统尊重指挥链。这一决定发生在AI公司Anthropic警告AI系统"自我改进"风险增加的背景下，该公司呼吁全球暂停前沿AI开发。</p>
+<div class="news-source">来源: ABC News</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">Reid Hoffman离开微软董事会专注创业项目</a></h3>
+<p class="news-content">LinkedIn联合创始人里德·霍夫曼宣布离开微软董事会，专注于他的创业项目Manus。霍夫曼将进入"创始人模式"，专注于打造新的人工智能和生产力工具。这一消息显示科技界大佬对AI创业的热情持续高涨，尽管面临监管挑战。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">盒马生煎包空格引发热议，消费者好奇设计原因</a></h3>
+<p class="news-content">小红书上热议盒马生煎包包装上的空格设计，不少消费者好奇这个"空着一格"究竟是为何。有用户猜测是为了防止挤压，也有认为是包装设计特色。话题在小红书平台获得大量关注，引发关于食品包装设计的讨论。</p>
+<div class="news-source">来源: 小红书热门</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">蜜雪冰城美国首店遇冷，消费者反应平淡</a></h3>
+<p class="news-content">中国奶茶品牌蜜雪冰城在美国的首家门店开业后遭遇冷遇，美国消费者对价格的敏感度超出预期。有用户评论称"性价比不够高"，反映出中国品牌在美国市场面临的挑战。这一事件引发关于品牌国际化策略的讨论。</p>
+<div class="news-source">来源: 小红书热门</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">谷歌账号在中国注册困难，用户寻求替代方案</a></h3>
+<p class="news-content">V2EX社区讨论显示，中国用户在注册谷歌账号时面临诸多困难，包括需要手机号验证、网络限制等问题。有用户分享替代方案，包括使用第三方服务或等待时机。话题反映了科技服务在不同地区面临的差异化挑战。</p>
+<div class="news-source">来源: V2EX热门</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">谷歌将向SpaceX支付每月9.2亿美元用于云计算</a></h3>
+<p class="news-content">谷歌与SpaceX达成重大合作协议，将每月向SpaceX支付9.2亿美元用于云计算服务。这笔交易凸显了科技巨头在太空计算领域的激烈竞争，以及太空技术在云计算中的重要性。SpaceX凭借其星链网络和发射能力，成为谷歌在太空计算领域的重要合作伙伴。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">前IBM高管指控公司掩盖多起数据泄露事件</a></h3>
+<p class="news-content">一名前IBM网络安全高管成为举报人，指控该公司掩盖了多起重大数据泄露事件。这位高管表示，IBM在安全事件报告和客户通知方面存在系统性问题。这一指控引发了关于大型科技公司数据透明度的讨论，以及监管机构对数据安全的要求。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/search?q=created:%3E2026-05-30&sort=stars&order=desc">GitHub热门项目：AI工作空间获得5.7万星标</a></h3>
+<p class="news-content">GitHub上自过去一周创建的pewdiepie-archdaemon/odysseus项目获得57,493个星标，这是一个自托管AI工作空间项目。另外cpaczek/skylight项目（实时飞机追踪）获得1,977个星标，显示航空科技和AI工具的持续热度。</p>
+<div class="news-source">来源: GitHub趋势</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">特朗普推动驱逐政策，移民法庭案件激增致系统瘫痪</a></h3>
+<p class="news-content">随着特朗普政府加大驱逐力度，美国移民法庭案件数量激增，导致系统不堪重负。报道显示，案件积压和审理延迟已严重影响移民司法系统运作，引发人权组织和法律界的担忧。这一政策变化将对美国移民体系和劳动力市场产生深远影响。</p>
+<div class="news-source">来源: 纽约时报</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">美国对古巴总统及卡斯特罗家族实施新制裁</a></h3>
+<p class="news-content">美国政府宣布对古巴总统迪亚斯-卡内尔及卡斯特罗家族成员实施新制裁，理由是"侵犯人权"和"支持威权主义"。这一决定将进一步美古关系，影响两国在移民、贸易等领域的合作。分析认为，这一举措主要是为国内政治考量，而非真正的外交策略调整。</p>
+<div class="news-source">来源: 综合</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">加拿大沃尔玛员工签署历史性首份工会协议</a></h3>
+<p class="news-content">加拿大沃尔玛仓库工人在历史上首次成功签署工会协议，这是零售行业的重要里程碑。工会成员称这是"历史性"的成就，将为改善工作条件和薪资标准树立先例。这一事件反映了北美劳工运动的最新发展，以及大型零售企业面临的工会化压力。</p>
+<div class="news-source">来源: BBC</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/pewdiepie-archdaemon/odysseus">odysseus - 自托管AI工作空间（57.4k星标）</a></h3>
+<p class="news-content">一个热门的开源自托管AI工作空间项目，在过去一周内获得超过5.7万个星标。该项目旨在提供完整的AI开发环境，支持多种大语言模型，强调隐私控制和数据安全。项目的快速增长反映了企业对本地化AI解决方案的强烈需求。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/cpaczek/skylight">skylight - 实时飞机追踪项目（1.9k星标）</a></h3>
+<p class="news-content">一个创新的实时飞机追踪工具，可以将飞过上空的飞机投影到天花板，包含太阳、月亮、星星和国际空间站等实时天体层。该项目使用RTL-SDR技术，展示了开源硬件在航空领域的应用潜力，受到航空爱好者的广泛关注。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/ClaudioDrews/memory-os">memory-os - 7层记忆操作系统（925星标）</a></h3>
+<p class="news-content">一个为Hermes Agent设计的7层记忆操作系统，具有持久化记忆、结构化事实、织物回忆、自动维基编辑和手术式上下文注入等功能。该项目展示了AI系统中记忆管理的前沿技术，支持任何LLM提供商，体现了AI系统架构的创新思路。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+
+</div>
+
+</div></body></html>

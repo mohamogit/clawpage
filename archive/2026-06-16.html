@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html" selected>2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月16日 星期二</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://abcnews.com/">FBI成功挫败针对白宫UFC活动的无人机袭击阴谋</a></h3><p class="news-content">美国联邦调查局（FBI）成功挫败了一起针对白宫UFC（终极冠军赛）活动的无人机袭击阴谋。据消息人士透露，该阴谋涉及使用无人机袭击正在白宫附近举行的UFC活动。FBI及时介入，阻止了这一可能造成重大伤亡的恐怖袭击。事件显示美国执法机构正在加强对重要活动和设施的安保措施，以应对潜在的恐怖威胁。</p><div class="news-source">来源: ABC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.aljazeera.com/news/liveblog/2026/6/16/iran-war-live-trump-says-mou-with-tehran-signed-electronically">特朗普要求以色列在黎巴嫩行动中表现出更多责任感</a></h3><p class="news-content">美国总统特朗普在谈到以色列在黎巴嫩的军事行动时，要求以色列总理内塔尼亚胡表现出"更多的责任感"。这一表态显示特朗普政府试图在美国盟友以色列与伊朗之间寻求平衡。与此同时，特朗普确认已与伊朗通过电子方式签署了谅解备忘录，并表示霍尔木兹海峡将在周五完全开放。该协议旨在结束持续了100多天的美伊战争。</p><div class="news-source">来源: Al Jazeera</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.cbsnews.com/news/iran-world-cup-team-coach-says-team-ordered-out-of-us-right-after-first-match-amir-ghalenoei/">美国强迫伊朗队提前离开世界杯赛场</a></h3><p class="news-content">伊朗世界杯教练阿米尔·加莱诺伊透露，伊朗队在首场与新西兰的比赛结束后，被要求立即离开美国返回墨西哥的训练基地。伊朗队原计划在加利福尼亚州过夜以正常恢复，但被告知必须立即登上飞往墨西哥的航班。这一决定让伊朗队球员非常困扰，因为他们在比赛后经历了长时间的旅行和安全检查。</p><div class="news-source">来源: CBS News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/world">美空军B-52轰炸机坠毁致8人死亡</a></h3><p class="news-content">一架美国空军B-52轰炸机在加州起飞后不久坠毁，造成机上8名人员全部遇难。这起事故发生在空军进行例行训练任务的期间，具体事故原因正在调查中。B-52轰炸机是美国空军的主力战略轰炸机，已服役数十年。此次坠毁事故引发了对美军老旧装备安全性的关注。</p><div class="news-source">来源: BBC News</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.nbcnews.com/">泽连斯基称对莫斯科的大型无人机袭击是对俄罗斯的"胁迫"</a></h3><p class="news-content">乌克兰总统泽连斯基表示，对莫斯科的大型无人机袭击是对俄罗斯的一种"胁迫"，目的是促使俄罗斯结束战争。此次袭击发生在七国集团领导人会议期间，显示乌克兰正在积极寻求通过无人机技术打击俄罗斯境内目标。同时，乌克兰军队还瞄准了莫斯科的一个石油设施进行打击，展现了乌军对关键基础设施的打击能力。</p><div class="news-source">来源: NBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/world">匈牙利议会阻止欧尔班再次担任总理</a></h3><p class="news-content">匈牙利议会投票阻止了前总理欧尔班的回归，将总理任期限制为八年。这一投票履行了新总理彼得·马加什的承诺，阻止其前任再次成为总理。这一政治变动标志着匈牙利政治格局的重要变化。</p><div class="news-source">来源: BBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.guardian.com/">南非爵士钢琴家阿卜杜拉·易卜拉欣去世</a></h3><p class="news-content">南非著名爵士钢琴家阿卜杜拉·易卜拉欣（Abdullah Ibrahim）在91岁时去世。易卜拉欣是南非最具影响力的爵士音乐家之一，他的音乐融合了非洲传统音乐和爵士乐元素，在国际上享有盛誉。他的去世是南非音乐界的重大损失。</p><div class="news-source">来源: The Guardian</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">西班牙0-0战平佛得角爆冷门</a></h3><p class="news-content">在世界杯H组的首轮比赛中，西班牙队0-0被首次参赛的佛得角队逼平，爆出了本届世界杯开赛至今的最大冷门。这场比赛几乎占据了微博热搜前十名的全部位置，第一名是"西班牙vs佛得角"，第二名是"西班牙0比0战平佛得角"。西班牙队全场25脚射门却未能取得进球，而40岁的佛得角门将表现出色。</p><div class="news-source">来源: 微博</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">华为鸿蒙7开发者Beta正式发布</a></h3><p class="news-content">华为HDC 2026大会带来了鸿蒙系统的全面升级，新系统在流畅度、AI智能玩法、跨设备互联体验等方面都有显著提升。鸿蒙生态稳步驶入高速增长快车道，被用户称为"体验天花板"。此次更新带来了众多创新功能，大大提升了用户的使用体验。</p><div class="news-source">来源: 微博</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">25岁女子为保胎多器官衰竭进ICU</a></h3><p class="news-content">一名25岁的孕妇为保胎导致多器官衰竭被送进ICU，这一社会事件引发广泛关注。此事反映了当代年轻女性在生育过程中面临的风险和挑战，也引发了关于孕期保健和医疗条件的讨论。</p><div class="news-source">来源: 微博</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">世界杯在中国收视率创历史新高</a></h3><p class="news-content">2026美加墨世界杯在中国的收视率直接爆了，完全碾压同时间段的其他节目。大量上班族选择在上班时间看球，一些幸运的打工人甚至获得了"补觉卡"。这一现象表明世界杯在中国的影响力持续扩大。</p><div class="news-source">来源: 微博</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">SpaceX估值飙升至2.7万亿美元，超越亚马逊</a></h3><p class="news-content">SpaceX的市值飙升至2.7万亿美元，超越了亚马逊和微软成为全球最有价值的公司。这一增长主要得益于零售投资者的热情购买。SpaceX的成功展示了商业航天的巨大潜力，以及投资者对太空经济的强烈信心。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">ChatGPT市场份额首次跌破50%</a></h3><p class="news-content">ChatGPT的市场份额首次跌破50%，显示AI聊天机器人市场竞争日趋激烈。这一变化表明用户对AI助手的选择更加多样化，同时也反映了新兴AI产品的快速崛起。OpenAI需要不断创新以保持市场领先地位。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">Robinhood宣布裁员10%，称AI不是借口</a></h3><p class="news-content">Robinhood宣布裁员10%，并在声明中明确表示不能将裁员责任归咎于AI。这一表态反映了该公司对AI技术应用的务实态度，同时也显示了在金融科技领域，过度依赖AI并不能解决所有问题。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">印度临时禁止Telegram，担心考试作弊</a></h3><p class="news-content">印度因担心考试论文泄露问题，临时禁止了Telegram应用的使用。这一决定反映了政府对数字通信安全的重视，同时也引发了关于网络隐私和政府监管的讨论。禁令预计将在考试问题解决后解除。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">SpaceX拟以600亿美元股票收购Cursor</a></h3><p class="news-content">SpaceX计划以600亿美元的股票收购AI编程工具Cursor，这发生在其大型IPO之后。这一收购显示SpaceX正在积极布局AI领域，希望通过整合编程工具来提升其技术能力。这也反映了科技行业对AI工具的高度重视。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/">Threads新增个性化功能和社区功能，月活用户达5亿</a></h3><p class="news-content">Meta旗下的社交应用Threads新增了个性化功能和社区功能，月活跃用户达到5亿。这一增长显示了该平台的强劲发展势头，同时也反映了用户对社交网络新功能的需求日益增长。Threads正在成为Instagram的重要补充。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/world">必胜客餐厅连锁集团以27亿美元出售</a></h3><p class="news-content">必胜客餐厅连锁集团将被以27亿美元的价格出售，这一交易反映了餐饮行业面临的挑战。必胜客近年来经营困难，此次出售可能帮助公司获得新的发展机会。这一交易也显示了快餐行业在竞争加剧环境下的整合趋势。</p><div class="news-source">来源: BBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.nbcnews.com/">联邦储备委员会将在通胀三年新高后做出利率决定</a></h3><p class="news-content">美国联邦储备委员会将在通胀达到三年新高后做出利率决定。这一决定将对金融市场产生重大影响，同时也反映了美联储在控制通胀和维持经济增长之间的平衡。市场密切关注美联储的政策动向。</p><div class="news-source">来源: NBC News</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/DietrichGebert/ponytail">Ponytail - 让AI代理像最懒的高级开发人员一样思考</a></h3><p class="news-content">Ponytail是一个开源项目，旨在让AI代理像最懒的高级开发人员一样思考。该项目获得了超过2万颗星，证明了其在AI开发领域的创新价值。项目理念是：最好的代码就是你永远不需要写的代码。这种独特的方法为AI编程提供了新的思路。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/XiaomiMiMo/MiMo-Code">MiMo-Code - 国行Mac一键开启完整Apple智能</a></h3><p class="news-content">MiMo-Code是一个让国行Mac用户能够一键开启完整Apple智能功能的项目，包括端侧计算和云端计算。该项目为国行Mac用户提供了本地化的人工智能体验，解决了国内用户使用Apple智能功能的限制问题。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/shadcn/improve">Improve - 使用最强大的模型审计代码库</a></h3><p class="news-content">Improve是一个代码审计工具，使用最强大的模型来审计代码库并为更便宜的模型制定执行计划。该项目获得了近5千颗星，显示了它在AI辅助开发领域的重要价值。项目旨在帮助开发团队更高效地进行代码质量评估。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/omnigent-ai/omnigent">Omnigent - AI代理的元框架</a></h3><p class="news-content">Omnigent是一个为所有AI代理提供的元框架，支持Claude Code、Codex、Pi等工具的通用层。该框架允许用户在不重写代码的情况下切换或组合工具，并通过策略和沙箱进行管控，支持从任何设备进行实时协作。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

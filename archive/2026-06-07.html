@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html" selected>2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月7日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box"><h3 class="news-title"><a href="https://www.defensenews.com/flashpoints/middle-east/2026/06/06/us-strikes-iranian-sites-after-iran-launches-drones-in-latest-gulf-flare-up/">美伊冲突升级：美军打击伊朗沿海监视站点，伊朗发射无人机威胁霍尔木兹海峡</a></h3><p class="news-content">美国中央司令部宣布，美军周六击落了伊朗向霍尔木兹海峡发射的四架无人机后，随即打击了伊朗Goruk和Qeshm岛上的监视站点。伊朗外交部称美国行动违反了4月8日的停火协议，并警告美国将为"非法行动"的后果负责。伊朗革命卫队随后对科威特和巴林的美军基地发动了报复性袭击。这一系列冲突导致油价上涨，联合国世界粮食计划署表示燃油和运输成本上升正使数百万人更加接近饥饿。目前美国和伊朗正在进行间接谈判，试图达成临时停火协议，但周期性冲突使协议难以达成。</p><div class="news-source">来源: Defense News</div></div>
+
+<div class="highlight-box"><h3 class="news-title"><a href="https://www.newsweek.com/ukraine-drone-strike-russia-nuclear-storage-facility-12041215">乌克兰指控俄罗斯进行"核恐怖主义"：无人机袭击切尔诺贝利核废料储存设施</a></h3><p class="news-content">乌克兰总参谋部指控一架俄罗斯无人机袭击了距离切尔诺贝利核电站约15公里的集中使用核废料储存设施，引发火灾并造成部分建筑损坏。乌克兰能源部称此举对核安全构成严重威胁，国际原子能机构(IAEA)已获悉事件并计划派专家组评估影响。IAEA总干事拉斐尔·马里亚诺·格罗西称这一事件"令人深感担忧"，强调对核设施的攻击完全不可接受，违反了武装冲突期间核安全的关键原则。该事件发生在1986年切尔诺贝利核灾难遗址附近，引发了对核辐射风险的广泛担忧。</p><div class="news-source">来源: Newsweek</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.euronews.com/my-europe/2026/06/07/us-downs-two-iranian-drones-threatening-strait-of-hormuz-traffic">美军再击落两架威胁霍尔木兹海峡交通的伊朗无人机</a></h3><p class="news-content">美国中央司令部宣布，美军在中东地区击落了两架威胁霍尔木兹海峡国际航运的伊朗单向攻击无人机。这是继一天前击落四架伊朗无人机后的最新升级。巴林政府表示，伊朗向巴林和科威特发射的弹道导弹和无人机已被拦截，并呼吁德黑兰停止对海湾邻国的攻击。</p><div class="news-source">来源: Euronews</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.timesofisrael.com/terrorist-kills-one-wounds-five-in-central-israel-shooting-spree/">以色列中部发生恐怖袭击事件：一名恐怖分子在多地开枪致1死5伤</a></h3><p class="news-content">周日，一名阿拉伯以色列恐怖分子在以色列中部多个地点进行枪击 spree，造成1人死亡、5人受伤，最终被安全部队击毙。袭击始于科哈夫亚伊附近的加油站，随后扩展到图尔伊茨哈克和图尔纳坦等社区。事件发生在美国和伊朗冲突升级的背景下，引发了对地区安全的担忧。</p><div class="news-source">来源: Times of Israel</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.nbcnews.com/trump-says-iran-has-not-agreed-to-a-deal-because-theyre-strong-theyre-proud">特朗普称伊朗未达成协议因"他们强大而自豪"</a></h3><p class="news-content">美国总统特朗普在接受NBC新闻"会见新闻界"节目采访时表示，他认为伊朗现在约有战争开始时21%-22%的导弹。特朗普面临国内因油价上涨而要求结束不受欢迎战争的政治压力。美国和以色列于2月28日对伊朗发动战争后，德黑兰袭击了驻有美军基地的海湾国家，并基本上停止了霍尔木兹海峡的航运。</p><div class="news-source">来源: NBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://rebang.today">亚洲多国调整高考政策，1290万中国考生明天迎高考</a></h3><p class="news-content">随着2026年高考临近，中国教育部发布4条特别提醒，全国多地调整机关单位高考期间上班时间以减少交通噪音。今年高考报名人数达1290万人，相关地区雨势较大，教育部门特别准备了语音祝福服务。同时，多地出台高考加油红包政策，为考生提供心理支持。</p><div class="news-source">来源: 今日热榜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">#iPhone20原型机偷跑#</a></h3><p class="news-content">5月25日消息，博主晒出号称是20周年iPhone的外观渲染图，声称这是目前流出的iPhone 20早期原型机方案。该机最大的变化是放弃了苹果已沿用多年的直屏方案，改用四微曲屏幕，同时搭载完全体的屏下Face ID技术，屏占比达到苹果最高水平。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">#今年热度破三万的三部剧#</a></h3><p class="news-content">今年热度破三万的三部剧：张嘉益刘浩存《主角》、张凌赫田曦薇《逐玉》、宋威龙赵今麦《骄阳似我》，引发观众热议。这些作品凭借精良制作和演员出色表现成为年度爆款。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">#智能机器人加速走进日常生活#</a></h3><p class="news-content">在河北秦皇岛，机器人已经开始为市民进行中医理疗，京津冀三地在科技创新方面协同发展，让新质生产力融入日常生活的点滴。在智能机器人产业基地，今年刚入驻的人形机器人企业，把智能机器人研发、制造、销售、技术服务、货物进出口等集于一体。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/b-nnett/goose">[b-nnett/goose] ⭐2210 Goose Swift proof-of-concept README</a></h3><p class="news-content">Goose项目是一个Swift编程语言的proof-of-concept实现，获得了2210颗星星的关注。这个项目展示了Goose编程语言的核心概念和特性，吸引了众多开发者的关注和参与。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/cpaczek/skylight">[cpaczek/skylight] ⭐2197 Project the aircraft passing overhead onto your ceiling in real time</a></h3><p class="news-content">Skylight项目可以将头顶飞过的飞机实时投影到天花板上，使用RTL-SDR技术实现，包含实时天空层（太阳、月亮、星星、ISS）和每架飞机的目的地信息。该项目获得了2197颗星星。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/jd-opensource/JoyAI-Echo">[jd-opensource/JoyAI-Echo] ⭐809 JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation</a></h3><p class="news-content">JoyAI-Echo项目专注于推动长音频-视觉生成的前沿技术，获得了809颗星星。该项目代表了AI生成技术的重要进展，特别是在处理长时间多媒体内容方面。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/VAST-AI-Research/TripoSplat">[VAST-AI-Research/TripoSplat] ⭐511 TripoSplat converts a single 2D image into high-quality 3D Gaussians</a></h3><p class="news-content">TripoSplat项目由TripoAI开发，可以将单张2D图像转换为高质量的3D高斯分布，代表了2D到3D转换技术的前沿进展。该项目获得了511颗星星。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">金价年内大跌，国内金饰价格大幅下跌</a></h3><p class="news-content">受国际市场影响，黄金价格年内出现大幅下跌，导致国内金饰价格也随之走低。消费者对黄金首饰的购买意愿增强，市场出现一波购买热潮。业内人士分析，这为投资者提供了良好的入场时机。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">英伟达市值一夜蒸发2.2万亿</a></h3><p class="news-content">受市场波动影响，英伟达市值在一天内大幅蒸发2.2万亿美元。这一变化引发了市场对科技股未来走势的关注和讨论。投资者密切关注英伟达及其他科技巨头的业绩表现。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">瑞幸咖啡去冰后仅半杯可退款</a></h3><p class="news-content">瑞幸咖啡近期因"去冰后仅半杯"问题引发消费者投诉，公司随后宣布相关退款政策。这一事件引发了对餐饮行业计量标准的讨论，消费者权益保护再度成为热点话题。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/tastyeffectco/sandboxes">[tastyeffectco/sandboxes] ⭐485 Self-hosted dev sandboxes with preview URLs. One command. No Kubernetes, perfect for coding agents and Saas factories</a></h3><p class="news-content">Sandboxes项目提供了自托管的开发沙箱环境，支持预览URL，一条命令即可部署，无需Kubernetes，特别适合编码代理和SaaS工厂使用。该项目简化了开发环境的管理流程。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/Jane-xiaoer/xiaoer-videolab">[Jane-xiaoer/xiaoer-videolab] ⭐460 One click on the toolbar grabs the current page's video into ~/Downloads — local yt-dlp daemon, 1800+ sites</a></h3><p class="news-content">Xiaoer Video Lab项目提供了一键抓取当前页面视频到本地下载的功能，支持1800多个网站，使用本地的yt-dlp守护进程。该项目为用户提供了便捷的视频下载解决方案。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/qiuqiubuchongle-cloud/chokepoint-atlas">[qiuqiubuchongle-cloud/chokepoint-atlas] ⭐595</a></h3><p class="news-content">Chokepoint Atlas项目获得了595颗星星，虽然描述信息较少，但这个项目名称暗示可能与网络监控或流量分析相关，值得进一步关注其具体功能和应用场景。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/tiantianGPU/reg-factory">[tiantianGPU/reg-factory] ⭐474</a></h3><p class="news-content">Reg Factory项目获得了474颗星星，从名称推测可能与GPU注册表管理或GPU资源工厂化部署相关，反映了当前AI和机器学习基础设施领域对GPU资源管理的需求。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

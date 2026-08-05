@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板 v2
+  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
+  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
+  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
+  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
+  Light-first，dark mode 为 prefers-color-scheme fallback
+  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+
+<style>
+  /* ============ LIGHT-FIRST THEME ============ */
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+
+    /* Semantic palette — terracotta & sage */
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .anim {
+    animation: fadeUp 0.45s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+  .anim-scale {
+    animation: fadeScale 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER — Newspaper masthead ============ */
+  .masthead {
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+  }
+  .masthead::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+  .masthead h1 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-bright);
+  }
+  .masthead .date-line {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 24px 0 20px;
+  }
+  .section + .section {
+    border-top: 1px dashed var(--border-bright);
+  }
+
+  /* Section labels — vary color per section */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+
+  /* ============ NEWS ITEMS ============ */
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hero item — focal story gets more visual weight */
+  .item--hero {
+    background: var(--surface-elevated);
+    border-left: 3px solid var(--rose);
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .item__tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+
+  .item__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text-bright);
+  }
+  .item__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .item__title a:hover { text-decoration: underline; }
+
+  .item__body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+
+  .item__src {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .masthead h1 { font-size: 24px; }
+    .masthead { padding: 24px 12px 20px; }
+    .item { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html" selected>2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年8月3日 · 星期一</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:1"><div class="item__title"><a href="https://www.aljazeera.com/news/2026/8/3/tigray-refugees-flee-into-sudan-after-deadly-violence-on-ethiopia-border">埃塞俄比亚政府军与TPLF在提格雷交火，数百难民逃往苏丹</a></div><div class="item__body">周末，埃塞俄比亚联邦军队与提格雷人民解放阵线（TPLF）在提格雷北部谢雷里纳（Shererina）爆发激烈战斗，双方动用重炮和无人机，这是对三年前《比勒陀利亚和平协议》的严重破坏，外界担忧该国可能再次滑向内战。截至周日（8月2日）下午5点，战斗已暂时平息，TPLF成员称局势"正在降级"，但双方此前数月已在提格雷北部边境集结重兵、互相指责对方想挑起新冲突。数百名提格雷人（包括受伤的战斗人员）已越境逃入苏丹青尼罗州，边境多个大型难民营据报遭到无人机或炮击波及，伤亡数字不详，联合国难民署（UNHCR）对边境局势表示担忧。上一次提格雷战争（2020-2022年）据非洲联盟估计造成至少60万人死亡；不到四年后，和平协议面临解体风险，成为非洲之角最危险的冲突导火索之一。</div><div class="item__src">Al Jazeera</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>全球热点</h2>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://nginx-sxrb.app.sxrbw.com/sxrb/site1/mweb/ja9u3/c2152472.html">内蒙古包钢板材厂爆炸事故调查报告公布：10人遇难84人受伤，62人被追责</a></div><div class="item__body">8月2日，内蒙古自治区应急管理厅公布包钢板材厂重大容器爆炸事故调查报告。该事故发生于2026年1月18日，造成10人遇难、84人受伤，被认定为重大生产安全责任事故。报告对62名相关人员进行追责问责，具体责任链条覆盖企业安全管理、监管部门履职等环节。包钢集团是内蒙古最大的国有钢铁企业，此次爆炸发生在板材生产环节的压力容器上。事故调查历时半年多公布，正值全国深化安全生产专项整治之际，为钢铁行业老旧设备与压力容器管理敲响警钟。</div><div class="item__src">山西日报客户端</div></div>
+
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://nginx-sxrb.app.sxrbw.com/sxrb/site1/mweb/ja9u3/c2152472.html">甘肃渭源县山洪致25死23伤，国家防减救灾委挂牌督办调查</a></div><div class="item__body">7月26日，甘肃省定西市渭源县会川镇罗家磨村双石门沟区域突发短时强降雨引发山洪灾害，目前已造成25人死亡、23人受伤。国家防灾减灾救灾委员会依据《自然灾害调查评估暂行办法》，对该起灾害调查评估实施挂牌督办，要求甘肃省人民政府及时组织开展调查评估。渭源县地处陇中黄土高原丘陵沟壑区，山洪沟道纵横，短时强降雨极易诱发突发山洪。此次挂牌督办意味着官方将系统复盘预警发布、转移避险、基层应急响应等环节，推动山区防灾减灾能力建设。</div><div class="item__src">山西日报客户端</div></div>
+
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--sage">非洲</span><div class="item__title"><a href="https://www.bbc.com/news/articles/ce85097leydo">苏丹军方无人机袭击达尔富尔传统法庭，35人死亡</a></div><div class="item__body">据苏丹当地维权组织紧急律师团（Emergency Lawyers Group）称，8月2日下午，苏丹武装部队对达尔富尔北部加拉扎维亚村（Ghara al-Zawiya）一场在树下举行的传统法庭会议发动无人机袭击，造成35人死亡、数十人受伤，死者包括4名部落长老和2名快速支援部队（RSF）指挥官。目击者称两架无人机飞临后发射了至少4枚导弹。该村由RSF控制，苏丹军方尚未回应。达尔富尔24网站援引当地居民说法证实了袭击细节。紧急律师团谴责此举是针对平民的严重违反国际人道法的行为。苏丹内战已持续三年，数十万人死亡、数百万人流离失所；联合国调查团此前认定RSF对法希尔城的围攻具有"种族灭绝特征"。</div><div class="item__src">BBC</div></div>
+
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--gold">拉美</span><div class="item__title"><a href="https://www.euronews.com/2026/08/03/lula-da-silva-formally-launches-bid-for-brazils-presidency">80岁卢拉正式确认角逐巴西总统第四任期，对阵博索纳罗长子</a></div><div class="item__body">8月2日，巴西劳工党（PT）正式确认现任总统卢拉为该党候选人，现年80岁的他将参加10月大选，寻求第四个任期。卢拉以捍卫国家"主权"为竞选主轴，矛头直指特朗普政府的关税施压。其主要对手是45岁的参议员弗拉维奥·博索纳罗——前总统雅伊尔·博索纳罗的长子，其父因2023年政变未遂案被判27年、目前软禁在家。Datafolha最新民调显示卢拉支持率48%、弗拉维奥43%，竞争激烈。卢拉阵营联合PSB等六个政党，副手仍是阿德米尔森·阿尔克明；米莱和以色列总理内塔尼亚胡则公开为弗拉维奥站台。卢拉曾在2018-2021年因贪腐案入狱580天，后定罪被撤销。</div><div class="item__src">Euronews</div></div>
+
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--slate">俄乌</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cr7kmnyrdn7o">乌克兰无人机坠入俄罗斯黑海度假海滩，7死40伤含3名儿童</a></div><div class="item__body">俄罗斯克拉斯诺达尔边疆区州长康德拉季耶夫表示，一架无人机坠入黑海度假胜地阿尔希波-奥西波夫卡村附近海滩，造成7人死亡（含3名儿童）、40人受伤，其中17人住院。BBC核实的社交媒体视频显示无人机冲向悬崖后在海滩上爆炸起火，游客纷纷躲避。俄方指控乌克兰"蓄意袭击平民"，乌方未回应；乌克兰部分Telegram频道称无人机是被电子战干扰后失控坠毁，另有目击者称爆炸前有枪声、疑为防空火力拦截。该海滩是制裁下俄罗斯人的热门度假地。过去一年乌军对俄境内能源设施和仓库的远程打击明显增多，仅上周末俄多地就有8人死于此类袭击；乌总统泽连斯基则称周六俄军弹道导弹袭击基辅致至少9人死亡。</div><div class="item__src">BBC</div></div>
+
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--slate">欧洲</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cr59qyy4l5yo">法国怒斥英国改革党"皇家海军遣返移民"计划：侵犯主权、违反国际法</a></div><div class="item__body">英国改革党（Reform UK）领袖法拉奇宣布，若胜选将派10艘海军巡逻舰搭载军用橡皮艇拦截横渡英吉利海峡的移民船只，由边防军和警察登船逮捕，并将移民"遣返法国或比利时港口"——即使法国不同意。党内安全发言人齐亚·优素福威胁称："如果爱丽舍宫拒绝，皇家海军陆战队会把他们安全送上当天早晨出发的那片海岸。"法国内政部随即声明谴责该计划"侵犯法国主权，违反海洋法和国际法"。南安普顿大学海洋法专家Andrew Serdy指出计划"需要法国同意，这是大胆假设"；海事律师James Turner KC表示《联合国海洋法公约》并不授权把寻求庇护者送回出发国。英方数据显示今年横渡人数同比已下降约43%，周六仍有326人抵达。</div><div class="item__src">BBC</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social anim" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--rose">社区热议</span><div class="item__title"><a href="https://www.v2ex.com/t/1231626">V2EX热帖：同居女友vs相亲对象，已婚人士的纠结引发共鸣</a></div><div class="item__body">V2EX用户发帖求助：一边是追求自己一年、相恋三个月后像夫妻一样同居的女生——"下班后回她的出租屋，讨论柴米油盐、计划旅行，她弥补了我童年缺爱的创伤"；另一边是相亲认识、小3岁的独生女，同小区拆迁户，"比前者高、白、瘦"，父母强烈支持认为"独生配独生最省心"。发帖人承认自己"回避、懦弱"，怕选前者辜负父母、选后者又担心对方不如前者爱自己。帖子引发数百条讨论，回复大多指向"婚姻是合伙经营，家庭支持度与门当户对的重要性常被低估"，也有人批评"把爱量化比较本身就是问题"。该帖与早前"12.8万彩礼谈崩"热帖共同折射当代婚恋决策中的现实焦虑。</div><div class="item__src">V2EX</div></div>
+
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--rose">社区热议</span><div class="item__title"><a href="https://www.v2ex.com/t/1231653">V2EX求助：妹妹考上华南农业大学，升学宴送什么礼物？</a></div><div class="item__body">一位V2EX用户发帖称亲妹妹今年考上了华南农业大学，过几天家里办升学宴，作为哥哥想送一份"实用又有纪念意义"的礼物，求大家支招。评论区给出大量接地气建议：笔记本电脑（配"大学四年生产力"定位）、机械键盘、拍立得相机记录大学时光、大额红包+开学必备清单、带刻字的钢笔或定制纪念品等；也有过来人提醒"送礼不如送钱最实在"，还有回复建议送行李箱+降噪耳机组合。帖子再次展现了中文互联网社区"升学季"的温情讨论传统，华南农业大学作为广东知名双一流高校也成为话题背景。</div><div class="item__src">V2EX</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>科技新闻</h2>
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://techcrunch.com/2026/08/03/aws-is-helping-vibe-coding-startup-superblocks-and-the-implications-are-big/">AWS与Superblocks达成多年合作：企业级vibe-coding平台接入Bedrock</a></div><div class="item__body">AWS宣布与Superblocks建立多年战略合作，将其"企业级vibe-coding平台"引入亚马逊云生态，客户可在自己的VPC内以Cloud-Prem模式部署，数据、代码与推理全部留在AWS安全边界内。Superblocks的Smart Router接入Amazon Bedrock后，会把简单编码任务路由给开源模型、复杂任务交给前沿模型，官方称可节省约30%的token成本；应用需要存储时自动拉起Aurora数据库（scale-to-zero计费）。Superblocks成立于2022年，累计融资6000万美元，投资方包括Kleiner Perkins、Spark Capital、Meritech与Greenoaks。CEO Brad Menezes表示："客户受够了被昂贵的前沿模型绑架"。此举被视为AWS争夺"影子IT+AI乱建"企业市场的关键落子。</div><div class="item__src">TechCrunch</div></div>
+
+    <div class="item a" style="--i:11"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://techcrunch.com/2026/08/03/apple-challenges-uk-governments-latest-demand-for-icloud-backdoor-report/">苹果再次挑战英国政府iCloud后门要求，向调查权法庭申诉</a></div><div class="item__body">据英国《金融时报》报道，苹果已向英国调查权法庭（IPT）提起申诉，挑战政府去年10月依据《调查权力法》发出的第二份"技术能力通知"——该秘密法律命令要求苹果在用户开启高级数据保护（ADP）端到端加密后仍能提供数据访问，批评者直言这就是"开后门"。这是双方第二次正面交锋：2025年2月英国首度发出类似命令，苹果随后一度移除英国用户的ADP功能，同年8月该命令在特朗普政府介入后被撤回；10月英方再度发令，苹果现在正式反击。本案结果将影响端到端加密产品的全球监管走向，也牵动美英"加密战争"的敏感神经。苹果未回应置评请求。</div><div class="item__src">TechCrunch</div></div>
+
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--teal">科技</span><div class="item__title"><a href="https://blog.cloudflare.com/smaller-faster-safer-models/">Cloudflare技术解码：FP8量化让Kimi K2.6并发翻倍，GLM 5.2权重压缩40%</a></div><div class="item__body">Cloudflare发布技术长文，详述其Workers AI如何大规模托管中国开源模型：将KV缓存从BF16降到FP8后，Kimi K2.6单卡可容纳的上下文从约68.6万token提升到137万token，并发请求从32路（内存耗尽）提升到64路，吞吐峰值2192 token/s，比BF16峰值高约41%、每token成本降约30%；基准测试显示FP8与BF16输出质量几乎无差异。GLM 5.2的权重从8bit压缩到INT4后，checkpoint从705GB减至421GB，8卡张量并行部署下每卡显存占用从88GB降至52GB。文章同时介绍为共享缓存增加完整性校验。Cloudflare与SGLang团队合作并向上游回馈补丁，展示边缘云服务万亿参数开源模型的工程路径。</div><div class="item__src">Cloudflare Blog</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance anim" style="--i:5"><span class="dot"></span>财经要闻</h2>
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://nginx-sxrb.app.sxrbw.com/sxrb/site1/mweb/ja9u3/c2152472.html">央行定调下半年：实施适度宽松货币政策，加大逆周期调节力度</a></div><div class="item__body">据中国人民银行8月2日披露，央行明确下半年工作重点：实施好适度宽松的货币政策，充分发挥各项存量政策效能，及时谋划出台务实管用的增量政策，加大逆周期调节力度，加力扩大内需、优化供给，扎实做好下半年各项重点工作，推动经济持续向新向优向好发展。这是继7月底中央政治局会议定调后，央行对下半年货币政策的首次系统表述。"适度宽松"延续了2025年底以来中央对货币政策的定性，市场关注点在于增量政策的具体抓手——包括降准降息空间、结构性工具扩容以及财政货币协同力度。此前公布的工业企业利润等数据显示经济修复仍不均衡，政策加码预期升温。</div><div class="item__src">山西日报客户端</div></div>
+
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--gold">财经</span><div class="item__title"><a href="https://fortune.com/2026/07/31/ai-debt-hypescalers-capex-capital-spending-hidden-borrowing-bond-issuance/">AI"隐藏债务"飙至1.65万亿美元，超大规模厂商2026年发债已增973%</a></div><div class="item__body">《财富》援引S&P Global数据：截至2026年年中，超大规模云厂商及英伟达等关联实体年内已发行2250亿美元债券，同比暴增973.7%，全年有望达4000亿美元创纪录。但这只是"看得见的"债务——日本经济新闻研究显示，美国五大科技巨头的"隐藏债务"（长期GPU/服务器采购协议、数据中心租赁等表外负债）四年间膨胀8倍至1.65万亿美元，甚至超过其资产负债表上1.35万亿美元的显性债务。S&P警告"市场参与者对杠杆快速攀升越来越警惕"，超大规模厂商债券较无风险收益率的溢价正在走阔。与此同时美国本财年赤字预计逼近2万亿美元，美联储又不再大规模购债，私人投资者承接压力巨大。RSM首席经济学家Brusuelas提醒："资本之河不会永远奔流。"</div><div class="item__src">Fortune / Nikkei</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/yc-software/qm">yc-software/qm ⭐9.4k：多人协作的"智能体工作绳"</a></div><div class="item__body">本周GitHub新星，上线一周即斩获9400+星。qm是一个TypeScript编写的多人智能体编排框架（Multiplayer agent harness for work），让多个AI agent像团队一样分工协作完成工作任务：可定义角色、共享上下文、协调任务队列，支持人类随时介入接管。项目主打"把AI从单打独斗变成团队作战"，在Hacker News与开发者社区引发热议，被视为2026年"agent协作"范式的重要探索。仓库提供CLI与SDK两种接入方式，文档齐全，适合对多智能体工作流感兴趣的团队直接上手。</div><div class="item__src">GitHub</div></div>
+
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/bashalarmistalt/decimen-optical-transfer">decimen-optical-transfer ⭐4.2k：用屏幕和摄像头传文件，实测128KB/s</a></div><div class="item__body">这个脑洞大开的项目实现了"纯光学文件传输"：一台设备把文件编码成无限滚动的动态QR码流显示在屏幕上，另一台设备用摄像头拍摄并还原文件——两台设备之间没有任何网络连接、无需App配对、仅需摄像头权限，数据以光为载体。支持最大64MB任意文件，保留文件名与媒体类型，内置gzip自适应压缩和SHA-256完整性校验；作者称更密集帧+多码格+纠错彩色通道的实验版本曾达到手机对手机128KB/s的实测速率。在线演示位于decimen.app，首次访问后可离线使用。适合无网环境、隔离网络间的文件摆渡场景，是"最硬核的投屏传文件"。</div><div class="item__src">GitHub</div></div>
+
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/trycompai/crm">trycompai/crm ⭐3.1k：Agent优先的开源CRM</a></div><div class="item__body">由TryComp.ai开源的"agentic-first"客户关系管理系统，把AI智能体作为CRM的一等公民：销售线索自动跟进、邮件自动起草、客户行为自动打标，人工只需要审核与决策。项目采用TypeScript全栈实现，提供自托管部署，数据完全自主可控，直接对标Salesforce等传统CRM的"表格优先"模式。上线一周收获3100+星，正处于爆发增长期。对想用AI重构销售流程的团队和开发者而言，它是观察"AI原生企业软件"形态的绝佳样本——核心卖点不是聊天框，而是把agent嵌入业务流程本身。</div><div class="item__src">GitHub</div></div>
+
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/microsoft/skill-recorder">microsoft/skill-recorder ⭐1.4k：微软官方"录屏即技能"工具</a></div><div class="item__body">微软开源的桌面应用：录制你在屏幕上的工作过程，用GitHub Copilot CLI把操作序列重构为"意图+有序步骤"，自动生成可复用的Skill或Automation，供Microsoft Scout、Microsoft Copilot Cowork或Copilot Studio调用。简单说就是"把你做一遍的事变成AI能重复执行的技能"，显著降低企业沉淀自动化流程的门槛。由微软官方发布、TypeScript实现，与GitHub Copilot深度集成，上线即获1400+星。这是微软"技能经济"战略在开发者侧的重要落地，也让"录屏教学AI"成为新的自动化范式。</div><div class="item__src">GitHub</div></div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html" selected>2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月31日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cdep04kzz5wo">以色列占领黎巴嫩城堡，扩大地面攻势</a></h3>
+<div class="news-content">
+以色列军方宣布占领了黎巴嫩南部利塔尼河上方的战略要地博福特城堡，这是以色列自1982年以来对黎巴嫩最深入的军事行动。以军已扩大了南部黎巴嫩的疏散警告区域，进一步扩大针对真主党的地面行动。以色列总理内塔尼亚胡称这次占领是"我们政策中的戏剧性阶段和戏剧性变化"。目前已有超过3,300名黎巴嫩人在冲突中丧生，25名以色列军人死亡。这次行动发生在美伊停火谈判的背景下，使得中东局势更加复杂化。
+</div>
+<div class="news-source">来源: BBC News</div>
+</div>
+
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.aljazeera.com/news/2026/5/31/trump-tightens-terms-on-iran-war-deal-us-media-say">特朗普收紧伊朗战争协议条款，媒体报道称</a></h3>
+<div class="news-content">
+美国总统特朗普寻求改变结束美以对伊朗战争提案的多个条款，这使最终协议变得更加复杂。据《纽约时报》报道，特朗普的修改涉及强化协议条款，美国已将新框架退回供伊朗考虑。特朗普的优先事项包括伊朗同意永不发展核武器以及重新开放封锁的霍尔木兹海峡。目前谈判已陷入僵局，伊朗首席谈判代表表示德黑兰不会同意任何不能充分保障伊朗权利的协议。这可能会延长谈判进程，增加军事行动重启的风险。
+</div>
+<div class="news-source">来源: Al Jazeera</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.aljazeera.com/news/2026/5/31/ukrainian-drone-attacks-hit-multiple-russian-targets-including-refinery">乌克兰无人机袭击多个俄罗斯目标，包括炼油厂</a></h3>
+<div class="news-content">
+乌克兰无人机打击了俄罗斯多个地区的能源和工业目标，这是对基础设施的打击行动升级。萨拉托夫地区的州长称，民用基础设施在夜间袭击中受损。乌克兰军方确认袭击了萨拉托夫炼油厂，并否认对扎波罗热核电站的指控。与此同时，基辅要求盟友提供更多防空导弹系统。
+</div>
+<div class="news-source">来源: Al Jazeera</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cbsnews.com/">美国ICE拘留中心内儿童"被当作罪犯对待"</a></h3>
+<div class="news-content">
+特朗普总统第二任期内，已有超过6,300名18岁以下儿童被联邦移民局拘留，其中近一半被关押在德利移民处理中心。这些儿童几乎都没有犯罪记录，有些甚至只有两个月大。德利中心的条件被批评为不人道，引发了广泛的社会关注和争议。
+</div>
+<div class="news-source">来源: CBS News</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/">哥伦比亚在暴力阴影中举行高风险选举</a></h3>
+<div class="news-content">
+哥伦比亚正在举行一场高风险的总统选举，但选举很可能需要在6月进行第二轮投票。这次选举是在政治暴力重新抬头的情况下举行的，反映了哥伦比亚政治局势的复杂性。现任领导者的盟友与亲特朗普候选人之间的对决吸引了全国关注。
+</div>
+<div class="news-source">来源: NBC News</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/rss/">刚果(金)埃博拉疫情死亡率达30-50%，WHO总干事抵达疫区</a></h3>
+<div class="news-content">
+世界卫生组织称刚果(金)埃博拉疫情死亡率为"巨大"的30-50%，WHO总干事已抵达疫情中心。该疫情应对工作面临挑战，但有5名埃博拉患者已从罕见毒株中康复，表明即使没有批准的治疗方法或疫苗，康复也是可能的。
+</div>
+<div class="news-source">来源: The Guardian</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/rss/">肯尼亚女子学校宿舍火灾造成至少16名学生死亡</a></h3>
+<div class="news-content">
+肯尼亚一所女子学校的宿舍发生火灾，造成至少16名学生死亡。这一悲剧再次引发了对校园安全的关注，凸显了撒哈拉以南非洲地区学校基础设施安全面临的挑战。
+</div>
+<div class="news-source">来源: The Guardian</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">神21航天员乘组回家</a></h3>
+<div class="news-content">
+神舟21号航天员乘组成功返回地球，标志着这次载人航天任务圆满完成。这次任务期间，航天员完成了多项科学实验和技术验证，为中国空间站建设和未来深空探测积累了宝贵经验。
+</div>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">释永信被判24年</a></h3>
+<div class="news-content">
+少林寺方丈释永信被判处24年有期徒刑，这一判决引起了广泛关注。释永信涉及多起法律案件，包括挪用公款、职务侵占等罪名，这一判决对中国宗教界和佛教界都产生了重大影响。
+</div>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">39岁博主被虫咬后感染离世</a></h3>
+<div class="news-content">
+一名39岁的博主在户外活动后被虫咬伤，不幸感染去世。这一事件引发了人们对户外活动安全的关注，也提醒人们在享受大自然的同时要注意防护，及时处理可能的危险情况。
+</div>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">广东高温天热死几千只鸡</a></h3>
+<div class="news-content">
+广东省遭遇极端高温天气，导致数千只家禽中暑死亡。这一事件反映了气候变化对农业和畜牧业的影响，也提醒人们关注极端天气事件的增加及其对食品安全的潜在威胁。
+</div>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/">黑人创始人创季度融资新高，但存在隐忧</a></h3>
+<div class="news-content">
+黑人创始人在2026年第二季度获得了自2022年以来最高金额的融资，创下历史新高。这一趋势表明科技行业的多样性在改善，但分析人士指出，这背后仍有结构性问题需要解决，包括长期投资不足和退出机会有限等挑战。
+</div>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/">Meta据报道正在开发AI吊坠设备</a></h3>
+<div class="news-content">
+Meta公司正在开发一款AI吊坠设备，这标志着该公司向可穿戴AI设备领域扩展。这一产品可能进一步模糊数字世界和物理世界的界限，为用户提供更个性化的AI体验，同时也引发了关于隐私和数据安全的讨论。
+</div>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/op7418/guizang-social-card-skill">GitHub趋势项目：鬼葬社交卡片技能</a></h3>
+<div class="news-content">
+GitHub上最受欢迎的项目之一是"鬼葬社交卡片技能"，该项目可以生成小红书轮播图和微信公众号21:9+1:1配对封面。该项目采用瑞士视觉系统，包含28种布局和10个主题，能将单文件HTML转换为PNG格式，反映了社交媒体内容创作的技术需求。
+</div>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/">法拉利试图用Luce挑战中国电动车，随后引发反弹</a></h3>
+<div class="news-content">
+法拉利曾计划推出Luce车型来挑战中国电动车市场，但随后引发了强烈的市场反弹。这一事件反映了欧洲豪华汽车制造商在应对中国电动车竞争时的战略挑战，也显示了全球汽车行业格局正在发生深刻变化。
+</div>
+<div class="news-source">来源: BBC News</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cbsnews.com/">财政部考虑发行250美元面额的特朗普头像纸币</a></h3>
+<div class="news-content">
+美国财政部正在考虑发行一张250美元面额的纸币，上面将印有特朗普总统的头像。这一举措是对去年提出的立法提议的回应，引发了关于货币政治化和历史人物在货币上出现的历史争议。
+</div>
+<div class="news-source">来源: CBS News</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="#">美联储继续关注通胀数据，市场预期6月可能暂停加息</a></h3>
+<div class="news-content">
+尽管通胀压力仍然存在，但最新的经济数据显示通胀压力有所缓解，市场普遍预期美联储在6月会议上可能暂停加息。这一预期对全球金融市场产生了积极影响，主要股指出现上涨趋势。
+</div>
+<div class="news-source">来源: 综合财经报道</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/op7418/guizang-social-card-skill">鬼葬社交卡片技能</a></h3>
+<div class="news-content">
+该项目是一个Claude Code/Codex技能，专门生成小红书轮播图和微信公众号封面配对。采用瑞士视觉系统，包含28种布局和10个主题，支持单文件HTML到PNG的转换。该项目反映了社交媒体内容创作的技术需求，展示了AI在创意设计领域的应用潜力。
+</div>
+<div class="news-source">来源: GitHub</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/helloianneo/ian-xiaohei-illustrations">Ian小黑怪诞正文配图生成</a></h3>
+<div class="news-content">
+这是一个中文小黑怪诞正文配图生成技能，提供16:9白底手绘风格图像，包含少量红橙蓝色批注。该项目展示了AI在创意设计和本地化内容生成方面的能力，特别适合中文内容创作者使用。
+</div>
+<div class="news-source">来源: GitHub</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Sophomoresty/gemini-web2api">Gemini Web2API</a></h3>
+<div class="news-content">
+这个项目将Google Gemini网络服务转换为OpenAI兼容的API，无需认证，支持跨平台，单文件部署。它解决了不同AI服务之间的兼容性问题，为开发者提供了更灵活的AI服务接入方式。
+</div>
+<div class="news-source">来源: GitHub</div>
+</div>
+</div>
+
+</div></body></html>

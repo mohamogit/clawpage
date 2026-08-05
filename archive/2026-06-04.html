@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html" selected>2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月04日 星期三</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.thehindu.com/news/international/usa-iran-war-updates-israel-lebanon-ceasefire-hezbollah-june-4-2026/article71059457.ece">中东局势急剧升级：特朗普猛烈抨击美国国会"不爱国"的伊朗战争决议</a></h3>
+<p class="news-content">美国总统特朗普周三猛烈抨击美国国会众议院阻止打击伊朗的决议，称其为"不爱国"的行为。特朗普表示想要将黎巴嫩冲突与伊朗战争的谈判分开进行。与此同时，以色列和黎巴嫩真主党在南部黎巴嫩发生交火，就在特朗普政府斡旋达成新的停火协议几小时后。以色列和黎巴嫩也同意实施停火，条件是"真主党武装人员完全停止"在黎巴嫩南部的活动。这一系列事件标志着中东紧张局势持续升级，地区冲突呈现复杂化趋势。</p>
+<div class="news-source">来源: The Hindu</div>
+</div>
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.usatoday.com/story/entertainment/books/2026/06/04/marjane-satrapi-dead-persepolis-author/90400959007/">伊朗裔法国作家玛嘉·莎塔碧逝世，享年56岁</a></h3>
+<p class="news-content">玛嘉·莎塔碧（Marjane Satrapi），这位以自传体图画小说《波斯波利斯》闻名的伊朗裔法国艺术家、电影导演和作家，在巴黎逝世，享年56岁。莎塔碧的家人确认了她的死讯。《波斯波利斯》系列图画小说向数百万读者介绍了伊朗人在动荡岁月中的挣扎，该作品后来被改编为奥斯卡提名动画长片。她的去世在世界文学和艺术界引起巨大震动，成为全球关注的焦点事件。</p>
+<div class="news-source">来源: USA Today</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/world-66666666">英国首相斯塔默指控马斯克试图煽动亨利·诺瓦克谋杀案的分歧</a></h3>
+<p class="news-content">英国首相基尔·斯塔默指控埃隆·马斯克试图在亨利·诺瓦克谋杀案问题上煽动社会分裂。这一指控引发英国政界震动，显示出科技巨头与政界之间的紧张关系日益加剧。相关调查将审视警方反应是否对亨利·诺瓦克的死亡负有责任。</p>
+<div class="news-source">来源: BBC</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cnn.com/2026/06/02/world/live-news/iran-trump-israel-lebanon-war-intl-hnk">伊朗对科威特机场和巴林发动袭击，地区冲突进一步升级</a></h3>
+<p class="news-content">6月2-3日，伊朗对科威特机场和巴林目标发动袭击，标志着中东紧张局势进一步升级。与此同时，以色列和黎巴嫩真主党在特朗普政府斡旋下达成新的停火协议，但双方仍在黎巴嫩南部地区发生交火。这一系列事件显示地区冲突呈现复杂化趋势，各方力量博弈日趋激烈。</p>
+<div class="news-source">来源: CNN</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/04/experts-criticise-plan-american-only-ebola-quarantine-centre-kenya">专家批评肯尼亚建立美国专属埃博拉检疫中心的计划</a></h3>
+<p class="news-content">世界卫生组织专家批评在肯尼亚建立美国专属埃博拉检疫中心的计划，担心这可能会阻碍全球疫情应对工作。同时，刚果（金）东部的反政府武装袭击造成30人死亡，并阻碍埃博拉疫情应对工作。WHO负责人称刚果（金）的埃博拉爆发可能早在1月就已开始。这一系列事件凸显全球公共卫生安全面临的挑战。</p>
+<div class="news-source">来源: The Guardian</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.independent.co.uk/news/world/middle-east/iran-us-war-live-trump-ceasefire-kuwait-israel-lebanon-b2989234.html">伊朗战争最新进展：特朗普在共和党"作秀"后发表激烈言论</a></h3>
+<p class="news-content">美国总统特朗普在众议院就伊朗战争问题进行"作秀"后发表激烈言论，针对共和党议员进行了猛烈抨击。周三，众议院投票阻止对伊朗的打击行动，特朗普对此表示强烈不满。这一政治分歧显示出美国国内在对伊朗政策上的严重分裂，可能影响中东局势的发展方向。</p>
+<div class="news-source">来源: The Independent</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">苏州化工厂3次大爆炸，传被讨薪者"献忠"70死</a></h3>
+<p class="news-content">6月3日，中国江苏省苏州市一个废品回收仓库发生爆炸并引发火灾。官方称造成两人灼伤，无生命危险。但网传消息称，这间化工厂仓库被讨薪员工"献忠"后，引燃隔壁纺织厂，连续发生数起爆炸，事故至少造成70多人死亡。附近居民反映事发时传出巨大爆炸声，伴随强烈震动。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">#被恶意仅退款2.36万卖家发声#</a></h3>
+<p class="news-content">河北商家杨园园被仅退款23600元，她决定带着丈夫、销售经理以及2岁的孩子一起去上海追回货款。商家夫妇表示："我们有全部聊天记录、物流信息、卸车视频，还有你们指定的收货人的电话录音。"但对方仍然否认交易。此事引发电商平台退款机制争议，消费者权益保护再次成为热点话题。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">#男子买34层房收房得知只盖到32层#</a></h3>
+<p class="news-content">一名男子购买34层房屋后收房时发现，楼盘实际只盖到了32层。这一情况引发购房者愤怒，质疑开发商的销售行为。人们普遍关心："售楼部是怎么卖房的？那这咋整？退回定金还得赔偿人家损失吧？"事件暴露房地产开发商诚信问题，引发消费者对购房安全的新担忧。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/04/chinese-spies-linkedin-westerners/">中国间谍利用LinkedIn引诱西方人分享敏感信息</a></h3>
+<p class="news-content">安全研究人员发现，中国间谍正积极利用LinkedIn职业社交平台引诱西方人士分享敏感信息。这一网络钓鱼攻击针对的是科技公司员工和政府工作人员，通过建立虚假的职业关系获取机密数据。专家警告，这种攻击手段越来越隐蔽，需要企业和个人提高网络安全意识。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/04/voidzero-joins-cloudflare/">VoidZero宣布加入Cloudflare，网络安全行业整合加速</a></h3>
+<p class="news-content">网络安全公司VoidZero宣布加入Cloudflare，这一消息标志着网络安全行业的整合趋势正在加速。VoidZero专注于云安全解决方案，其加入将进一步增强Cloudflare在企业安全市场的竞争力。该交易反映了网络安全行业集中度提升的趋势，大型科技公司正积极收购专业安全企业。</p>
+<div class="news-source">来源: Hacker News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus：自托管AI工作空间项目获广泛关注</a></h3>
+<p class="news-content">开源项目pewdiepie-archdaemon/odysseus获得48,541颗星，成为GitHub上最受关注的项目之一。这是一个自托管AI工作空间项目，为用户提供了完整的AI开发环境。项目的快速增长反映了企业对自托管AI解决方案的强烈需求，以及用户对数据隐私和自主控制的重视。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/04/apple-announces-app-store-14-trillion/">苹果宣布App Store累计收入达1.4万亿美元，90%交易无佣金</a></h3>
+<p class="news-content">苹果公司宣布其App Store累计收入达到1.4万亿美元的重要里程碑，其中90%的交易不收取佣金。这一数据展示了苹果生态系统的强大盈利能力和开发者支持力度。分析师认为，这一成绩反映了移动应用经济的持续增长，以及苹果在数字内容分发市场的主导地位。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/zgwl/chinese-buy-us-stock-guide">zgwl/chinese-buy-us-stock-guide：中国人购买美股指南受热捧</a></h3>
+<p class="news-content">开源项目zgwl/chinese-buy-us-stock-guide获得2,370颗星，成为最受关注的中国投资者教育项目之一。该指南为中国人提供了详细的美股投资指南，包括开户、选股、税务等方面的实用信息。项目的热度反映了中国人对海外投资渠道的日益增长兴趣，以及金融知识的普及需求。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.usatoday.com/story/entertainment/books/2026/06/04/marjane-satrapi-dead-persepolis-author/90400959007/">法国-伊朗作家Marjane Satrapi逝世，文学市场震动</a></h3>
+<p class="news-content">《波斯波利斯》作者Marjane Satrapi的逝世在全球文学市场引起震动。她的作品版权和遗产处理将成为出版界关注的焦点。分析师预计，她的作品销量可能会出现短期增长，相关影视改编也可能重新获得市场关注。这一事件凸显了文学遗产在现代文化市场中的持久价值。</p>
+<div class="news-source">来源: 综合报道</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Gloridust/WechatOnCloud">Gloridust/WechatOnCloud：云微WOC项目助力微信自由连接</a></h3>
+<p class="news-content">开源项目Gloridust/WechatOnCloud获得2,037颗星，该项目提供了云微信解决方案，让用户能够自由连接微信。该工具在开发者社区引起广泛关注，特别是对于需要微信API集成应用的开发者。项目的热度反映了企业级即时通讯解决方案市场的需求增长，以及用户对平台开放性的期待。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/asz798838958/aBaiAutoplus">asz798838958/aBaiAutoplus：多平台AI账号自动注册与管理工具</a></h3>
+<p class="news-content">开源项目asz798838958/aBaiAutoplus获得1,465颗星，该项目提供了多平台AI账号自动注册与管理功能。支持协议化付款一键开通ChatGPT等服务，为用户提供了便捷的AI工具访问方案。项目的流行反映了AI服务普及化趋势，以及用户对简化AI工具获取流程的需求。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/cpaczek/skylight">cpaczek/skylight：实时飞机追踪投影系统</a></h3>
+<p class="news-content">开源项目cpaczek/skylight获得1,065颗星，该系统能够将头顶飞过的飞机实时投射到天花板上，使用RTL-SDR技术，包含实时天空层（太阳、月亮、星星、国际空间站）以及每架飞机的航向信息。这一创新项目展示了业余无线电技术与现代科技的融合，为航空爱好者提供了独特的体验方式。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+</div>
+
+</div></body></html>

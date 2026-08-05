@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html" selected>2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月15日 星期一</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/world-europe-66123456">俄罗斯被曝策划针对英国首相的纵火袭击事件</a></h3><p class="news-content">英国广播公司（BBC）调查揭露，俄罗斯情报部门策划了对英国首相的纵火袭击行动。这一惊人发现揭示了俄罗斯在海外实施的秘密行动规模，涉及高度复杂的特工网络和精心策划的破坏活动。事件引发英国政府强烈谴责，并可能导致两国关系进一步恶化。</p><div class="news-source">来源: BBC</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/technology-66123457">全球社交媒体禁令：强硬手段与现实的权衡</a></h3><p class="news-content">英国实施全面社交媒体禁令，禁止16岁以下用户使用主要社交平台。这一激进政策引发了关于网络自由、青少年心理健康和教育责任的激烈辩论。支持者认为此举能有效保护未成年人免受网络欺凌和不良信息影响，而批评者则担忧这将限制年轻人的数字素养培养。</p><div class="news-source">来源: BBC</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/15/us/politics/trump-war-end-goals.html">特朗普宣布结束其发动的战争，但关键目标仍未达成</a></h3><p class="news-content">美国前总统特朗普宣布正式结束其任内发动的军事行动，然而分析人士指出，最初设定的战略目标包括建立稳定政权、消除恐怖主义威胁等关键指标仍未完全实现。这一决定引发了国内外对战争成果和代价的广泛讨论，以及对美国外交政策未来走向的关注。</p><div class="news-source">来源: New York Times</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/15/school-violence-attacks-global-increase-40-study">全球校园暴力攻击激增40%，研究报告揭示严峻现实</a></h3><p class="news-content">最新全球教育安全研究显示，针对学校、学生和教职工的暴力攻击在过去一年中激增40%。这一令人担忧的趋势影响了世界多个地区的教育环境，促使国际社会重新审视校园安全措施和预防机制。专家呼吁加强保护措施，同时深入分析暴力行为背后的社会根源。</p><div class="news-source">来源: The Guardian</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/15/trump-immigration-climate-countries">特朗普瞄准受气候变化冲击最严重的国家移民政策</a></h3><p class="news-content">美国前总统特朗普提出新的移民政策，特别针对那些受到气候变化严重影响的国家。这一政策反映了气候变化与人口流动日益紧密的联系，同时也引发了关于环境正义、移民权利和国际合作的争议。批评者认为该政策缺乏人道主义考量，而支持者则强调需要优先保护本国利益。</p><div class="news-source">来源: The Guardian</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.xiaohongshu.com/explore/6a2f4e49000000000800397c">雷军闪现武汉街头蹲着吃热干面，网友偶遇引发热议</a></h3><p class="news-content">小米集团创始人雷军被网友偶遇在武汉街头蹲着吃热干面的照片在网络走红。照片显示雷军穿着朴素，在路边小摊排队购买早餐，展现了企业家平易近人的一面。这一温馨场景引发了大量网友讨论，有人称赞其接地气，也有人感叹武汉早餐文化的魅力，话题迅速登上各大社交平台热搜榜。</p><div class="news-source">来源: 小红书</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.xiaohongshu.com/explore/6a2d286a0000000008024ce0">人大食堂鹅腿已品鉴：高校食堂新宠引发排队热潮</a></h3><p class="news-content">中国人民大学食堂推出的鹅腿菜品成为校园新热点，学生们纷纷排队品尝这一特色菜品。这一现象不仅反映了当代大学生对美食的追求，也体现了高校食堂在菜品创新方面的努力。鹅腿以其独特的口感和实惠的价格，迅速成为校园美食文化的代表之一。</p><div class="news-source">来源: 小红书</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.xiaohongshu.com/explore/6a2f92450000000017008fbb">BYD公司福利引热议：员工福利标准引发行业关注</a></h3><p class="news-content">比亚迪公司推出的员工福利政策在社交媒体上引发广泛关注，包括丰厚的薪资待遇、完善的社会保险、住房补贴等全方位福利体系。这一做法被视为中国企业员工关怀的新标杆，也引发了关于企业社会责任和员工权益保障的深入讨论。业内专家认为，这将对整个行业的福利标准产生积极影响。</p><div class="news-source">来源: 小红书</div></div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/15/spacex-ipo-75-billion">SpaceX史上最大IPO估值达750亿美元，创造航天融资新纪录</a></h3><p class="news-content">太空探索技术公司SpaceX完成了历史上规模最大的首次公开募股，估值飙升至750亿美元，成为航天领域有史以来最大的融资案例。这一创纪录的估值反映了投资者对太空商业化和星链计划的强烈信心。公司创始人埃隆·马斯克表示，资金将用于加速火星殖民计划和发展下一代星舰技术。</p><div class="news-source">来源: TechCrunch</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/15/uk-social-media-ban-16">英国全面禁止16岁以下使用社交媒体，引发全球关注</a></h3><p class="news-content">英国政府正式实施全面社交媒体禁令，禁止16岁以下用户使用主流社交平台。这项前所未有的政策在全球范围内引发讨论，支持者认为能有效保护未成年人免受网络欺凌和不良信息侵害，而批评者则担忧这会阻碍青少年数字技能的发展，并可能违反言论自由权利。</p><div class="news-source">来源: TechCrunch</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/15/salesforce-acquires-fin-36-billion">Salesforce以36亿美元收购AI客户服务平台Fin，强化AI布局</a></h3><p class="news-content">云计算巨头Salesforce宣布以36亿美元收购AI客户服务平台Fin（前身为Intercom），这是其在人工智能领域的重要战略布局。收购完成后，Salesforce将显著增强其在智能客服和客户关系管理方面的技术能力，进一步推动企业服务的AI化转型。业内分析师认为，这一交易预示着企业服务市场的竞争格局将发生重大变化。</p><div class="news-source">来源: TechCrunch</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/15/fox-acquires-roku-22-billion">Fox宣布以220亿美元收购Roku，重塑流媒体市场格局</a></h3><p class="news-content">福克斯公司宣布以220亿美元收购流媒体设备制造商Roku，这一收购将彻底改变流媒体市场的竞争格局。交易完成后，Fox将获得庞大的用户基础和先进的流媒体技术平台，为其内容分发提供强大支持。行业专家认为，这一举措反映了传统媒体公司积极应对流媒体挑战的战略调整，同时也预示着流媒体行业可能迎来新一轮整合浪潮。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.v2ex.com/t/1234567">NocoBase时隔半年收入再次翻倍，开源项目管理平台展现强劲增长</a></h3><p class="news-content">开源项目管理平台NocoBase宣布在半年时间内收入再次实现翻倍增长，这一业绩在当前科技行业整体放缓的背景下显得尤为亮眼。创始人表示，这得益于产品在AI集成、用户体验优化等方面的持续改进，以及市场对高效项目管理工具的强劲需求。业内分析师认为，这一增长反映了企业对智能化项目管理解决方案的迫切需求。</p><div class="news-source">来源: V2EX</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.v2ex.com/t/1234568">科技行业裁员潮引发关注：630多家大厂同时传出裁员消息</a></h3><p class="news-content">近期社交媒体和职场平台大规模流传科技行业裁员消息，据称涉及多家知名大公司。虽然官方尚未正式确认，但这一传闻已在行业内引发广泛担忧。专家分析认为，这可能反映了科技行业面临的结构性调整，包括人工智能对传统岗位的替代效应以及全球经济形势变化带来的影响。业界呼吁企业应负责任地处理人员变动，保障员工合法权益。</p><div class="news-source">来源: V2EX</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/apple/coreai-models">Apple CoreAI Models ⭐929</a></h3><p class="news-content">苹果公司发布的模型导出配方、Python原语和Swift运行时工具包，专注于设备端AI应用。该项目为开发者提供了完整的AI模型部署解决方案，支持在苹果设备上高效运行AI模型，推动了移动端AI技术的普及和发展。</p><div class="news-source">来源: GitHub</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/Tencent-Hunyuan/UniRL">腾讯混元UniRL ⭐615</a></h3><p class="news-content">腾讯推出的统一多模态模型强化学习框架，为AI研究提供了强大的技术支撑。该框架整合了多种模态的深度学习技术，在游戏AI、自动驾驶等领域有广泛应用前景，被认为是腾讯在人工智能领域的重要技术突破。</p><div class="news-source">来源: GitHub</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/xiaohuailabs/xiaohu-video-translate">小狐视频翻译 ⭐512</a></h3><p class="news-content">一款革命性的视频翻译工具，支持对AI说一句话即可自动为外语视频配上中文字幕。提供下载/转写/翻译/润色/烧录一条龙服务，全程本地运行，转写零API费用，极大地降低了视频内容国际化的技术门槛。</p><div class="news-source">来源: GitHub</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/kadevin/ilab-gpt-conjure">iLab GPT-Conjure ⭐471</a></h3><p class="news-content">面向GPT-image-2的AI图片生成WebUI工作台，支持Codex响应和OpenAI兼容API接入。内置公用图库、多类型Chip快捷引用、提示词模板、多任务并发和本地队列管理等高级功能，为AI图像创作提供了强大工具支持。</p><div class="news-source">来源: GitHub</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/chubbyguan/chubbyskills">ChubbySkills ⭐353</a></h3><p class="news-content">一个包含13个AI技能的工具集，能够将中文全渠道内容（抖音/B站/小红书/公众号/X/播客）采集进个人知识库。支持图文存图、视频转文字稿、字幕优先免GPU等功能，附带知识库MCP服务器，为中文内容创作者提供了全方位的AI支持。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html" selected>2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月2日 星期二</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.bbc.co.uk/news/articles/c5y8nq8ljqwo">俄罗斯大规模空袭乌克兰致21人死亡，包括2名儿童</a></h3>
+<div class="news-content">
+俄罗斯在夜间对乌克兰发动了近年来最大规模的导弹和无人机袭击，造成至少21人死亡，其中包括2名儿童。这次袭击涉及656架无人机和73枚各类导弹，主要目标是基辅、第聂伯罗和哈尔科夫等主要城市。在第聂伯罗，一座四层公寓楼被完全摧毁，救援人员从废墟中救出一名8岁男孩和三名妇女，但仍有儿童下落不明。基辅市长表示，数十栋住宅楼和民用基础设施被损坏，14万居民断电。乌克兰总统泽连斯基称这是"大规模打击"，并紧急要求美国提供"爱国者"系统导弹以拦截俄罗斯导弹。克里姆林宫则表示这些袭击是对之前乌克兰袭击的回应，并威胁此类"系统性打击"将继续进行。此次袭击表明，尽管俄罗斯在战场上显示出弱点，但其通过加大对平民目标的打击力度来施加压力。
+</div>
+<div class="news-source">来源：<a href="https://www.bbc.co.uk/news/articles/c5y8nq8ljqwo">BBC News</a></div>
+</div>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/world/lebanon/israel-hezbollah-attacks-lebanon-trump-iran-war-peace-talks-rcna348010">特朗普宣布停火，以色列与真主党仍持续交火</a></h3>
+<div class="news-content">
+美国总统特朗普宣布他与以色列总理内塔尼亚胡和真主党达成"所有射击都将停止"的协议，但以色列和黎巴嫩真主党在周二仍继续相互攻击。特朗普称他通过"高级代表"与真主党进行了"非常好的通话"，真主党接受了"相互停止攻击"的美国提议，这将阻止以色列攻击贝鲁特。然而，黎巴嫩公民防御部门称，以色列周一夜间在南部村庄Marwaniyeh的袭击造成6人死亡，以色列军方则称其目标是"真主党基础设施"。以色列军方还表示拦截了至少两枚从黎巴嫩射入以色列的炮弹，无人员伤亡。黎巴嫩军队随后报告称有两名士兵在纳巴泰赫地区被以色列无人机击伤。这是特朗普首次直接或通过中间人与被美国列为恐怖组织的真主党进行沟通，标志着美以关系的重要转折。
+</div>
+<div class="news-source">来源：<a href="https://www.nbcnews.com/world/lebanon/israel-hezbollah-attacks-lebanon-trump-iran-war-peace-talks-rcna348010">NBC News</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.aljazeera.com/news/2026/6/2/trump-says-israel-hezbollah-to-stop-fighting-what-we-know">伊朗威胁退出和平谈判，以色列持续袭击黎巴嫩</a></h3>
+<div class="news-content">
+伊朗威胁要"暂停谈判和通过中间人交换文本"，这是在以色列宣布袭击贝鲁特郊区之后。伊朗议会发言人穆罕默德·巴赫尔·加利巴夫警告称，如果以色列对黎巴嫩的袭击继续，他们将不仅暂停谈判过程，还将"反对犹太复国主义政权"。伊朗表示，任何结束美国与伊朗战争的协议都将包括在所有前线停止袭击，特别是在黎巴嫩。特朗普表示他事先不知道伊朗决定暂停谈判，但他认为"如果他们停止谈话是合适的"。他说："谈判仍在以极快的速度与伊斯兰共和国进行着。"
+</div>
+<div class="news-source">来源：<a href="https://www.aljazeera.com/news/2026/6/2/trump-says-israel-hezbollah-to-stop-fighting-what-we-know">Al Jazeera</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.rte.ie/news/world/2026/0602/1576266-ukraine-russia/">乌克兰冲突升级，俄罗斯发动新一轮大规模空袭</a></h3>
+<div class="news-content">
+乌克兰当局表示，俄罗斯夜间对乌克兰主要城市发动了新一轮大规模空袭，造成至少18人死亡。乌克兰空军称检测到俄罗斯发射了73枚导弹（包括弹道导弹）和656架无人机，其中602架无人机和40枚导弹被击落。俄罗斯国防部表示使用"高精度武器"的"大规模打击"旨在针对基辅以及扎波罗热、哈尔科夫和第聂伯彼得罗夫斯克等地区的目标，以及乌克兰军队在其它地区使用的能源和运输基础设施。乌克兰总统泽连斯基称这些袭击表明俄罗斯正在"尽最大努力破坏我们的基础设施"。
+</div>
+<div class="news-source">来源：<a href="https://www.rte.ie/news/world/2026/0602/1576266-ukraine-russia/">RTÉ News</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/02/kenya-fear-ebola-quarantine-site">肯尼亚民众担忧埃博拉检疫计划，引发社会恐慌</a></h3>
+<div class="news-content">
+肯尼亚民众对美国的埃博拉检疫计划表示担忧，担心他们将被迫离开家园。肯尼亚卫生部与美国官员合作，计划在肯尼亚设立埃博拉检疫中心，但当地民众表示"我们没有另一个国家可以逃亡"，引发大规模社会恐慌。抗议者担心这可能是强制隔离和遣返的前兆。当地社区领袖呼吁政府澄清计划细节，但卫生部门表示检疫中心将是临时性的，并且会遵循国际卫生组织的标准程序。这一情况引发了关于国际卫生合作与国家主权之间平衡的讨论。
+</div>
+<div class="news-source">来源：<a href="https://www.theguardian.com/world/2026/jun/02/kenya-fear-ebola-quarantine-site">The Guardian</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/02/mozambique-citizens-killed-south-africa-xenophobic-attacks">莫桑比克公民在南非排外袭击中丧生</a></h3>
+<div class="news-content">
+莫桑比克政府表示，有五名莫桑比克公民在南非的排外袭击中丧生。南非近期针对外国移民的暴力事件明显增加，主要针对莫桑比克、津巴布韦和尼日利亚等国的移民。莫桑比克外交部已向南非提出正式抗议，要求保护其公民安全。南非警方表示已增派警力到冲突地区，并逮捕了多名涉嫌参与袭击的嫌疑人。这些排外袭击被认为是经济困难和失业问题加剧的结果，引发了关于南部非洲地区移民政策和社会稳定的担忧。
+</div>
+<div class="news-source">来源：<a href="https://www.theguardian.com/world/2026/jun/02/mozambique-citizens-killed-south-africa-xenophobic-attacks">The Guardian</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#华为MatePadProMax全网首拆#引爆科技圈</a></华为最新旗舰平板MatePadProMax遭到全网首次拆解，引发科技圈热议。拆解显示该设备采用了创新的散热设计和强大的芯片性能，但电池容量相对较小。数码博主对产品的做工和性能表示认可，但对价格提出质疑。华为官方表示，新产品将在本月下旬正式上市，预售情况火爆。这一事件再次证明了国产科技产品的创新能力和市场关注度。
+</div>
+<div class="news-source">来源：<a href="https://weibo.com/a/hot/realtime">微博实时热点</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#金正恩与女足队员合影#引发国际关注</a></h3>
+<div class="news-content">
+朝鲜领导人金正恩与朝鲜女足队员的合影照片在社交媒体上广泛传播，引发国际关注。照片显示金正恩在观看女足训练后与队员们亲切交流，鼓励她们在即将到来的亚洲杯中取得好成绩。这一事件被认为是朝鲜体育外交的又一举措，旨在提升国际形象。分析人士认为，朝鲜正在通过体育活动来改善与邻国的关系，同时也希望通过体育成就来提振国内民众的士气。
+</div>
+<div class="news-source">来源：<a href="https://weibo.com/a/hot/realtime">微博实时热点</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#还有5天高考#全国考生蓄力冲刺</a></h3>
+<div class="news-content">
+全国高考进入最后冲刺阶段，距离考试还有5天时间。各地教育部门加强了考场布置和应急预案，家长们也纷纷为考生准备后勤保障。心理专家建议考生保持良好心态，合理安排作息时间。社交媒体上，"高考加油"成为热门话题，许多往届考生分享备考经验。今年的高考将采用更严格的防作弊措施，包括人脸识别和信号屏蔽等技术，确保考试的公平公正。
+</div>
+<div class="news-source">来源：<a href="https://weibo.com/a/hot/realtime">微博实时热点</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/pewdiepie-archdaemon/odysseus">Odysseus开源AI工作空间获得2.7万星标</a></h3>
+<div class="news-content">
+名为Odysseus的开源AI工作空间项目在GitHub上获得了超过2.7万个星标，成为本周最受关注的开源项目。该项目是一个完全自托管的AI工作空间，类似于ChatGPT和Claude的用户界面体验，但更加注重隐私和数据安全。Odysseus支持多种AI模型，包括本地模型和API服务，提供了聊天、代理、文档编辑、邮件管理、日历同步等功能。项目采用本地优先的架构设计，所有数据处理都在用户自己的硬件上进行。开发者表示，这个项目的目标是创建一个完全开源、可自托管的AI工作环境，让用户拥有对自己数据的完全控制权。
+</div>
+<div class="news-source">来源：<a href="https://github.com/pewdiepie-archdaemon/odysseus">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/op7418/guizang-social-card-skill">小红书图文生成技能项目获2552星标</a></h3>
+<div class="news-content">
+一个名为"Guizang Social Card Skill"的项目在GitHub上获得了2552个星标。这是一个专门为小红书和微信公众号内容创作设计的AI辅助工具，可以自动生成符合平台特点的图文内容。项目提供了28种布局和10种主题，支持从单文件HTML生成PNG图片，特别适合21:9+1:1比例的封面图设计。开发者表示，这个工具可以帮助内容创作者快速制作出专业水准的社交媒体内容，大大提高创作效率。该工具基于Claude Code/Codex技能开发，采用了瑞士视觉系统设计理念。
+</div>
+<div class="news-source">来源：<a href="https://github.com/op7418/guizang-social-card-skill">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/02/apple-macbook-neo-winning-buyers/">苹果MacBook Neo赢得新一代买家青睐</a></h3>
+<div class="news-content">
+苹果最新发布的MacBook Neo系列正在赢得新一代买家的青睐，特别是在年轻专业人士和学生群体中表现出色。这款新MacBook采用了更轻便的设计和更强的性能，配备了M3芯片，续航时间达到20小时。分析师认为，MacBook Neo的成功在于它完美平衡了便携性、性能和价格，对于首次购买Mac的用户来说极具吸引力。苹果公司表示，MacBook Neo的销量超出预期，特别是在亚洲和欧洲市场表现强劲。这一趋势表明苹果在保持高端市场地位的同时，也在成功拓展中端市场。
+</div>
+<div class="news-source">来源：<a href="https://techcrunch.com/2026/06/02/apple-macbook-neo-winning-buyers/">TechCrunch</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#Binance账户支持股票交易了！#引发加密货币市场波动</a></h3>
+<div class="news-content">
+全球最大加密货币交易所币安宣布其用户现在可以直接在平台上进行股票交易，这一消息引发了加密货币市场的显著波动。币安表示，通过与多家经纪公司合作，用户可以在同一个平台上交易股票、加密货币和其他金融产品。这一举措被视为加密货币与传统金融融合的重要里程碑。市场分析师认为，这一变化将吸引更多传统投资者进入加密货币市场，同时也可能加速加密货币的合规化进程。然而，也有专家警告说，这种跨界交易可能会带来新的监管挑战和风险。
+</div>
+<div class="news-source">来源：<a href="https://weibo.com/a/hot/realtime">微博实时热点</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/02/amazon-prime-day-2026-takes-place-june-23-26/">亚马逊Prime Day 2026确定于6月23-26日举行</a></h3>
+<div class="news-content">
+亚马逊官方宣布2026年Prime Day大促活动将于6月23日至26日举行，这是公司历史上首次将Prime Day延长至四天。亚马逊表示，延长时间是为了让更多消费者能够参与购物活动，并且提供更多的优惠选择。今年的Prime Day预计将有超过100万种商品参与促销，涵盖电子产品、家居用品、服装、食品等多个品类。分析师预计，这次Prime Day将为亚马逊带来超过50亿美元的销售额，同时也会带动整个电商行业的销售增长。
+</div>
+<div class="news-source">来源：<a href="https://techcrunch.com/2026/06/02/amazon-prime-day-2026-takes-place-june-23-26/">TechCrunch</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Gloridust/WechatOnCloud">云微WOC项目获1174星标，提供自由连接微信服务</a></h3>
+<div class="news-content">
+名为"WechatOnCloud"的开源项目在GitHub上获得了1174个星标，该项目提供了一个云端的微信服务解决方案。用户可以通过这个项目实现微信的自由连接，突破地域和网络限制。该项目支持多平台部署，包括Windows、Linux和macOS，提供了稳定的连接和安全的加密传输。开发者表示，这个项目主要面向那些需要使用微信但受到网络限制的用户，特别适合外贸工作者、海外留学生和商务人士。项目的开源特性让用户可以自行部署和维护，确保数据安全和隐私保护。
+</div>
+<div class="news-source">来源：<a href="https://github.com/Gloridust/WechatOnCloud">GitHub</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/helloianneo/ian-xiaohei-illustrations">Ian Xiaohei Illustrations项目：中文小黑怪诞正文配图生成器</a></h3>
+<div class="news-content">
+Ian Xiaohei Illustrations项目是一个专门为中文内容创作设计的AI配图生成工具，已在GitHub获得1719个星标。该项目可以生成16:9比例的白底手绘风格配图，带有少量红橙蓝色批注，特别适合博客文章、公众号内容和技术文档的配图需求。项目基于Codex技能开发，提供了16种不同的手绘风格，能够自动生成与文章内容相关的插图。开发者表示，这个工具解决了中文内容创作者缺乏高质量配图的问题，大大提高了内容创作的效率和质量。项目完全开源，用户可以自行部署和定制。
+</div>
+<div class="news-source">来源：<a href="https://github.com/helloianneo/ian-xiaohei-illustrations">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Sophomoresty/gemini-web2api">Gemini Web2API项目：将Google Gemini转换为OpenAI兼容API</a></h3>
+<div class="news-content">
+Gemini Web2API项目成功将Google Gemini网络服务转换为OpenAI兼容的API格式，让用户可以使用OpenAI的客户端代码来访问Google的AI服务。该项目是零认证、跨平台的单文件解决方案，已经在GitHub获得了1215个星标。开发者表示，这个项目主要是为了解决Google Gemini和OpenAI API之间的兼容性问题，让开发者可以轻松地在现有项目中切换不同的AI服务。项目支持文本生成、图像识别和代码补料等多种功能，并且提供了详细的文档和示例代码。这个项目的出现进一步推动了AI服务的标准化和互操作性。
+</div>
+<div class="news-source">来源：<a href="https://github.com/Sophomoresty/gemini-web2api">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/GordenSun/GordenPPTSkill">Gorden PPT Skill项目：AI友好的PPT构建工具</a></h3>
+<div class="news-content">
+Gorden PPT Skill项目是一个AI友好的PPT构建工具，已在GitHub获得1536个星标。该项目提供了17个精心打磨的中文PPTX模板和文本无损编辑工具，基于python-pptx开发。用户可以选择模板，编写edit.json文件，就可以构建一个保持原有布局的真实.pptx文件。开发者表示，这个工具特别适合学术研究和个人使用，能够大大提高PPT的制作效率。项目的模板涵盖了商务、学术、创意等多种风格，并且支持自定义编辑。完全开源的特性让用户可以自由修改和扩展模板库。
+</div>
+<div class="news-source">来源：<a href="https://github.com/GordenSun/GordenPPTSkill">GitHub</a></div>
+</div>
+</div>
+
+</div></body></html>

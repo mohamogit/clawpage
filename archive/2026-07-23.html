@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News · 2026年7月23日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .a { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; }
+  }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html" selected>2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead a" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年7月23日 · 星期四</div>
+  </header>
+
+  <section class="section" id="focus">
+    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:2">
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/23/iran-war-live-us-launches-new-attacks-houthis-attack-2-saudi-oil-tankers">美伊战争第23天：美军对伊朗发动新一轮打击，胡塞武装红海攻击沙特油轮，布伦特原油突破100美元</a></div>
+      <div class="item__body">美国中央司令部于7月22日晚间宣布对伊朗境内军事目标实施新一轮打击，这是停火协议失效后美军连续第12晚的军事行动。同一天，也门胡塞武装宣布对两艘沙特阿美油轮"Encelia"和"Layla"发动导弹和无人机袭击，称其违反了对沙特的海上封锁令。两艘油轮均在红海遭袭起火，船员已被控制。布伦特原油期货随之突破每桶100美元大关，为今年5月以来首次。与此同时，伊朗革命卫队对美军驻约旦的费萨尔国王空军基地和哈桑王子空军基地发动精确打击，摧毁8架MQ-9"死神"无人机。美国国防部长赫格塞思表示，截至7月22日，美军在伊朗军事行动中已耗资375亿美元，并寻求追加670亿美元预算。特朗普威胁称，伊朗每次在霍尔木兹海峡袭击商船，美方将轰炸伊朗一座桥梁或发电厂，包括德黑兰市内设施。</div>
+      <div class="item__src">Al Jazeera / BBC / 新华社</div>
+    </div>
+  </section>
+
+  <section class="section" id="asia">
+    <h2 class="section-label section-label--global a" style="--i:3"><span class="dot"></span>亚洲 / 中国</h2>
+
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--rose">南海争端</span>
+      <div class="item__title"><a href="https://m.secretchina.com/news/gb/2026/07/23/1102399.html">中菲仁爱礁冲突升级互召大使，美澳齐声谴责中方"危险行径"</a></div>
+      <div class="item__body">7月20日，中菲两国在南海仁爱礁（菲称阿云津礁）爆发严重肢体冲突。菲律宾总统小马科斯在马尼拉亲自召见中国驻菲大使井泉，中国外交部也在北京召见菲律宾驻华大使弗洛克鲁斯，两国采取极其罕见的"互召大使"方式进行紧急交涉。菲方指控中国海警使用橡皮艇强行逼近补给船，以木棍殴打两名菲海军水兵头部致伤。中方则称菲方橡皮艇以危险方式冲撞中国巡逻艇并率先用船桨发起攻击。事件发生正值第59届东盟外长会议在马尼拉开幕，美国国务卿卢比奥和澳大利亚外长黄英贤均到场，齐声谴责中方行动。卢比奥重申"美国对东南亚航行自由的坚定承诺"。</div>
+      <div class="item__src">看中国 / 路透社 / 美国之音</div>
+    </div>
+
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--gold">日本</span>
+      <div class="item__title"><a href="https://news.usni.org/2026/07/22/japan-protests-chinese-destroyers-live-fire-drill-near-disputed-reef">日本抗议中国驱逐舰在冲之鸟礁附近EEZ内实弹射击</a></div>
+      <div class="item__body">7月19日，中国海军052D型驱逐舰"开封舰"（舷号124）在日本冲之鸟礁（日称 Okinotori Island）西南约180公里处进行机枪实弹射击训练。日本防卫大臣小野寺五典在法恩伯勒国际航展上公开此消息，内阁官房长官木原诚二随即通过外交渠道提出严正抗议。日方称中国军舰曾向日本护卫舰"五月雨"号发送射击通知。中国不承认日本基于冲之鸟礁主张的200海里专属经济区（EEZ），外交部发言人林剑表示日方抗议"毫无道理"，并反批日本借"外部威胁"加速再军事化。目前"开封舰"正与俄海军"尖锐"号护卫舰组成联合编队在菲律宾海活动。</div>
+      <div class="item__src">USNI News / 共同社</div>
+    </div>
+
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">韩日股市</span>
+      <div class="item__title"><a href="https://www.tradingkey.com/analysis/stocks/more/262048268-japan-south-korea-stocks-open-higher-kospi-tradingkey">韩国KOSPI飙升3.4%重回7000点，三星电子和SK海力士领涨</a></div>
+      <div class="item__body">7月23日亚洲早盘，韩国综合股价指数（KOSPI）大涨3.41%，重新站上7000点关口至7029.46点；日经225指数同步上涨逾0.5%至66467.88点。半导体板块领涨：SK海力士涨5%，三星电子涨3.65%至约27万韩元（约194.8美元），铠侠涨3.41%。驱动因素是谷歌将全年资本支出预期上调至1950亿至2050亿美元，表明AI基础设施投资仍在加速。CoreWeave和美光科技盘后分别上涨2.9%和2.48%，进一步提振亚洲半导体和AI概念股市场情绪。</div>
+      <div class="item__src">TradingKey</div>
+    </div>
+  </section>
+
+  <section class="section" id="middleeast">
+    <h2 class="section-label section-label--social a" style="--i:7"><span class="dot"></span>中东 / 非洲 / 拉美</h2>
+
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--rose">中东</span>
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/23/more-than-2300-israelis-storm-al-aqsa-mosque-in-jerusalem">逾2300名以色列人强闯阿克萨清真寺，极右翼部长本-格维尔带队进入</a></div>
+      <div class="item__body">7月23日犹太圣日Tisha B'Av期间，超过2300名以色列定居者和极右翼团体在重兵保护下强闯耶路撒冷阿克萨清真寺大院，以色列国家安全部长伊塔马尔·本-格维尔亲自带队进入。巴勒斯坦耶路撒冷总督府称当日进入人数最终可能达5000人，创近年同期新高。以色列警方严密封锁清真寺大门，大量巴勒斯坦礼拜者和学生被拦在外。远在拉马拉的Al Jazeera记者指出，执政的利库德集团核心人物参与标志着"根本性政治转变"——呼吁在圣殿山重建犹太圣殿的主张已获以色列政府和议会背书。巴勒斯坦宗教事务部谴责这是"危险升级"，呼吁国际社会介入。</div>
+      <div class="item__src">Al Jazeera</div>
+    </div>
+
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--accent">拉美</span>
+      <div class="item__title"><a href="https://valorinternational.globo.com/economy/news/2026/07/23/new-relief-plan-offers-r185bn-to-tariff-hit-companies.ghtml">巴西总统卢拉签署185亿雷亚尔紧急信贷计划，应对美国25%新关税</a></div>
+      <div class="item__body">巴西总统卢拉于7月22日签署临时法令，推出"主权巴西III"计划，规模达185亿雷亚尔（约37亿美元），以应对美国对巴西商品加征25%关税的冲击。其中135亿雷亚尔来自国库未分配资金，50亿雷亚尔来自巴西国家开发银行（BNDES）。该计划分三组覆盖行业：直接受美国关税影响的制造业、战略产业（关键矿产和化肥）以及向波斯湾出口的企业。贷款利率在3%至9.8%之间，低于市场水平。巴西估计约18%的对美出口受此次关税影响，贸易团体警告比例可能接近三分之一。同时巴西还面临美国以"强迫劳动"问题为由额外加征12.5%关税的威胁。卢拉表示巴西将积极开拓亚洲、欧洲和中东替代市场。</div>
+      <div class="item__src">Valor International / AFP</div>
+    </div>
+
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--sage">非洲</span>
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/23/armed-attackers-kill-more-than-20-in-northwest-nigeria">尼日利亚西北部武装匪徒袭击村庄，至少20人遇害</a></div>
+      <div class="item__body">7月22日，大量武装匪徒袭击尼日利亚西北部赞法拉州Talata Mafara地方政府区的多个村庄，造成至少20人死亡。当地代表Nasiru Lauwali称袭击发生在下午3至4时，匪徒"见人就杀"。尼日利亚西北部和中部近期暴力事件激增，武装团伙抢掠牲畜、绑架勒索赎金。据SBM Intelligence数据，2024年绑匪勒索赎金超160万美元。安全危机还因博科圣地叛乱而进一步恶化。本月早些时候，尼日利亚安全部队在西南部奥约州解救出39名学童和5名教师，这些师生被绑架长达56天。国防部长Christopher Musa称绑匪计划用人质要挟政府释放其头目。</div>
+      <div class="item__src">Al Jazeera / AFP</div>
+    </div>
+
+  </section>
+
+  <section class="section" id="europe">
+    <h2 class="section-label section-label--tech a" style="--i:11"><span class="dot"></span>欧洲 / 北美</h2>
+
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--accent">美沙关系</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cwye71yq8wwo">特朗普：沙特必须承认以色列才能达成民用核能协议</a></div>
+      <div class="item__body">美国总统特朗普于7月22日表示，与沙特的民用核合作协议将以沙特加入《亚伯拉罕协议》、正式承认以色列为前提。这是特朗普首次将核合作与以色列关系正常化绑定。他在Truth Social上发文称，协议"不会允许任何铀浓缩活动"，并强调"材料才是关键"。同日，美沙两国宣布签署核合作谅解备忘录，协议包括建设多座小型模块化反应堆（SMR）。以色列总理内塔尼亚胡称赞称，沙特加入《亚伯拉罕协议》将是"中东和平的历史性飞跃"。但沙特方面尚未正式回应。此外，韩国对美沙核协议中允许沙特铀浓缩的传闻表示强烈关切，称这将对朝鲜半岛核不扩散体系构成"双重标准"。</div>
+      <div class="item__src">BBC / Al Jazeera / NYT</div>
+    </div>
+
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--teal">能源危机</span>
+      <div class="item__title"><a href="https://www.nytimes.com/2026/07/23/business/bangladesh-farmers-diesel-water-iran.html">柴油价格飙升冲击全球贫困农民，发展中国家属地粮食安全告急</a></div>
+      <div class="item__body">纽约时报报道指出，持续上涨的柴油价格正严重冲击发展中国家的小农户。以孟加拉国为例，农民依靠柴油水泵灌溉稻田，但过去一个月柴油价格上涨超过40%。在印度、巴基斯坦和非洲多地，情况类似。全球柴油供应受到三重打击：霍尔木兹海峡封锁切断中东原油出口、胡塞武装红海封锁阻断炼油产品转运、以及欧美炼厂产能持续下降。国际能源署（IEA）警告称，柴油短缺将直接影响粮食生产——灌溉、收割、运输均依赖柴油。粮农组织（FAO）已发出预警，如果柴油价格继续高位运行，部分发展中国家可能在2027年第一季度出现粮食供应紧张。</div>
+      <div class="item__src">New York Times</div>
+    </div>
+
+  </section>
+
+  <section class="section" id="tech">
+    <h2 class="section-label section-label--finance a" style="--i:14"><span class="dot"></span>科技新闻</h2>
+
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--teal">AI芯片</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/23/ai-chip-startup-etched-defies-skeptics-hits-10-3b-valuation-from-big-name-investors/">AI芯片初创公司Etched估值飙至103亿美元，顶级投资机构逆势押注</a></div>
+      <div class="item__body">专注于AI推理芯片的初创公司Etched宣布完成新一轮融资，估值达到103亿美元，投资方包括多位知名机构。Etched开发名为"Sohu"的专用架构芯片（ASIC），专为大语言模型推理设计，声称在特定AI工作负载上能效比是NVIDIA H100的10倍以上。在整体AI芯片市场面临过热质疑的背景下，Etched的融资反映了投资者对"专用推理芯片"细分赛道的信心。该公司计划用新资金加速量产，并已与多家云服务商签订早期部署协议。Etched此前曾获Sam Altman和GitHub前CEO Nat Friedman等科技圈知名人士的天使投资。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--gold">AI平台</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini/">Google Gemini日活逼近10亿，成为下一个十亿用户级产品</a></div>
+      <div class="item__body">谷歌旗下AI助手Gemini正快速逼近月活10亿用户的重要里程碑。据内部人士透露，Gemini的日活跃用户在过去三个月增长了约40%，主要驱动因素包括：深度集成到Android系统、Chrome浏览器内置的"帮我写"功能，以及Google Workspace中的AI写作助手。谷歌CEO Sundar Pichai在内部会议上将Gemini形容为"谷歌下一代计算平台的基础"。分析师指出，如果Gemini突破10亿用户，将成为继Google Search、YouTube、Android、Gmail、Google Maps和Google Play之后，谷歌第七个十亿用户级产品。谷歌还将全年资本支出预期上调至1950-2050亿美元，印证其在AI基础设施上的持续大规模投入。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--sage">太空探索</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/23/nvidia-is-sending-gpus-to-the-moon/">NVIDIA将把GPU送往月球：为月球表面AI计算提供边缘算力</a></div>
+      <div class="item__body">NVIDIA宣布将与多家航天机构合作，向月球表面运送定制版GPU计算模块。这些抗辐射加固的GPU将用于月球着陆器和巡视车的实时AI计算，包括自主导航、地质样本分析和地月通信优化。项目初期将部署在计划于2027年初发射的NASA月球着陆器上。NVIDIA称，月球表面的AI计算能力对于支撑"阿尔忒弥斯"载人登月计划和未来月球基地建设至关重要，因为地月通信延迟长达数秒，必须靠边缘AI实现自主决策。此项目也标志着AI芯片在极端环境应用中的重大突破。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--accent">电动汽车</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/07/23/ford-bets-on-apple-for-its-next-generation-of-evs/">福特押注苹果：下一代电动汽车将深度集成Apple生态</a></div>
+      <div class="item__body">福特汽车宣布与苹果达成深度合作，其下一代电动汽车将全面采用Apple技术体系。新车将搭载基于Apple Silicon的中央计算平台、iOS化的车载信息娱乐系统，以及深度集成的Apple Maps导航和Siri语音控制。福特CEO Jim Farley表示这是"汽车行业的iPhone时刻"，预计新平台将显著降低开发时间和成本。福特计划2028年推出首款搭载Apple技术的电动车型。此举标志着传统车企在电动车软件竞争中探索差异化路线，也意味着苹果"泰坦计划"虽然内部终止，但其技术与生态正通过B2B合作进入汽车行业。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-label section-label--projects a" style="--i:19"><span class="dot"></span>开源 / 社区</h2>
+
+    <div class="item a" style="--i:20"><span class="item__tag item__tag--slate">开源</span>
+      <div class="item__title"><a href="https://github.com/nethical6/conversation-steganography">conversation-steganography ⭐1058 — 用LLM将秘密信息隐藏在正常对话中</a></div>
+      <div class="item__body">一个新颖的开源项目，利用大语言模型（LLM）在看似普通的对话中嵌入和提取隐写信息。用户可以向模型提供一个"密文"和一个"对话语境"，LLM会生成一段自然流畅的对话，其中密文被巧妙编码在措辞、语气和词汇选择中。接收方使用同一模型即可解码。项目支持多种LLM后端（包括DeepSeek、GPT-4o、Claude），且无需训练自定义模型。这一工具引发了对AI时代信息隐藏技术的新型讨论——当AIGC内容充斥网络，隐写检测将变得前所未有的困难。MIT许可证。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+
+    <div class="item a" style="--i:21"><span class="item__tag item__tag--teal">开源</span>
+      <div class="item__title"><a href="https://github.com/Blaizzy/nativ">nativ ⭐801 — macOS上本地运行AI模型的原生桌面应用</a></div>
+      <div class="item__body">nativ 是一个面向macOS的原生AI应用，支持用户在本地运行、聊天、服务和监控MLX模型。它整合了聊天界面、模型下载管理、性能监控和API服务等功能，无需联网即可使用强大的开源AI模型。特别针对Apple Silicon（M系列芯片）优化，利用MLX框架充分发挥统一内存架构的优势。一键加载Llama、Mistral、DeepSeek等模型，适合注重隐私的用户。项目还内置了Prompt模板库和对话历史管理。MIT许可证。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+
+    <div class="item a" style="--i:22"><span class="item__tag item__tag--sage">开源</span>
+      <div class="item__title"><a href="https://github.com/Jakubantalik/thinking-orbs">thinking-orbs ⭐776 — AI应用与Agent界面的动态"思考中"指示器</a></div>
+      <div class="item__body">一个专注于AI应用UX的轻量级CSS/SVG动画库，提供六种不同"思考中"状态的圆点指示器动画。包含两个尺寸模式，自动适配暗色/亮色主题。这个项目回应了AI助手界面中一个真实痛点：当模型推理时，用户需要获得清晰且愉悦的等待反馈而非空白加载。设计师Jakub Antalik将心理认知模型映射到六个不同状态（如"初始思考"、"深度推理"、"生成中"），每个状态有独特的动画节奏。目前已集成到多个ChatGPT开源替代品的UI框架中。MIT许可证。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+
+    <div class="item a" style="--i:23"><span class="item__tag item__tag--accent">社区</span>
+      <div class="item__title"><a href="https://www.v2ex.com/t/1229233">V2EX热议："AI果然让某些人变得更自信了"</a></div>
+      <div class="item__body">V2EX 社区一则热门帖子引发了关于AI如何影响人类自信心的讨论。发帖人观察到，自从AI编程工具（如Cursor、GitHub Copilot、DeepSeek Coder）普及后，部分开发者出现了两种极端现象：有人过度自信，把AI生成的代码直接上线而不过审；也有人因AI能力太强而产生"存在性焦虑"。回复中观点分化明显——有人认为AI只是工具，核心仍是工程师的判断力；也有人担忧"AI会让Junior开发者永远Junior"，因为过度依赖AI会阻碍底层知识的积累。帖子引发同日的"VibeCoding"实践讨论热潮。</div>
+      <div class="item__src">V2EX</div>
+    </div>
+
+    <div class="item a" style="--i:24"><span class="item__tag item__tag--gold">社区</span>
+      <div class="item__title"><a href="https://www.v2ex.com/t/1229247">V2EX讨论：5年后高端新能源车"御三家"会是谁？</a></div>
+      <div class="item__body">V2EX用户发起投票讨论5年后（2031年）高端新能源车市场的"御三家"（前三强）。选项涵盖Tesla、比亚迪/仰望、蔚来、理想、华为（问界/智界）、小米、小鹏、BBA的电动子品牌以及福特、通用等传统车企的电动化转型。目前Tesla和比亚迪/仰望几乎被公认将占据两席。最大的争议点集中在第三名：蔚来（换电生态与社区运营）、华为系（智选车模式与鸿蒙生态）、小米（性价比与生态链整合）各获大量支持。有用户指出，此讨论忽略了电池技术突破可能带来的"黑马"以及传统豪华品牌（BBA+保时捷）在高端市场的品牌壁垒。</div>
+      <div class="item__src">V2EX</div>
+    </div>
+
+  </section>
+
+  <footer class="foot a" style="--i:25">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>

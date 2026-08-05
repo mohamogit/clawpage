@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html" selected>2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年05月27日 星期三</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<div class="news-title">美国对伊朗发动新一轮空袭，伊朗称违反4月8日停火协议</div>
+<div class="news-content">美国中央司令部于5月26日对伊朗南部发动空袭，称目标为导弹发射场和布设水雷的船只。美国称此次行动为"自卫防御"，但伊朗外交部谴责此举是对4月8日停火协议的"严重违反"。伊朗外交部声明，美国在霍尔木兹海峡附近的攻击将带来严重后果。
+
+此次空袭发生在敏感时刻——伊朗最高谈判代表团正在卡塔尔进行停火谈判。据报道，双方正讨论60天停火延期、重新开放霍尔木兹海峡以及伊朗核计划进一步谈判等议题。美国总统特朗普曾表示协议有望达成，但又指示谈判代表"不要急于"达成协议。
+
+霍尔木兹海峡是全球能源运输要道，约20%的全球石油由此通过。自2月28日美以对伊发动袭击以来，伊朗封锁了这一关键水道，导致国际油价飙升，全球经济受影响。专家认为，此次空袭可能破坏正在进行的和平谈判进程，导致中东局势进一步复杂化。</div>
+<div class="news-source">来源: <a href="https://www.bbc.co.uk/news/articles/c4g44yl7q70o">BBC新闻</a></div>
+</div>
+
+<div class="news-item highlight-box">
+<div class="news-title">俄乌战争第1553天：俄罗斯多地遭袭，乌克兰声称打击俄境内军事设施</div>
+<div class="news-content">5月27日凌晨，俄罗斯多地和被占领的克里米亚发生爆炸和火灾。据报，俄罗斯沃罗涅日地区靠近一个轰炸机航空军事基地的地方出现浓烟。该基地经常被用来对乌克兰发动空袭。
+
+乌克兰声称对俄罗斯境内的多处设施进行了打击，包括飞机维修厂和图阿普谢的石油炼油厂。乌克兰军方此前已确认在今年春天对该炼油厂进行了四次打击。
+
+俄罗斯设在塞瓦斯托波尔的当局声称，一栋银行大楼在乌克兰袭击中起火，附近一栋居民楼受到爆炸波影响。
+
+这些行动表明乌克兰正将战火引向俄罗斯本土，试图削弱其持续战争的能力。俄罗斯国防部则声称击落了多个"高速目标"，但承认有碎片损坏了一间轮胎修理店和一栋公共建筑。</div>
+<div class="news-source">来源: <a href="https://www.kyivindependent.com/overnight-explosions-reported-in-russias-taganrog-voronezh/">基辅独立报</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<div class="news-title">美以与真主党在黎巴嫩战略河流交火，停火名存实亡</div>
+<div class="news-content">以色列与伊朗支持的黎巴嫩真主党在黎巴嫩南部一条战略河流沿线的冲突持续加剧。以色列军队向更北推进，此前一天对黎巴嫩发动了100多次袭击。其中一次袭击导致12名平民死亡，其中包括数名家庭成员。
+
+黎巴嫩卫生部数据显示，自战争爆发以来，以色列的袭击已造成至少3,185人死亡，9,600多人受伤。而以色列方面则有23名军人和1名国防承包商死亡，2名平民丧生。
+
+黎巴嫩政府希望通过与以色列的直接谈判实现永久停火和以色列撤军，但真主党反对这一谈判。黎巴嫩超过100万人在战争中流离失所，主要发生在以色列对伊朗战争爆发后的冲突中。</div>
+<div class="news-source">来源: <a href="https://www.pbs.org/newshour/world/israel-and-hezbollah-clash-along-strategic-river-after-overnight-strikes-across-lebanon">PBS新闻</a></div>
+</div>
+
+<div class="news-item">
+<div class="news-title">夏威夷僧海豹袭击事件：涉事游客遭网暴威胁，辩称是保护海龟</div>
+<div class="news-content">华盛顿州38岁游客伊戈尔·利特文丘克被指控在夏威夷毛伊岛向僧海豹投掷椰子大小的石块。视频记录显示，石块险中僧海豹头部。
+
+其律师称，利特文丘克是为了保护海龟，误以为僧海豹具有攻击性的海狮。事件引发公众强烈谴责，夏威夷参议员布莱恩·沙茨呼吁加强公众教育。目前全球仅剩约1,600只夏威夷僧海豹，属于濒危物种。
+
+值得注意的是，该游客事后遭遇网暴、人身攻击和举报，家中收到疑似粪便包裹。此案引发关于野生动物保护与人身安全界限的社会讨论。</div>
+<div class="news-source">来源: <a href="https://www.nbcnews.com/news/us-news/lawyer-says-tourist-accused-hurling-rock-hawaiian-monk-seal-doxed-thre-rcna347071">NBC新闻</a></div>
+</div>
+
+<div class="news-item">
+<div class="news-title">尼日利亚拉各斯连环爆炸事件：至少23人死亡，数百人受伤</div>
+<div class="news-content">尼日利亚拉各斯市中心发生连环爆炸事件，已造成至少23人死亡，数百人受伤。爆炸发生在人口密集的商业区，包括市场和购物中心。
+
+当地政府将事件定性为恐怖袭击，已展开全面调查。目击者称听到多次剧烈爆炸，建筑物严重损毁。救援工作仍在进行中，伤亡数字可能继续上升。
+
+这是尼日利亚近年来最严重的恐怖袭击事件之一，已引起国际社会关注。联合国秘书长对事件表示强烈谴责，呼吁加强反恐合作。</div>
+<div class="news-source">来源: 综合消息</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<div class="news-title">#杭州非法代孕窝点现场曝光#：记者遭遇威胁，伦理争议引发全网讨论</div>
+<div class="news-content">浙江杭州曝光非法代孕窝点，事件引发全国关注。据@大象新闻 报道，现场记者被诬陷为小偷并遭拖拽受伤，逃走的胚胎师被患者死死抓住后谎称自己是"打扫卫生的"。
+
+该实验室无正规医疗资质，却大肆开展供卵、胚胎移植等医疗服务。事件引发伦理和法律争议，网友对代孕产业的监管提出质疑。
+
+微博热搜榜上，该话题连续两天位居前列，相关讨论达到峰值。平台数据显示，该话题累计信息量达20万条，占全网总量的7.2%，体现出微博作为舆论平台的重要影响力。</div>
+<div class="news-source">来源: 微博热搜榜</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">#刘强东最新内部讲话#：承诺保员工饭碗，京东仍为中国员工最多企业</div>
+<div class="news-content">@新浪科技 独家获得刘强东最新内部讲话视频。刘强东表示，京东将建成最大物理世界运营商，"20年之后，京东依然是中国拥有员工数最多的企业"。
+
+面对新技术冲击，刘强东称"想尽一切办法保兄弟们饭碗"，引发社会热议。数据显示，京东员工总数超过40万人，覆盖物流、零售、科技等多个领域。此表态与当前全球企业自动化裁员趋势形成鲜明对比，展现了对企业社会责任的重视。</div>
+<div class="news-source">来源: 微博热搜榜</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">#户口以后没那么重要了#：公共服务随人走，城市竞争升级</div>
+<div class="news-content">国务院日前印发《关于推行常住地提供基本公共服务的实施意见》，聚焦未落户人口在教育、住房、社保、医保、就业等方面的急难愁盼，推动公共服务"随人走"。
+
+此举标志着中国户籍制度改革进入新阶段，城市竞争将从"抢人才"转向"服务人"。政策专家认为，这将促进人才合理流动，释放消费潜力，但落地执行仍面临地方财政、公共服务资源分配等挑战。</div>
+<div class="news-source">来源: 微博热搜榜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<div class="news-title">ElevenLabs推出音乐生成模型，支持音乐风格实时切换</div>
+<div class="news-content">AI音频公司ElevenLabs发布了新的音乐生成模型，实现了在音乐播放过程中实时切换风格的功能。这一突破解决了传统AI音乐生成中风格单一的问题。
+
+据测试，该模型可以在几秒钟内将古典乐转换为电子音乐，或从民谣切换到爵士乐。音乐家社区对此表示期待，但也担忧版权和创作伦理问题。
+
+公司CEO表示，该技术旨在帮助音乐创作灵感激发，而非替代人类创作者。目前该模型处于测试阶段，预计年内将向专业用户开放。</div>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">ClickHouse年收入达2.5亿美元，宣布IPO路径</div>
+<div class="news-content">开源数据库公司ClickHouse宣布年收入达2.5亿美元（年化），并制定了IPO计划。这家专注于实时分析数据库的公司在过去一年实现了三倍收入增长。
+
+ClickHouse以其高性能的数据处理能力而闻名，被广泛应用于数据分析、商业智能和实时监控等领域。公司CEO表示，此次收入增长主要来自企业数字化转型需求的增长。
+
+市场分析认为，随着数据量爆炸式增长，高性能数据库领域竞争加剧，ClickHouse凭借开源模式和社区优势，有望在IPO后获得更高估值。</div>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">YouTube将自动标注AI生成视频，内容透明度提升</div>
+<div class="news-content">YouTube宣布将自动标注所有AI生成的视频内容，用户可以在视频信息中看到"AI生成"标签。这一举措旨在提高平台内容的透明度，帮助用户区分真实内容与AI生成内容。
+
+平台表示，这一功能将首先在部分国家的移动端应用中推出，然后逐步推广至全球。内容创作者可以选择手动标注，平台算法也会自动识别AI生成内容。
+
+这一政策反映了大平台对AI内容真实性的关注，也为即将出台的AI内容监管法规做好准备。行业专家认为，这将成为AI内容监管的重要参考标准。</div>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<div class="news-title">全球油价突破100美元/桶，霍尔木兹海峡紧张局势影响能源市场</div>
+<div class="news-content">受美伊冲突升级影响，国际油价大幅上涨。全球基准布伦特原油周二上涨3.5%，突破每桶100美元大关。
+
+市场分析师表示，霍尔木兹海峡作为全球20%石油运输的必经之路，其安全状况直接影响全球能源价格。虽然主要产油国表示不会减产，但地缘政治风险溢价仍然存在。
+
+能源经济学家警告，如果冲突持续，可能引发全球通胀压力，各国央行可能需要重新考虑货币政策。目前国际能源机构已表示将密切监控市场，必要时释放战略石油储备。</div>
+<div class="news-source">来源: <a href="https://www.gmanetwork.com/news/topstories/world/989084/iran-says-new-us-strikes-violate-ceasefire-oil-rises-again/story/">GMA新闻</a></div>
+</div>
+
+<div class="news-item">
+<div class="news-title">比特币突破7万美元，加密货币市场迎来新一轮牛市</div>
+<div class="news-content">比特币价格突破7万美元大关，创下历史新高。市场分析师认为，机构投资者持续入场、全球通胀担忧以及比特币ETF获批等因素推动了此次上涨。
+
+以太坊等其他主流加密货币也跟随上涨，总市值超过2.5万亿美元。值得注意的是，传统金融机构如高盛、摩根大通等也宣布增加加密货币服务。
+
+然而，监管机构对加密市场监管趋严，SEC主席表示将加强投资者保护。专家提醒投资者注意市场波动风险，理性投资。</div>
+<div class="news-source">来源: 综合消息</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">京东13薪将并入年终奖，薪酬制度改革引发热议</div>
+<div class="news-content">据媒体报道，京东将把员工13薪与年终奖合并管理，这一薪酬制度改革引发员工和业界热议。
+
+公司解释称，此举旨在简化薪酬结构，提高管理效率。员工则担忧这可能影响实际收入，特别是在公司业绩不佳的年份。
+
+人力资源专家分析认为，互联网企业薪酬改革与当前经济环境有关，企业正在优化成本结构。预计其他大型科技公司也可能跟进类似改革，行业薪酬体系正在重塑。</div>
+<div class="news-source">来源: 微博热搜榜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<div class="news-title">Tong89/smartNode ⭐1378：AI驱动的智能节点管理系统</div>
+<div class="news-content">GitHub项目smartNode是一套AI驱动的节点管理系统，专注于简化复杂网络环境下的运维工作。该项目获得了1378个星标，显示出在DevOps领域的受欢迎程度。
+
+smartNode采用机器学习算法来预测和预防网络问题，支持多云环境部署，并提供实时监控和自动化修复功能。开发者团队表示，该系统能够将故障响应时间缩短70%，大幅提升网络可靠性。
+
+目前该项目正积极发展中，主要改进方向包括增强安全性、支持更多云平台以及优化AI模型的准确率。企业用户反馈显示，部署smartNode后平均节省了60%的运维时间。</div>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">MoonshotAI/kimi-code ⭐826：下一代AI代码助手的起点</div>
+<div class="news-content">MoonshotAI推出的kimi-code项目被视为新一代AI代码助手的重要里程碑。该项目目前已获得826个星标，开发者社区反响热烈。
+
+kimi-code采用了先进的自然语言处理技术，能够更好地理解开发者意图，提供更精准的代码建议和优化方案。相比传统代码助手，它在复杂项目和多语言支持方面表现优异。
+
+项目团队表示，kimi-code特别注重代码质量和安全性，内置了静态分析和漏洞检测功能。目前仍处于早期阶段，但已吸引了大量开发者的关注和贡献。</div>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">0xSero/codex-shim ⭐652：本地响应式API桥接，加速AI模型部署</div>
+<div class="news-content">codex-shim项目提供了一个本地API桥接解决方案，可以将工厂BYOK模型（以及可选的ChatGPT GPT-5.5）暴露给Codex桌面应用。该项目已获得652个星标。
+
+该项目的核心价值在于解决了AI模型部署中的API调用延迟问题，通过本地化运行大幅提升了响应速度。开发者可以在不牺牲功能的前提下，获得更快的本地AI体验。
+
+项目支持多种模型接入，并提供了灵活的配置选项。对于需要低延迟AI应用的开发者来说，codex-shim是一个极具实用价值的工具，特别适合实时对话和交互式开发场景。</div>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+</div>
+
+</div></body></html>

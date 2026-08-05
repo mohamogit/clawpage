@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html" selected>2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月26日 星期二</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/may/25/iran-bomb-trump-deal-sparks-alarm-israel-netanyahu">特朗普伊朗核协议引发以色列安全危机</a></h3>
+<div class="news-content">
+特朗普今年2月联合以色列对伊朗发动先发制人战争，本被内塔尼亚胡誉为政治生涯的巅峰成就。然而三个月后，该地区局势急剧恶化。随着特朗普最新提出的伊朗核协议框架，以色列安全警报持续升级。内塔尼亚胡政府紧急评估特朗普协议中的漏洞，担忧伊朗可能加速核武器研发，威胁以色列国家安全。美国方面则试图在维持中东稳定与履行对以色列安全承诺之间寻求平衡，以色列民众对局势发展表示担忧，国际社会正密切关注事态进展。
+</div>
+<div class="news-source">来源: <a href="https://www.theguardian.com">The Guardian</a></div>
+</div>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.euronews.com/my-europe/2026/05/26/eu-to-favour-european-satellite-services-to-prevent-musks-starlink-expansion">欧盟出手限制SpaceX星链扩张</a></h3>
+<div class="news-content">
+欧盟委员会本周将通过一项决定，优先选择欧洲卫星运营商服务，旨在阻止埃隆·马斯克旗下SpaceX的星链服务在欧洲的扩张。这一决定反映了欧盟在太空技术领域寻求战略自主的立场，同时也回应了欧洲航天产业对美国科技巨头日益增长的市场份额的担忧。该政策将直接影响全球卫星互联网市场的竞争格局，欧洲航天公司有望获得更多发展机会，但消费者可能会面临服务价格变化。
+</div>
+<div class="news-source">来源: <a href="https://www.euronews.com">Euronews</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.yahoo.com/news/articles/ireland-ban-goods-israeli-settlements-110752611.html">爱尔兰将于7月禁止进口以色列定居点商品</a></h3>
+<div class="news-content">
+爱尔兰计划通过一项法律，限制与以色列占领西岸定居点的贸易，预计7月中旬实施。这一举措遭到以色列、部分美国立法者和企业集团的反对。此举表明欧洲国家对以色列定居点政策的批评正在加强，可能引发国际社会对巴以问题的更多关注。
+</div>
+<div class="news-source">来源: <a href="https://www.yahoo.com">Yahoo News</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.jpost.com/israel-news/defense-news/article-897342">真主党发动史上最大无人机袭击以色列北部</a></h3>
+<div class="news-content">
+黎巴嫩真主党对以色列北部地区发动了史上最大规模的无人机袭击，标志着地区紧张局势持续升级。以军迅速作出反应，内塔尼亚胡下令加强对真主党的打击力度。美国官员表示可能很快批准以色列对黎巴嫩真主党的更大规模军事行动。
+</div>
+<div class="news-source">来源: <a href="https://www.jpost.com">Jerusalem Post</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c70vvd17rg7o">比利时发生校车与列车相撞事故，造成4人死亡</a></h3>
+<div class="news-content">
+比利时布亨豪特地区发生严重交通事故，一辆载有7名儿童和2名成人的校车与列车相撞，造成2名12岁和15岁的儿童以及2名成人死亡。事故引发对铁路道口安全管理的广泛讨论，当地政府已启动安全调查。
+</div>
+<div class="news-source">来源: <a href="https://www.bbc.com">BBC</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.firstpost.com/auto/self-driving-bus-in-sweden-crashes-with-tram-on-first-day-of-passenger-service-14015075.html">瑞典自动驾驶公交车首日运营即与有轨电车相撞</a></h3>
+<div class="news-content">
+瑞典哥德堡的自动驾驶公交测试项目在首日载客运营时就发生事故，车辆与有轨电车相撞。该测试项目已被暂停，事故引发了公众对自动驾驶技术安全性的质疑。这是自动驾驶技术在公共交通领域应用的重要挫折，相关安全监管将面临更严格审查。
+</div>
+<div class="news-source">来源: <a href="https://www.firstpost.com">First Post</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">武契奇参访小米汽车工厂</a></h3>
+<div class="news-content">
+正在对中国进行国事访问的塞尔维亚总统武契奇抵达小米汽车工厂参访。这一访问表明中国新能源汽车在国际市场的影响力持续扩大，小米作为科技企业在汽车领域的创新受到国际关注。
+</div>
+<div class="news-source">来源: <a href="https://weibo.com">微博</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">小米一季度净利润60.72亿元</a></h3>
+<div class="news-content">
+小米集团公告显示，2026年第一季度营业收入991.42亿元，同比下降10.9%；经调整净利润60.72亿元，同比下降43.1%。尽管智能手机收入达到443亿元人民币，但整体业绩显示出行业竞争加剧带来的压力。
+</div>
+<div class="news-source">来源: <a href="https://weibo.com">微博</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">印度多地遭历史罕见热浪袭击</a></h3>
+<div class="news-content">
+2026年5月，印度多地遭受历史罕见的热浪侵袭，部分地区地表温度逼近50°C。新德里气温达到45.3°C，北方邦城市班达气温高达47.6°C。特伦甘纳邦政府表示，今年入夏以来高温已导致至少16人死亡。
+</div>
+<div class="news-source">来源: <a href="https://weibo.com">微博</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://perplexityai/bumblebee">Bumblebee成为热门开源项目</a></h3>
+<div class="news-content">
+PerplexityAI的Bumblebee项目获得广泛关注，这是一个只读的开发者端扫描器，用于检测磁盘上的包、扩展和开发者工具元数据，专门设计用于检查已知的软件供应链漏洞。该项目目前获得近3000颗星标，表明开源社区对软件供应链安全的重视。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Tong89/smartNode">智能节点项目引发关注</a></3>
+<div class="news-content">
+GitHub上的SmartNode项目获得近千颗星标，该项目可能涉及智能合约或区块链技术。开源社区对这类工具的持续关注反映了区块链技术在实际应用中的重要性，同时也显示出开发者对智能合约安全性的高度重视。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/run-liyi/wechatpay">微信账单分析工具发布</a></3>
+<div class="news-content">
+GitHub上的微信账单分析工具基于Electron开发的可视化账单分析应用，获得近700颗星标。这反映了用户对个人财务管理的需求增加，同时也显示了跨平台桌面应用在个人理财领域的应用前景。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/environment/2026/may/25/louisiana-state-senator-jay-morris-meta-datacenter">路易斯安那州议员助Meta建数据中心后高价出售相邻土地</a></3>
+<div class="news-content">
+路易斯安那州议员Jay Morris帮助Meta建造该州最大的数据中心项目，随后以高价出售了数据中心旁边的土地。这一行为引发对政商利益冲突的质疑，环境调查新闻机构Floodlight对此事进行了深入报道，揭示了政治权力与商业利益之间的复杂关系。
+</div>
+<div class="news-source">来源: <a href="https://www.theguardian.com">The Guardian</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.denver7.com/lifestyle/health/arapahoe-county-man-recovering-after-contracting-hantavirus-infection-not-tied-to-cruise-ship-cluster">科罗拉多州汉坦病毒感染病例增加</a></3>
+<div class="news-content">
+阿勒派县一名男子确诊感染一种科罗拉多本地流行的汉坦病毒变种，目前正在家中康复。当地卫生官员表示这种病毒与游轮船上的聚集性感染无关。随着气候变暖，这种由啮齿动物传播的疾病在特定地区的发病率有所上升。
+</div>
+<div class="news-source">来源: <a href="https://www.denver7.com">Denver 7</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cg5ppg50gplo">中国处决杀害知名游戏富豪的凶手</a></3>
+<div class="news-content">
+中国 authorities 已处决一名因杀害其合伙人、亿万富翁游戏大亨林奇的前律师徐瑶。这起案件发生在2024年，显示了中国对严重犯罪的严厉打击态度。案件也反映出游戏行业的商业竞争激烈程度。
+</div>
+<div class="news-source">来源: <a href="https://www.bbc.com">BBC</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/open-gsd/get-shit-done-redux">Get Shit Done Redux项目</a></3>
+<div class="news-content">
+开源项目"Get Shit Done, the Aftermath"获得超过1000颗星标，这个项目关注生产力工具和任务管理。在当今快节奏的工作环境中，这类项目管理工具的需求持续增长，反映出职场人士对提高工作效率的追求。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/MoonshotAI/kimi-code">Kimi Code成为新一代智能代理起点</a></3>
+<div class="news-content">
+月之暗面公司的Kimi Code项目获得近700颗星标，被定位为"新一代智能代理的起点"。这显示了AI代理技术的快速发展，以及开发者对智能代码辅助工具的高度认可。这类技术正在改变传统的软件开发模式。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/kageroumado/phosphene">macOS动态壁纸引擎Phosphene</a></3>
+<div class="news-content">
+Phosphene是一个macOS动态壁纸引擎项目，获得近700颗星标。随着Apple Vision Pro等设备的发展，动态壁纸和视觉特效越来越受到用户青睐，这类工具满足了用户对个性化视觉体验的需求。
+</div>
+<div class="news-source">来源: <a href="https://github.com">GitHub</a></div>
+</div>
+</div>
+
+</div></body></html>

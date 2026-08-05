@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html" selected>2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月14日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://abcnews.com/US/wireStory/qatari-mediators-travel-tehran-final-touches-deal-end-133859575">Qatari mediators travel to Tehran for final touches on a possible deal to end war</a></h3>
+<p class="news-content">ISLAMABAD -- Iran and the U.S. inched closer to a deal to end the Iran war, as Qatari mediators traveled to Tehran on Sunday to finalize the agreement. The officials expressed cautious optimism that the U.S. and Iran were finally approaching an agreement that could halt hostilities that have killed thousands of people and reopen the Strait of Hormuz, whose closure has thrown world markets into disarray. Trump said the Strait of Hormuz would open immediately after signing.</p>
+<div class="news-source">来源: ABC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">UK set to announce social media ban for under-16s</a></h3>
+<p class="news-content">The United Kingdom is set to announce a comprehensive ban on social media access for children under 16 years old. The measure aims to protect young people from online harms and excessive screen time, with implementation expected to begin later this year.</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Royal Marines board Russian shadow fleet oil tanker in English Channel</a></h3>
+<p class="news-content">Royal Marines have boarded a Russian shadow fleet oil tanker in the English Channel in a significant maritime security operation. The action comes amid ongoing tensions over maritime security and sanctions enforcement against Russian vessels.</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+PLACEHOLDER_FOCUS
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://abcnews.com/US/wireStory/qatari-mediators-travel-tehran-final-touches-deal-end-133859575">Qatari mediators travel to Tehran for final touches on a possible deal to end war</a></h3>
+<p class="news-content">Iran and the U.S. inched closer to a deal to end the Iran war, as Qatari mediators traveled to Tehran on Sunday to finalize the agreement. The officials expressed cautious optimism that the U.S. and Iran were finally approaching an agreement that could halt hostilities and reopen the Strait of Hormuz.</p>
+<div class="news-source">来源: ABC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Swiss voters reject 10 million population cap, early projections say</a></h3>
+<p class="news-content">Swiss voters have rejected a proposal to cap the country's population at 10 million people. Early projections indicate that the initiative, which aimed to limit immigration and control population growth, was defeated in a national referendum.</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Knicks win first NBA championship in 53 years, igniting pandemonium in NYC</a></h3>
+<p class="news-content">The New York Knicks have won their first NBA championship in 53 years, defeating the San Antonio Spurs 94-90 in Game 5. The victory has sparked massive celebrations across New York City, with fans pouring into the streets to celebrate the long-awaited title.</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+PLACEHOLDER_GLOBAL
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">世界杯在中国的收视率爆了</a></h3>
+<p class="news-content">2026美加墨世界杯在国内的收视率直接爆了，完全碾压同时间段的其他节目，看来今天上班摸鱼的人不少，也有一些幸运打工人，直接用上「补觉卡」，是谁羡慕了我不说～</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">鸿蒙7开发者Beta正式发布</a></h3>
+<p class="news-content">#鸿蒙生态驶入高速增长快车道#HDC 2026高能开场！本次大会带来超多鸿蒙的全新升级，系统流畅度、AI智能玩法、跨设备互联体验全面焕新，综合体验直接拉满。</p>
+<div class="news-source">来源: 小红书热门</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">华为鸿蒙7首次亮相</a></h3>
+<p class="news-content">华为鸿蒙7系统正式亮相，带来了全新的用户体验和功能升级。从日常娱乐到办公使用，各类功能都做到极致，在一次又一次的更新中成为体验天花板。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+PLACEHOLDER_WEIBO
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Anthropic suspends access to new AI models after government directive</a></h3>
+<p class="news-content">Anthropic has suspended access to Fable 5 and Mythos 5 models after receiving a government directive that any foreign national accessing these models could face criminal charges. The company is reportedly disabling the models entirely to comply with the regulations.</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Meta reportedly moves to unwind $2B Manus deal after Beijing's demand</a></h3>
+<p class="news-content">Meta is reportedly moving to unwind a $2 billion deal with Manus AI following demands from Chinese authorities. The deal involved AI technology development and has become controversial amid escalating tech tensions between the US and China.</p>
+<div class="news-source">来源: Tech Industry News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">OpenAI faces investigation from state attorneys general</a></h3>
+<p class="news-content">OpenAI is facing investigations from multiple state attorneys general over potential harm caused by AI models. The probe comes as AI regulation becomes an increasingly important issue as the technology becomes more prevalent in daily life.</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+PLACEHOLDER_TECH
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">SpaceX soars after trading begins in largest IPO of all time</a></h3>
+<p class="news-content">SpaceX has begun trading with the largest IPO in history, making Elon Musk the world's first-ever trillionaire. The company's stock performance has exceeded expectations, with significant gains in early trading.</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">Brazil reports drop in Amazon deforestation rates</a></h3>
+<p class="news-content">Brazil has reported a significant drop in Amazon deforestation rates, pushing back against US tariff accusations. The improvement comes as Brazil works to balance environmental protection with economic development.</p>
+<div class="news-source">来源: Environmental News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">US producer prices rose 6.5% on higher energy prices</a></h3>
+<p class="news-content">US producer prices rose 6.5% on higher energy prices, marking the largest yearly jump since 2022. The increase reflects ongoing inflationary pressures in the economy, particularly in the energy sector.</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+PLACEHOLDER_FINANCE
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/XiaomiMiMo/MiMo-Code">XiaomiMiMo/MiMo-Code</a></h3>
+<p class="news-content">An open-source AI coding agent with cross-session memory. MiMoCode is a terminal-native AI coding assistant. It can read and write files across sessions, maintaining context and understanding project structure over time. The project has gained significant traction with 8,224 stars.</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></h3>
+<p class="news-content">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote. 80-94% less code · 3-6× faster · 47-77% cheaper. Median of 10 runs across Haiku, Sonnet, and Opus.</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/shadcn/improve">shadcn/improve</a></h3>
+<p class="news-content">Use your most capable model to audit your codebase and write plans for cheaper models to execute. An agent skill that audits any codebase and writes implementation plans for other agents to execute. Use your most capable model for the part where intelligence is needed.</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+PLACEHOLDER_PROJECTS
+</div>
+
+</div></body></html>

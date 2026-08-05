@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html" selected>2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年05月21日 星期四</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box">
+<h3 class="news-title"><a href="https://www.cbsnews.com/news/ukraine-russia-war-nuclear-weapons-belarus-exercises/">俄罗斯与白俄罗斯进行核军演，乌克兰提升安全措施</a></h3>
+<p class="news-content">俄罗斯宣布与白俄罗斯举行联合军事演习，包括"核弹头"交付和导弹测试。乌克兰在北部边境实施"增强安全措施"，这是俄罗斯2022年全面入侵以来首次在北方边境提升安全级别。俄罗斯国防部称已将核弹头交付至白俄罗斯导弹旅的野战储存设施，并进行洲际弹道导弹和"锆石"、"匕首"高超音速导弹的试射。北约秘书长警告称，任何核攻击的回应都将是"毁灭性的"。这场演习标志着俄乌冲突进一步升级，触及了俄罗斯的核红线，局势已进入高危状态。</p>
+<div class="news-source">来源：CBS News</div>
+</div>
+<div class="highlight-box">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c9d3v2d6p1eo">以色列驱逐加沙援助船队活动家，国际谴责加剧</a></h3>
+<p class="news-content">以色列正式驱逐了拦截加沙援助船队后被拘留的数百名亲巴勒斯坦活动家。这一行动引发国际强烈谴责，英国、波兰、意大利等多国召见以色列外交官。极右翼国家安全部长本吉维发布视频炫耀自己嘲讽戴手铐的活动家，遭到包括美国在内的多国批评。意大利外长要求欧盟考虑对本吉维实施制裁。这场外交危机加剧了以色列与西方盟友之间的紧张关系，也引发了关于国际人道法的争议。</p>
+<div class="news-source">来源：BBC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/world/taiwan/trump-says-will-speak-taiwan-president-major-break-protocol-rcna346259">特朗普称将与台湾总统通话，打破重大外交惯例</a></h3>
+<p class="news-content">美国总统特朗普宣布将与中国台湾地区领导人通话，这将是打破长期以来坚持的外交惯例。此举引发广泛关注，因为台湾问题被视为中美关系中最敏感的问题之一。特朗普的这一表态可能会加剧台海紧张局势，但同时也显示出其在对华政策上的新思路。分析人士认为，这可能是在向中国展示强硬立场，也可能是为未来对台政策调整做准备。</p>
+<div class="news-source">来源：NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cbsnews.com/live-updates/iran-war-trump-us-latest-peace-proposal/">伊朗考虑美国最新和平提议，特朗普表示将等待"几天"</a></h3>
+<p class="news-content">伊朗政府正在审查美国最新提出的和平提议，旨在结束持续近三个月的战争。巴基斯坦陆军首席调解员穆尼尔预期周四抵达德黑兰，继续斡旋美伊谈判。特朗普表示愿意等待"几天"时间等待伊朗回应，称其团队对伊朗谈判者"印象深刻"，但强调需要获得"正确答案"以避免战争重回。国际社会密切关注这一和平进程，因为美伊冲突已对全球油价产生重大影响。</p>
+<div class="news-source">来源：CBS News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/uk-news/2026/may/21/london-mayor-sadiq-khan-blocks-met-police-deal-with-palantir">伦敦市长萨迪克·汗阻止警方与Palantir的5000万英镑交易</a></h3>
+<p class="news-content">伦敦市长萨迪克·汗叫停了伦敦警察厅与美国数据公司Palantir的价值5000万英镑的技术合作协议。这一决定引发了关于隐私和警务数据使用的广泛讨论。Palantir因其在执法领域的使用而长期面临批评，特别是其在处理敏感数据方面的担忧。市长的决定得到了民权组织的支持，他们认为这一合作可能侵犯公民隐私权。这一事件反映了在数据保护和警务现代化之间持续的紧张关系。</p>
+<div class="news-source">来源：The Guardian</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">总书记这些关心事与服务业发展相关</a></h3>
+<p class="news-content">中共中央总书记近期关于服务业发展的重要讲话引发广泛关注。总书记强调服务业高质量发展对经济转型升级的重要性，提出多项支持政策。这些政策涵盖数字经济、现代物流、文化旅游等多个领域，为服务业发展注入新动力。分析人士认为，这表明国家将继续把服务业作为经济增长的重要引擎，推动经济结构优化升级。</p>
+<div class="news-source">来源：微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">武汉有轨电车与电动车相撞事故</a></h3>
+<p class="news-content">武汉市发生有轨电车与电动车相撞事故，引发对城市交通安全的关注。事故导致部分区域交通中断，相关部门已展开调查。这起事故再次凸显了城市交通管理的复杂性，特别是在混合交通环境下的安全问题。当地政府表示将进一步加强交通安全管理，完善交通设施建设。</p>
+<div class="news-source">来源：微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">瘫痪女孩误买邓紫棋演唱会票平台拒退</a></h3>
+<p class="news-content">一名瘫痪女孩因意外购买邓紫棋演唱会门票，购票平台拒绝退款的事件引发网络热议。该女孩因身体原因无法到场观看演唱会，但平台以"不可抗力"为由拒绝退款。此事引发了对票务平台退款政策的广泛讨论，许多网友呼吁平台更人性化地处理特殊情况。目前相关话题仍在发酵中，平台尚未作出进一步回应。</p>
+<div class="news-source">来源：微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://gulfbusiness.com/en/2026/tech/meta-cuts-8000-jobs-zuckerberg-no-more-layoffs-ai-restructuring/">Meta裁员8000人进行AI重构，扎克伯格称不会再进行大规模裁员</a></h3>
+<p class="news-content">Meta公司宣布裁员8000名员工，作为AI业务重组的一部分。扎克伯格在内部信中表示，这是公司转向AI优先战略的重要一步，但他承诺不会再进行大规模裁员。这次裁员主要涉及传统的业务部门，而资源将重新分配到AI相关的项目上。这一决定反映了科技公司正在将重心转向AI技术，以应对市场的变化和挑战。Meta此举也引发了关于科技公司未来发展方向的大讨论。</p>
+<div class="news-source">来源：Gulf Business</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">Convective Capital筹集8500万美元基金用于建设抗灾能力</a></h3>
+<p class="news-content">Convective Capital成功筹集8500万美元新基金，专注于投资增强抗灾能力的初创企业。该基金将支持那些致力于气候变化应对、自然灾害预警和基础设施弹性技术的公司。随着极端天气事件的增加，这类投资正在获得更多关注。投资方表示，他们希望支持能够帮助社会更好地应对气候变化挑战的创新解决方案。</p>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://api.github.com/search/repositories?q=created:>$(date -u -d '7 days ago' +%Y-%m-%d)">ZeroLang编程语言获4166星，专为AI代理设计</a></h3>
+<p class="news-content">GitHub上新项目vercel-labs/zerolang获得了4166个星标，这是一种专为AI代理设计的编程语言。该语言旨在简化AI代理的开发过程，提供了专门针对代理功能的语法和工具。项目开发者表示，这个语言旨在解决当前AI开发中的复杂性问题，让更多开发者能够参与到AI应用的开发中来。这个项目的热度反映了社区对简化AI开发工具的强烈需求。</p>
+<div class="news-source">来源：GitHub Trending</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://apnews.com/article/refrigerants-epa-hfc-air-conditioners-trump-eb0ffc23a65b42171d834c3700585123">特朗普将放宽制冷剂规定以应对不断上涨的食品杂货成本</a></h3>
+<p class="news-content">特朗普总统宣布将放宽空调制冷剂的环境法规，以应对不断上涨的食品杂货成本。这一决定引发了环保组织和消费者权益组织之间的争议。支持者认为这有助于降低空调成本，从而降低食品价格；反对者则担心这会对环境造成负面影响。白宫表示，这一决定是在平衡经济需求和环境保护的基础上做出的，但这一政策的影响仍需观察。</p>
+<div class="news-source">来源：Associated Press</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://investinglive.com/news/iran-and-oman-are-discussing-a-permanent-strait-of-hormuz-toll-20260521/">伊朗和阿曼讨论霍尔木兹海峡永久通行费</a></h3>
+<p class="news-content">伊朗和阿曼正在讨论在霍尔木兹海峡设立永久通行费的计划。这一消息引发国际关注，因为霍尔木兹海峡是全球重要的石油运输通道。如果这一计划实施，可能影响全球石油运输成本和供应链稳定。分析人士认为，这一举动可能是伊朗在国际制裁压力下的经济应对措施，也可能是其在该地区扩大影响力的一步棋。</p>
+<div class="news-source">来源：Investing Live</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">大疆Pocket4相机发布引发科技爱好者关注</a></h3>
+<p class="news-content">大疆公司发布新款Pocket4口袋相机，这款产品凭借其便携性和强大的拍摄功能在科技爱好者中引发热议。作为大疆口袋系列的最新产品，Pocket4在保持了小巧便携的同时，大幅提升了拍摄性能和市场竞争力。这款产品的发布进一步巩固了大疆在便携相机市场的领先地位，也为消费者提供了更多高质量的选择。</p>
+<div class="news-source">来源：微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">Spotify推出AI驱动的问答和简报生成功能</a></h3>
+<p class="news-content">Spotify宣布推出全新的AI功能，包括基于播客内容的问答生成和智能简报创建。这些新功能利用先进的AI技术，能够根据播客内容自动生成问答问题和摘要，帮助用户更好地理解和吸收播客内容。这一创新反映了音频科技公司在AI领域的积极探索，也预示着未来内容消费方式的重要变革。用户现在可以通过这些AI功能更高效地获取和消化播客信息。</p>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://bytedance.com">字节跳动发布Lance统一多模态模型</a></h3>
+<p class="news-content">字节跳动推出Lance，一个基于3B参数的原生统一多模态模型，专门用于图像和视频的理解、生成和编辑。这个模型代表了字节跳动在AI领域的重要进展，特别是在多模态处理方面的突破。Lance模型能够同时处理文本、图像和视频等多种数据类型，为开发更智能的多媒体应用提供了强大基础。这一发布显示了科技巨头在AI基础设施竞争中的激烈程度。</p>
+<div class="news-source">来源：ByteDance</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ntdtv.com/b5/2026/05/21/a104098610.html">美军航母进入加勒比海，美古关系持续紧张</a></h3>
+<p class="news-content">美国"尼米兹号"航空母舰战斗群已进入加勒比海地区，这一行动正值美古关系持续紧张之际。与此同时，美国佛罗里达州联邦法院起诉了古巴革命领袖劳尔·卡斯特罗。这一系列军事和法律行动引发了国际社会对加勒比地区局势的关注。分析人士认为，这反映了美国在该地区战略布局的变化，也可能对地区稳定产生深远影响。</p>
+<div class="news-source">来源：新唐人电视台</div>
+</div>
+</div>
+
+</div></body></html>

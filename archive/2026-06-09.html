@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html" selected>2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月9日 星期二</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/news/us-news/pilots-fine-us-military-helicopter-goes-down-strait-hormuz-rcna349137">美国对伊朗发动袭击回应直升机事件</a></h3>
+<p class="news-content">美国中央司令部宣布对伊朗发动"自卫打击"，回应此前美军直升机在霍尔木兹海峡附近被击落事件。特朗普称伊朗"击落了我们高度精密的阿帕奇直升机"，两名飞行员均已获救且状况稳定。然而，有报道称尚不清楚直升机是被伊朗火力击落、技术故障还是其他原因造成。CENTCOM称此次行动是"对 unjustified Iranian aggression 的适度回应"。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/politics/2026-election/steve-hilton-advance-california-governor-race-xavier-becerra-rcna348575">加州州长选举：史蒂夫·希尔顿将迎战哈维尔·贝塞拉</a></h3>
+<p class="news-content">NBC News周二预测，前福克斯新闻主持人史蒂夫·希尔顿将在拥挤的初选后进入大选，与民主党人哈维尔·贝塞拉对决。这标志着加州政治格局的重要变化，希尔顿的进步立场与贝塞拉的保守路线将形成鲜明对比。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/world/europe/anti-immigrant-protests-belfast-knife-attack-northern-ireland-rcna349329">北爱尔兰贝尔法斯特爆发暴力反移民抗议</a></h3>
+<p class="news-content">在一名难民因持刀袭击被捕后，贝尔法斯特各地爆发了激烈的反移民抗议活动。蒙面青年在城市各处聚集，警方部署装甲车辆应对。这一事件加剧了北爱尔兰本已紧张的种族关系。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/world/lebanon/israelis-order-tyre-residents-evacuate-ancient-lebanese-city-rcna349233">以色列下令撤离曾被亚历山大大帝和十字军围攻的古城</a></h3>
+<p class="news-content">以色列下令黎巴嫩古城泰尔的居民撤离，这座古城曾经历亚历山大大帝和十字军的围攻。这一决定引发了国际关注，被认为是地区紧张局势升级的信号。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/world/afghanistan/afghanistan-taliban-protest-women-dress-code-herat-rcna349178">阿富汗抗议者反对塔利班 imposed 的女性着装规定</a></h3>
+<p class="news-content">在赫拉特省，抗议者举行反对塔利班对女性着装规定的游行，多人受伤。塔利班上台后实施严格的女性着装要求，引发了持续的社会抗议。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/news/us-news/karmelo-anthony-found-guilty-murder-texas-high-school-stabbing-rcna349132">卡梅洛·安东尼因德州高中刺杀案被判谋杀罪</a></h3>
+<p class="news-content">卡梅洛·安东尼因在2025年4月德州弗里斯科地区田径比赛中刺杀奥斯汀·梅特卡夫被判处35年监禁。这一案件震惊了全美，引发了对校园安全的广泛关注。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">演员魏宗万去世</a></h3>
+<p class="news-content">国家一级演员魏宗万去世，他曾因"其貌不扬"跑了19年龙套，演过《三国演义》里的司马懿，《水浒》里高俅等经典角色。他的离世引发了网友的集体缅怀。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">山西沁源县委书记赵永进被查</a></h3>
+<p class="news-content">长治市沁源县委书记赵永进涉嫌严重违纪违法，目前正接受省纪委监委纪律审查和监察调查。这一消息显示反腐工作的持续深入。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">外国网红中国搭便车的视频火到国外</a></h3>
+<p class="news-content">一段货车司机顺路搭载外国游客的视频在国外走红，其中一名游客是知名博主莱克斯。视频展现了中国人民的友好热情，获得国内外广泛关注。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/tech/security/fable-5-anthropic-release-public-mythos-claude-model-rcna349104">Anthropic发布Fable 5，可一键制作有趣视频游戏</a></h3>
+<p class="news-content">Anthropic推出的Fable 5工具可以让用户一键制作有趣视频游戏，展示了AI在创意领域的强大能力。这标志着AI从文本生成向多媒体创作的重要转变。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/tech-media/google-ai-subscription-price-wars-rcna349000">Google在AI订阅价格战中发出警告</a></h3>
+<p class="news-content">Google在AI订阅价格战中发出警告，显示市场竞争日趋激烈。各大科技公司纷纷降低AI服务价格，争夺用户市场份额。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/diffusionstudio/lottie">[diffusionstudio/lottie] ⭐1478 开源Lottie动画生成工具</a></h3>
+<p class="news-content">一个用于生成生产级Lottie动画的开源工具，支持codex/claude代码。该项目在GitHub上获得1478星标，显示了对动画制作工具的强劲需求。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">何超琼套现逾1.4亿美元</a></h3>
+<p class="news-content">何超琼出售美高梅国际306.6万股，清仓所有持股，套现逾1.4亿美元。这一举动引发了市场对美高梅未来走向的关注。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/business/travel/former-air-canada-pilot-flew-hundreds-flights-proper-license-police-sa-rcna349184">前加拿大飞行员无适当执照飞行数百次</a></h3>
+<p class="news-content">警方调查显示，前加拿大飞行员在16年内没有适当执照的情况下飞行了数百次航班。这一事件引发了对航空安全监管的严重质疑。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">美高梅股价大幅波动</a></h3>
+<p class="news-content">在何超琼清仓持股后，美高梅股价出现大幅波动，每股价格一度达到51.59美元的高点，引发市场关注。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/NoopApp/noop">[NoopApp/noop] ⭐1017 离线WHOOP伴侣应用</a></h3>
+<p class="news-content">一个离线WHOOP伴侣应用，可以通过蓝牙连接手环，将所有数据保存在自己的设备上。无云、无账户、无订阅模式，注重用户隐私和数据控制。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/JimLiu/baoyu-design">[JimLiu/baoyu-design] ⭐637 本地运行Claude Design的Agent Skill</a></h3>
+<p class="news-content">一个本地运行Claude Design的Agent Skill，可用于制作精美的UI原型、演示文稿和线框图，无需访问claude.ai/design。与Opus 4.8配合效果最佳。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nbcnews.com/science/space/nasa-artemis-iii-astronauts-announced-mission-rcna347223">NASA宣布Artemis III任务宇航员名单</a></h3>
+<p class="news-content">NASA宣布了Artemis III任务的宇航员名单，预计明年发射进入地球轨道，与SpaceX和Blue Origin正在建造的月球着陆器进行演示。这标志着人类重返月球计划的重要里程碑。</p>
+<div class="news-source">来源: NBC News</div>
+</div>
+</div>
+
+</div></body></html>

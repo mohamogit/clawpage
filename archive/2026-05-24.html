@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html" selected>2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月24日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title">俄罗斯大规模导弹袭击乌克兰首都基辅</h3>
+<div class="news-content">
+俄罗斯于5月24日对乌克兰首都基辅发动了大规模导弹和无人机袭击，造成至少4人死亡，数十人受伤。这次袭击使用了俄军先进的"奥列什尼克"高超音速导弹，这是该导弹在俄乌冲突中的第三次使用。乌克兰官员称，俄军发射了约90枚导弹和600架无人机，其中55枚导弹和549架无人机被击落。袭击导致基辅50多个地点受损，包括住宅楼、学校、市场和政府建筑。欧洲多国领导人谴责此次袭击，称其为"政治恐吓和不负责任的核边缘政策"。
+</div>
+<div class="news-source">来源：BBC News、法新社 | 更新时间：5月24日 05:54</div>
+</div>
+
+<div class="highlight-box news-item">
+<h3 class="news-title">白宫附近发生枪击事件 嫌疑人被击毙</h3>
+<div class="news-content">
+美国白宫附近于5月23日晚发生枪击事件，一名21岁男子在白宫安全 perimeter 外向特勤局特工开火。特勤局特工还击，击中嫌疑人，后者被送医后不治身亡。事件发生时，美国总统特朗普正在白宫内进行与伊朗相关的谈判，未受伤害。另有一名旁观者在枪击中受伤。特朗普在社交媒体上表示，该嫌疑人"有暴力历史，可能对白宫有执念"。这是特朗普任期内遭遇的第三起未遂刺杀事件。
+</div>
+<div class="news-source">来源：France 24、美联社 | 更新时间：5月24日 01:58</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title">伊朗核协议谈判取得进展</h3>
+<div class="news-content">
+美国与伊朗就核协议问题进行谈判，据接近谈判的地区官员透露，美国已接近达成一项协议，该协议将结束战争、重新开放霍尔木兹海峡，并要求伊朗放弃其高浓缩铀库存。伊朗尚未公开承诺放弃铀浓缩这一美国总统特朗普的关键要求。美国国务卿鲁比奥表示"取得了重大进展，但尚未取得最终进展"。
+</div>
+<div class="news-source">来源：ABC News、路透社 | 更新时间：5月24日 10:34</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">中国山西煤矿爆炸事故致82死2失联</h3>
+<div class="news-content">
+山西长治市沁源县山西通洲集团留神峪煤业有限公司于5月22日19时29分发生瓦斯爆炸事故，导致247人被困井下。截至5月23日晚，事故已造成82人死亡，2人失联，128人受伤。事故发生后，山西省成立省级应急救援现场指挥部，投入755名救援人员展开搜救工作。国务院已成立事故调查组，企业实际控制人、负责人已被依法采取控制措施。
+</div>
+<div class="news-source">来源：新华网 | 更新时间：5月24日 00:00</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">巴基斯坦自杀式炸弹袭击致24死</h3>
+<div class="news-content">
+巴基斯坦俾路支省发生针对列车的自杀式汽车炸弹袭击，造成至少24人死亡。袭击发生在偏远地区的铁路轨道附近，当地安全部队正在展开救援行动。这是巴基斯坦近期发生的严重恐怖袭击事件之一，显示该国安全局势仍然严峻。
+</div>
+<div class="news-source">来源：半岛电视台、美联社 | 更新时间：5月24日 未详</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">刚果(金)埃博拉治疗帐篷再次被烧毁</h3>
+<div class="news-content">
+刚果(金)东北部的埃博拉治疗帐篷18日再次被烧毁，导致18例疑似病例离开隔离区。这是该地区埃博拉疫情爆发期间发生的第二次针对医疗设施的袭击。世卫组织对这一事件表示严重关切，称这将严重影响埃博拉疫情的防控工作。
+</div>
+<div class="news-source">来源：CBC News | 更新时间：5月24日 未详</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title">#煤矿爆炸时247人下井仅记录124人#</h3>
+<div class="news-content">
+山西沁源煤矿爆炸事故中，实际下井人数247人，但企业仅登记144人携带井下人员定位卡，103人未携带。这一重大瞒报行为导致救援工作一度受阻，企业存在重大违法行为。目前国务院已成立调查组，事故相关责任人已被控制。
+</div>
+<div class="news-source">来源：微博热搜 | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">#枪击发生时特朗普正在白宫#</h3>
+<div class="news-content">
+5月23日晚，一名21岁男子在白宫附近向特勤局特工开火，被击毙。当时正在白宫内的特朗普未受伤害。这是特朗普任期内遭遇的第三起未遂刺杀事件。特朗普曾表示嫌疑人"有暴力历史和对白宫的执念"。
+</div>
+<div class="news-source">来源：微博热搜 | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">#重庆永川暴雨致多人失联#</h3>
+<div class="news-content">
+重庆永川区遭遇强降雨天气，导致多人失联。当地政府已启动应急预案，组织救援力量开展搜救工作。气象部门预计未来24小时该地区仍有强降雨，提醒市民注意防范。
+</div>
+<div class="news-source">来源：微博热搜 | 更新时间：5月24日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title">GitHub热门项目：AI编码助手获1959星</h3>
+<div class="news-content">
+GitHub上一周创建的最受欢迎项目中，名为"9arm-skills"的AI编码助手获得1959个星标。该项目专门针对小型语言模型进行了优化，在4B模型中达到了87%的基准性能。另一个名为"GuJumpgate"的项目也获得了2257个星标，这是一个全自动GPT Plus注册浏览器扩展。
+</div>
+<div class="news-source">来源：GitHub Trending | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">AI文本人性化工具开源发布</h3>
+<div class="news-content">
+一个名为"humanize-text"的开源AI工具发布，可以将AI生成的内容转换为无法被检测的、类人风格的文章。该工具号称可以绕过Turnitin、GPTZero等主流AI检测器，无需注册即可使用。项目已获得610个星标。
+</div>
+<div class="news-source">来源：GitHub | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">V2EX热门话题：AI写产品官网困难</h3>
+<div class="news-content">
+V2EX上热门话题讨论"让AI写产品官网还很困难，很磨时间"。用户反映默认生成的文案和样式都不太行，询问有没有技巧或神奇的prompt可以提高效率。这反映了当前AI在创意内容生成方面的局限性。
+</div>
+<div class="news-source">来源：V2EX热门 | 更新时间：5月24日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title">4月中国新能源汽车销量占比达53.2%</h3>
+<div class="news-content">
+中国4月新能源汽车产销分别完成132万辆和134.4万辆，新能源汽车新车销量占有率达到53.2%。数据显示，居民消费价格指数（CPI）同比上涨1.2%，工业生产者出厂价格指数（PPI）同比上涨2.8%。这一数据表明新能源汽车在中国市场已占据半壁江山。
+</div>
+<div class="news-source">来源：国家统计局 | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">中国数字产业一季度收入9.5万亿元</h3>
+<div class="news-content">
+一季度中国数字产业实现收入9.5万亿元，同比增长12.9%。这表明数字经济继续保持快速发展态势。同时，德国警方破获一起涉及在德中国公民的下药性侵案件，涉案人员中包括3名985高校毕业生。
+</div>
+<div class="news-source">来源：经济参考报 | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">匈牙利组建55人精英政府团队</h3>
+<div class="news-content">
+匈牙利总理马加里宣布组建由55名国务秘书组成的精英新政府团队。这个新团队拥有103个学位，其中包括数十个博士学位。这一新的人事安排显示了匈牙利政府对专业背景的重视。
+</div>
+<div class="news-source">来源：Daily News Hungary | 更新时间：5月24日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title">GuJumpgate：全自动GPT Plus注册工具</h3>
+<div class="news-content">
+一个名为"GuJumpgate"的GitHub项目获得了2257个星标，这是一个全自动的GPT Plus注册浏览器扩展。项目功能包括自动注册免费账号、PayPal激活Plus全流程、Hotmail/Outlook自动别名功能等。项目成功率据称达到100%，但要求用户提供US手机号和代理。
+</div>
+<div class="news-source">来源：GitHub | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">Bumblebee：软件供应链安全扫描工具</h3>
+<div class="news-content">
+"perplexityai/bumblebee"项目获得了1927个星标，这是一个只读的开发者端点扫描器，用于检测磁盘上的包、扩展和开发者工具元数据，专门用于检查已知的软件供应链漏洞。项目旨在提高软件供应链的安全性。
+</div>
+<div class="news-source">来源：GitHub | 更新时间：5月24日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">HRM-Text：1B文本生成模型</h3>
+<div class="news-content">
+"sapientinc/HRM-Text"项目获得了699个星标，这是一个基于HRM架构的10亿文本生成模型，通过任务完成和潜在空间推理得到加强。该模型展现了在小型语言模型上的性能提升，为AI发展提供了新的技术路径。
+</div>
+<div class="news-source">来源：GitHub | 更新时间：5月24日</div>
+</div>
+</div>
+
+</div></body></html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Claw Daily News</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;margin:0;padding:20px;background:#f5f5f5;color:#333}.container{max-width:800px;margin:0 auto;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:20px;text-align:center}.header h1{margin:0;font-size:24px}.header .date{margin-top:8px;opacity:.9;font-size:14px}.section{padding:20px;border-bottom:1px solid #eee}.section:last-child{border-bottom:none}.section-title{font-size:18px;font-weight:600;margin:0 0 15px;color:#2c3e50}.news-item{margin-bottom:20px;padding:15px;background:#f8f9fa;border-radius:6px;border-left:4px solid #667eea}.news-title{font-weight:600;color:#2c3e50;margin:0 0 8px;font-size:16px}.news-content{margin:0;color:#555;font-size:14px}.news-source{margin:8px 0 0;font-size:12px;color:#999;font-style:italic}.update-tag{display:inline-block;background:#e74c3c;color:#fff;font-size:11px;padding:2px 6px;border-radius:3px;margin-right:6px}</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html" selected>2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="container">
+<div class="header">
+<h1>📰 Claw Daily News</h1>
+<div class="date">2026年5月19日</div>
+</div>
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item">
+<h3 class="news-title">特朗普宣布推迟对伊朗的军事打击</h3>
+<p class="news-content">美国总统特朗普周一宣布推迟原计划对伊朗的军事打击。特朗普表示，在卡塔尔、沙特阿拉伯和阿联酋领导人的请求下，他将暂停对伊朗的攻击，以允许正在进行的谈判继续进行。特朗普此前曾多次警告德黑兰，称在结束战争的协议上"时钟正在滴答作响"，伊朗必须迅速行动，否则将面临毁灭性后果。自4月初美宣布脆弱的停火以来，关于结束战争的谈判已经停滞了五个星期。伊朗对特朗普的退缩反应冷淡，称他们在战争中仍占据上风。伊朗高级顾问穆罕默德·礼萨伊表示，特朗普取消了自己的军事打击，伊朗的"铁拳"将迫使美国"撤退和投降"。</p>
+<p class="news-source">来源：Newsweek | https://www.newsweek.com/donald-trump-says-hes-delayed-military-attack-on-iran-11964510</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">刚果(金)埃博拉疫情持续恶化，死亡人数达131人</h3>
+<p class="news-content">世界卫生组织周二宣布，刚果民主共和国东部爆发的埃博拉疫情已导致至少513例疑似病例和131例疑似死亡。世卫组织总干事谭德塞在日内瓦举行的年度世界卫生大会期间解释了他在召集紧急委员会之前宣布构成国际关注的突发公共卫生事件的原因。谭德塞表示："我不是轻易做出这个决定的。我是根据《国际卫生条例》第12条，在与两国卫生部长协商后做出的，因为我深深关注疫情的规模和速度。"世卫组织将在当天召开紧急委员会，就临时建议提供指导。</p>
+<p class="news-source">来源：ABC News | https://abcnews.com/International/ebola-outbreak-sees-131-suspected-deaths-drc-officials/story?id=133099345</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title">北约新成员瑞典宣布40亿美元国防投资</h3>
+<p class="news-content">作为北约最新的成员国，瑞典宣布了价值40亿瑞典克朗的国防投资计划，这一消息促使国防公司萨博公司股价上涨5%。这一投资反映了北约在东翼增强防御能力的战略举措，尤其是在当前地缘政治紧张局势加剧的背景下。瑞典加入北约标志着北欧安全格局的重大变化，此次投资将用于加强瑞典的国防工业基础和军事能力。</p>
+<p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/19/nato-sweden-saab-billion-defense-investment-rheinmetall.html</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">希腊将在6月偿还69亿欧元债务</h3>
+<p class="news-content">希腊政府计划在6月偿还价值69亿欧元的债务，这将结束其作为欧元区负债最严重国家的长期历史。这一里程碑式的财务成就标志着希腊在经历多年债务危机后的经济复苏。希腊财长表示，这一偿还计划将显著改善国家的债务状况，并增强投资者对希腊经济的信心。这也为希腊在国际金融市场上的地位带来积极影响。</p>
+<p class="news-source">来源：IEFimerida | https://www.iefimerida.gr/english/greece-pay-eu69-billion-june-ending-its-run-eurozones-most-indebted-nation</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">石油价格达到伊朗战争开始以来的最高水平</h3>
+<p class="news-content">由于霍尔木兹海峡航运中断对全球供应链造成影响，国际油价已达到自伊朗战争开始以来的最高水平。这一价格波动对全球经济产生连锁反应，导致商品短缺和通货膨胀压力增加。能源分析师表示，当前的地缘政治紧张局势和市场不确定性将继续影响全球能源价格走势。各国政府和能源机构正密切关注局势发展，并考虑应对措施。</p>
+<p class="news-source">来源：BBC | https://www.bbc.com/news/articles/cq6pz60p996o</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title">人工智能公益平台重新开放注册，赠送50美元额度</h3>
+<p class="news-content">由开发者团队创建的免费AI公益平台今日重新开放注册，同时为首批用户赠送50美元的API额度兑换码。该平台旨在为研究者和开发者提供低成本的AI服务支持，特别针对教育和科研领域的需求。平台负责人表示，这是他们持续推动AI技术普及的重要举措，希望能帮助更多有需要的个人和机构。</p>
+<p class="news-source">来源：V2EX | https://www.v2ex.com</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title">GitHub热门项目：AI编程工具受关注</h3>
+<p class="news-content">本周GitHub上最受关注的开源项目之一是一个针对小型语言模型优化的AI编程代理，该项目在4B活跃模型上实现了87%的基准测试准确率。另一热门项目是一个基于浏览器的等距岛屿构建器，使用ES模块技术，无需打包工具，同时保持移动端友好。这些项目反映了AI和Web开发领域的技术趋势，展示了开源社区的创新能力。</p>
+<p class="news-source">来源：GitHub | https://github.com</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">Elon Musk对OpenAI的诉讼失败</h3>
+<p class="news-content">据报道，Elon Musk对OpenAI的法律诉讼已经失败。这一案件涉及关于AI发展方向的争议，引发了业界对AI公司治理和法律责任的广泛讨论。法律专家分析认为，这一判决可能对AI行业的未来发展产生深远影响，特别是在公司创始人与公司发展方向之间的关系界定方面。</p>
+<p class="news-source">来源：Reddit News | https://www.reuters.com/legal/government/elon-musk-loses-lawsuit-against-openai-2026-05-18/</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title">30年期国债收益率达到近19年最高水平</h3>
+<p class="news-content">美国30年期国债收益率突破5.18%，达到近19年来的最高水平。这一变化反映了市场对通胀预期和利率政策的重新评估。分析师指出，收益率上升可能对长期投资组合产生重要影响，投资者需要重新考虑资产配置策略。美联储官员对此表示密切关注，称将根据经济数据变化调整货币政策。</p>
+<p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/19/treasurys-yields-inflation-traders-fed-interest-rates.html</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">特朗普宣布18亿美元新资金计划</h3>
+<p class="news-content">总统特朗普宣布了一项价值18亿美元的新资金计划，这一消息伴随着加州圣地亚哥清真寺袭击事件的后续报道。该资金计划被称为"反武器化基金"，引发了政府财政政策和国家安全领域的广泛讨论。财政部一名高级律师因此计划的创建而辞职，进一步加剧了这一话题的政治敏感性。</p>
+<p class="news-source">来源：New York Times | https://www.nytimes.com/2026/05/19/world/middleeast/iran-trump-attack.html</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title">Zero：面向AI代理的编程语言</h3>
+<p class="news-content">Vercel Labs推出的Zero编程语言获得了2721个GitHub星标，成为本周最受关注的项目。该语言专为AI代理设计，提供了独特的编程范式来支持智能系统开发。项目文档详细介绍了其架构设计、核心功能和实际应用案例，吸引了大量开发者的关注和讨论。</p>
+<p class="news-source">来源：GitHub | https://github.com/vercel-labs/zero</p>
+</div>
+<div class="news-item">
+<h3 class="news-title">Native Feel Skill：跨平台桌面应用开发工具</h3>
+<p class="news-content">一个名为"Native Feel"的AI技能项目获得了1335个星标，该项目专注于设计感觉原生的跨平台桌面应用。该项目从Raycast 2.0的深度分析中提取了架构原则，包含八项架构准则和四层架构设计。同时提供WebKit/WebView2生存指南和75项发布检查清单，为开发者提供全面的桌面应用开发解决方案。</p>
+<p class="news-source">来源：GitHub | https://github.com/yetone/native-feel-skill</p>
+</div>
+</div>
+</div>
+</body>
+</html>

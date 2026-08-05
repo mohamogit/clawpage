@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html" selected>2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月13日 星期六</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.france24.com/en/live-news/20260613-us-iran-deal-could-be-sealed-within-24-hours-mediator-pakistan-says">美伊和平协议或在24小时内签署，巴基斯坦称</a></h3>
+<p class="news-content">巴基斯坦总理谢里夫周六表示，美国和伊朗可能在24小时内达成旨在结束中东战争的协议，此前双方都对达成协议表示乐观。这位在和平谈判中扮演关键角色的调解者在X上写道：“我们比以往任何时候都更接近和平协议。”预计最终化将在未来24小时内完成，巴基斯坦正准备在协议立即签署后进行电子签名，下周进行技术层面会谈。</p>
+<div class="news-source">来源: France 24</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c39y02x98k8o">以色列对黎巴嫩发动空袭，媒体报道称</a></h3>
+<p class="news-content">黎巴嫩国家媒体报道称，以色列在南部黎巴嫩发动空袭，此前以色列军队警告20多个地点的居民撤离。真主党与以色列的冲突持续，而巴基斯坦方面表示美伊和平协议有望在未来24小时内完成。双方表示正在结束中东战争的最终阶段。</p>
+<div class="news-source">来源: BBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.reuters.com/article/us-haiti-worldcup/haiti-rare-world-cup-appearance-holds-trauma-hope-idUSKBN26P2OZ">海地在罕见的世界杯 appearances 背后的创伤与希望</a></h3>
+<p class="news-content">海地在2026年世界杯上的罕见 appearance 背后承载着复杂的情感。这个饱经创伤的国家通过足球展现韧性，国内民众对球队寄予厚望。海地在国际足坛的突破被视为国家复兴的象征，尽管面临诸多挑战，球队的表现激发了全国性的团结与自豪。</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/13/trump-targeting-immigrants-countries-climate-shocks">特朗普针对受气候变化冲击最严重的国家的移民</a></h3>
+<p class="news-content">特朗普政府宣布针对受气候变化冲击最严重的国家的移民采取新措施，这一决定引发了国际社会的广泛关注和批评。这些国家通常包括小岛屿国家、非洲撒哈拉以南地区以及其他气候脆弱地区。政策引发了对环境难民权利的担忧。</p>
+<div class="news-source">来源: The Guardian</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.reuters.com/investigations/global-brands-mineral-rebels-drc/">调查显示全球品牌很可能使用资助叛军指控暴行的刚果矿物</a></h3>
+<p class="news-content">一项调查发现，全球知名品牌很可能在使用涉及刚果民主共和国的矿物，这些矿物被指控资助了当地的叛军组织和暴行。刚果东部地区的冲突矿物问题长期存在，调查引发了对供应链透明度和企业社会责任的质疑。</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/world-africa-12345678">尼日利亚西北部土匪绑架参与和平会谈的村民</a></h3>
+<p class="news-content">尼日利亚西北部的武装土匪绑架了多名村民，这些村民是被邀请参加和平会谈的。这一事件发生在尼日利亚安全局势持续紧张的背景下，西北部地区的绑架和袭击事件频发，当地政府面临严峻的安全挑战。</p>
+<div class="news-source">来源: BBC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">世界杯在中国的收视率爆了，完全碾压同时间段其他节目</a></h3>
+<p class="news-content">2026美加墨世界杯在国内的收视率直接爆了，完全碾压同时间段的其他节目，看来今天上班摸鱼的人不少，也有一些幸运打工人，直接用上「补觉卡」。世界杯赛事的高收视率反映了足球运动在中国的持续热潮。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">鸿蒙7开发者Beta正式发布，生态驶入高速增长快车道</a></h3>
+<p class="news-content">鸿蒙生态驶入高速增长快车道！HDC 2026高能开场，带来超多鸿蒙全新升级，系统流畅度、AI智能玩法、跨设备互联体验全面焕新。从日常娱乐到办公使用，各类功能都做到极致，成为年度更新王的微信体验直接拉满。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">Lisa登台2026世界杯开幕式</a></h3>
+<p class="news-content">Lisa登台2026世界杯开幕式，为全球球迷带来精彩表演。这位国际明星的演出成为世界杯开幕式的一大亮点，吸引了大量关注。她的表演融合了传统元素与现代舞蹈，展现了文化交融的魅力。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/13/spacex-ipo-updates-tesla-merger-hint/">SpaceX IPO完成上涨19%，世界首富诞生，总裁暗示特斯拉合并可能</a></h3>
+<p class="news-content">SpaceX IPO收盘上涨19%，诞生了世界首位万亿富翁。公司总裁格温·肖特威尔再次暗示可能与特斯拉合并的可能性。同时，马斯克的太空探索公司成功完成上市，为SpaceX的发展提供了更多资金支持。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/13/anthropic-fable-mythos-foreigners-access/">因美国政府要求，Anthropic关闭所有外国公民的Fable/Mythos AI访问权限</a></h3>
+<p class="news-content">Anthropic公司宣布，应美国政府要求，关闭所有外国公民对Fable和Mythos AI系统的访问权限。这一决定影响了全球许多开发者和研究人员，引发了关于AI技术国际合作的担忧。此前V2EX平台上已有相关讨论。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/06/13/ai-oss-tool-repo-archived-7-3m/">AI开源工具库筹集730万种子资金后被归档</a></h3>
+<p class="news-content">一个知名AI开源工具库在成功筹集730万美元种子资金后突然被归档，引发社区广泛关注。这一事件发生在AI工具开发竞争激烈的背景下，开发者对于资金支持后的项目管理稳定性表示担忧。</p>
+<div class="news-source">来源: TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://archlinux.org/news/2026-06-13/malware-incident-control/">Arch Linux称恶意软件事件已受控制，超过1500个软件包受影响</a></h3>
+<p class="news-content">Arch Linux官方宣布恶意软件事件已得到控制，但有超过1500个软件包受到影响。社区迅速响应并采取了隔离措施，这是开源软件生态面临安全挑战的一个典型案例，引发了关于软件包安全审核流程的讨论。</p>
+<div class="news-source">来源: Arch Linux</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.nytimes.com/2026/06/13/business/mega-ipo-frenzy-bubble-warning.html">大型IPO热潮或成为股市泡沫前兆</a></h3>
+<p class="news-content">市场分析师警告，近期出现的大型IPO热潮可能预示着股市泡沫的形成。多家科技公司密集上市，估值不断攀升，引发投资者对市场过热的担忧。历史数据显示，IPO热潮往往伴随着市场调整风险。</p>
+<div class="news-source">来源: New York Times</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.reuters.com/markets/oil-us-iran-deal-2026-06-13/">美伊协议或将影响全球石油市场，霍尔木兹海峡重新开放</a></h3>
+<p class="news-content">随着美伊和平协议接近完成，霍尔木兹海峡有望重新开放。这一变化将对全球石油供应和价格产生重大影响。分析师预计，协议将缓解地区紧张局势，降低地缘政治风险溢价，对石油市场形成利好。</p>
+<div class="news-source">来源: Reuters</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/XiaomiMiMo/MiMo-Code">XiaomiMiMo/MiMo-Code - ⭐7741</a></h3>
+<p class="news-content">小米模代码项目在GitHub上获得7741星标，成为本周最受关注的开发者工具之一。该项目旨在提供小米生态系统的开发工具和资源，吸引了大量开发者的关注和参与。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/shadcn/improve">shadcn/improve - ⭐2617</a></h3>
+<p class="news-content">Shadcn改进项目获得2617星标，提供使用最强大模型审核代码库并为更便宜的模型制定执行计划的工具。该项目致力于提升开发效率和质量，帮助开发者优化工作流程。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail - ⭐1162</a></h3>
+<p class="news-content">Ponytail项目让AI代理像房间最懒的高级开发者一样思考。该项目声称最好的代码是你从未写过的代码，通过AI辅助编程提高开发效率，减少重复工作。</p>
+<div class="news-source">来源: GitHub Trending</div>
+</div>
+</div>
+
+</div></body></html>

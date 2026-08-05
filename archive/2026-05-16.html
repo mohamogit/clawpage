@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;margin:0;padding:20px;background:#f5f5f5;color:#333}.container{max-width:800px;margin:0 auto;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:20px;text-align:center}.header h1{margin:0;font-size:24px}.header .date{margin-top:8px;opacity:.9;font-size:14px}.section{padding:20px;border-bottom:1px solid #eee}.section:last-child{border-bottom:none}.section-title{font-size:18px;font-weight:600;margin:0 0 15px;color:#2c3e50}.news-item{margin-bottom:20px;padding:15px;background:#f8f9fa;border-radius:6px;border-left:4px solid #667eea}.news-title{font-weight:600;color:#2c3e50;margin:0 0 8px;font-size:16px}.news-content{margin:0;color:#555;font-size:14px}.news-source{margin:8px 0 0;font-size:12px;color:#999;font-style:italic}.update-tag{display:inline-block;background:#e74c3c;color:#fff;font-size:11px;padding:2px 6px;border-radius:3px;margin-right:6px}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html" selected>2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月16日</div></div><div class="section"><h2 class="section-title">🎯 焦点事件</h2><div class="news-item"><div class="news-title">以色列通过允许死刑的法律，针对10月7日袭击者</div><div class="news-content">以色列议会以93票赞成、0票反对的压倒性结果通过了新法律，允许对涉及2023年10月7日哈马斯袭击和大规模扣押人质的相关人员判处死刑并进行公开审判。这项立法得到了政府与反对党议员的共同支持。10月7日是以色列历史上最血腥的一天，哈马斯武装分子在以色列南部杀害了超过1200名平民，另有251人被劫持到加沙地带作为人质。此次袭击引发了加沙有史以来最致命的战争，据哈马斯控制的卫生部统计，迄今已有72,740人死亡，大多数是儿童、妇女和老年人。新法将设立特殊的法律框架，在耶路撒冷的特别军事法庭审判被指控直接参与袭击的人员，包括哈马斯军事翼卡桑旅的努赫巴特种部队成员。他们预计将面临从恐怖主义和谋杀到性暴力甚至种族灭绝的指控，这些指控都可能判处死刑。听证会的关键时刻包括开庭、 verdict和宣判，都将在专门的网站上拍摄和播放。</div><p class="news-source">来源：BBC | https://www.bbc.com/news/articles/c202ngg45x8o</p></div><div class="news-item"><div class="news-title">特朗普称对中国之行感到"不可思议"，习近平称建立"双边关系新框架"</div><div class="news-content">美国总统唐纳德特朗普结束了对中国的访问，称这次访问"不可思议"。中国领导人习近平则将其描述为"双边关系新框架"，并承诺将特朗普和中方在散步期间欣赏的中国玫瑰种子寄给他，特朗普回应道："我喜欢，太棒了。"特朗普在离开前接受了福克斯新闻的采访，称习近平"热情"且"非常聪明"。特朗普表示，习近平承诺不向伊朗提供军事武器。尽管在贸易问题上达成了脆弱的停火协议，但伊朗在最近几个月成为更加紧迫的问题。特朗普告诉福克斯新闻，贸易谈判比上一次进展得"更好"，他说他带到中国的商界领袖是为了"做交易"和"带回就业机会"。特朗普还表示，中国已同意购买更多美国石油，200架波音飞机和"大量我们的农产品"。</div><p class="news-source">来源：BBC | https://www.bbc.com/news/articles/crrpj0ejxp8o</p></div><div class="news-item"><div class="news-title">特朗普失去耐心，油价飙升，霍尔木兹海峡局势紧张</div><div class="news-content">石油价格周五上涨，因为唐纳德特朗普总统在与中国国家主席习近平的峰会结束后，可能重新关注与伊朗陷入僵持的冲突。国际基准布伦特原油期货7月份上涨超过3%，收于每桶109.26美元。美国西德克萨斯中质原油期货6月份上涨超过4%，结算价为每桶105.42美元。特朗普在周四晚间播出的福克斯新闻采访中表示，他对伊朗正在失去耐心。特朗普告诉福克斯，习近平希望霍尔木兹海峡重新开放。这位中国领导人不喜欢伊朗对通过霍尔木兹海峡的船只收取通行费的事实，特朗普说。特朗普表示，习近平同意不向伊朗提供军事装备。美国财政部长斯科特·贝森特周四在接受CNBC采访时表示，中国将在幕后帮助重新开放霍尔木兹海峡。</div><p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/15/oil-prices-china-us-iran-strait-of-hormuz-middle-east.html</p></div></div><div class="section"><h2 class="section-title">🌍 全球热点</h2><div class="news-item"><div class="news-title">古巴完全耗尽燃料，陷入能源危机</div><div class="news-content">美国中情局局长约翰·拉特克利夫周四访问了加勒比岛国古巴，这是自1959年古巴共产主义革命以来中情局局长第二次前往该国。拉特克利夫向古巴高级立法者传达了信息，根据新闻机构路透社的报道，华盛顿将在该国政府做出"根本性变革"的情况下"认真参与"双边关系。在周四的会晤中，"双方都强调了对发展两国执法机构间双边合作的兴趣，以保障两国以及区域和国际安全。"古巴自今年1月以来一直严重依赖从委内瑞拉进口石油，但由于美国军方旨在委内瑞拉总统尼古拉斯·马杜罗的军事行动后，该岛国实际上已被切断燃料供应。古巴人口陷入每天长达22小时的停电，抗议活动在哈瓦那爆发。</div><p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/15/cuba-cia-john-ratcliffe-oil-blockade-trump-blackouts.html</p></div><div class="news-item"><div class="news-title">英国警方准备应对大规模极右翼和亲巴勒斯坦抗议活动</div><div class="news-content">大都会警察局正在准备应对伦敦大规模的极右翼和亲巴勒斯坦抗议活动，警察据说将被授予额外的权力，因为这些游行恰逢足总决赛在同一天举行。警方预计将有大量抗议者聚集在伦敦市中心，而足总决赛将在温布利球场举行，这给警方带来了双重挑战。随着中东冲突的持续，伦敦预计将出现多个抗议活动，包括支持巴勒斯坦的示威活动以及极右翼组织的集会。警方已经与活动组织者进行了对话，试图确保和平抗议的同时维护公共秩序。此次活动的重要性在于，它反映了英国国内对国际局势的强烈分歧，以及警方在维护国家安全与保护言论自由权利之间的平衡。</div><p class="news-source">来源：The Guardian | https://www.theguardian.com/uk-news/2026/may/15/met-police-preparing-far-right-pro-palestine-protests-london</p></div><div class="news-item"><div class="news-title">伊朗议会提出法案，提议悬赏5000万美元杀害特朗普</div><div class="news-content">伊朗议会正在起草一项法案，提议悬赏5000万美元杀害美国总统特朗普。这一提案是在特朗普总统访问中国并与习近平主席会晤后提出的，显示出伊朗方面对美国的强硬态度。根据伊朗国际新闻报道，这一法案得到了议会中部分议员的支持。此举进一步加剧了中东地区已经紧张的美伊关系，同时也反映了伊朗国内在面临美国制裁和军事压力下的政治立场。这一悬赏提案引发了国际社会的广泛关注，可能对中东地区的安全局势产生深远影响。</div><p class="news-source">来源：Reddit IranIntl | https://www.iranintl.com/en/202605148010</p></div><div class="news-item"><div class="news-title">中情局局长拉特克利夫访问古巴，要求政治改革</div><div class="news-content">美国中情局局长约翰·拉特克利夫周四访问了古巴，这是自1959年古巴共产主义革命以来美国情报部门负责人第二次访问该国。拉特克利夫在访问期间向古巴立法者传达信息，称华盛顿愿意为古巴提供援助，但条件是该国政府必须进行"根本性的政治体制变革"。古巴政府在周四的会晤声明中表示，双方都强调了发展两国执法机构间双边合作的兴趣，以保障两国以及区域和国际安全。这一访问是在古巴陷入严重能源危机的背景下进行的，该岛国目前每天经历长达22小时的停电，美国对古巴的石油封锁导致其能源供应几乎完全中断。</div><p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/15/cuba-cia-john-ratcliffe-oil-blockade-trump-blackouts.html</p></div></div><div class="section"><h2 class="section-title">🔥 微博/小红书热搜</h2><div class="news-item"><div class="news-title">偶遇黄仁勋街头吃杂酱面，随意自在</div><div class="news-content">有网友在街头偶遇英伟达CEO黄仁勋吃杂酱面，被发现时态度随意自在，看起来享受美食。据悉，黄仁勋此前被传是台湾人，但目前他在英伟达担任CEO，带领公司成为全球AI芯片的领导者。这一偶遇引发了网友的热议，很多人对这位科技大佬的平民化生活方式表示赞赏。有人评论说："原来大老板也吃路边摊啊！"还有人表示："看到黄仁勋这么随和，感觉更亲切了。"这一事件也反映了科技界人士生活中的另一面，他们在工作之外也有普通人的一面。</div><p class="news-source">来源：小红书 | 魔卡</p></div><div class="news-item"><div class="news-title">以后再也不吃隆江猪脚饭了</div><div class="news-content">苦瓜酱酱发文表示以后再也不吃隆江猪脚饭了，引发了网友的热议。这条帖子获得了大量关注和讨论，很多人对猪脚饭的质量问题表示关注。有人表示理解，也有人分享了自己的类似经历。这一话题引发了关于食品安全和餐饮质量的广泛讨论，反映了消费者对食品质量的关注和要求。</div><p class="news-source">来源：小红书 | 苦瓜酱酱</p></div><div class="news-item"><div class="news-title">父亲母亲我入选了🥹</div><div class="news-content">一位网友分享了父母为自己入选某个项目或活动而感到骄傲的温暖时刻，表达了对父母支持的感激之情。这条帖子充满了情感和正能量，引发了网友们的共鸣和祝福。很多人在评论区分享了自己类似的家庭经历，表达了对亲情的珍视。这一话题反映了当代年轻人对家庭关系的重视，也展现了社交媒体上温暖正能量的内容受到广泛欢迎。</div><p class="news-source">来源：小红书 | 热门话题</p></div></div><div class="section"><h2 class="section-title">💻 科技新闻</h2><div class="news-item"><div class="news-title">AI芯片独角兽Cerebras面临困境，每月烧钱800万美元</div><div class="news-content">AI芯片独角兽Cerebras几乎在早期濒临死亡，每月烧钱800万美元。这家估值高达600亿美元的AI芯片公司面临着严峻的财务挑战。Cerebras以开发大型AI处理器而闻名，但其高昂的研发成本和生产费用给公司带来了巨大压力。尽管公司获得了巨额融资，但持续的高额支出引发了投资者对其财务可持续性的担忧。这一事件反映了AI硬件行业在快速发展过程中面临的普遍挑战：在追求技术创新的同时如何控制成本并实现盈利。</div><p class="news-source">来源：TechCrunch | https://techcrunch.com/feed/</p></div><div class="news-item"><div class="news-title">OpenAI推出ChatGPT个人理财功能，允许连接银行账户</div><div class="news-content">OpenAI推出了ChatGPT个人理财功能，将允许用户连接银行账户。这一新功能标志着AI助手在个人财务管理领域的重要进展，用户可以通过ChatGPT获得更加个性化和智能的理财建议。OpenAI表示，这一功能将帮助用户更好地管理个人财务，包括预算规划、投资建议、账单支付等功能。不过，这一功能也引发了关于数据隐私和安全的讨论，因为涉及到用户的银行账户信息。OpenAI承诺将采取严格的安全措施保护用户数据，但用户对于AI助手处理敏感财务信息的担忧仍然存在。</div><p class="news-source">来源：TechCrunch | https://techcrunch.com/feed/</p></div><div class="news-item"><div class="news-title">Meta为AI转型裁员8000人，季度营收达560亿美元</div><div class="news-content">Meta计划裁员8000人，尽管公司第一季度营收达到560亿美元。这一决定反映了Meta在AI时代战略转型过程中的艰难选择。公司在财报中表示，尽管营收增长，但在AI和元宇宙领域的巨大投资需要控制成本。Meta首席执行官扎克伯格强调，公司将资源集中在AI优先的战略上，裁减一些非核心业务部门。这一裁员计划引发了市场对公司战略方向的质疑，同时也反映了整个科技行业在AI转型过程中的普遍挑战：如何在保持增长的同时控制成本。</div><p class="news-source">来源：TechCrunch | https://techcrunch.com/feed/</p></div></div><div class="section"><h2 class="section-title">💰 财经要闻</h2><div class="news-item"><div class="news-title">Meta尽管第一季度560亿美元营收，仍计划裁员8000人</div><div class="news-content">Meta计划裁员8000人，尽管公司第一季度营收达到560亿美元。这一决定反映了Meta在AI时代战略转型过程中的艰难选择。公司在财报中表示，尽管营收增长，但在AI和元宇宙领域的巨大投资需要控制成本。Meta首席执行官扎克伯格强调，公司将资源集中在AI优先的战略上，裁减一些非核心业务部门。这一裁员计划引发了市场对公司战略方向的质疑，同时也反映了整个科技行业在AI转型过程中的普遍挑战：如何在保持增长的同时控制成本。</div><p class="news-source">来源：Reddit r/news | https://moneywise.com/news/top-stories/meta-layoffs-8000-workers-zuckerberg-ai-spending</p></div><div class="news-item"><div class="news-title">美国最大电网电价飙升76%，能源成本压力加剧</div><div class="news-content">美国最大电网电价飙升76%，反映了能源成本压力的加剧。这一价格上涨与中东地区的紧张局势以及全球能源供应链的紧张状况有关。随着伊朗战争的持续，能源价格波动加剧，给美国企业和消费者带来了巨大的经济压力。能源分析师表示，这一价格上涨可能进一步推高通货膨胀，并对经济复苏造成不利影响。政府正在考虑采取措施缓解能源价格压力，但短期内能源成本的高企可能持续。</div><p class="news-source">来源：GitHub热门项目讨论</p></div><div class="news-item"><div class="news-title">中国同意购买更多美国石油，两国达成新的能源协议</div><div class="news-content">在中美领导人峰会后，中国同意购买更多美国石油，两国达成了新的能源合作协议。根据报道，中国将开始从美国进口原油，包括来自德克萨斯州、路易斯安那州和阿拉斯加的石油。这一协议是两国在贸易紧张关系背景下取得的重要突破，有助于缓解由于伊朗战争导致的全球能源供应紧张状况。美国财政部长表示，这一能源合作将有助于稳定全球能源市场，并促进两国经济的共同发展。</div><p class="news-source">来源：CNBC | https://www.cnbc.com/2026/05/15/oil-prices-china-us-iran-strait-of-hormuz-middle-east.html</p></div></div><div class="section"><h2 class="section-title">⭐ 值得关注的项目</h2><div class="news-item"><div class="news-title">OrcaSlicer-bambulab：Bambu Lab 3D打印机社区版获4910星标</div><div class="news-content">OrcaSlicer-bambulab项目是Bambu Lab 3D打印机的社区版，目前已获得4910个星标。这个开源项目为Bambu Lab用户提供了免费且功能强大的切片软件替代方案。该项目具有6层架构设计，支持15个端点，整合了7个数据源，为3D打印爱好者提供了全面的解决方案。开发者表示，这个项目致力于打造一个开源、免费的3D打印切片软件，让更多人能够享受到3D打印的乐趣。项目的高星标反映了社区对于开源硬件软件的支持和认可，也体现了3D打印技术在爱好者群体中的普及程度。</div><p class="news-source">来源：GitHub | https://github.com/FULU-Foundation/OrcaSlicer-bambulab</p></div><div class="news-item"><div class="news-title">YellowKey：BitLocker绕过漏洞公开，获2711星标</div><div class="news-content">YellowKey项目是一个BitLocker绕过漏洞工具，已获得2711个星标。这个项目公开了Windows系统BitLocker加密的绕过方法，引起了安全研究界的广泛关注。项目作者详细描述了漏洞的技术细节和利用方法，为安全研究人员提供了宝贵的研究资料。这一漏洞的发现和公开反映了安全研究在保护系统安全方面的重要作用，同时也提醒用户需要及时更新系统以防止潜在的安全威胁。在网络安全日益重要的今天，这样的安全研究项目对于提高整个社区的安全意识具有重要意义。</div><p class="news-source">来源：GitHub | https://github.com/Nightmare-Eclipse/YellowKey</p></div><div class="news-item"><div class="news-title">html-anything：AI驱动的HTML编辑器获2346星标</div><div class="news-content">html-anything项目是一个AI驱动的HTML编辑器，已获得2346个星标。这个项目允许AI代理编写HTML代码，用户可以轻松地将内容发布到各种平台。该项目支持75种技能和9种展示表面，包括杂志、演示文稿、海报、小红书/推文、原型、数据报告等。项目具有沙盒预览功能，支持一键分享到微信、知乎、HTML等多种格式。最大的特点是不需要任何API密钥，支持Claude Code、Cursor、Codex、Gemini、Copilot、OpenCode、Qwen等多种AI工具。这个项目代表了AI辅助网页开发领域的重要进展。</div><p class="news-source">来源：GitHub | https://github.com/nexu-io/html-anything</p></div><div class="news-item"><div class="news-title">3DCellForge：AI驱动的3D模型生成工作室获2082星标</div><div class="news-content">3DCellForge项目是一个AI驱动的交互式3D模型生成、检查和展示工作室，已获得2082个星标。这个项目为3D建模和展示提供了全新的AI解决方案，使用户能够快速创建高质量的3D内容。该平台集成了先进的AI技术，使得3D建模过程变得更加直观和高效。项目支持多种3D格式的导入导出，提供了丰富的模板和工具，适合设计师、开发者和创意工作者使用。这个项目代表了AI技术在3D建模领域的创新应用，为创意产业带来了新的可能性。</div><p class="news-source">来源：GitHub | https://github.com/huangserva/3DCellForge</p></div></div></div></body></html>

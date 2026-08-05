@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html" selected>2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月10日 星期三</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">特朗普宣布将对伊朗实施强硬打击</a></h3><p class="news-content">美国总统特朗普今日宣布将对伊朗实施更严厉的打击，称伊朗在最近的事件中展现了不可接受的行为。特朗普表示美国将在今天对伊朗进行新的打击行动，这标志着中东地区紧张局势的进一步升级。国际社会密切关注局势发展，担心可能引发更大规模的地缘政治冲突。</p><div class="news-source">来源: Reuters/BBC</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">贝法特骚乱后居民心声："永远不会忘记家园被烧毁"</a></h3><p class="news-content">北爱尔兰贝尔法斯特的居民在经历了一夜的骚乱后表示，他们永远不会忘记看到家园被烧毁的痛苦经历。骚乱造成了严重的财产损失，当地社区正在努力恢复秩序和重建信任。警方已逮捕多名涉嫌参与暴力事件的嫌疑人，并警告将采取进一步行动。</p><div class="news-source">来源: BBC</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">中东局势升级：多国呼吁克制和对话</a></h3><p class="news-content">随着美国和伊朗之间的紧张局势加剧，中东地区多个国家呼吁各方保持克制，通过对话解决争端。联合国安理会计划召开紧急会议讨论局势，国际专家警告说，任何军事行动都可能对地区稳定产生深远影响。油市对此反应剧烈，油价出现明显波动。</p><div class="news-source">来源: Guardian</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">马斯克的朋友Antonio Gracias将从SpaceX IPO中获得数十亿美元</a></h3><p class="news-content">SpaceX即将进行IPO，预计将使4400名员工成为百万富翁。据悉，马斯克的长期朋友Antonio Gracias将从这次IPO中获得数十亿美元的回报。这一消息引发了对航天行业财富分配和科技巨头IPO影响的广泛讨论。华尔街分析师普遍认为，SpaceX的成功将对整个航天产业产生深远影响。</p><div class="news-source">来源: NYTimes</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">特朗普提名Bill Pulte担任情报职位，FISA监视法或将到期</a></h3><p class="news-content">特朗普总统提名Bill Pulte担任情报相关职位，这一提名可能导致FISA监视法到期。FISA法案是美国重要的反恐和国家安全法律，涉及对外国情报监视的规定。这一人事变动引起了国会和国家安全领域的密切关注，各方正在评估可能带来的政策变化。</p><div class="news-source">来源: NYTimes</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">黑客攻击：Oracle PeopleSoft服务器被攻破</a></h3><p class="news-content">网络犯罪分子声称已攻破Oracle PeopleSoft服务器，影响超过100个组织。Oracle是美国最大的企业软件供应商之一，PeopleSoft是其主要的企业资源规划系统。此次攻击影响了大量使用Oracle产品的企业和政府机构，网络安全专家正在评估潜在的数据泄露风险和影响范围。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">特朗普移民政策：针对气候冲击严重国家</a></h3><p class="news-content">特朗普宣布新的移民政策，特别关注那些受到气候变化最严重影响的国家。这一政策引发了国际人权组织和环保团体的强烈批评，认为这可能违反国际人道主义原则。政策细节正在制定中，预计将对全球移民格局产生重大影响。</p><div class="news-source">来源: Guardian</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">Whole Foods排骨打折引发抢购热潮</a></h3><p class="news-content">Whole Foods超市的排骨特价活动在社交媒体上引发广泛关注和抢购热潮。消费者纷纷表示"香晕了一锅出"，反映了当前消费者对优质肉类产品的强烈需求。该话题在小红书上获得大量讨论，相关视频播放量迅速攀升，成为当日最热门的生活话题之一。</p><div class="news-source">来源: 小红书热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">V2ex热议：即将迎来全额社保，大家怎么看？</a></h3><p class="news-content">在技术社区V2ex上，"快要迎来全额社保了，大佬们怎么看"的讨论引发广泛关注。程序员和科技从业者对社保政策的变化展开热烈讨论，有人期待改善，也有人担忧对薪资结构的影响。该话题反映了年轻专业人士对社会保障体系的关注和思考。</p><div class="news-source">来源: V2ex热点</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">北京新烤鸭店Bloom&Vine开业引发美食圈关注</a></h3><p class="news-content">MTV Downtown新开的北京烤鸭店Bloom&Vine开业消息在微博和小红书上引发热烈讨论。作为MTV旗下在北京的首家餐饮项目，这家融合传统北京烤鸭与现代美学的餐厅吸引了大量美食爱好者的关注。开业首周预定火爆，成为北京餐饮界的新热点。</p><div class="news-source">来源: 小红书热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/diffusionstudio/lottie">开源项目：Lottie动画生成工具获得关注</a></h3><p class="news-content">diffusionstudio/lottie项目在GitHub上获得2000+星标，该项目用于使用Claude Code或Codex生成生产就绪的Lottie动画。支持多种平台包括Web、React Native、iOS、Android和Flutter。这个工具的出现大大降低了动画开发的门槛，让开发者能够快速创建高质量的矢量动画。</p><div class="news-source">来源: Hacker News/GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/NoopApp/noop">隐私优先：WHOOP健身手环完全离线伴侣应用</a></h3><p class="news-content">NoopApp/noop项目获得1380+星标，这是一个完全离线的WHOOP健身手环伴侣应用。项目通过蓝牙直接连接手环，数据完全保存在本地，不需要任何云端账户和订阅。该应用强调数据隐私和自主权，让用户能够完全掌控自己的健康数据，获得科技隐私意识用户的青睐。</p><div class="news-source">来源: Hacker News/GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">AI热潮："AI药丸"企业为员工每月花费7500美元AI工具</a></h3><p class="news-content">最新报告显示，那些"AI药丸"（深度采用AI技术的企业）为每个员工每月平均花费7500美元购买AI工具和订阅。这反映了AI技术在企业中的快速普及，但也引发了关于AI投资回报和员工技能发展的讨论。专家表示，AI支出的快速增长正在改变企业软件市场的格局。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">Raspberry Pi 5发布：16GB版本售价350美元</a></h3><p class="news-content">Raspberry Pi基金会发布了16GB版本的Raspberry Pi 5，售价350美元。这一配置大幅提升了开发板的处理能力和内存容量，为AI开发、边缘计算等应用提供了更好的硬件支持。产品发布后在开发者社区引起热烈反响，被认为是微型电脑发展的一个重要里程碑。</p><div class="news-source">来源: Hacker News</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">SpaceX IPO：预计创造4400个百万富翁</a></h3><p class="news-content">SpaceX即将进行IPO，预计将使4400名员工成为百万富翁。公司估值达到前所未有的高度，使得马斯克长期合作伙伴Antonio Gracias预计将获得数十亿美元回报。这一IPO不仅将对航天产业产生深远影响，还将成为科技史上最大的财富创造事件之一，华尔街投行纷纷上调对该公司的评级。</p><div class="news-source">来源: NYTimes</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">特斯拉电池业务引发巨头争抢</a></h3><p class="news-content">特斯拉的电池业务成为各科技巨头争夺的焦点，多家企业希望能够参与特斯拉的电池供应链。特斯拉在电池技术上的创新正在重新定义电动汽车行业，也引发了对能源存储市场格局的重新评估。分析师预计，围绕电池技术的竞争将在未来几年持续升温。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">亚马逊筹集175亿美元AI投资</a></h3><p class="news-content">亚马逊在成功发行债券后，又从银行借贷175亿美元，继续加大对AI领域的投资。这家电商巨头在AI领域的持续投入反映了科技行业对人工智能技术的高度重视。分析师认为，亚马逊的AI战略将继续推动其在云计算和电商领域的竞争优势。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">通胀担忧：特朗普称"我爱通货膨胀"</a></h3><p class="news-content">特朗普总统在回应关于高物价的询问时表示"我爱通货膨胀"，这一表态引发了对经济政策方向的重新审视。尽管通胀数据持续上升，但政府官员对通胀的态度成为市场关注的焦点。经济学家警告，通胀预期的不稳定可能对经济复苏产生负面影响。</p><div class="news-source">来源: NYTimes</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/diffusionstudio/lottie">[diffusionstudio/lottie] Generate production-ready Lottie animations with Claude Code</a></h3><p class="news-content">这是一个开源工具，用于使用Claude Code或Codex生成生产就绪的Lottie动画。项目提供文本到Lottie的转换功能，支持多种平台包括Web、React Native、iOS、Android和Flutter。用户可以通过简单的提示创建动画，系统会处理复杂的动画生成和播放逻辑。这个项目特别适合需要快速创建高质量动画内容的开发者和设计师。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/NoopApp/noop">[NoopApp/noop] Offline WHOOP companion — pair your strap over Bluetooth</a></h3><p class="news-content">这是一个完全离线的WHOOP健身手环伴侣应用。它通过蓝牙直接连接手环，将所有数据保存在本地SQLite数据库中，支持导入现有的WHOOP和Apple Health历史记录，并在本地计算恢复度、负荷、HRV和睡眠数据。项目强调数据隐私，不需要WHOOP账户，无云端连接，完全匿名，支持多种平台（macOS、Android、iOS实验版本）。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/shadcn/improve">[shadcn/improve] 代码库审计和优化工具</a></h3><p class="news-content">shadcn/improve项目获得734个星标，这是一个使用最强大模型来审计代码库并编写计划，让更便宜模型执行的工具。该工具可以帮助开发团队提高代码质量，优化开发流程，特别适合希望在大规模项目中提升效率的团队。支持多种编程语言，提供详细的代码分析和改进建议。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/GordenSun/GordenSuperPPTSkills">[GordenSun/GordenSuperPPTSkills] AI PPT生成工具</a></h3><p class="news-content">GordenSun的GordenSuperPPTSkills项目获得723个星标，这是一个被描述为"AI PPT赛道终结者"的工具。使用GPT生成豪华的图片格式PPT，然后转换为完全可编辑的PPTX文件。该工具大幅提升了PPT制作效率，特别适合需要频繁制作高质量演示文稿的用户，代表了AI办公工具的重要创新。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

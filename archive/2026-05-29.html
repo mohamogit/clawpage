@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html" selected>2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月29日 星期五</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c98r2qy5809o">伊朗宣称报复美国空袭，中东局势再度紧张</a></h3>
+<div class="news-content">
+伊朗伊斯兰革命卫队宣布对美国空军基地发动袭击，回应美国对伊朗南部的新一轮打击。这一冲突发生在美伊之间脆弱的停火持续数周之际。美国中央司令部称，伊朗的袭击"严重违反停火协议"，而伊朗外交部谴责美国的行动是"侵略行径"。双方目前正在就停火协议进行谈判，但最新的军事行动表明和平进程仍面临严峻挑战。特朗普政府表示"对协议条款仍不满意"，而伊朗则坚持其核权利和地区影响力。此次冲突升级对全球能源市场造成新的冲击，霍尔木兹海峡作为全球五分之一的液化天然气和石油运输通道，其关闭持续影响着全球燃料贸易。
+</div>
+<div class="news-source">来源：BBC新闻</div>
+</div>
+<div class="highlight-box news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/05/28/blue-origins-new-glenn-rocket-explodes-during-testing-in-florida/">蓝色起源火箭测试爆炸，太空探索遭遇重挫</a></h3>
+<div class="news-content">
+杰夫·贝索斯的蓝色起源公司新型巨型火箭New Glenn在佛罗里达州卡纳维拉尔角发射场测试时发生爆炸。这是美国历史上最大的火箭爆炸之一，也是蓝色起源成立以来最严重的失败。Blue Origin后来确认了爆炸事件，并表示"所有人员都已安全"。贝索斯在X平台上写道："今天非常艰难，但我们将重建需要重建的一切，恢复飞行。这是值得的。"这次爆炸很可能意味着Blue Origin将不得不暂停New Glenn火箭计划一段时间，这对亚马逊的Leo互联网卫星网络建设计划造成影响。NASA局长贾里德·艾萨克曼表示将"支持彻底调查"，评估对阿尔忒弥斯登月计划的影响。埃隆·马斯克评论称："非常不幸。火箭很难。"显示出太空行业巨头之间的相互支持。
+</div>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cj3pgrpmlklo">以色列扩大对黎巴嫩空袭，人道主义危机加剧</a></h3>
+<div class="news-content">
+以色列军队对黎巴嫩南部发动大规模空袭，目标为真主党基础设施。在以色列发出大规模疏散令后，数万平民被迫逃离家园。黎巴嫩卫生部称，至少11人在最新的空袭中丧生。以色列国防军敦促居民迁移到扎赫拉尼河以北地区，称将"极端武力"应对。此次军事行动是对真主党无人机袭击以色列占领的黎巴嫩南部和以色列北部平民的回应。自4月17日停火生效以来，以色列和真主党相互指责对方违反停火协议。
+</div>
+<div class="news-source">来源：BBC新闻</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cze29764067o">美伊谈判陷入僵局，特朗普表示"对协议条款不满意"</a></h3>
+<div class="news-content">
+美国总统特朗普周三表示，他对正在与伊朗谈判的协议条款"仍不满意"。尽管双方谈判代表同意将停火框架延长60天，但这仍需特朗普和伊朗领导层的批准。特朗普在白宫内阁会议上说："伊朗正开始给我们他们必须给的东西，但到目前为止他们还没有达到要求。"他再次警告说，如果德黑兰不遵守协议，将恢复军事行动。这一表态使得原本看似接近达成的和平协议前景再次变得不确定。
+</div>
+<div class="news-source">来源：BBC新闻</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cx21x812w1lo">伊朗互联网服务部分恢复，民众如获重释</a></h3>
+<div class="news-content">
+在经历88天全面断网后，伊朗互联网服务开始部分恢复。民众纷纷表示感觉"像囚犯被释放"一样兴奋。一名计算机科学专业学生描述道："当我点击网站看到它打开时，感觉欣喜若狂；当我意识到可以再次通过Telegram、WhatsApp等平台发送消息时，那种感觉无法形容。"伊朗政府在2月28日美伊战争爆发后切断互联网，称目的是防止监控、间谍和网络攻击。此次恢复被视为政府重建公民信任和恢复在线服务的重要一步，但同时也有担忧认为审查可能进一步加剧。
+</div>
+<div class="news-source">来源：BBC新闻</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">刚果(金)埃博拉疫情死亡率达30-50%，肯尼亚宿舍火灾致16人死亡</a></h3>
+<div class="news-content">
+世界卫生组织刚果(金)埃博拉疫情死亡率达到惊人的30-50%，WHO总干事已抵达刚果应对疫情。与此同时，肯尼亚一所女子学校宿舍发生火灾，造成至少16名学生死亡。火灾原因正在调查中。这两个事件凸显了非洲地区面临的双重公共卫生和安全挑战。刚果(金)的埃博拉疫情是近年来最严重的之一，而肯尼亚的悲剧事件再次提醒了校园安全的重要性。
+</div>
+<div class="news-source">来源：综合媒体报道</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">#释永信被判24年# 佛教协会前主席巨额贪污案震惊全国</a></h3>
+<div class="news-content">
+61岁的佛教协会前主席释永信因贪污罪被判刑24年。法院查明，2003年至2025年，他非法侵占单位财物1.31亿元；2012年至2022年，挪用单位资金1.51亿余元；1995年至2022年，非法收受财物共计折合人民币1163万余元。此案引发全国对宗教机构财务管理的广泛关注，网友热议"61岁判24年，出狱时都85岁了"。
+</div>
+<div class="news-source">来源：微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">#39岁博主被虫咬后感染离世# 健康安全警钟长鸣</a></h3>
+<div class="news-content">
+5月28日，网传"哈尼小"博主因被虫咬后感染离世的消息引发关注。据悉，该博主平时经常直播，身体一直很健康。亲友处透露，她被咬后"已经治不好了"，离世前"吃不下饭"。此事引发网友对户外活动安全的担忧，提醒人们注意防护虫类叮咬，及时就医。
+</div>
+<div class="news-source">来源：微博热搜</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">#广东高温天热死几千只鸡# 极端天气影响农业</a></h3>
+<div class="news-content">
+5月29日，广东持续高温开启"烧烤"模式，最高气温普遍在36度左右。茂名一养鸡场数千只鸡因中暑死亡。养殖场老板受访时表示："喷水也受不了，这么热，没办法！"极端天气对农业养殖造成严重影响，引发对气候变化影响的关注。
+</div>
+<div class="news-source">来源：微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/">内存芯片公司XCENA获1.35亿美元融资，押注AI内存瓶颈解决方案</a></h3>
+<div class="news-content">
+内存芯片公司XCENA获得1.35亿美元B轮融资，估值达5.7亿美元，总融资额达1.85亿美元。这家成立于2022年的公司设计了将计算能力更接近DRAM内存的芯片，解决AI推理中的内存瓶颈问题。CEO金진表示："推理不只是计算问题，越来越是内存扩展问题。"公司声称原来需要10个服务器才能运行的任务现在可能只需1个。MX1芯片原型仍在测试中，计划2026年底开始大规模生产，2027年开始创收。
+</div>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/">企业AI搜索平台Glean营收突破3亿美元，AI预算削减成为核心卖点</a></h3>
+<div class="news-content">
+企业AI搜索平台Glean宣布其营收已突破3亿美元，在AI企业服务领域取得重要突破。随着企业面临AI预算削减压力，Glean的"AI预算优化"功能成为其核心竞争力。该公司帮助企业在不降低效率的前提下减少AI支出，这一卖点在当前经济环境下特别具有吸引力。Glean的进步是显著的，比15个月前的1亿美元营收增长了三倍。公司表示，通过连接AI到Glean，可以"大大减少token消耗"，帮助企业在使用AI的同时控制成本。
+</div>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/05/28/waymo-dominates-texas-autonomous-vehicle-registrations-as-tesla-trails-behind/">Waymo在德州自动驾驶车辆注册量遥遥领先，特斯拉落后</a></h3>
+<div class="news-content">
+根据德州机动车管理局新推出的自动车辆追踪工具，Waymo在德州的自动驾驶车辆注册量达到577辆，远超竞争对手。数据显示，Alphabet旗下的Waymo在德州注册了577辆自动驾驶车辆，紧随其后的是Avride（317辆）、Nuro（47辆），而特斯拉仅有42辆。该工具是根据5月28日生效的新法律创建的，要求在德州测试或部署自动驾驶车辆的公司分享车队数量和其他安全信息。Waymo于2025年3月在奥斯汀推出商业服务，目前已扩展到达拉斯、休斯顿和圣安东尼奥。
+</div>
+<div class="news-source">来源：TechCrunch</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="#">全球股市震荡，投资者关注美联储政策走向</a></h3>
+<div class="news-content">
+受美伊局势紧张和通胀数据影响，全球股市出现震荡。投资者密切关注美联储的货币政策走向，以及即将公布的通胀数据。科技股和新能源板块表现相对抗跌，而传统能源股因霍尔木兹海峡局势而波动。分析师认为，当前市场不确定性较高，建议投资者保持谨慎，关注防御性板块。
+</div>
+<div class="news-source">来源：财经新闻</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">亚马逊与SpaceX竞争加剧，卫星互联网建设加速</a></h3>
+<div class="news-content">
+亚马逊确认，其Leo互联网卫星网络建设计划正加速推进。亚马逊在X平台上炫耀称New Glenn是"可重复使用重型火箭"，但火箭爆炸事件可能对建设进度造成影响。与此同时，SpaceX的星链网络继续扩张，两家科技巨头的卫星互联网竞争进入白热化阶段。分析认为，卫星互联网市场潜力巨大，但技术和资金门槛也极高。
+</div>
+<div class="news-source">来源：财经新闻</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="#">半导体行业迎来新一轮投资热潮</a></h3>
+<div class="news-content">
+随着AI和自动驾驶等领域的快速发展，半导体行业迎来新一轮投资热潮。内存芯片巨头三星、SK海力士、美光都首次突破万亿美元市值。AI芯片公司如XCENA等获得大额融资，显示资本市场对半导体行业的信心。不过，行业也面临技术挑战和供应链风险，需要持续创新来应对。
+</div>
+<div class="news-source">来源：财经新闻</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/op7418/guizang-social-card-skill">guizang-social-card-skill - 小红书图文+公众号封面生成工具</a></h3>
+<div class="news-content">
+GitHub开源项目"guizang-social-card-skill"获得1117星标，这是一个专门用于生成小红书轮播图和微信公众号21:9+1:1封面对的工具。项目采用编辑学×瑞士视觉系统，包含28种布局、10个主题，可将单文件HTML转换为PNG。该项目解决了社交媒体内容创作者在跨平台发布时的视觉设计难题，帮助用户快速生成符合不同平台规范的视觉内容，大大提高了内容制作效率。
+</div>
+<div class="news-source">来源：GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/study8677/awesome-architecture">awesome-architecture - 软件架构学习指南</a></h3>
+<div class="news-content">
+开源项目"awesome-architecture"获得785星标，帮助开发者"像软件架构师一样思考，而不仅仅是程序员"。项目包含21个架构图谱（包括AI网关、RAG、智能体、推理服务、向量数据库等）和语言无关的系统设计教程。每个模板都链接到真实的开源原型，是架构师和高级开发者的宝贵学习资源。该项目涵盖了从基础架构到前沿AI应用的全景式知识体系。
+</div>
+<div class="news-source">来源：GitHub Trending</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/withkynam/vibecode-pro-max-kit">vibecode-pro-max-kit - AI编程辅助工具</a></h3>
+<div class="news-content">
+"vibecode-pro-max-kit"项目获得477星标，这是一个面向产品负责人、CEO和实际开发者的AI编程辅助工具。项目具有自改进的上下文记忆功能，包含12个智能体、32个技能，解决了上下文腐化问题。它能帮助开发者更高效地构建和维护代码，特别适合复杂的项目开发。项目承诺能在30秒内解决问题，大大提高了开发效率，代表了AI辅助编程工具的最新发展方向。
+</div>
+<div class="news-source">来源：GitHub Trending</div>
+</div>
+</div>
+
+</div></body></html>

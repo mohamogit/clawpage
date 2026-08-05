@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html" selected>2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月19日 星期五</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.gov.cn/zhengce/content/202606/content_7070901.htm">国务院印发《加快农业农村现代化"十五五"规划》</a></h3><p class="news-content">国务院近日印发《加快农业农村现代化"十五五"规划》，明确了到2030年的发展目标。规划强调粮食安全根基持续夯实，农业科技自立自强水平大幅提高，发展农业新质生产力取得重大突破。"十五五"时期是基本实现农业农村现代化的关键时期，规划将推动农业建成现代化大产业，提高农业质量效益和竞争力，促进农民收入持续增长。文件还提出要加强农业科技创新，推动数字技术与农业深度融合，发展绿色低碳农业，为乡村全面振兴提供有力支撑。</p><div class="news-source">来源: 中国政府网</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://news.qq.com/rain/a/20260618A026SJ00">全球变暖速度前所未有，2024年气温升高1.55℃</a></h3><p class="news-content">中国国际发展知识中心报告显示，全球变暖正以前所未有的速度加快，2024年全球气温平均值首次比工业化前的平均水平高出1.55℃。气候变化导致极端天气事件和自然灾害频发，给人类生命财产和全球经济带来严重损失。报告指出，当前全球气候行动面临多重挑战：部分国家能源政策倒退、绿色贸易壁垒增加、气候治理陷入僵局等，给应对气候变化带来严峻考验。专家呼吁世界各国和社会各界凝聚共识，破除贸易壁垒，深化绿色合作，共同推动低碳转型。</p><div class="news-source">来源: 腾讯新闻</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/">Allbirds转型AI公司，CEO计划建设团队</a></h3><p class="news-content">Allbirds从鞋类零售商成功转型为AI基础设施公司Smartbird，这一转变堪称现实版《硅谷》剧情。公司以4300万美元出售鞋类业务，又从股市融资1亿美元，现任CEO Nadia Carlsten表示将组建全新的AI团队并设立办公室。作为前AWS高管，Carlsten专注于为需要数据主权和基础设施控制的企业提供AI计算服务，目标客户包括制药、能源、金融和公共部门等对数据安全有特殊需求的行业。公司承诺不与大型云服务商直接竞争，而是专注于企业内部项目，计划今年内为多个客户部署计算集群。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/">美国指控ASML光刻机或流入中国，ASML坚决否认</a></h3><p class="news-content">美国商务部长卢特尼克近期告诉ASML高管，担忧这家荷兰芯片制造商的极紫外光刻机（EUV）可能已流入中国。EUV是地球上唯一能生产最先进半导体图案的设备，自特朗普政府时期以来对华禁售。ASML坚称中国从未拥有过此类设备，并强调其完善的内部安全措施防止技术泄露。此次争议正值全球AI芯片需求激增，ASML作为全球EUV垄断供应商，市值已达约7000亿美元。美国也在投资1500万美元支持xLight公司开发替代技术，试图挑战ASML的核心垄断地位。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.deloitte.com/cn/zh/Industries/telecom-media-entertainment/perspectives/deloitte-2026-global-semiconductor-industry-outlook.html">2026年全球半导体销售额预计达9750亿美元创新高</a></h3><p class="news-content">德勤最新报告显示，受AI基础设施建设驱动，2026年全球半导体销售额预计将达9750亿美元，创历史新高。报告指出，尽管2025年半导体行业增长率达22%，但2026年将加速至26%。然而行业也存在隐忧：对AI布局高度集中，需要前瞻性评估需求放缓风险。报告认为，行业焦点将转向风险规避、集成系统架构及均衡投资策略，高增长伴随结构性差异，未来十年半导体销售额仍将持续增长。</p><div class="news-source">来源: 德勤中国</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">吴倩自曝演赵默笙被骂到害怕演戏</a></h3><p class="news-content">演员吴倩近日在采访中坦言，出演《何以笙箫默》中赵默笙一角曾遭受大量网络暴力，甚至让她一度害怕接戏。她表示当年的网络暴力经历给心理造成很大压力，但现在已经能坦然面对这些评价。这一话题引发网友热议，不少人对当年过度批评的行为进行反思。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">全国多地高温预警持续</a></h3><p class="news-content">中央气象台发布高温橙色预警，预计华北、黄淮等地将持续出现35℃以上高温天气。部分地区最高气温可达38-40℃，提醒公众注意防暑降温。多个城市启动高温应急预案，相关部门呼吁减少户外活动，做好防暑措施。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">新能源汽车销量创新高</a></h3><p class="news-content">最新数据显示，2026年5月新能源汽车销量同比上涨68%，市场渗透率首次突破35%。各大车企纷纷加大投入，预计今年全年新能源汽车销量将超过1200万辆。充电基础设施建设也在加速推进，产业链上下游协同发展态势明显。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.moe.gov.cn/srcsite/A16/s3342/202604/t20260410_1433240.html">教育部发布《"人工智能+教育"行动计划》</a></h3><p class="news-content">教育部等五部门联合发布《"人工智能+教育"行动计划》，这是根据《教育强国建设规划纲要（2024—2035年）》战略部署制定的重要文件。该行动计划旨在推动人工智能技术与教育深度融合，促进教育数字化转型。文件提出要构建人工智能教育基础设施，发展智能教育应用场景，培养人工智能教育人才，完善人工智能教育标准体系。这一政策将加速AI技术在教学、管理、科研等各环节的应用，推动教育模式创新，提升教育质量和公平性。</p><div class="news-source">来源: 教育部</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.familydoctor.cn/news/ai-sheji-dao-jiyin-bianji-zhiyao-lingyu-zhongdatupo-307053.html">从AI设计到基因编辑：2026年制药领域重大突破</a></h3><p class="news-content">随着制药行业步入2026年，精准优先疗法、原生AI药物发现和可扩展基因编辑技术正深度重塑研发格局。四大关键趋势包括：人工智能作为生物制药基础设施的整合应用，新一代基因编辑技术从罕见病向肿瘤学等高发疾病扩展，体内CAR-T疗法与T细胞重定向双特异性抗体在肿瘤治疗中的深化发展，以及量子计算与先进制造工艺的协同创新。这些突破将显著提升药物研发效率，推动可大规模生产的基因药物发展，为癌症、纤维化及心血管疾病等提供更快速、更精准的疗法。</p><div class="news-source">来源: 家医大健康</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/telegram-ban-in-india-sparks-a-rush-to-vpns-rival-apps/">印度封锁Telegram致VPN和替代应用激增</a></h3><p class="news-content">印度因考试欺诈风险临时封锁Telegram一周，导致VPN应用下载量激增49%。Proton VPN在苹果商店下载量增长113%，Turbo VPN增长85%。Signal应用在谷歌商店下载量激增322%，Viber增长216%。数据显示，印度用户对网络限制的应对越来越迅速，VPN服务提供商的用户注册量也大幅上升。Telegram在印度拥有1.5亿用户，公司已向德里高等法院申诉但被驳回。政府称此举是防止假试题传播的必要措施。这一趋势反映了用户对绕过工具越来越熟悉，应对网络封锁的速度比过去更快。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.sohu.com/a/980534102_121924582">2026年米兰冬奥会：可持续发展与创新的体育盛会</a></h3><p class="news-content">2026年米兰冬奥会筹备工作进展顺利，这一届冬奥会不仅是一场体育盛会，更是一次关于可持续发展与创新组织模式的实验。赛事将分布在意大利北部多个城市，采用独特的分散化布局。中国体育代表团已正式成立，积极备战。本届冬奥会强调绿色环保理念，大量使用可再生能源，场馆建设遵循可持续标准。赛事组织方面引入多项科技创新，包括智能交通系统、数字化场馆管理和沉浸式观赛体验等，为观众带来全新感受。</p><div class="news-source">来源: 搜狐</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/">AI推理公司Baseten融资15亿美元，估值飙升至130亿</a></h3><p class="news-content">AI推理公司Baseten即将完成15亿美元融资，估值达130亿美元。这一轮距离5个月前的3亿美元E轮融资仅隔数月，估值在不到半年内增长160%。据报道，这是一轮分价融资，部分投资者以130亿美元估值进入，部分以110亿美元估值投资。由Spark Capital、Sands Capital等联合领投。Baseten成立于2019年，专注于AI推理层技术，通过将用户请求路由到最适合任务的模型来实现快速推理和成本控制，尤其擅长利用开源替代方案。这反映了当前"推理黄金 rush"的投资热潮，VC正在向构建推理层的公司投入巨额资金。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.163.com/dy/article/KVNJECQS0511BLFD.html">挪威批准建设全球首条海洋船舶隧道</a></h3><p class="news-content">挪威政府近日正式批准在斯塔德半岛修建全球首条"海洋船舶隧道"，项目总投资约86亿挪威克朗（约合8.05亿美元），已进入承包商遴选阶段，预计2027年初开工建设，工期约五年。该项目将贯通挪威西海岸斯塔德兰半岛，全长约1.7公里，断面高度50米，水面至顶板净高33米，宽度36米，可容纳吃水深度12米、船宽16米的各类船舶通过。这一创新工程将直接从沿岸坚硬山体中凿通，是全球首个直接服务开阔海域的船舶隧道，对挪威沿海航运具有重大战略意义。</p><div class="news-source">来源: 网易订阅</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/">Snap分拆AI团队成立Dotmo，专注游戏互动体验</a></h3><p class="news-content">Snap将生成式AI视频团队分拆为独立公司Dotmo，专注于开发AI驱动的互动游戏体验。Snap表示分拆的主要原因是内部研发成本过高。新公司将由现任Snap员工组建，CTO Bobby Murphy将作为主要投资者，同时保持Snap的技术授权。作为交换，Snap将获得Dotmo的大量股权，分享未来收益。这是Snap今年第二次重大分拆，此前还分拆了智能眼镜团队Specs。该策略既降低了财务负担，又通过股权分享保留了潜在收益。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+</div></body></html>

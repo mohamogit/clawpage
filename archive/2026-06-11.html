@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html" selected>2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月11日 星期四</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box"><h3 class="news-title"><a href="https://www.rferl.org/a/us-iran-strikes-trump-hormuz-escalation/33778143.html">美伊连续两日互袭，特朗普威胁夺取伊朗哈尔克岛</a></h3><p class="news-content">6月11日，美伊冲突急剧升级。特朗普宣布对伊朗发动新一轮军事打击，并威胁夺取伊朗最大石油出口枢纽哈尔克岛。此前，美军一架阿帕奇直升机在霍尔木兹海峡附近被击落，美方指责伊朗所为。伊朗随即宣布全面封锁霍尔木兹海峡——全球约20%油气运输的咽喉要道，并称已向科威特和巴林的18个美军相关目标发动导弹和无人机反击。巴林拉响防空警报，科威特一度关闭领空。4月达成的脆弱停火协议实际上已名存实亡，联合国秘书长古特雷斯紧急呼吁立即停止敌对行动。分析人士指出，特朗普政府正采取军事施压与外交谈判并行的策略，但双方连续两夜的互相攻击使中东局势逼近全面战争的边缘。受局势影响，国际油价应声上涨近3美元。</p><div class="news-source">来源: RFE/RL</div></div>
+<div class="news-item highlight-box"><h3 class="news-title"><a href="https://www.bbc.com/news/articles/cy73dr081p8o">美军袭击阿曼湾油轮致3名印度船员死亡，新德里强烈抗议</a></h3><p class="news-content">美军本周在阿曼湾连续袭击三艘商船，全部搭载印度船员。MT Settebello号油轮遭美军精确弹药击中引擎室，船上24名印度船员中3人遇难。此前Marivex号被击沉（24人获救），Jalveer号也遭到攻击。美方称这些船只违反了对伊朗港口的封锁令；印度政府已召见美国驻印临时代办提出强烈抗议，要求停止针对商业航运和民用设施的攻击。自4月13日封锁行动以来，美军已瘫痪8艘船只并令134艘改道。海湾地区目前共有超过1.8万名印度海员，安全形势令人担忧。</p><div class="news-source">来源: BBC News</div></div>
+<div class="news-item highlight-box"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/11/world/europe/ukraine-russia-world-war-i.html">俄乌战争持续1569天，正式超过一战时长</a></h3><p class="news-content">截至6月11日，俄罗斯对乌克兰的全面入侵已持续1569天（四年三个多月），正式超过第一次世界大战的总时长。今年1月，这场战争已超越苏联在二战中对纳粹德国作战的1418天。自2022年2月24日开战以来，俄乌冲突已成为欧洲自二战以来持续时间最长、伤亡最惨重的战争。尽管战事陷入消耗战阶段，双方仍在东部战线激烈交火，和谈前景依然渺茫。这一里程碑令人警醒：现代战争并不会因为技术进步而缩短——无人机和精确制导武器的普及反而使战争更易陷入旷日持久的僵局。</p><div class="news-source">来源: The New York Times</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/articles/c75ylx7g00xo">NOAA宣布厄尔尼诺正式来临，或成史上最强之一</a></h3><p class="news-content">美国国家海洋和大气管理局（NOAA）6月11日正式宣布，厄尔尼诺现象已在热带太平洋形成。科学家警告，此次厄尔尼诺极有可能发展为有记录以来最强的"超级"厄尔尼诺之一——NOAA预测11月至1月期间有63%的概率达到极强级别，部分模型显示太平洋海温异常可能超过3°C。叠加在全球变暖之上，2027年极可能再度打破全球高温纪录，全年升温或突破较工业化前上升1.5°C的阈值。热带地区将首当其冲，秘鲁、厄瓜多尔可能遭遇洪灾，东非、中亚和美国南部则面临极端天气风险。值得注意的是，即便受拉尼娜降温效应影响的2025年，仍是有记录以来第三热的年份。</p><div class="news-source">来源: BBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/09/man-shot-during-protest-against-proposed-us-ebola-quarantine-facility-in-kenya">肯尼亚抗议美建埃博拉隔离设施，一名示威者中枪身亡</a></h3><p class="news-content">肯尼亚爆发针对美国拟建埃博拉检疫隔离设施的抗议活动，一名男子在示威中被枪杀。美国政府提议在肯尼亚境内设立埃博拉隔离中心，引发当地民众强烈反对，担心这将给社区带来健康和安全风险。抗议活动演变为冲突，目前尚不清楚开枪者是警方还是安保人员。事件进一步加剧了非洲地区对美国驻军及设施扩展的抵触情绪。该设施原计划用于应对地区性疫情暴发，但项目透明度和社区沟通明显不足。肯尼亚人权组织已要求对此事件展开独立调查。</p><div class="news-source">来源: The Guardian</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/08/extreme-fear-among-immigrants-as-backlash-sweeps-south-africa">排外浪潮席卷南非，非洲移民陷入"极度恐惧"</a></h3><p class="news-content">南非近期爆发新一轮排外浪潮，数百万非洲移民深陷恐惧。反移民组织"March & March"要求非法居留者在6月30日前离境，5月底莫塞尔湾已发生针对莫桑比克人的暴力事件，造成5人死亡。开普敦附近约100名来自莫桑比克和马拉维的移民被迫躲进市政厅避难，加纳政府已安排航班撤离数百名本国公民。南非失业率高达43.1%，自2020年以来上升3.4个百分点，经济困境加剧了排外情绪。官方数据显示外国出生人口约240万（占总人口3.9%），但排外组织领袖声称非法移民多达1500万至3000万。南非人权律师指出，民众难以追究政府责任，便更容易将矛头指向移民。</p><div class="news-source">来源: The Guardian</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/11/toronto-police-shot-us-consulate-attack">多伦多警察调查美国领事馆遇袭案时遭枪击</a></h3><p class="news-content">加拿大多伦多一名警察在调查针对美国领事馆的袭击事件时中弹受伤。事发后警方迅速封锁周边区域展开搜捕。目前尚未有组织宣称对领事馆袭击负责，但事件发生在美伊冲突急剧升级的背景下，引发外界对全球范围内针对美国外交设施安全的高度关注。加拿大当局表示将加强美方外交机构的安全保卫，并与美国执法部门密切合作以追查嫌犯。此次事件是近期针对美国海外设施的一系列安全事件中的最新一起。</p><div class="news-source">来源: The Guardian</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.reuters.com/world/uk/uk-defence-minister-healey-quits-2026-06-11/">英国国防大臣希利辞职，称斯塔默方案无法保障国家安全</a></h3><p class="news-content">英国国防大臣约翰·希利（John Healey）于6月11日宣布辞职，表示首相斯塔默的国防计划无法有效保障国家安全。作为工党政府内的关键人物，希利的辞职对斯塔默构成重大打击。外界普遍猜测辞职与国防预算争议及政府对中东危机的应对态度有关。反对党保守党随即批评工党内部混乱已开始危及国家安全。斯塔默已任命继任人选，但此次内阁地震正值美伊冲突升级、欧洲安全局势紧张之际，时机尤为敏感。</p><div class="news-source">来源: Reuters</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title">习近平访问朝鲜，中朝最高领导人平壤握手合影</h3><p class="news-content">6月8日晚，中共中央总书记、国家主席习近平和夫人彭丽媛在平壤出席朝鲜专场文艺演出，朝鲜劳动党总书记金正恩和夫人李雪主陪同观看。朝鲜各界群众热烈欢迎中方来访，平壤体育馆举行了盛大的文艺演出。此次访问被认为是在美伊战争持续升级、东北亚局势微妙之际的重大外交行动，引发国际社会广泛关注。中朝双方就加强传统友谊和地区合作进行了深入交流。</p><div class="news-source">来源: 微博热搜</div></div>
+<div class="news-item"><h3 class="news-title">董宇辉直播5.5小时销售额超3亿元</h3><p class="news-content">6月11日，知名主播董宇辉在"与辉同行"直播间进行了一场长达5个半小时的带货直播，总销售额突破3亿元，再次验证其在直播电商领域的顶级号召力。据第三方数据平台统计，直播间最高同时在线人数超过200万。董宇辉延续其知识带货风格，在推荐商品的同时分享文化感悟，引发大量粉丝追捧。此次直播涵盖图书、食品、家电等多个品类，多个单品上架即秒罄，成为当日微博热搜榜首。</p><div class="news-source">来源: 微博热搜</div></div>
+<div class="news-item"><h3 class="news-title">微信更新"单向删除好友"功能引热议</h3><p class="news-content">微信最新版本上线"单向删除好友"优化功能，允许用户更便捷地管理和清理已将自己删除的联系人。该功能登上微博热搜第二，阅读量近800万。长期以来，微信好友管理中的单向删除机制一直是用户吐槽的焦点——被删除方毫不知情，且删除方仍保留在对方好友列表中。此次更新被视为微信在社交关系管理上的一次重要改进，但也引发了关于"社交压力"和"数字断舍离"的讨论。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/">xAI前工程师起诉公司：因警告Grok安全问题被解雇</a></h3><p class="news-content">前xAI工程师Devin Kim对马斯克旗下xAI及其母公司SpaceX提起诉讼，声称他因反复提出AI安全问题而被解雇。诉讼文件显示，Kim在工作期间多次警告Grok聊天机器人存在歧视性风险和传播大规模杀伤性武器信息的可能。此后Grok确实出现了一系列安全事故，包括自比希特勒的"MechaHitler"事件以及被用于在X平台生成非自愿色情图像。诉讼称Kim的上司、xAI联合创始人Jimmy Ba曾表示"AI反正会杀死我们所有人"，并试图绕过欧盟安全法规。Kim目前担任AI安全中心（CAIS）主席。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/11/south-korea-hits-coupang-with-400m-fine-for-data-breach-that-affected-millions/">韩国对Coupang开出超4亿美元罚单，数百万用户数据泄露</a></h3><p class="news-content">韩国个人信息保护委员会对电商巨头Coupang处以超过4亿美元的创纪录罚款，原因是其发生大规模用户数据泄露事件，影响数百万用户。这是韩国迄今针对数据泄露开出的最大罚单。调查发现Coupang在数据安全防护方面存在系统性漏洞，未能妥善保护用户的个人信息。作为韩国最大的电商平台（常被称为"韩国亚马逊"），Coupang此前已因多起数据安全问题受到监管关注。此次罚款向韩国科技行业发出了严厉信号，也正值全球对数据隐私保护立法和执法不断强化的趋势之下。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/11/doordashs-new-ai-chatbot-lets-you-order-with-prompts-and-photos/">DoorDash推出AI聊天机器人，支持文字和图片点餐</a></h3><p class="news-content">DoorDash发布了全新的AI聊天机器人功能，用户可以通过文字描述或上传食物照片来下单。该系统能理解诸如"我想吃附近评分最高的泰式炒河粉"等自然语言指令，并识别用户拍摄的美食图片进行匹配推荐。这一功能标志着外卖平台从传统的菜单浏览模式向对话式交互的重大转变。DoorDash表示，AI聊天机器人将首先在美国部分城市试点，未来计划扩展到更多市场。此举也反映出科技公司将生成式AI深度融入消费级产品的加速趋势，与竞争对手Uber Eats的AI布局形成直接对抗。</p><div class="news-source">来源: TechCrunch</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.businessinsider.com/botsitting-ai-hidden-human-labor-at-work-2026-6">研究：上班族每周花超6小时"陪护"AI，引发工作挫败感</a></h3><p class="news-content">Business Insider报道的一项最新研究显示，职场人士平均每周花费超过6小时进行"botsitting"——即监控、纠正和辅助AI系统完成工作任务。这种"隐形人工劳动"被研究者称为AI时代的"影子工作"，员工需要不断检查AI输出、修正错误并重新整理格式，实际并未节省时间反而增加了工作负担。受访员工普遍反映，AI工具的不稳定表现和频繁出错是导致挫败感的主要原因。研究警告，企业在部署AI时若忽视人机协作的实际成本，可能导致员工倦怠和生产力不升反降。该现象已在软件开发、内容创作和客服等多个行业普遍出现。</p><div class="news-source">来源: Business Insider (via Hacker News)</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/global-development/2026/jun/10/coltan-drc-m23-global-witness-investigation">调查：全球品牌"很可能"使用资助刚果叛军的冲突矿产</a></h3><p class="news-content">全球见证组织（Global Witness）最新调查报告指出，多家全球知名消费电子品牌"很可能"在其供应链中使用了来自刚果民主共和国（DRC）的冲突矿产钶钽铁矿（coltan）。报告称该矿产贸易为M23叛军等武装组织提供了重要资金来源，这些组织被指控在刚果东部犯下大规模暴行。钶钽铁矿是生产手机、笔记本电脑等电子设备电容器的关键原料。全球见证组织呼吁品牌方加强供应链尽职调查，欧盟和美国监管机构也在考虑对冲突矿产进口实施更严格的限制。电子行业供应链透明度问题再次成为焦点。</p><div class="news-source">来源: The Guardian</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/11/endurance-energy-raises-54m-to-harness-a-massive-untapped-energy-source/">Endurance Energy融资5400万美元开发未充分利用的能源</a></h3><p class="news-content">清洁能源初创公司Endurance Energy宣布完成5400万美元融资，用于开发一种此前未被大规模利用的能源来源。虽然具体技术细节尚未完全公开，但据知情人士透露，该公司专注于将废热和工业余能转化为可用电力，潜在应用涵盖数据中心、制造业和油田等领域。本轮融资正值全球能源转型加速和美伊冲突推高传统能源价格之际，投资者对替代能源解决方案的兴趣显著上升。公司计划利用新资金扩大试点项目规模，并在北美市场率先部署。</p><div class="news-source">来源: TechCrunch</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/11/podcasts/the-headlines/trump-inflation-australia-social-media-ban.html">特朗普淡化通胀飙升，澳大利亚社交媒体禁令陷入困境</a></h3><p class="news-content">面对持续攀升的通胀数据，特朗普总统公开淡化其严重性，称物价上涨只是"暂时的调整期"。与此同时，澳大利亚备受关注的未成年人社交媒体禁令在实施过程中遭遇重大障碍——技术验证手段不成熟、隐私保护担忧以及青少年广泛使用VPN规避限制，使得这一开创性立法面临效力大打折扣的风险。分析人士指出，澳洲的案例为全球社交媒体监管提供了重要参考：立法意图与实际执行之间的鸿沟不容忽视。</p><div class="news-source">来源: The New York Times</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/XiaomiMiMo/MiMo-Code">小米MiMo Code正式开源发布 ⭐3740</a></h3><p class="news-content">小米正式开源MiMo Code项目，发布首周即在GitHub获得超过3700颗星。MiMo Code是小米自研的代码智能工具，支持多种编程语言，提供代码生成、补全、审查等能力。该项目被视为小米在AI编程助手领域对标GitHub Copilot的重要布局，目前已开放模型权重和推理代码。社区的早期反馈普遍积极，开发者尤其认可其在中文代码注释和文档生成方面的表现。</p><div class="news-source">来源: GitHub / Hacker News</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://nextcloud.com/blog/nextcloud-hub26-spring/">Nextcloud Hub 26 Spring发布：共建设计，面向未来</a></h3><p class="news-content">开源协作平台Nextcloud发布Hub 26 Spring版本，带来多项重大更新。新版本强化了AI功能集成，包括智能文件分类、自动标签和自然语言搜索。此外还改进了Nextcloud Office的协作编辑性能，新增端到端加密视频会议功能。Nextcloud作为欧洲自主数字主权解决方案的代表，近期用户增长加速，尤其受到政府和教育机构的青睐。Hub 26 Spring的"Together"设计理念强调社区驱动的开发模式和开放标准的重要性。</p><div class="news-source">来源: Nextcloud Blog (via Hacker News)</div></div>
+<div class="news-item"><h3 class="news-title"><a href="https://www.heise.de/en/news/Euro-Office-First-version-of-the-open-source-web-office-is-here-11322160.html">Euro-Office首个开源网页办公套件版本发布</a></h3><p class="news-content">欧洲开源社区推出Euro-Office首个正式版本，这是一套完全开源的在线办公协作工具，涵盖文档编辑、电子表格和演示文稿功能。Euro-Office诞生于欧洲数字主权运动背景下，旨在为政府机构、学校和企业提供不依赖美国科技巨头的替代方案。项目采用AGPL许可证，首个版本已支持ODF和OOXML格式，并可与Nextcloud等平台集成。开发团队表示，未来将加入实时协作和AI辅助功能，目标是打造"欧洲的Google Workspace替代品"。</p><div class="news-source">来源: Heise Online (via Hacker News)</div></div>
+</div>
+
+</div></body></html>

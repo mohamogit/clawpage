@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html" selected>2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月18日 星期四</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.reuters.com/world/europe/moscow-hit-largest-ukrainian-attack-start-russias-full-scale-war-2026-06-18/">乌克兰发动大规模无人机攻击 莫斯科遭遇战争以来最猛烈袭击</a></h3><p class="news-content">乌克兰军队对俄罗斯首都莫斯科发动了自全面战争开始以来规模最大的无人机攻击。袭击导致莫斯科地区的炼油厂发生火灾，俄罗斯当局称击落了多架无人机。这是乌克兰对俄罗斯纵深目标的重要打击，旨在破坏俄罗斯的战争机器和能源设施。俄罗斯国防部表示，拦截了至少180架飞向首都的无人机。</p><div class="news-source">来源: Reuters</div></div><div class="news-item"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/18/world/europe/ukraine-moscow-drone-attack.html">乌克兰无人机袭击莫斯科炼油厂 大规模打击俄罗斯能源设施</a></h3><p class="news-content">乌克兰军队周三夜间对莫斯科发动大规模无人机袭击，导致一座重要的炼油厂发生大火。乌克兰总统泽连斯基证实这次行动是"完全正义的报复"，针对俄罗斯对基辅等城市的袭击。这次袭击导致莫斯科所有机场一度关闭，显示出乌克兰对俄罗斯纵深打击能力的显著提升。</p><div class="news-source">来源: New York Times</div></div><div class="news-item"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/18/us/politics/trump-iran-deal-republicans.html">特朗普与伊朗协议引发共和党内部分裂 共和党人强烈反对</a></h3><p class="news-content">美国总统特朗普与伊朗达成的初步协议在共和党内引发强烈反对。多位共和党议员批评该协议是"数十年来最糟糕的外交政策失误"，认为协议向伊朗提供了3000亿美元的经济援助，却没有有效限制其核计划。参议员比尔·卡西迪称这一协议是"灾难性的"，而前副总统彭斯则指责这是"对伊朗的绥靖政策"。</p><div class="news-source">来源: New York Times</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.theguardian.com/world/2026/jun/18/seven-year-old-abdiqadir-was-hit-in-a-us-airstrike">7岁男孩在美军空袭中受伤 若不及时手术可能丧失行走能力</a></h3><p class="news-content">一名7岁的索马里男孩阿卜迪卡迪尔在美国空袭中受伤，如果不及时进行750美元的手术，他可能会丧失行走能力。这一事件引发了国际社会对平民伤亡问题的关注。医疗工作者表示，这名男孩的伤势严重，需要紧急手术才能恢复正常的行走能力。这起空袭事件再次引发了关于军事行动中平民保护的争议。</p><div class="news-source">来源: The Guardian</div></div><div class="news-item"><h3 class="news-title"><a href="https://www.nytimes.com/2026/06/18/world/middleeast/iran-us-deal-economic-lifeline.html">伊朗获得重大经济援助 特朗普协议为伊朗提供最少让步的重大经济支持</a></h3><p class="news-content">伊朗与美国达成的协议为伊朗提供了重大的经济支持，但在让步方面相对有限。根据协议内容，美国将提供3000亿美元的资金用于伊朗的重建和发展，而伊朗同意重新开放霍尔木兹海峡。这一协议被批评者认为是对伊朗的过度让步，但支持者则认为这是解决中东紧张局势的重要一步。</p><div class="news-source">来源: New York Times</div></div><div class="news-item"><h3 class="news-title"><a href="https://www.reuters.com/world/europe/young-women-hpv-cervical-cancer-risk-2026-06-18/">年轻女性接种HPV疫苗后宫颈癌死亡风险降至接近零</a></h3><p class="news-content">最新研究显示，年轻女性在接种HPV疫苗后，宫颈癌死亡风险已降至接近零的水平。这一重要医学突破意味着在全面接种HPV疫苗的年轻女性群体中，宫颈癌相关死亡几乎可以被消除。医疗专家表示，这将成为现代医学史上最重要的公共卫生成就之一。</p><div class="news-source">来源: Reuters</div></div>最新研究显示，年轻女性在接种HPV疫苗后，宫颈癌死亡风险已降至
+</div>
+
+div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://weibo.com">"C罗状态"冲上微博热搜第一 葡萄牙爆冷战平刚果（金）</a></h3><p class="news-content">2026年世界杯小组赛首轮，葡萄牙队爆冷1-1被刚果（金）队逼平。C罗在本场比赛中首发出场，这是他第六次出战世界杯。赛后C罗发微博表示："这不是我们想要的开局，但一切远未结束。抬起头，专注下一场。"这一结果让球迷感到意外，"C罗状态"话题迅速冲上微博热搜第一，引发广泛讨论。</p><div class="news-source">来源: 微博热搜</div></div><div class="news-item"><h3 class="news-title"><a href="https://weibo.com">梅西戴帽登上微博热搜第一 热搜前六有五条与梅西相关</a></h3><p class="news-content">在世界杯小组赛首轮中，梅西完成帽子戏法帮助阿根廷队3-0击败阿尔及利亚取得开门红。赛后，"梅西帽子戏法"词条登上微博热搜第一，而热搜前六中有五条都与梅西相关。这包括梅西个人词条、阿根廷比赛相关话题等，显示出梅西在社交媒体上的巨大影响力。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/adobe-ai-assistant-premiere-illustrator-indesign/">Adobe为其Premiere、Illustrator和InDesign软件添加AI助手功能</a></h3><p class="news-content">Adobe公司宣布为其创意软件套装中的Premiere视频编辑、Illustrator图形设计和InDesign排版软件添加AI助手功能。这一更新将帮助用户更快地完成创作任务，提高工作效率。AI助手能够智能识别用户意图，提供自动化建议，并在创作过程中提供实时帮助。这一举措标志着Adobe在AI与创意软件融合方面的重要进展。</p><div class="news-source">来源: TechCrunch</div></div><div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/waymo-recalls-4000-robotaxis-highway-construction/">Waymo召回近4000辆无人驾驶出租车 防止误入高速公路施工区</a></h3><p class="news-content">Waymo公司宣布召回近4000辆无人驾驶出租车，原因是这些车辆可能误入高速公路施工区域。此次召回涉及Waymo在凤凰城和旧金山运营的全部无人车队。公司表示已经通过软件更新解决了这一问题，但为了确保安全仍需召回检修。这是无人驾驶技术商业化过程中面临的又一个安全挑战。</p><div class="news-source">来源: TechCrunch</div></div><div class="news-item"><h3 class="news-title"><a href="https://techcrunch.com/2026/06/18/pixi-ios-ar-text-messages/">Pixi推出iOS新应用 将短信转换为交互式AR体验</a></h3><p class="news-content">Pixi公司推出了一款创新的iOS应用，能够将传统的短信转换为交互式增强现实(AR)体验。用户只需发送短信，对方就能在AR空间中查看和互动这些内容。这一应用将通信技术与AR技术完美结合，为用户提供全新的沟通方式。该应用展示了移动通信技术的新发展方向。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://www.reuters.com/business/central-banks/interest-rates-energy-prices-2026-06-18/">央行维持利率不变 警告高能源价格对经济的影响</a></h3><p class="news-content">中央银行宣布维持当前利率水平不变，但警告高能源价格可能对经济产生严重的影响。央行行长表示，能源成本上升正在影响消费者支出和企业投资，未来货币政策需要考虑这一因素。这一决定反映了央行在应对通胀压力和支持经济增长之间的平衡考量。</p><div class="news-source">来源: Reuters</div></div><div class="news-item"><h3 class="news-title"><a href="https://www.bbc.com/news/business/apple-ai-chip-prices-2026-06-18/">苹果因AI热潮推高芯片成本 宣布将提高产品价格</a></h3><p class="news-content">苹果公司宣布因人工智能技术带来的芯片成本上升，将提高部分产品价格。公司表示，AI处理器的制造成本和研发投入大幅增加，这是多年来首次提价。分析师认为，这一决定反映了AI技术对整个电子产业链的成本影响，未来可能会有更多科技公司跟进调整价格策略。</p><div class="news-source">来源: BBC</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="https://github.com/DietrichGebert/ponytail">ponytail - 让AI代理像房间里最懒的高级开发者一样思考</a></h3><p class="news-content">Ponytail是一个创新的开源项目，可以让AI代理以最像资深开发者的方式思考和编程。该项目理念是"最好的代码就是你永远不需要编写的代码"。通过模拟资深开发者的思维模式，AI代理能够做出更明智的编程决策，提高代码质量和开发效率。该项目在GitHub上获得了超过35000个星标。</p><div class="news-source">来源: GitHub</div></div><div class="news-item"><h3 class="news-title"><a href="https://github.com/tamnd/kage">kage - 任何网站的离线镜像浏览器，剥离JavaScript代码</a></h3><p class="news-content">Kage是一个强大的工具，可以创建任何网站的离线镜像版本，并自动剥离JavaScript代码。用户可以保存完整的网页内容供离线浏览，而不受脚本和跟踪器的影响。该项目特别适合需要保存网页内容或进行网络分析的用户，目前已在GitHub上获得了超过1500个星标。</p><div class="news-source">来源: GitHub</div></div><div class="news-item"><h3 class="news-title"><a href="https://github.com/vercel/eve">eve - 构建AI代理的框架</a></h3><p class="news-content">Vercel推出的Eve是一个专门用于构建AI代理的开源框架。该框架提供了开发复杂AI代理所需的核心工具和基础设施，支持多种AI模型和集成方式。Eve的设计目标是简化AI代理的开发过程，让开发者能够快速构建和部署功能强大的AI应用。这一框架代表了AI开发工具领域的重要进展。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

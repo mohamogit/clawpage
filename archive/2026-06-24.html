@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板 v2
+  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
+  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
+  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
+  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
+  Light-first，dark mode 为 prefers-color-scheme fallback
+  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+
+<style>
+  /* ============ LIGHT-FIRST THEME ============ */
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+
+    /* Semantic palette — terracotta & sage */
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .anim {
+    animation: fadeUp 0.45s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+  .anim-scale {
+    animation: fadeScale 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER — Newspaper masthead ============ */
+  .masthead {
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+  }
+  .masthead::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+  .masthead h1 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-bright);
+  }
+  .masthead .date-line {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 24px 0 20px;
+  }
+  .section + .section {
+    border-top: 1px dashed var(--border-bright);
+  }
+
+  /* Section labels — vary color per section */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+
+  /* ============ NEWS ITEMS ============ */
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hero item — focal story gets more visual weight */
+  .item--hero {
+    background: var(--surface-elevated);
+    border-left: 3px solid var(--rose);
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .item__tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+
+  .item__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text-bright);
+  }
+  .item__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .item__title a:hover { text-decoration: underline; }
+
+  .item__body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+
+  .item__src {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .masthead h1 { font-size: 24px; }
+    .masthead { padding: 24px 12px 20px; }
+    .item { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html" selected>2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年6月24日</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:2">
+      <div class="item__title"><a href="https://www.bbc.co.uk/weather/articles/c3vyzly206no">欧洲遭遇异常高温，多地气温突破历史记录</a></div>
+      <div class="item__body">欧洲正在经历前所未有的极端高温天气，多国气温突破历史记录。法国、西班牙等国家的部分地区气温连续多日超过40摄氏度，许多地区出现"热带夜晚"现象，夜间温度依然保持在20摄氏度以上。气象专家指出，此次热浪强度和持续时间都超出历史记录，预计未来几天高温仍将持续。欧洲各国已经启动紧急应对措施，包括延长公共泳池开放时间、设立避暑中心等，以帮助民众应对极端高温天气。</div>
+      <div class="item__src">来源: BBC</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>全球热点</h2>
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--accent">欧洲</span><div class="item__title"><a href="https://www.bbc.co.uk/weather/articles/c3vyzly206no">欧洲遭遇异常高温，多地气温突破历史记录</a></div><div class="item__body">欧洲正在经历前所未有的极端高温天气，多国气温突破历史记录。法国、西班牙等国家的部分地区气温连续多日超过40摄氏度，许多地区出现"热带夜晚"现象，夜间温度依然保持在20摄氏度以上。气象专家指出，此次热浪强度和持续时间都超出历史记录，预计未来几天高温仍将持续。</div><div class="item__src">来源: BBC</div></div>
+    
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--accent">非洲</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/jun/24/france-ebola-first-case-doctor-drc">法国确认首例埃博拉病例，医生刚从刚果民主共和国返回</a></div><div class="item__body">法国卫生部门宣布确认该国首例埃博拉病毒感染病例。患者是一名曾在刚果民主共和国工作的医生，目前在巴黎接受治疗。这一病例引发了对埃博拉疫情在欧洲传播的担忧。法国卫生部门已启动追踪程序，识别所有与患者有过接触的人员。世界卫生组织表示正在密切监控疫情发展。</div><div class="item__src">来源: The Guardian</div></div>
+    
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--accent">亚洲</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/facebook-rolls-out-an-ai-companion-app-for-creators">Facebook推出创作者AI伴侣应用</a></div><div class="item__body">Meta公司旗下Facebook推出了专为创作者设计的AI伴侣应用，该应用能够帮助创作者进行内容创作、粉丝互动和数据分析。该AI助手可以根据创作者的需求提供创意建议、回复评论、生成内容摘要等功能。这一创新产品展示了人工智能在内容创作领域的应用潜力。</div><div class="item__src">来源: TechCrunch</div></div>
+    
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">中东</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/agility-robotics-plans-to-go-public-via-spac-in-a-2-5b-deal">机器人公司通过SPAC上市，估值达25亿美元</a></div><div class="item__body">专注于开发双足行走机器人的公司宣布将通过SPAC方式上市，估值达25亿美元。该公司产品已在物流和仓储领域获得应用。此次上市将为公司提供更多资金，加速机器人技术的研发和市场推广，反映出投资者对机器人行业未来的看好。</div><div class="item__src">来源: TechCrunch</div></div>
+    
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--accent">拉美</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/ntsb-launches-probe-into-fatal-texas-tesla-crash">美国调查特斯拉致命车祸，关注自动驾驶系统</a></div><div class="item__body">美国国家交通安全委员会对德克萨斯州发生的一起致命特斯拉车祸展开调查。事故中，一辆自动驾驶的特斯拉汽车发生严重碰撞。调查将重点关注车辆自动驾驶系统的工作状态以及事故发生的具体原因。这一调查将对自动驾驶技术的发展方向产生影响。</div><div class="item__src">来源: TechCrunch</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social anim" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--sage">科技</span><div class="item__title"><a href="https://www.v2ex.com/t/1222453">小米智能存储开启众筹，4TB版本2299元起</a></div><div class="item__body">小米智能存储(NAS)产品开启众筹活动，4TB版本售价2299元起。该产品主打家庭数据存储和共享功能，支持多种设备连接和数据备份功能。小米进入NAS市场，进一步丰富了其智能家居产品线，为消费者提供了更多数据存储选择。</div><div class="item__src">来源: V2EX</div></div>
+    
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--sage">生活</span><div class="item__title"><a href="https://www.v2ex.com/t/1222395">独立开发者之路遭遇挫折，苹果开发者账号被封禁</a></div><div class="item__body">一位独立开发者分享了自己在苹果开发者平台遭遇账号封禁的经历，引发了开发社区的广泛关注。该开发者表示，虽然已经提交申诉，但尚未得到明确回复。这一事件再次引发了对苹果开发者政策公平性的讨论，许多开发者呼吁更加透明的审核机制。</div><div class="item__src">来源: V2EX</div></div>
+    
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--sage">生活</span><div class="item__title"><a href="https://www.v2ex.com/t/1222419">开始注射替尔泊肽，个人体验分享</a></div><div class="item__body">网友分享了开始注射替尔泊肽（Tirzepatide）的个人体验和观察。这是一种新型降糖药物，近年来在体重管理领域也展现出良好效果。分享者详细记录了用药过程中的身体变化和心理感受，为其他考虑使用该药物的人提供了参考。</div><div class="item__src">来源: V2EX</div></div>
+    
+    <div class="item a" style="--i:11"><span class="item__tag item__tag--sage">房产</span><div class="item__title"><a href="https://www.v2ex.com/t/1222423">买房后有点后悔，如何调整心态？</a></div><div class="item__body">一位网友分享了买房后的心理调适过程。面对房贷压力和市场波动，许多购房者都会产生"买房后悔"的情绪。帖文收集了网友们的建议和经验，帮助新购房者更好地应对购房后的各种挑战和心理压力。</div><div class="item__src">来源: V2EX</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>科技新闻</h2>
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/facebook-rolls-out-an-ai-companion-app-for-creators">Facebook推出创作者AI伴侣应用</a></div><div class="item__body">Meta公司旗下Facebook推出了专为创作者设计的AI伴侣应用，该应用能够帮助创作者进行内容创作、粉丝互动和数据分析。该AI助手可以根据创作者的需求提供创意建议、回复评论、生成内容摘要等功能，有望帮助创作者提高工作效率。</div><div class="item__src">来源: TechCrunch</div></div>
+    
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--teal">硬件</span><div class="item__title"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/">Gemini 3.5 Flash模型引入计算机使用能力</a></div><div class="item__body">谷歌宣布其最新的Gemini 3.5 Flash模型具备了计算机使用能力，能够理解并操作计算机界面。这一突破使AI系统能够完成更复杂的任务，如使用软件工具、分析屏幕内容等，为办公自动化和人机交互带来新的可能性。</div><div class="item__src">来源: Google AI Blog</div></div>
+    
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--teal">音乐</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/deezer-says-its-new-feature-lets-fans-remix-songs-with-artist-consent/">Deezer推出粉丝remix功能，允许在艺术家同意下重新混音歌曲</a></div><div class="item__body">全球音乐流媒体服务Deezer宣布推出全新功能，允许粉丝在获得艺术家同意的情况下对歌曲进行重新混音。这一创新功能将为音乐创作者和粉丝之间建立更加紧密的联系，为音乐创作和互动开辟新的可能性。</div><div class="item__src">来源: TechCrunch</div></div>
+    
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--teal">设计</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/">Figma更新：新增代码层、动画支持和更多AI功能</a></div><div class="item__body">设计平台Figma发布了重要更新，新增了代码层支持、动画功能以及更多AI功能。这次更新旨在提升开发与设计之间的协作效率，为设计师提供更强大的工具，同时也为开发人员提供更好的设计代码转换体验。</div><div class="item__src">来源: TechCrunch</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance anim" style="--i:5"><span class="dot"></span>财经要闻</h2>
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--gold">房产</span><div class="item__title"><a href="https://www.nytimes.com/2026/06/24/business/housing-package-congress-midterms.html">国会通过住房法案，具有广泛吸引力但非快速解决方案</a></div><div class="item__body">美国国会通过了一项具有广泛吸引力的住房法案，旨在解决美国住房危机。该法案包括提供住房补贴、支持首次购房者、增加保障性住房供应等措施。然而，专家指出，这一法案无法立即解决住房短缺问题，需要长期投入和政策配合才能见效。</div><div class="item__src">来源: New York Times</div></div>
+    
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--gold">政治</span><div class="item__title"><a href="https://www.nytimes.com/2026/06/24/us/politics/trump-senate-republicans-meeting.html">特朗普与共和党参议员会面，住房法案引发党内分歧</a></div><div class="item__body">特朗普与共和党参议员举行会面讨论住房法案，展现出党内存在的明显分歧。特朗普在会上使用"共产主义者"等激烈言辞批评支持法案的共和党人，显示其在党内影响力仍然强大。这一分歧可能影响11月中期选举前的政策协调。</div><div class="item__src">来源: New York Times</div></div>
+    
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--gold">选举</span><div class="item__title"><a href="https://www.nytimes.com/2026/06/24/us/politics/new-york-primary-election-democrats-midterms.html">纽约初选后，民主党面临五大关键问题</a></div><div class="item__body">纽约州初选选举结束后，民主党面临着一系列重要问题需要解决。包括如何应对党内左派与温和派的分歧、如何针对特朗普的支持者制定有效策略、以及如何在关键州维持选民支持等。这些问题将对11月中期选举产生重要影响。</div><div class="item__src">来源: New York Times</div></div>
+    
+    <div class="item a" style="--i:19"><span class="item__tag item__tag--gold">科技股</span><div class="item__title"><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/">OpenAI发布首款定制芯片，与博通合作开发</a></div><div class="item__body">人工智能公司OpenAI发布了其首款定制芯片，该芯片由博通公司制造。这一举措表明OpenAI正在努力降低对外部芯片供应商的依赖，提高AI计算效率。随着AI技术的快速发展，自主可控的芯片架构对保持竞争优势变得越来越重要。</div><div class="item__src">来源: TechCrunch</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:20"><span class="item__tag item__tag--slate">AI</span><div class="item__title"><a href="https://github.com/baidu/Unlimited-OCR">百度Unlimited-OCR - 单次长文本解析的开创性工作</a></div><div class="item__body">百度推出的Unlimited-OCR项目获得了6063个星标，该项目突破了传统OCR技术的局限，实现了单次处理长文本的解析能力。这一技术革新将大大提升文档数字化和文字识别的效率，为智能文档处理、知识图谱构建等领域提供了新的技术支撑。</div><div class="item__src">来源: GitHub</div></div>
+    
+    <div class="item a" style="--i:21"><span class="item__tag item__tag--slate">金融</span><div class="item__title"><a href="https://github.com/lyra81604/zhengxi-views">郑希投研Agent Skill - 基于基金经理投研框架的可溯源投资助手</a></div><div class="item__body">lyra81604开发的郑希投研Agent Skill项目获得了987个星标。该项目基于易方达基金经理郑希的全部公开观点原文，结合有原话佐证的投资方法和全市场基金真实数据，能够进行溯源问答、按投研框架给基金打分。该项目为投资者提供了一个基于专业基金经理框架的投资研究工具。</div><div class="item__src">来源: GitHub</div></div>
+    
+    <div class="item a" style="--i:22"><span class="item__tag item__tag--slate">AI</span><div class="item__title"><a href="https://github.com/Forsy-AI/agent-apprenticeship">Agent Apprenticeship - AI代理通过迭代工作流学习的生态系统</a></div><div class="item__body">Forsy-AI开发的agent-apprenticeship项目获得了899个星标。该项目创建了一个活跃的生态系统，让AI代理通过真实世界的迭代工作流、可重用的经验和集体训练信号交换来学习。这种学习模式有望加速AI代理在实际应用中的能力提升。</div><div class="item__src">来源: GitHub</div></div>
+    
+    <div class="item a" style="--i:23"><span class="item__tag item__tag--slate">工具</span><div class="item__title"><a href="https://github.com/aidenybai/cnfast">cnfast - `cn`命令的快速替代品</a></div><div class="item__body">aidenybai开发的cnfast项目获得了853个星标。这是一个`cn`命令的快速替代品，提供了更快的网络连接和更好的性能。该项目为需要快速网络连接的开发者提供了一个轻量级的解决方案，特别适合在国内网络环境下使用。</div><div class="item__src">来源: GitHub</div></div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html" selected>2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月23日 星期六</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.thenationalnews.com/news/asia/2026/05/23/china-coal-mine-accident-death-toll/">中国山西煤矿爆炸事故造成90人死亡，16年来最严重矿难</a></h3>
+<div class="news-content">
+山西沁源县通洲集团留神峪煤矿5月22日晚发生瓦斯爆炸事故，已造成90人死亡，是2009年以来中国最严重的矿难。事故发生在19时29分，当时井下有247名工作人员。中国国家主席习近平已指示全力救治伤员，科学组织搜救，妥善做好善后处置工作。应急管理部已调派6支国家矿山应急救援队伍345人携装备赴现场参与救援。涉事企业负责人已被依法采取控制措施。这起事故再次敲响了安全生产的警钟，反映出在追求能源产量同时，煤矿安全监管仍存在漏洞。</div>
+<div class="news-source">来源：The National | 2026-05-23</div>
+</div>
+<div class="news-item highlight-box">
+<h3 class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-05-23/russia-s-key-black-sea-oil-port-on-fire-after-drone-attack">乌克兰袭击俄罗斯黑海重要石油港口，油库起火</a></h3>
+<div class="news-content">
+乌克兰使用远程无人机袭击了俄罗斯黑海港口新罗西斯克的重要石油设施，这是该国能源基础设施遭到的系列袭击中的最新一起。俄罗斯紧急部门表示，无人机碎片导致港口油库起火，碎片还落在了石油码头上。此次袭击发生在俄乌冲突持续升级的背景下，双方在能源基础设施上的对抗日益激烈。NASA的FIRMS卫星图像显示，格鲁舍瓦娅码头发生火灾，该码头向新罗西斯克输送石油。这一事件可能进一步影响全球能源市场的稳定。</div>
+<div class="news-source">来源：Bloomberg | 2026-05-23</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c62d65y16nno">马斯克SpaceX成功发射史上最大火箭Starship V3</a></h3>
+<div class="news-content">
+埃隆·马斯克的SpaceX成功发射了史上最大且最强大的火箭Starship V3。这艘无人驾驶的火箭于周五17:30（22:30 GMT）从德克萨斯州发射，此前因发射塔故障推迟了一天的首次尝试。火箭在太空中部署了20颗卫星，然后重返大气层，约一小时后溅落在印度洋，并按计划爆炸。虽然火箭的两级都出现了发动机故障，但试飞总体上取得了成功。SpaceX计划进行首次公开募股（IPO），这可能是华尔街历史上规模最大的IPO，可能使马斯克成为首位万亿富翁。</div>
+<div class="news-source">来源：BBC | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/may/22/white-house-pauses-removal-detainers-drc-ebola-outbreak-widens">刚果（金）埃博拉疫情扩散，白宫暂停遣返拘留者</a></h3>
+<div class="news-content">
+随着刚果（金）埃博拉疫情迅速蔓延，白宫宣布暂停向刚果民主共和国遣返拘留者。世界卫生组织警告称，刚果（金）的埃博拉疑似病例在一周内增加了三倍。疫情已经在多个卫生机构中造成严重压力，导致医疗资源紧张。美国卫生官员表示，对刚果（金）、乌干达或南苏丹旅行者的禁令"不是解决方案"。目前国际社会正在加强合作，努力控制疫情的进一步扩散。</div>
+<div class="news-source">来源：The Guardian | 2026-05-22</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cnn.com/2026/05/22/china/four-dead-and-dozens-trapped-in-chinese-mine-with-elevated-carbon-monoxide-levels">中国煤矿一氧化碳超标事故致4人死亡，数十人被困</a></h3>
+<div class="news-content">
+中国一处煤矿发生一氧化碳超标事故，已造成4人死亡，数十人被困。事故发生在山西省一处煤矿，救援工作仍在进行中。当地应急管理部门表示，矿工们受到有毒气体伤害，主要接受高压氧治疗。医院已派驻心理医生对伤者进行疏导。这起事故与此前报道的山西煤矿爆炸事故有关，反映出中国煤炭行业安全生产面临的严峻挑战。</div>
+<div class="news-source">来源：CNN | 2026-05-22</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.reuters.com/world/middle-east/israeli-minister-ben-gvir-banned-access-french-territory-2026-05-23/">法国禁止极右翼以色列部长本-格维尔入境</a></h3>
+<div class="news-content">
+法国宣布禁止以色列极右翼国家安全部长本-格维尔进入法国领土。此举是在以哈冲突升级的背景下作出的，法国外交部表示这一决定是基于国家安全考虑。本-格维尔以强硬立场著称，曾多次发表争议性言论。这一事件可能进一步影响法国与以色列的关系，也反映出欧洲国家对以色列政府内极右翼势力的担忧。</div>
+<div class="news-source">来源：Reuters | 2026-05-23</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#山西煤矿事故已致90人遇难#</a></h3>
+<div class="news-content">
+微博热搜话题#山西煤矿事故已致90人遇难#引发广泛关注。网友纷纷为遇难者祈祷，同时呼吁加强煤矿安全监管。此次事故再次暴露了安全生产的重要性，有网友质疑为何在2026年的今天还会发生如此严重的矿难。相关话题阅读量已超过10亿，讨论量超过100万。</div>
+<div class="news-source">来源：微博热搜 | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://sns-webpic-qc.xhscdn.com/202605232300/adf5cafe082730a819294fdbe4b43e64/1040g2sg320gc6qo05cf05p1l70rjjt3pgpjgiag!nc_n_webp_prv_1">#五角大楼披萨指数爆表了！？#</a></h3>
+<div class="news-content">
+小红书热门话题#五角大楼披萨指数爆表了！？#引发网友热议。这一话题可能与美国国防部近期的一些异常活动有关，具体含义尚不明确。有网友猜测可能与军事行动、预算异常或其他内部事务有关。该话题在小红书上获得大量关注，相关笔记点赞数超过1万。</div>
+<div class="news-source">来源：小红书热搜 | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#金秀贤从全民唾骂到沉冤得雪#</a></h3>
+<div class="news-content">
+微博热搜话题#金秀贤从全民唾骂到沉冤得雪#引发热议。据报道，韩国演员金秀贤近期的一些争议事件似乎有了新的进展，公众态度有所转变。网友纷纷讨论演艺圈的是非对错，以及媒体在塑造公众舆论中的作用。这一话题反映了社会对公正和真相的追求。</div>
+<div class="news-source">来源：微博热搜 | 2026-05-23</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/c62d65y16nno">SpaceX Starship V3成功试飞，为史上最大IPO铺路</a></h3>
+<div class="news-content">
+SpaceX成功试飞了Starship V3火箭，这一成就不仅推动了太空探索的进步，也为公司即将进行的史上最大IPO奠定了基础。SpaceX估值预计达到1.25万亿美元，这一IPO可能使埃隆·马斯克成为全球首位万亿富翁。火箭虽然出现了一些技术问题，但整体试飞成功，显示了SpaceX的技术实力和未来发展潜力。</div>
+<div class="news-source">来源：BBC | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/feed/">AI技术应用于逝者声音复活，引发伦理争议</a></h3>
+<div class="news-content">
+科技新闻报道称，AI技术正被用于"复活"已故飞行员的 voices，这一应用引发了广泛的伦理讨论。支持者认为这有助于传承经验和纪念逝者，而批评者则担心这可能侵犯隐私和被滥用。这一技术发展反映了AI在伦理和社会影响方面的挑战，也促使行业加强相关规范的制定。</div>
+<div class="news-source">来源：TechCrunch | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/Doorman11991/smallcode">AI编程助手优化小模型性能达87%基准</a></h3>
+<div class="news-content">
+GitHub上一个名为"smallcode"的AI编程助手项目获得广泛关注，该项目专门针对小型语言模型进行了优化，在4B活跃模型上达到了87%的基准性能。这一突破证明了AI技术可以在资源受限的情况下仍保持高效，为边缘计算和移动设备上的AI应用提供了新思路。</div>
+<div class="news-source">来源：GitHub | 2026-05-23</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://money.udn.com/money/story/5603/9521148">中国山西矿难冲击炼焦煤市场，25座煤矿停产</a></h3>
+<div class="news-content">
+山西煤矿爆炸事故导致当地25座煤矿全部停产，预计产能损失达1870万吨，炼焦煤供应告急。分析师认为，这一事故可能推高全球炼焦煤价格，影响钢铁行业成本。事故发生后，相关股票出现波动，市场对能源安全问题的担忧加剧。</div>
+<div class="news-source">来源：UDN经济日报 | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.reuters.com/world/us/gabbard-resigns-trumps-national-intelligence-director-fox-news-digital-reports-2026-05-22/">图西·加巴德辞去美国国家情报总监职务</a></h3>
+<div class="news-content">
+美国国家情报总监图西·加巴德突然辞职，这一消息引发市场波动。加巴德的辞职被认为是特朗普政府内部变动的一部分，可能影响美国的情报政策和对华战略。华尔街对这一政治变动反应谨慎，主要股指出现小幅调整。</div>
+<div class="news-source">来源：Reuters | 2026-05-22</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">#韩国投资者抄底A股#</a></h3>
+<div class="news-content">
+微博热搜话题#韩国投资者抄底A股#显示国际资本对中国市场的看好。据报道，韩国投资者近期加大了对中国A股市场的投资力度，认为中国资产具有估值优势。这一趋势反映了国际投资者对中国经济前景的信心，也可能为A股市场带来新的资金流入。</div>
+<div class="news-source">来源：微博热搜 | 2026-05-23</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/FoundZiGu/GuJumpgate">GuJumpgate：开源跳板机项目获1992星标</a></h3>
+<div class="news-content">
+GitHub项目GuJumpgate获得1992个星标，该项目是一个开源跳板机解决方案，为企业提供了安全的服务器访问管理方案。项目的受欢迎程度反映了企业对网络安全和远程访问解决方案的迫切需求，同时也显示出开源软件在企业级应用中的重要地位。</div>
+<div class="news-source">来源：GitHub | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/datawhalechina/Agent-Learning-Hub">Agent-Learning-Hub：AI Agent学习资料库获1191星标</a></h3>
+<div class="news-content">
+由DataWhaleChina维护的Agent-Learning-Hub项目获得1191个星标，该项目是一个AI Agent学习路线与资料库收集平台。随着AI Agent技术的快速发展，这样的开源学习资源对于推动技术普及和人才培养具有重要意义，也为中文AI社区提供了宝贵的参考资料。</div>
+<div class="news-source">来源：GitHub | 2026-05-23</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/lynote-ai/humanize-text">humanize-text：AI文本人性化工具，可绕过AI检测</a></h3>
+<div class="div class="news-content">
+lynote-ai开发的humanize-text项目提供免费的开源AI文本人性化工具，可以将AI生成的内容转换为无法被检测的类人写作。该工具可以绕过Turnitin、GPTZero等主要AI检测器，无需注册即可使用。这一项目反映了AI检测与规避技术的持续博弈，也引发了关于AI内容伦理的讨论。</div>
+<div class="news-source">来源：GitHub | 2026-05-23</div>
+</div>
+</div>
+
+</div></body></html>

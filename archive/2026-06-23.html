@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板
+  美学：Editorial — 衬线标题 + 无衬线正文，暖色调，舒适阅读
+  配色：Deep blue + gold（优雅、有质感）
+  字体：Instrument Serif + IBM Plex Sans + IBM Plex Mono
+  原则：CSS custom properties 深浅主题自动切换，背景氛围，卡片深度层次，逐行渐入动画
+  禁止：indigo/violet 渐变紫、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  /* ============ THEME ============ */
+  :root {
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Instrument Serif', 'Georgia', serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --surface2: #f5f2ed;
+    --surface-elevated: #fffdf9;
+    --border: rgba(0, 0, 0, 0.07);
+    --border-bright: rgba(0, 0, 0, 0.14);
+    --text: #1c1917;
+    --text-dim: #78716c;
+    --accent: #1e3a5f;
+    --accent-dim: rgba(30, 58, 95, 0.06);
+    --gold: #d4a73a;
+    --gold-dim: rgba(212, 167, 58, 0.08);
+    --red: #dc2626;
+    --red-dim: rgba(220, 38, 38, 0.06);
+    --green: #16a34a;
+    --green-dim: rgba(22, 163, 74, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111010;
+      --surface: #1a1917;
+      --surface2: #242220;
+      --surface-elevated: #2a2825;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #f5f0e8;
+      --text-dim: #a8a29e;
+      --accent: #93c5fd;
+      --accent-dim: rgba(147, 197, 253, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --red: #f87171;
+      --red-dim: rgba(248, 113, 113, 0.08);
+      --green: #4ade80;
+      --green-dim: rgba(74, 222, 128, 0.08);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, var(--gold-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, var(--accent-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATION ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate {
+    animation: fadeUp 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER ============ */
+  .header {
+    text-align: center;
+    padding: 40px 24px 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+
+  .header h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: var(--text);
+  }
+
+  .header .date {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ============ NEWS ITEMS ============ */
+  .news-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .news-item:last-child { margin-bottom: 0; }
+
+  .news-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .news-item--highlight {
+    background: var(--surface-elevated);
+    border-color: var(--gold);
+    border-left: 3px solid var(--gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .news-title {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .news-title a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .news-title a:hover { text-decoration: underline; }
+
+  .news-content {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .news-content a { color: var(--accent); text-decoration: none; }
+  .news-content a:hover { text-decoration: underline; }
+
+  .news-source {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 10px;
+  }
+
+  .news-source a { color: var(--teal); text-decoration: none; }
+
+  /* ============ CATEGORY TAG ============ */
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .tag--red { background: var(--red-dim); color: var(--red); }
+  .tag--green { background: var(--green-dim); color: var(--green); }
+  .tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .tag--gold { background: var(--gold-dim); color: var(--gold); }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .header h1 { font-size: 28px; }
+    .news-item { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html" selected>2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+
+<div class="container">
+
+  <div class="header animate" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date">2026年6月23日</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:1">焦点事件</h2>
+    <!-- news-item--highlight for top stories -->
+    <div class="news-item news-item--highlight animate" style="--i:1"><div class="news-title"><a href="#">英国数百所学校因红色高温预警计划关闭</a></div><p class="news-content">英国面临极端高温天气，红色预警级别下，数百所学校计划暂时关闭。教育部门发布紧急通知，建议学校在高温期间采取灵活的教学安排，避免学生在高温环境下活动。气象部门警告，本周气温可能达到历史新高，部分地区温度将超过40摄氏度。</p><div class="news-source">来源: Reuters</div></div>
+    <div class="news-item news-item--highlight animate" style="--i:2"><div class="news-title"><a href="#">联合国宣布将撤离霍尔木兹海峡被困海员</a></div><p class="news-content">联合国宣布将派遣船只救援被困在霍尔木兹海峡的商船海员。近期该地区局势紧张，美国参议员鲁比奥警告不要在该地区设立过路费。联合国方面表示，正在与相关国家协调，确保海员安全撤离。霍尔木兹海峡是全球最重要的石油运输通道之一。</p><div class="news-source">来源: BBC</div></div>
+    <div class="news-item news-item--highlight animate" style="--i:3"><div class="news-title"><a href="#">肯尼亚部长叫停美国埃博拉设施建设</a></div><p class="news-content">肯尼亚卫生部长下令暂停美国在肯尼亚建设的埃博拉病毒研究设施。当地民众和环保组织担忧该设施可能带来生物安全风险，要求进行更全面的环境评估。美国政府表示该设施旨在帮助非洲地区应对埃博拉疫情，但肯尼亚政府表示需要更多时间来评估相关风险。</p><div class="news-source">来源: Guardian</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:2">全球热点</h2>
+    <div class="news-item animate" style="--i:1"><div class="news-title"><a href="#">美国国会通过住房法案，罕见达成两党共识</a></div><p class="news-content">美国国会顺利通过了一项重要的住房法案，这被视为近年来罕见的两党合作成果。该法案旨在解决美国住房负担能力危机，包括提供更多可负担住房补贴、简化住房开发审批流程等内容。两党议员都表示，住房问题是影响美国选民生活的核心议题。</p><div class="news-source">来源: NYT</div></div>
+    <div class="news-item animate" style="--i:2"><div class="news-title"><a href="#">英国优先发展与阿联酋关系，被指未能阻止苏丹大规模暴行</a></div><p class="news-content">英国议会调查报告显示，政府在苏丹危机期间优先发展与阿拉伯联合酋长国的关系，未能有效阻止苏丹发生的大规模暴行。人权组织批评英国政府过于注重经济利益，忽视了人道主义责任。英国政府表示正在重新评估其苏丹政策。</p><div class="news-source">来源: Guardian</div></div>
+    <div class="news-item animate" style="--i:3"><div class="news-title"><a href="#">德国铁路系统全国范围内短暂中断</a></div><p class="news-content">德国铁路系统因IT系统故障在全国范围内出现短暂中断，影响了数百万乘客的交通。德国铁路公司表示，故障已在几小时内修复，但延误和取消的班次仍然影响了整个交通网络。德国交通部长要求铁路公司加强IT基础设施的维护和安全。</p><div class="news-source">来源: BBC</div></div>
+    <div class="news-item animate" style="--i:4"><div class="news-title"><a href="#">特朗普声称林肯中心帆布上有其名字的内部文件引发质疑</a></div><p class="news-content">前总统特朗普声称林肯中心帆布上有其名字是有人故意破坏的结果，但内部文件显示这一说法缺乏证据。林肯中心方面表示，帆布上的标记是正常的维护工作，与特朗普无关。这一事件再次引发了关于特朗普政府时期艺术项目透明度的讨论。</p><div class="news-source">来源: NYT</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:3">微博 / 小红书热搜</h2>
+    <div class="news-item animate" style="--i:1"><div class="news-title"><a href="#">[create] Frset - 精致优雅的 macOS 效率工具</a></div><p class="news-content">一款名为Frset的macOS效率工具获得终身会员送赠活动，该工具集成了剪贴板、截图、开发者工具、Markdown、放假日历等多种功能。开发者称该工具注重细节和用户体验，旨在为Mac用户提供一站式效率解决方案。活动期间可获得终身会员资格。</p><div class="news-source">来源: V2EX</div></div>
+    <div class="news-item animate" style="--i:2"><div class="news-title"><a href="#">小红书对女性的影响引发家庭矛盾讨论</a></div><p class="news-content">网络上各种关于家庭矛盾的帖子引发了对小红书这一平台对女性影响的深入讨论。网友们纷纷分享自己或身边女性在接触小红书后的变化，包括消费习惯、价值观和生活态度等方面。这一话题引发了关于社交媒体平台对青少年特别是女性群体影响的广泛思考。</p><div class="news-source">来源: V2EX</div></div>
+    <div class="news-item animate" style="--i:3"><div class="news-title"><a href="#">两年实盘收益135%，用Claude Code搭建多Agent投研框架</a></div><p class="news-content">一位投资者分享了两年来实盘投资收益达到135%的经验，介绍如何使用Claude Code搭建多Agent投研框架。该框架结合了AI代理的协同工作能力，能够自动分析市场数据、跟踪投资机会并执行交易策略。分享者强调这是纯粹的技术分享，不构成投资建议。</p><div class="news-source">来源: V2EX</div></div>
+    <div class="news-item animate" style="--i:4"><div class="news-title"><a href="#">京津通勤的一天时间线引发热议</a></div><p class="news-content">一篇关于京津通勤一天时间线的帖子在网络上引发热议。作者详细记录了从北京到天津通勤过程中的各种经历和感受，包括交通状况、时间安排、生活成本等方面。帖子引发了关于双城生活可行性、通勤压力等话题的讨论，不少网友分享了自己的通勤经验。</p><div class="news-source">来源: V2EX</div></div>
+    <div class="news-item animate" style="--i:5"><div class="news-title"><a href="#">影院观影体验讨论：你有多久没进电影院了？</a></div><p class="news-content">一个关于观影体验的帖子引发网友讨论：你有多久没进电影院了？网友们分享了各自的观影习惯，包括选择在家看电影还是去影院的原因，以及对不同观影方式的偏好。讨论涉及票价、观影质量、观影环境等多个方面，反映了疫情期间和后疫情时代人们观影习惯的变化。</p><div class="news-source">来源: V2EX</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:4">科技新闻</h2>
+    <div class="news-item animate" style="--i:1"><div class="news-title"><a href="#">印度MoEngage押注AI代理将重塑未来营销</a></div><p class="news-content">印度营销科技平台MoEngage宣布，未来营销将由数百万个AI代理主导。该公司推出了基于AI的客户互动系统，能够为每个用户提供个性化的营销体验。MoEngage认为，传统的营销方式将被AI驱动的智能代理取代，这将彻底改变企业与客户的互动模式。</p><div class="news-source">来源: TechCrunch</div></div>
+    <div class="news-item animate" style="--i:2"><div class="news-title"><a href="#">Superhuman收购AI检测创业公司GPTZero</a></div><p class="news-content">邮件客户端Superhuman宣布收购AI检测公司GPTZero。此次收购旨在加强Superhuman对AI生成内容的检测能力，帮助用户识别AI生成的邮件内容。GPTZero的AI检测技术将被整合到Superhuman的平台中，提供更安全的邮件体验。</p><div class="news-source">来源: TechCrunch</div></div>
+    <div class="news-item animate" style="--i:3"><div class="news-title"><a href="#">Meta计划推出自己的预测市场平台</a></div><p class="news-content">Meta公司正在开发自己的预测市场平台，这将直接与现有的预测市场服务竞争。马克·扎克伯格表示，预测市场可以帮助用户更好地理解和预测未来事件的发展。Meta的预测市场将整合到其现有的社交生态系统中，为用户提供更丰富的社交体验。</p><div class="news-source">来源: TechCrunch</div></div>
+    <div class="news-item animate" style="--i:4"><div class="news-title"><a href="#">Anthropic推出Claude Tag，企业AI助手新功能</a></div><p class="news-content">AI公司Anthropic推出了Claude Tag功能，这是一个能够学习企业内部信息的AI助手。Claude Tag可以通过分析企业Slack消息等方式，深入了解公司的工作流程和文化，为企业提供更智能的AI服务。该功能将帮助企业更好地整合AI到日常工作中。</p><div class="news-source">来源: TechCrunch</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:5">财经要闻</h2>
+    <div class="news-item animate" style="--i:1"><div class="news-title"><a href="#">百度无限OCR项目获1800星标，开启长文本解析新时代</a></div><p class="news-content">百度开源的无限OCR项目在GitHub上获得了1800个星标，该项目承诺开启一次性长文本解析的新时代。无限OCR系统突破了传统OCR技术在处理长文档时的局限性，能够高效处理各种格式的长文本文档，为企业和开发者提供了强大的文本识别解决方案。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:2"><div class="news-title"><a href="#">郑希投研Agent框架获761星标，全市场基金数据支持</a></div><p class="news-content">基于易方达基金经理郑希公开观点的投研Agent框架在GitHub上获得了761个星标。该框架能够溯源问答、按郑希的投研框架给基金打分，绝不杜撰。项目整合了郑希的全部公开观点原文和有原话佐证的投资方法，结合全市场基金真实数据，为投资研究提供了AI辅助工具。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:3"><div class="news-title"><a href="#">AI代理学徒生态系统获得281星标</a></div><p class="news-content">一个名为agent-apprenticeship的AI代理生态系统项目获得了281个星标。该项目创建了一个生态系统，让AI代理能够通过迭代工作流循环、可重用经验和集体训练信号交换从真实世界工作中学习。这一创新模式有望改变AI训练的方式。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:4"><div class="news-title"><a href="#">cnfast - CN命令行工具的快速替代品</a></div><p class="news-content">cnfast项目作为cn命令行工具的快速替代品获得了超过600个星标。该项目旨在提供更快的网络连接测试和诊断功能，帮助开发者和网络管理员更好地理解和解决网络问题。cnfast通过优化算法和减少资源占用，提供了比原版更快的执行速度。</p><div class="news-source">来源: GitHub</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title animate" style="--i:6">值得关注的项目</h2>
+    <div class="news-item animate" style="--i:1"><div class="news-title"><a href="https://github.com/baidu/Unlimited-OCR">Unlimited OCR - 百度开源的长文本解析工具</a></div><p class="news-content">百度开源的Unlimited OCR项目突破了传统OCR技术在处理长文档时的限制。该项目采用先进的光学字符识别技术，能够高效处理各种格式的长文本文档，包括扫描件、图片和PDF等。项目在7天内获得了1800个星标，显示了其在AI文本识别领域的重要地位。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:2"><div class="news-title"><a href="https://github.com/lyra81604/zhengxi-views">郑希投研Agent - 全市场基金数据AI辅助工具</a></div><p class="news-content">基于易方达基金经理郑希投研框架的AI代理项目，能够溯源问答、按郑希框架给基金打分。该项目整合了郑希的全部公开观点原文和有原话佐证的投资方法，结合全市场基金真实数据，为投资研究提供AI辅助。项目承诺绝不杜撰，仅作为研究学习辅助工具。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:3"><div class="news-title"><a href="https://github.com/Forsy-AI/agent-apprenticeship">AI代理学徒生态系统 - AI代理学习新范式</a></div><p class="news-content">一个创新的AI代理生态系统，让AI代理能够通过迭代工作流循环、可重用经验和集体训练信号交换从真实世界工作中学习。该项目打破了传统AI训练的局限，创造了一个让AI代理在协作环境中共同进化的环境，获得了281个星标的关注。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:4"><div class="news-title"><a href="https://github.com/aidenybai/cnfast">cnfast - CN命令行工具快速替代品</a></div><p class="news-content">cnfast是CN命令行工具的快速替代品，通过优化算法和减少资源占用提供了更快的网络连接测试和诊断功能。该项目旨在帮助开发者和网络管理员更好地理解和解决网络问题，执行速度比原版cn命令有显著提升，获得了超过600个星标。</p><div class="news-source">来源: GitHub</div></div>
+    <div class="news-item animate" style="--i:5"><div class="news-title"><a href="https://github.com/sums001/Windows-Copilot-API">Windows Copilot API - 反向工程开源项目</a></div><p class="news-content">该项目通过反向工程将Windows Copilot转换为与OpenAI兼容的API，让用户无需API密钥或计费即可通过简单REST接口访问GPT-4和GPT-5模型。该项目为Windows用户提供了免费访问先进AI模型的途径，在GitHub上获得了522个星标。</p><div class="news-source">来源: GitHub</div></div>
+  </div>
+
+  <div class="footer animate" style="--i:7">
+    Powered by Claw · Visual Explainer Design System
+  </div>
+
+</div>
+
+</body>
+</html>

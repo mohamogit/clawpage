@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html" selected>2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年6月17日 星期三</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">梅西戴帽登上微博热搜第一，世界杯开门红</a></h3><p class="news-content">北京时间6月17日上午，世界杯小组赛第一轮，阿根廷对阵阿尔及利亚，最终阿根廷3-0击败阿尔及利亚。本场比赛，梅西完成帽子戏法帮助球队3-0击败对手取得开门红。赛后，梅西帽子戏法词条登上微博热搜第一，热搜前六中，有五条热搜与梅西相关。</p><div class="news-source">来源: 网易</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">德克萨斯州商务飞机坠毁高速公路起火</a></h3><p class="news-content">周二晚，一架商务飞机在德克萨斯州高速公路上坠毁并起火，造成一人死亡。根据警方消息，这架塞斯纳引纬纬度双引擎飞机载有6人，从墨西哥洛斯卡沃斯国际机场起飞后不久在拉雷多坠毁。五名响应警官因吸入烟雾被送医治疗。涉事飞机属于NetJets公司。</p><div class="news-source">来源: Fox News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">伊朗油轮通过美国封锁线，和平谈判在即</a></h3><p class="news-content">在美国和伊朗即将签署谅解备忘录并开始更多会谈之际，TankerTrackers监测报告显示伊朗两个月来首次出口石油。多艘伊朗油轮携带总计约380万桶原油通过了美国海军在霍尔木兹海峡的封锁线。这些油轮的动向标志着和平谈判的积极信号。</p><div class="news-source">来源: Al Jazeera</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">以色列对黎巴嫩发动新打击，特朗普表示批评</a></h3><p class="news-content">尽管美国总统特朗普对以色列的行动表示批评，以色列军队仍对黎巴嫩南部发动了新的打击。这一行动发生在美伊停火谈判的关键时刻，引发了国际社会对地区局势升级的担忧。美国敦促以色列在黎巴嫩行动中承担更多责任。</p><div class="news-source">来源: BBC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">FBI挫败针对白宫UFC赛事的袭击阴谋</a></h3><p class="news-content">FBI挫败了一个针对白宫UFC赛事的袭击阴谋，嫌疑人计划使用狙击手和无人机进行攻击。该团伙被指控对腐败、爱泼斯坦文件和数据中心表达不满，在法庭文件中被披露。此事件凸显了美国国家安全的持续挑战。</p><div class="news-source">来源: ABC News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">埃博拉疫情在刚果民主共和国创下单日记录</a></h3><p class="news-content">刚果民主共和国报告的埃博拉病例创下单日记录，武装分子袭击医院后正在寻找六岁的埃博拉患者。这一公共卫生危机给当地医疗系统带来巨大压力，国际社会正在加强对该地区的援助和支持。</p><div class="news-source">来源: BBC News</div></div>
+</div>
+
+div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">世界杯热潮席卷微博，梅西词条霸屏热搜</a></h3><p class="news-content">2026美加墨世界杯在国内的收视率直接爆了，完全碾压同时间段的其他节目，看来今天上班摸鱼的人不少，也有一些幸运打工人，直接用上"补觉卡"。阿根廷vs阿尔及利亚的比赛中，梅西戴帽表现成为微博热搜话题，相关词条占据热搜榜前六名中的五个位置。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">鸿蒙7开发者Beta正式发布</a></h3><p class="news-content">HDC 2026高能开场！本次大会带来超多鸿蒙的全新升级，系统流畅度、AI智能玩法、跨设备互联体验全面焕新，综合体验直接拉满。从日常娱乐到办公使用，各类功能都做到极致，成为体验天花板。</p><div class="news-source">来源: 微博热搜</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">华为鸿蒙生态驶入高速增长快车道</a></h3><p class="news-content">鸿蒙生态稳步驶入高速增长快车道，年度更新王的微信更是夯爆了。在最新的开发者版本中，鸿蒙7带来了全面升级的用户体验，从跨设备互联到AI智能助手功能都有显著提升。</p><div class="news-source">来源: 微博热搜</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">Pramaana Labs获2700万美元种子轮融资</a></h3><p class="news-content">Pramaana Labs从Khosla Ventures获得2700万美元种子轮融资，致力于将形式验证技术引入AI领域。这家初创公司旨在解决AI系统可靠性和安全性问题，通过数学方法验证AI决策的正确性，为AI应用提供更安全的基础。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">SpaceX校友获2200万美元融资，将火箭发动机改造为地热发电厂</a></h3><p class="news-content">一家由SpaceX前员工创立的公司获得2200万美元融资，计划将火箭发动机技术应用于地热发电。这项创新技术有望为地热能开发提供新思路，通过高效的热能转换系统提高地热发电效率。</p><div class="news-source">来源: Hacker News</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">DeepL收购Mixhalo，进军实时音频流和翻译领域</a></h3><p class="news-content">DeepL宣布收购Mixhalo公司，这家公司专注于实时活动音频流和翻译服务。此次收购将帮助DeepL拓展其在实时音频翻译领域的能力，为会议、音乐会等提供更优质的实时翻译解决方案。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">加拿大养老基金加入印度数据中心AI热潮</a></h3><p class="news-content">加拿大养老基金巨头加入对印度AI驱动数据中心热潮的投资，预计未来几年印度数据中心市场将呈现爆发式增长。随着AI应用的普及，对计算能力的需求激增，印度正成为全球数据中心投资的新热点。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">Uber将在2027年推出高级无人出租车服务</a></h3><p class="news-content">Uber宣布计划在2027年将其高级无人出租车服务扩展到休斯顿市。这项服务将采用最先进的自动驾驶技术，为用户提供更安全、更便捷的出行选择，标志着城市交通向智能化发展的重要一步。</p><div class="news-source">来源: TechCrunch</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">Pinterest推出实验性AI购物应用</a></h3><p class="news-content">Pinterest推出名为"Ask Pinterest"的实验性AI购物应用，该应用利用人工智能技术为用户提供个性化的购物推荐。通过整合AI和视觉搜索技术，Pinterest希望在电商领域占据更多市场份额。</p><div class="news-source">来源: TechCrunch</div></div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item"><h3 class="news-title"><a href="#">Ponytail：让AI代理像房间里最懒的资深开发者一样思考</a></h3><p class="news-content">一个开源项目，旨在让AI代理采用最像人类资深开发者的思考模式，特别强调"最佳代码就是你不编写的代码"的理念。该项目获得29662星标，通过优化AI代码生成策略，帮助开发者提高编程效率。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">Omnigent：开源AI代理框架</a></h3><p class="news-content">Omnigent是一个开源的AI代理框架和元接口，可以协调Claude Code、Codex、Cursor、Pi和自定义代理，在不重写代码的情况下交换接口，强制执行策略和沙箱，并从任何设备实时协作。该项目获得3283星标。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">Kage：网站离线查看工具</a></h3><p class="news-content">Kage是一个开源工具，可以屏蔽任何网站进行离线查看，同时移除JavaScript代码。该项目帮助用户在没有网络连接的情况下浏览网页内容，同时确保浏览安全性和隐私保护。该项目获得1829星标。</p><div class="news-source">来源: GitHub</div></div>
+
+<div class="news-item"><h3 class="news-title"><a href="#">IPA-Download：iOS历史版本安装工具</a></h3><p class="news-content">一款用于安装iOS应用历史版本的实用工具，适用于获取旧版应用并自动捕获数据包。下载后，可直接通过AirDrop传输至iPhone、iPad上并安装使用，为iOS开发者和测试人员提供便利。该项目获得961星标。</p><div class="news-source">来源: GitHub</div></div>
+</div>
+
+</div></body></html>

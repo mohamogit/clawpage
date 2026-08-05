@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html" selected>2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月22日 星期五</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="highlight-box news-item">
+<h3 class="news-title">WHO警告：刚果埃博拉疫情"迅速蔓延"，风险评估上调为"非常高"</h3>
+<div class="news-content">
+世界卫生组织总干事谭德塞周五警告称，刚果（金）的埃博拉疫情正在"迅速蔓延"，并在该国构成"非常高"的风险。这一风险评估从之前的"高"级别上调。目前已有82例确诊病例和7例确认死亡，但世卫组织相信实际疫情规模"大得多"——目前有近750例疑似病例和177例疑似死亡。联合国已释放6000万美元紧急资金，美国承诺提供2300万美元资助，但当地医疗资源匮乏和人口愤怒阻碍了响应。最令人担忧的是，4月19日，卢旺帕拉的一个埃博拉治疗中心被愤怒的青年纵火，因为他们在试图取回疑似死于埃博拉的朋友遗体时被阻拦。当地民众的愤怒主要源于错误信息，一些教堂向会众宣扬疫情是假的，神圣保护使医疗护理不必要。专家警告，疫情仍可控制，但行动窗口期很窄。
+</div>
+<div class="news-source">来源：美联社 | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="highlight-box news-item">
+<h3 class="news-title">巴基斯坦斡旋下的美伊和平协议草案：制裁解除与霍尔木兹海峡保障</h3>
+<div class="news-content">
+据阿拉比亚电视台报道，美国和伊朗预计将在几小时内宣布一项草案协议，旨在将他们脆弱的停火转变为更广泛的政治框架，涵盖制裁、海上安全和未来谈判。该草案协议包括所有前线（陆地、海上和空中）立即无条件停火，双方承诺不针对军事、民用或经济基础设施。关键条款包括保证阿拉伯湾、霍尔木兹海峡和阿曼湾的航行自由。这些水道在战争期间成为主要冲突热点，因为伊朗对与以色列、美国及其盟友相关的航运交通实施了限制。草案还包括建立联合机制监督实施和解决争端，协议生效后七天内开始就未解决问题进行谈判。据报道，通过巴基斯坦调解，美伊谈判已进入高级阶段。
+</div>
+<div class="news-source">来源：阿拉比亚电视台 | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title">美国西海岸出现巨大海洋热浪，科学家发出警报</h3>
+<div class="news-content">
+美国西海岸外的一个巨大海洋热浪正在让海洋和大气科学家感到震惊。新数据显示其生态和环境影响正在加剧。这个异常的暖水区域自2025年9月达到最大规模以来一直存在，仍从加州海岸延伸数千英里——横跨太平洋一半以上，影响从夏威夷到不列颠哥伦比亚省、向南到墨西哥的广阔三角海洋栖息地。国家海洋和大气管理局的最新预测显示，这个海洋热波预计将在未来几个月扩大和加强。科学家警告说，这可能会伴随热带太平洋厄尔尼诺现象的形成，导致影响从陆地创纪录温度到海洋食物链中断的一切。今年3月，一个陆地热浪被气象学家称为"本世纪迄今为止最令人惊讶的全球天气事件之一"，使明尼苏达、科罗拉多和爱达荷等相对温和地区的晚冬气温飙升到88°F(31°C)或更高。
+</div>
+<div class="news-source">来源：卫报 | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">佛罗里达生物学家因查理·柯克社媒言论被解雇后获48.5万美元和解</h3>
+<div class="news-content">
+佛罗里达官员将向一名生物学家支付近50万美元，该生物学家因在保守派活动家查理·柯克死后在社交媒体上批评他而被州机构解雇。州鱼类和野生动物保护委员会在9月解雇了生物学家布里特妮·布朗，因为她个人Instagram账户转发了柯克被枪杀后在校园里孩子们被枪杀的梗图。她提起诉讼要求恢复职位，表示她难以找到其他工作，因为该州机构是她鸟类保护研究专业的监管机构。布朗于周四与机构主管签署了48.5万美元的和解协议，包括欠薪、损害赔偿和律师费。柯克的支持者在9月10日枪击事件后仔细审查了社交媒体，他们认为有人在庆祝他的死亡。像劳拉·卢默这样的影响者发誓要毁掉那些对此杀戮轻描淡写的人的职业生涯。
+</div>
+<div class="news-source">来源：美联社 | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">美国西海岸海洋热浪加剧西部干旱，水资源管理面临挑战</h3>
+<div class="news-content">
+持续的海洋热浪已经导致美国大部分地区出现极端高温。异常温暖的太平洋水域往往保留夏季较温暖月份的大气热量，并在相对较冷的冬季月份重新释放，从而显著改变天气模式。俄勒冈州立大学气候学家拉里·奥尼尔描述海洋热浪为"异常持久"，担心增加的海洋温度可能带来更高的海岸湿度，在加利福尼亚和太平洋西北地区引发干燥雷暴。由于干旱恶化，这些雷暴可能引发野火而不是带来有益的降雨。专家警告说，即使海洋热浪不再持续，我们也将面临水资源供应条件差的糟糕野火季节。
+</div>
+<div class="news-source">来源：综合报道 | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title">81岁游戏奶奶为给孙子治病直播，遭"报警"突袭</h3>
+<div class="news-content">
+亚利桑那州一名81岁的祖母"GrammaCrackers"因通过视频游戏帮助支付孙子的医疗费用而走红，有超过60万YouTube订阅者。她和家人最近开始了一个24/7的直播筹款活动，以帮助杰克·塞尔夫支付癌症治疗费用。家人已连续直播近15天，周一有人谎报塞尔夫枪杀了祖母并要自杀。十几名全副装备的皇后溪警察冲入家中。尽管受到惊吓，雅克表示她没有停止直播的计划。警方正在调查这起事件。这起事件引发了人们对直播安全和网络暴力的担忧。
+</div>
+<div class="news-source">来源：KPNX/CNN | 发布时间：2026年5月21日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">特朗普手机运营商确认泄露客户个人信息，包括电话号码和家庭住址</h3>
+<div class="news-content">
+特朗普手机运营商确认，客户的姓名、电子邮件地址、邮寄地址、手机号码和订单标识符在互联网上公开可见。特朗普移动公司的发言人克里斯·沃克表示，公司正在调查这次泄露，没有发现内容或财务信息泄露到网上的证据。该公司的承认是在本周早些时候的报道之后，即特朗普移动客户的数据可以从网络上公开访问。两家YouTube博主在上周订购了特朗普手机后，有研究人员通知他们个人信息已被泄露到网上。沃克说，特朗普移动正在评估是否需要通知客户其个人数据泄露的情况。
+</div>
+<div class="news-source">来源：TechCrunch | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title">特朗普手机运营商数据泄露事件持续发酵</h3>
+<div class="news-content">
+特朗普移动公司数据泄露事件引发广泛关注。这次泄露与支持"某些特朗普移动运营"的第三方平台提供商有关。该公司表示没有发现网络、系统或基础设施遭到破坏的证据。两名YouTube博主在研究人员警告他们个人信息在线暴露后试图联系特朗普移动，但未果。这次事件引发了人们对数据安全和隐私保护的再次关注，尤其是在政治人物相关的企业中。
+</div>
+<div class="news-source">来源：TechCrunch | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">GitHub热门项目：AI编码代理和小型语言模型受关注</h3>
+<div class="news-content">
+GitHub最新热门项目显示，FoundZiGu/GuJumpgate获得1673星标，thananon/9arm-skills获得1338星标。特别引人注目的是Doorman11991/smallcode，这是一个为小型语言模型优化的AI编码代理，在4B活跃模型上达到87%的基准测试成绩。datawhalechina/Agent-Learning-Hub获得1053星标，是一个AI学习路线和资料库收集项目。这些项目反映了在AI领域，特别是小型语言模型和AI代理方面的快速发展。
+</div>
+<div class="news-source">来源：GitHub | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title">霍尔木兹海峡紧张局势影响全球油价，美股上涨</h3>
+<div class="news-content">
+由于霍尔木兹海峡的紧张局势，全球油价出现波动。美国国务卿鲁比奥表示就霍尔木兹海峡的重新开放缺乏选票，缺乏击败该措施的票数。鲁比奥在瑞典赫尔辛堡举行的会议上对记者表示："我们必须有一个B计划，以防有人在霍尔木兹海峡开枪。"他补充说："理想情况下，他们会打开海峡，B计划必须是，如果伊朗说'不，我们拒绝打开霍尔木兹海峡'怎么办？"这些地缘政治紧张局势对全球市场产生了影响，但投资者对潜在的外交解决方案持谨慎乐观态度。
+</div>
+<div class="news-source">来源：综合报道 | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">美伊谈判进展推动市场情绪，消费者信心创一年最大涨幅</h3>
+<div class="news-content">
+随着美伊外交谈判的进展，市场情绪有所改善。周五晚间，由于美伊谈判的进展和华尔街隔夜上涨，首尔股市小幅走高。据报道，美伊谈判已取得一定进展，尽管尚未达成最终协议。此外，5月份消费者信心以一年来最快的速度上升，这得益于强劲的芯片出口。韩国 shares 小幅走高，受华尔街隔夜上涨和伊朗希望的推动。
+</div>
+<div class="news-source">来源：联合通讯社 | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title">FoundZiGu/GuJumpgate - 1673星标的自动化工具</h3>
+<div class="news-content">
+这个获得1673星标的项目是一个自动化工具，看起来在开发者社区中很受欢迎。GitHub数据显示，过去一周内创建的热门项目中，这个项目位居榜首，表明它可能解决了开发者面临的一个重要问题或提供了创新的解决方案。其高星标数量反映了社区对该项目的认可和实用性。
+</div>
+<div class="news-source">来源：GitHub | 发布时间：2026年5月22日</div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title">Agent-Learning-Hub - AI学习路线与资料库收集</h3>
+<div class="news-content">
+这个获得1053星标的项目是一个AI Agent学习路线和资料库收集项目，由datawhalechina维护。随着AI技术的快速发展，开发者对系统化学习AI代理和智能系统的需求日益增长。该项目为开发者提供了结构化的学习路径和丰富的资源集合，有助于降低AI技术学习的门槛，特别适合想要深入理解AI代理技术的开发者。
+</div>
+<div class="news-source">来源：GitHub | 发布时间：2026年5月22日</div>
+</div>
+</div>
+
+</div></body></html>

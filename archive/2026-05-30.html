@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}.news-item:hover{background:#f5f6f8}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-title a:hover{text-decoration:underline}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea;text-decoration:none}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html" selected>2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年5月30日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item highlight-box">
+<h3 class="news-title">非洲埃博拉疫情再袭，致死率高达30-50%</h3>
+<div class="news-content">
+刚果民主共和国和乌干达于2026年5月确认爆发埃博拉疫情，涉及的是尚无疫苗或特效治疗的布隆迪堡型埃博拉病毒。疫情发生在人道主义危机背景下，且在人口稠密、地形偏远且不稳定的地区蔓延。世界卫生组织指出这是刚果民主共和国第17次埃博拉疫情，距离上次疫情结束仅五个月。已有病例从伊图里省扩散至北基伍省，甚至乌干达首都坎帕拉也报告了输入性病例。疫情传播挑战巨大，当地基础设施薄弱，医疗资源匮乏，加上武装冲突阻碍了医疗队的进入，使得疫情防控工作面临严峻考验。</div>
+<div class="news-source">来源: <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026">世界卫生组织</a></div>
+</div>
+<div class="news-item highlight-box">
+<h3 class="news-title">特朗普肯尼迪中心重修计划引发文化界强烈反对</h3>
+<div class="news-content">
+美国建筑和历史保护组织联盟对特朗普总统的肯尼迪中心改造计划提起诉讼。该计划宣布肯尼迪中心将在不到四个月内完全关闭数年，期间进行包括拆除和重建在内的重大结构工程。建筑界人士认为此举将破坏这一国家级文化地标的历史价值。原告包括八家顶级建筑和文化组织，他们质疑特朗普在没有充分公众参与的情况下做出的这一决定可能永久改变了肯尼迪中心作为美国文化艺术中心的地位。此案反映了当前美国文化政策与历史保护之间的激烈冲突，也引发了对公共文化空间管理权的广泛讨论。</div>
+<div class="news-source">来源: <a href="https://www.cnn.com/2026/03/23/politics/kennedy-center-trump-lawsuit">CNN政治</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title">SpaceX获美国太空军64.5亿美元合同，创航天商业新纪录</h3>
+<div class="news-content">
+SpaceX获得美国太空军价值64.5亿美元的巨额合同，用于构建导弹和防空系统卫星以及近地轨道通信网络。这笔交易发生在SpaceX预计创纪录的IPO之前，凸显了政府业务在公司收入中的重要地位。数据显示，SpaceX 2025年收入的20%来自政府合同，显示出该公司对政府业务的显著依赖。太空军表示，这些合同将增强美国的太空能力，特别是在导弹防御和通信领域。SpaceX的CEO埃隆·马斯克称这是"太空探索新时代的里程碑"，而批评者则担忧过度依赖单一承包商可能影响市场竞争和成本控制。</div>
+<div class="news-source">来源: <a href="https://techcrunch.com/2026/05/29/spacex-awarded-6-45b-in-space-force-contracts-ahead-of-ipo/">TechCrunch</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">英国青年失业率达16.2%，经济复苏面临挑战</h3>
+<div class="news-content">
+英国国家统计局最新数据显示，2026年3月16-24岁青年失业率上升至16.2%，较前月的15.8%有所增长。这一数据反映了英国经济在疫情后复苏过程中面临的严峻挑战，特别是在就业市场方面。分析人士指出，青年就业难的原因包括技术变革带来的技能错配、自动化对低技能岗位的冲击，以及经济增长乏力等多种因素。政府表示正在推出多项措施帮助青年就业，包括技能培训补贴和创业支持政策。然而，专家警告要解决结构性失业问题需要更长期的系统性改革，而非短期应急措施。</div>
+<div class="news-source">来源: <a href="https://commonslibrary.parliament.uk/research-briefings/sn05871/">英国议会图书馆</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">卢旺达媒体盛赞中国发展模式成非洲典范</h3>
+<div class="news-content">
+卢旺达资深媒体人杰拉尔德·姆班达近日在接受新华社专访时表示，中国的发展成就为包括卢旺达在内的非洲国家提供了宝贵经验。姆班达在其专著《中国与卢旺达：有效领导是转型治理的关键》中指出，中国坚持走中国特色社会主义道路，始终坚持以人民为中心的发展思想，这为发展中国家提供了重要借鉴。他特别称赞中国在消除绝对贫困、推动高质量发展以及维护国家独立自主方面取得的成就，认为这是"发展中国家的典范"。卢旺达自1994年后实行协商民主，同样把人民的美好生活放在首位，两国在探索符合各自国情的发展道路上有着相似的价值观。</div>
+<div class="news-source">来源: <a href="https://www.news.cn/world/20250816/3bf331b5d8ff4d44bc8c8c0e1578f7cc/c.html">新华网</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title">AI正在悄悄改变信息获取方式，小红书面临挑战</h3>
+<div class="news-content">
+QuestMobile最新报告显示，AI原生应用正在改变用户获取信息的入口。数据显示，以豆包为代表的AI原生App总月活用户从2025年1月的1.42亿激增到2026年4月的4.62亿，短短15个月翻了三倍。与此同时，小红书DAU（日活跃用户）约1.18亿，基本在"一亿"附近徘徊。报告强调，AI时代用户获取信息的入口正在转向AI原生应用，这对以内容社区为核心的小红书提出了严峻挑战。虽然小红书近期高调成立AI一级部门，但面对用户的根本行为模式转变，平台需要重新思考战略定位。</div>
+<div class="news-source">来源: <a href="https://eu.36kr.com/zh/p/3826839508210560">36氪</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">中国式内卷引发AI替代焦虑，职场人士热议</h3>
+<div class="news-content">
+小红书上热议话题"中国式内卷AI替代"引发广泛关注。许多职场人士担忧AI技术可能加剧职场内卷，替代部分工作岗位。这个话题反映了在AI快速发展的背景下，普通职场人士对未来职业发展的焦虑情绪。有观点认为，AI确实可能替代一些重复性工作，但同时也会创造新的就业机会和技能需求。专家建议，面对AI时代，职场人需要不断学习和适应新技能，提升自己的核心竞争力。</div>
+<div class="news-source">来源: 小红书热门话题</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title">AI编程工具革命性改变软件开发格局</h3>
+<div class="news-content">
+2026年的软件开发领域经历了翻天覆地的变化，AI编程工具已经从最初的代码补全小工具进化为能够完全自主编写、重构、调试和部署生产代码的强大系统。从独立开发者在几小时内完成整个应用到企业团队的大规模协作，AI正在重塑软件开发的每一个环节。最新的分析显示，采用AI编程工具的团队平均生产力提升了60%以上，代码质量也有显著改善。然而，这也引发了关于编程技能价值、代码所有权以及AI安全性的深度讨论，整个行业正在经历前所未有的变革。</div>
+<div class="news-source">来源: <a href="https://tech-insider.org/ai-coding-tools-2026-transforming-software-development/">Tech Insider</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">Anthropic超越OpenAI成为全球最有价值AI公司</h3>
+<div class="news-content">
+AI初创公司Anthropic获得650亿美元融资后估值达到9650亿美元，超越OpenAI成为全球最有价值的AI公司。这一里程碑事件发生在AI领域投资热潮持续升温的背景下。Anthropic新发布的Claude Opus 4.8模型进一步增强了其AI能力。市场分析师认为，这一融资显示了投资者对AI安全性和可靠性方向的偏好，以及对Anthropic技术路线的信心。OpenAI虽然仍是AI领域的领导者，但在估值已被Anthropic超越，这标志着AI行业格局正在发生微妙变化。</div>
+<div class="news-source">来源: <a href="https://www.businessinsider.com/anthropic-surpasses-openai-with-965b-valuation-debuts-opus-4-8-2026-5?op=1">Business Insider</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title">SpaceX政府业务占比达20%，IPO前景备受关注</h3>
+<div class="news-content">
+SpaceX最新财报披露，其2025年收入中有20%来自政府合同，这一比例比前一年显著提升。这一数据突显了政府业务在该公司商业模式中的核心地位，也引发了市场对太空商业化进程的关注。分析师指出，SpaceX的政府业务主要来自NASA、美国太空军和国防部，这些长期合同为公司提供了稳定的现金流支持。随着SpaceX即将进行的IPO，投资者将密切关注其政府业务的可持续性和增长潜力，以及如何平衡商业航天与政府合同的策略。</div>
+<div class="news-source">来源: <a href="https://techcrunch.com/2026/05/29/spacex-awarded-6-45b-in-space-force-contracts-ahead-of-ipo/">TechCrunch</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">AI初创公司融资创新高，估值泡沫引担忧</h3>
+<div class="news-content">
+2026年AI领域继续维持强劲的投资热度，多家AI初创公司创下融资新纪录。除了Anthropic的650亿美元融资外，其他AI公司也获得了大量资金。然而，市场开始出现对估值泡沫的担忧。一些分析师警告，过高的估值可能导致投资者预期不切实际，一旦增长放缓可能引发市场调整。同时，监管机构也开始关注AI领域的投资热潮，担心过度投机可能影响行业的健康发展。业内专家呼吁投资者关注公司的实质性技术突破和商业模式，而非仅仅追逐估值数字。</div>
+<div class="news-source">来源: <a href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html">CNBC</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title">GitHub爆红项目：小红书图文+公众号封面生成工具</h3>
+<div class="news-content">
+GitHub项目"op7418/guizang-social-card-skill"获得1434星标，这是一个AI驱动的社交媒体内容生成工具，专门用于生成小红书轮播图和微信21:9+1:1封面配对。该项目采用编辑式设计×瑞士视觉系统，包含28种布局和10种主题，支持将单文件HTML转换为PNG。开发者表示，这个工具解决了内容创作者在多平台发布时格式不一的痛点，提高了内容创作效率。项目基于Claude Code/Codex技能开发，体现了AI在内容创作领域的实际应用价值，也为自媒体创作者提供了强大的技术支持。</div>
+<div class="news-source">来源: <a href="https://github.com/op7418/guizang-social-card-skill">GitHub</a></div>
+</div>
+<div class="news-item">
+<h3 class="news-title">ADHD编程技能树：AI代理的认知框架创新</h3>
+<div class="news-content">
+GitHub项目"UditAkhourii/adhd"获得554星标，这是一个专门为编程AI设计的技能工具，采用树状思维结构并进行剪枝优化。该工具基于Claude & Codex Agent SDK构建，通过在不同认知框架下发散并行思维、评分、剪除陷阱、深化幸存路径的方式来提升AI的创造性工作能力。开发者认为ADHD编程技能为创意性和跨学科工作提供了"无脑解决方案"。这类认知优化工具反映了AI领域对思维方式和认知过程的深入研究，展示了AI系统在设计思维模式方面的进步。</div>
+<div class="news-source">来源: <a href="https://github.com/UditAkhourii/adhd">GitHub</a></div>
+</div>
+</div>
+
+</div></body></html>

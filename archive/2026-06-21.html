@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.5px}.header .date{margin-top:6px;opacity:.85;font-size:13px}.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}.section:last-child{border-bottom:none}.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2}.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}.news-title a{color:#667eea;text-decoration:none}.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}.news-content a{color:#667eea;text-decoration:none}.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}.news-source a{color:#667eea}.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}.highlight-box .news-title{color:#856404}</style></head><body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html">2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html" selected>2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年06月21日 星期日</div></div>
+
+<div class="section">
+<h2 class="section-title">🎯 焦点事件</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.abc.net.au/news/2026-06-21/us-iran-vance-switzerland-peace-agreement/106824984">美国副总统万斯前往瑞士启动美伊和平谈判</a></h3>
+<p class="news-content">美国副总统JD万斯已前往瑞士，正式启动与伊朗领导人的谈判，旨在遏制德黑兰的核计划并落实临时停火协议。该框架上周签署，美伊谈判人员将在60天内就技术细节达成协议，这些细节对全球经济和全球安全具有重大影响。然而，在黎巴嫩以色列与伊朗支持的真主党之间爆发激烈交火后，伊朗军方宣布再次关闭霍尔木兹海峡这一重要水道，使得谈判初期就面临复杂局面。</p>
+<div class="news-source">来源: ABC News</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🌍 全球热点</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.aljazeera.com/news/2026/6/21/ukraine-strikes-hit-oil-facilities-in-crimea-russias-krasnodar">乌克兰无人机袭击克里米亚石油设施，造成人员伤亡</a></h3>
+<p class="news-content">乌克兰无人机袭击了克里米亚的石油设施，导致至少4人死亡、28人受伤。俄罗斯任命的克里米亚领导人谢尔盖·阿克肖诺夫称，袭击击中了俄罗斯用于供应其军队的油库和燃料设施。另据报道，乌克兰还袭击了俄罗斯克拉斯诺达尔地区的石油运输设施，造成一名渡轮乘客死亡，一个石油终端起火。乌克兰总统泽连斯基证实了袭击了刻赤市的油库和克拉斯诺达尔的石油运输设施。这些袭击加剧了克里米亚的燃料短缺危机。</p>
+<div class="news-source">来源: Al Jazeera</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85%E6%8A%A5%E9%81%93/20260621-%E5%8D%B0%E5%BA%A6%E5%8C%BB%E5%AD%A6%E9%99%A2%E5%85%A5%E5%AD%A6%E8%80%83%E8%AF%95%E9%A2%98%E5%A4%96%E6%B3%84%E9%A3%8E%E6%B3%A2-%E9%80%BE220%E4%B8%87%E8%80%83%E7%94%9F%E4%BB%8A%E9%87%8D%E8%80%83">印度医学考试试题外泄后227万考生重考，军方介入保障安全</a></h3>
+<p class="news-content">印度政府在严密安全措施下为227万多名医学专业学生重新举行全国医学入学资格考试。上月该考试因试题大规模外泄而被迫作废，引发全国哗然。此次重考首次动用空军力量运送试卷，使用军用直升机向全国20多个考点运输。政府对试卷印刷机构周边环境实施严格管控，限制相关人员通信和出行，确保考试公平。这是2019年以来印度国家考试机构首次取消整场考试。</p>
+<div class="news-source">来源: RFI</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://finsages.org/2026/06/19/%E5%B7%B4%E5%B7%B4%E5%A4%9A%E6%96%AF%E6%80%BB%E7%90%86%E5%8F%91%E5%B8%83%E5%A5%B4%E9%9A%B6%E5%88%B6%E8%B5%94%E5%81%BF%E5%AE%A3%E8%A8%80%EF%BC%8C%E6%97%A8%E5%9C%A8%E6%8E%A8%E5%8A%A8%E5%8A%A0%E5%8B%92/">巴巴多斯总理发布奴隶制赔偿宣言，推动加勒比地区实现修复正义</a></h3>
+<p class="news-content">巴巴多斯总理米娅·莫特利近日宣布了一份由加勒比地区领导人共同起草的新宣言，旨在从道德、伦理和法律三个维度，针对数百年奴隶制度所造成的深远损害寻求赔偿。该宣言在加纳举行的历史性会议上发布，呼吁将贩卖被奴役的非洲人定性为针对人类的最严重罪行。此举标志着全球追求恢复性司法的关键时刻，是加勒比共同体协调一致推动赔偿正义的重要一步。</p>
+<div class="news-source">来源: 智者同行Insight</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://finance.sina.com.cn/7x24/2026-06-21/doc-inieaqpn1695688.shtml">法国热浪来袭，夏至音乐节期间全面禁止饮酒</a></h3>
+<p class="news-content">法国政府对全国超过三分之一地区发布高温红色预警，6月21日举办的夏至音乐节期间全面禁止饮酒。由于气温逼近历史新高，法国35个省份处于最高级别高温预警，政府为减轻医疗系统压力，在这些区域举行的公共活动中禁止民众饮酒。法国总理贝鲁办公室称，这一措施是为了确保公共卫生安全，特别是在高温天气下，过量饮酒会增加中暑和心血管疾病风险。</p>
+<div class="news-source">来源: 新浪财经</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🔥 微博/小红书热搜</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://weibo.com/a/hot/realtime">华为鸿蒙7首次亮相，AI智能体验全面升级</a></h3>
+<p class="news-content">华为鸿蒙生态2026年度大会正式开启，带来了超多全新升级。系统流畅度、AI智能玩法、跨设备互联体验全面焕新，综合体验直接拉满。微信等关键应用也进行了重要更新，成为体验天花板。华为鸿蒙生态正稳步驶入高速增长快车道。</p>
+<div class="news-source">来源: 微博热搜</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💻 科技新闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cr47z6ykp2xo">美国真实犯罪大会反思道德界限，受害者家属寻求正义</a></h3>
+<p class="news-content">在美国拉斯维加斯举办的CrimeCon真实犯罪大会上，近6500名参与者探讨犯罪题材作品的伦理边界。心理学专家玛吉·辛格曼的女儿在2004年遇害，她坚持为寻找真相奔波全美。大会强调'受害者剥削不等于受害者倡导'的原则，许多受害者家属在会上分享他们的故事。尽管商业化存在争议，但大会为公众安全教育和受害者权益提供了重要平台。</p>
+<div class="news-source">来源: BBC News</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html">诺贝尔奖得主约翰·贾姆普离开谷歌DeepMind加入Anthropic</a></h3>
+<p class="news-content">诺贝尔奖得主、谷歌DeepMind资深研究科学家约翰·贾姆普宣布将离开谷歌加入AI初创公司Anthropic。贾姆普是AlphaFold的联合创始人，该AI技术已成功预测了超过2亿个蛋白质结构，为生物和医学研究节省了数年时间。他的离职发生在Gemini联合主管Noam Shazeer离职加入OpenAI之后，反映了科技巨头之间的激烈人才竞争。Anthropic目前正面临与美国政府的高风险法律监管战。</p>
+<div class="news-source">来源: CNBC</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/technology/2026/jun/08/apple-debuts-siri-ai-child-safety-features-wwdc">苹果发布全新Siri AI和儿童安全功能，iOS 27将在秋季推出</a></h3>
+<p class="news-content">苹果在年度开发者大会上宣布对Siri进行重大升级，新版本将整合苹果的人工智能工具Apple Intelligence，并重新命名为'Siri AI'。新Siri将于秋季发布，将更像ChatGPT或Google Gemini这样的AI聊天机器人，而不是仅从网络搜索答案的工具。Siri的重建以新的生成式AI为核心，通过苹果与谷歌的10亿美元合作关系获得Google的Gemini AI模型支持。新功能包括通过相机识别食物营养成分、导航规划等。苹果还发布了全新的儿童安全功能，允许父母限制孩子访问的内容、聊天对象和使用时间。</p>
+<div class="news-source">来源: Guardian</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://aitoolly.com/zh/ai-news/article/2026-06-21-signalmeredith-whittakerai">Signal总裁警告：AI聊天机器人并非人类朋友，缺乏意识与感知能力</a></h3>
+<p class="news-content">Signal总裁Meredith Whittaker近日针对AI聊天机器人的拟人化趋势发出严厉警告。她明确指出，这些AI系统既不是人类的朋友，也不是有意识的生命体，更不具备感知的对话能力。Whittaker认为用户不应该对这些工具产生情感依赖或拟人化投射，并批评科技公司利用人性弱点来收集数据的做法。她警告所谓的代理型AI一旦深入接入个人服务，对隐私和安全会构成根本性的威胁，呼吁公众保持清醒，避免过度依赖这些AI系统。</p>
+<div class="news-source">来源: AIToolly</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://ai.zhiding.cn/2026/0612/3190475.shtml">WWDC 2026全面回顾：iOS 27、全新Siri及AI功能深度解析</a></h3>
+<p class="news-content">苹果在WWDC 2026大会上发布了iOS 27系统，以AI深度赋能、性能底层优化、Liquid Glass视觉革新为核心。新系统支持从iPhone 11到iPhone 17的多款设备，开发者预览版已上线，公测版预计7月推送，正式版将于秋季随新iPhone同步发布。iOS 27带来全新Siri AI重构、Apple Intelligence全面升级、跨设备无缝协作等AI功能，标志着苹果正式全面进入AI时代。</p>
+<div class="news-source">来源: 智 AI</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">💰 财经要闻</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://news.sina.cn/bignews/insight/2026-06-11/detail-iniazihv0781906.d.html?vt=4">霍尔木兹海峡全面关闭，国际原油市场面临结构性重塑</a></h3>
+<p class="news-content">伊朗在6月11日凌晨宣布对所有船只关闭霍尔木兹海峡，导致全球30%的海运原油和20%的液化天然气运输中断。海湾国家原油日均产量被迫削减超1000万桶，全球石油供应面临史上最严重梗阻。中国已将原油进口从2月的1170万桶/日削减至5月底的近900万桶/日，成为缓解价格压力的关键压力阀。预计布伦特原油可能突破100-110美元，极端情景下可达150-200美元。全球能源贸易路线正在发生结构性改变，各国加速摆脱对单一通道的依赖。</p>
+<div class="news-source">来源: 新浪财经</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://goldmarketlink.com/analysis/gold-price-crash-analysis-2026">黄金市场大幅回调，摩根士丹利下调2026年下半年预期</a></h3>
+<p class="news-content">现货黄金价格近期经历大幅回调，摩根士丹利将2026年下半年的目标价从5700美元大幅下调至5200美元，显示出对高估值的担忧。分析师普遍认为，短期金价在经历急跌后，空头动能已得到释放，未来一个月可能会进入震荡整理区间。黄金价格走势受到美联储货币政策、央行购金行为以及地缘政治风险等多重因素影响，投资者需关注美元走势和通胀预期变化。</p>
+<div class="news-source">来源: Gold Market Link</div>
+</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ 值得关注的项目</h2>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/vercel/eve">Vercel开源Agent框架eve，生产级AI代理开发新选择</a></h3>
+<p class="news-content">Vercel在6月17日发布开源Agent框架eve，这是一个文件系统优先的持久化AI Agent框架，内置持久化执行、沙盒计算、人工审批和评估功能。Vercel平台Agent触发部署占比已从3%升至29%，开发者可以通过npx eve@latest init一分钟内运行首个Agent。该框架采用与传统项目相同的代码结构，使得项目更容易检查、扩展和运营，标志着AI Agent基础设施的快速发展。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/zhongerxin/Cowart">Cowart：开源LLM Token压缩工具，单周增长14272星</a></h3>
+<p class="news-content">在2026年6月的第23周，GitHub新增星数超过9.3万，其中LLM Token压缩工具headroom以单周+14,272星的成绩登顶热门榜首。该工具专注于LLM Token压缩优化，为大语言模型的高效运行提供技术支持。与此同时，AI Agent生态持续爆发，从Agent性能优化、设计语言到记忆引擎，一条完整的Agent开发链正在逐步成形，反映出开发者社区对AI基础设施建设的浓厚兴趣。</p>
+<div class="news-source">来源: GitHub</div>
+</div>
+</div>
+
+</div></body></html>

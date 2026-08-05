@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News · 2026年7月16日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255,255,255,0.06);
+      --border-bright: rgba(255,255,255,0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245,158,11,0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163,230,53,0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251,113,133,0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34,211,238,0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251,191,36,0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148,163,184,0.08);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%), radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeScale { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  .a { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:0.01ms!important; animation-delay:0ms!important; transition-duration:0.01ms!important; } }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
+</style>
+</head>
+<body>
+<style>
+#claw-nav{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 16px;display:flex;align-items:center;gap:12px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+#claw-nav .claw-brand{font-weight:700;font-size:15px;color:#111;white-space:nowrap}
+#claw-nav .claw-brand small{color:#999;font-weight:400}
+#claw-nav select{flex:1;min-width:0;padding:8px 10px;font-size:14px;border:1px solid #ddd;border-radius:8px;background:#fafafa;color:#222;-webkit-appearance:none;appearance:none}
+#claw-nav a{font-size:13px;color:#555;text-decoration:none;white-space:nowrap}
+@media (prefers-color-scheme:dark){#claw-nav{background:#1c1c1e;border-bottom-color:#333}#claw-nav .claw-brand{color:#eee}#claw-nav select{background:#2c2c2e;border-color:#444;color:#eee}#claw-nav a{color:#aaa}}
+</style>
+<nav id="claw-nav">
+  <span class="claw-brand">📰 Claw Daily</span>
+  <select id="claw-select" onchange="">
+<option value="">— 历史内容 —</option>
+<optgroup label="📰 日报">
+<option value="2026-08-05.html">2026-08-05</option>
+<option value="2026-08-04.html">2026-08-04</option>
+<option value="2026-08-03.html">2026-08-03</option>
+<option value="2026-08-02.html">2026-08-02</option>
+<option value="2026-08-01.html">2026-08-01</option>
+<option value="2026-07-31.html">2026-07-31</option>
+<option value="2026-07-30.html">2026-07-30</option>
+<option value="2026-07-29.html">2026-07-29</option>
+<option value="2026-07-27.html">2026-07-27</option>
+<option value="2026-07-26.html">2026-07-26</option>
+<option value="2026-07-25.html">2026-07-25</option>
+<option value="2026-07-24.html">2026-07-24</option>
+<option value="2026-07-23.html">2026-07-23</option>
+<option value="2026-07-22.html">2026-07-22</option>
+<option value="2026-07-21.html">2026-07-21</option>
+<option value="2026-07-20.html">2026-07-20</option>
+<option value="2026-07-19.html">2026-07-19</option>
+<option value="2026-07-18.html">2026-07-18</option>
+<option value="2026-07-17.html">2026-07-17</option>
+<option value="2026-07-16.html" selected>2026-07-16</option>
+<option value="2026-07-15.html">2026-07-15</option>
+<option value="2026-07-14.html">2026-07-14</option>
+<option value="2026-07-13.html">2026-07-13</option>
+<option value="2026-07-12.html">2026-07-12</option>
+<option value="2026-07-11.html">2026-07-11</option>
+<option value="2026-07-10.html">2026-07-10</option>
+<option value="2026-07-09.html">2026-07-09</option>
+<option value="2026-07-08.html">2026-07-08</option>
+<option value="2026-07-07.html">2026-07-07</option>
+<option value="2026-07-06.html">2026-07-06</option>
+<option value="2026-07-05.html">2026-07-05</option>
+<option value="2026-07-04.html">2026-07-04</option>
+<option value="2026-07-03.html">2026-07-03</option>
+<option value="2026-07-02.html">2026-07-02</option>
+<option value="2026-06-24.html">2026-06-24</option>
+<option value="2026-06-23.html">2026-06-23</option>
+<option value="2026-06-22.html">2026-06-22</option>
+<option value="2026-06-21.html">2026-06-21</option>
+<option value="2026-06-20.html">2026-06-20</option>
+<option value="2026-06-19.html">2026-06-19</option>
+<option value="2026-06-18.html">2026-06-18</option>
+<option value="2026-06-17.html">2026-06-17</option>
+<option value="2026-06-16.html">2026-06-16</option>
+<option value="2026-06-15.html">2026-06-15</option>
+<option value="2026-06-14.html">2026-06-14</option>
+<option value="2026-06-13.html">2026-06-13</option>
+<option value="2026-06-12.html">2026-06-12</option>
+<option value="2026-06-11.html">2026-06-11</option>
+<option value="2026-06-10.html">2026-06-10</option>
+<option value="2026-06-09.html">2026-06-09</option>
+<option value="2026-06-08.html">2026-06-08</option>
+<option value="2026-06-07.html">2026-06-07</option>
+<option value="2026-06-06.html">2026-06-06</option>
+<option value="2026-06-05.html">2026-06-05</option>
+<option value="2026-06-04.html">2026-06-04</option>
+<option value="2026-06-03.html">2026-06-03</option>
+<option value="2026-06-02.html">2026-06-02</option>
+<option value="2026-05-31.html">2026-05-31</option>
+<option value="2026-05-30.html">2026-05-30</option>
+<option value="2026-05-29.html">2026-05-29</option>
+<option value="2026-05-28.html">2026-05-28</option>
+<option value="2026-05-27.html">2026-05-27</option>
+<option value="2026-05-26.html">2026-05-26</option>
+<option value="2026-05-25.html">2026-05-25</option>
+<option value="2026-05-24.html">2026-05-24</option>
+<option value="2026-05-23.html">2026-05-23</option>
+<option value="2026-05-22.html">2026-05-22</option>
+<option value="2026-05-21.html">2026-05-21</option>
+<option value="2026-05-20.html">2026-05-20</option>
+<option value="2026-05-19.html">2026-05-19</option>
+<option value="2026-05-18.html">2026-05-18</option>
+<option value="2026-05-16.html">2026-05-16</option>
+<option value="2026-05-15.html">2026-05-15</option>
+<option value="2026-05-14.html">2026-05-14</option>
+<option value="2026-05-13.html">2026-05-13</option>
+<option value="2026-05-12.html">2026-05-12</option>
+</optgroup>
+<optgroup label="📈 周报">
+<option value="weekly-2026-08-03.html">2026-08-03</option>
+</optgroup>
+  </select>
+  <a href="./index.html">最新</a>
+</nav>
+<script>
+document.getElementById('claw-select').addEventListener('change', function(){
+  var f = this.value;
+  if (!f) return;
+  var p = location.pathname;
+  var base = p.endsWith('.html') ? p.substring(0, p.lastIndexOf('/')) : p.replace(/\/$/, '');
+  location.href = base + '/' + f;
+});
+</script>
+<div class="page">
+
+  <header class="masthead a" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年7月16日 · 星期四</div>
+  </header>
+
+  <section class="section" id="focus">
+    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>焦点事件</h2>
+
+    <div class="item item--hero a" style="--i:2"><div class="item__title"><a href="https://www.aljazeera.com/news/2026/7/15/iran-says-peace-deal-voided-fighting-existential-war-after-us-attacks">美国对伊朗发动新一轮空袭，伊朗宣布和平协议作废进入「生存战争」</a></div><div class="item__body">7月15日至16日，美军对伊朗发动大规模空袭，目标覆盖霍尔木兹海峡沿岸的指挥中心、防空设施、导弹和无人机基地及海岸监控站。伊朗称美军攻击已造成至少35人死亡、超300人受伤，其中第388旅一处兵营遭袭致7名军人丧生。伊朗首席谈判代表卡利巴夫宣布6月17日签署的临时和平协议就此作废，伊朗武装力量获得"对敌人的完全行动自由"。作为回应，伊朗革命卫队向巴林美国第五舰队和科威特米纳阿卜杜拉的美军后勤枢纽发射导弹和无人机。科威特击落至少4枚巡航导弹和21架无人机，约旦击落至少8枚导弹。特朗普警告伊朗"最好老实点"，威胁"摧毁"伊朗发电厂和桥梁，但副总统万斯在播客访谈中称与伊朗谈判仍不可或缺。布伦特原油涨至85.88美元/桶。美军同步重新实施对伊朗港口封锁，发射地狱火导弹击中试图驶向哈尔克岛油港的油轮"Belma"号。此前4月至6月的首次封锁期间，美军曾拦截超140艘船只。</div><div class="item__src">Al Jazeera / BBC</div></div>
+
+  <section class="section" id="asia">
+    <h2 class="section-label section-label--global a" style="--i:3"><span class="dot"></span>亚洲 · 中国</h2>
+
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--accent">半导体</span><div class="item__title"><a href="https://finance.sina.com.cn/roll/2026-07-16/doc-inihyqhh1204976.shtml">澜起科技、瑞萨电子、Rambus韩国办公室遭检方搜查，涉嫌串通半导体零部件价格</a></div><div class="item__body">7月16日，韩国检方对澜起科技、日本瑞萨电子和美国Rambus在韩办公室展开突击搜查，指控三家全球内存接口芯片龙头涉嫌串通零部件价格。据弗若斯特沙利文数据，三家公司2024年合计占据全球内存互连市场93.4%份额，其中澜起科技以36.8%居首。澜起科技董秘回应称"正在了解情况，经营正常"。受消息影响，澜起科技A股一度大跌12%，午间休盘收窄至9.93%，总市值2798亿元；港股跌18.64%。澜起科技为主要CXL内存供应商，客户包括三星电子和SK海力士。</div><div class="item__src">新浪财经</div></div>
+
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--rose">安全</span><div class="item__title">辽宁兴城一橡皮艇发生闪爆致7死5伤1失联</div><div class="item__body">7月15日至16日，辽宁省葫芦岛兴城市发生一起橡皮艇闪爆事故，已造成7人死亡、5人受伤、1人失联。据初步调查，事发时艇上载有赶海居民，疑似燃油泄漏引发爆炸。事故发生后，当地应急管理部门立即开展救援和善后工作。该事件在微博热搜引发广泛关注，网友呼吁加强小型船舶安全监管。</div><div class="item__src">央视新闻 / 微博</div></div>
+
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--sage">消费电子</span><div class="item__title"><a href="https://techcrunch.com/2026/07/16/phone-maker-oneplus-reportedly-plans-to-wind-down-us-and-europe-operations/">realme确认退出中国市场，OPPO系品牌持续收缩</a></div><div class="item__body">7月16日，realme官方确认退出中国市场，成为继一加之后又一家收缩战线的OPPO系品牌。此前一加（OnePlus）同日宣布将不再在北美和欧洲发布新产品，称"经过谨慎评估，一加将停止在欧洲和北美推出新品"，但保证现有用户的售后支持和软件更新不受影响。一加由刘作虎和裴宇于2013年创立，曾以高性价比旗舰打入全球市场，后因消费电子需求疲软、成本上涨而被迫重组。两大品牌收缩后，OPPO集团出海战略面临重新定位。</div><div class="item__src">TechCrunch / 微博</div></div>
+
+  </section>
+
+  <section class="section" id="mideast">
+    <h2 class="section-label section-label--social a" style="--i:7"><span class="dot"></span>中东 · 全球南方</h2>
+
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--gold">贸易</span><div class="item__title"><a href="https://apnews.com/article/us-brazil-trade-tariffs-99e8c52a44c75f31c343d7ebad41f614">美国宣布对巴西部分商品加征25%关税，7月22日生效</a></div><div class="item__body">美国贸易代表办公室7月15日宣布，经一年期301调查认定巴西存在不公平贸易行为，将对巴西部分进口商品加征25%关税，7月22日生效。豁免清单包括咖啡、牛肉、橙汁、部分油气产品和航空航天零部件。USTR格雷尔指出巴西给予印度和墨西哥的优惠关税待遇使美国出口商处于竞争劣势——涉及农产品、汽车及零部件、化学品等数百至上千个税目。巴西总统卢拉政府谴责此举为"令人遗憾的里程碑"，称过去15年美国对巴西累计享有4245亿美元贸易顺差，76%的美国商品零关税进入巴西，将启动对等反制并诉诸WTO争端机制。</div><div class="item__src">AP</div></div>
+
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--teal">印巴</span><div class="item__title"><a href="https://www.newkerala.com/news/a/india-brazil-agree-cooperate-digital-labour-platforms-skills-796.htm">印度与巴西在BRICS会议深化劳务合作，印度e-Shram平台模式获关注</a></div><div class="item__body">在印度海得拉巴举行的BRICS劳动就业部长会议上，印度和巴西同意加强技能发展、数字就业服务和社会保障领域的合作。印度分享了e-Shram门户——全球最大的非正式部门工人数据库，已注册超3.15亿劳动者。巴西对印度数字模式表示浓厚兴趣，将开展技术层面合作学习。两国还同意推进BRICS CONNECT能力建设倡议。印度劳动与社会保障部长曼达尔维亚主持部长级会议，所有BRICS成员国通过了《劳动就业部长宣言》，重点涵盖社会保障正规化、女性就业参与、技能发展及数字技术应用。</div><div class="item__src">ANI / 印度联合新闻</div></div>
+
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--accent">军事</span><div class="item__title"><a href="https://en.yna.co.kr/view/AEN20260716002200315">美日韩参谋长在五角大楼举行三方会议，承诺深化安全合作</a></div><div class="item__body">韩国联合参谋本部议长金永成、美军参谋长联席会议主席丹·凯恩和日本统合幕僚监部内仓浩昭在华盛顿五角大楼举行第23次三方参谋长会议。三方重申安全合作对应对朝鲜核导威胁及地区挑战至关重要，同意保持朝鲜完全无核化方向，深化多领域合作，维持"自由之刃"三边联合军演势头。韩美双边会谈中，双方承诺通过联合演习和高层交流提升联合作战能力。韩日参谋长亦同意加强沟通和信息共享。下次三方会议将于明年在日本举行。</div><div class="item__src">Yonhap News</div></div>
+
+  </section>
+
+  <section class="section" id="tech">
+    <h2 class="section-label section-label--tech a" style="--i:11"><span class="dot"></span>科技新闻</h2>
+
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/07/16/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/">Apple Intelligence获中国批准入华，整合阿里通义千问和百度模型</a></div><div class="item__body">苹果生成式AI服务Apple Intelligence已获中国国家互联网信息办公室批准落地。苹果将整合阿里巴巴的通义千问（Qwen）AI模型进入iOS、iPadOS、macOS和visionOS系统，百度也确认正与苹果合作开发面向中国用户的AI功能。这对苹果在华AI布局意义重大——第二季度苹果在大中华区营收205亿美元，同比增长28%，近期已重夺中国智能手机市场第二名。此前市场传闻苹果在适配中国AI模型时曾遇到合规挑战，如今与阿里、百度的双线合作有望加速Apple Intelligence在华全面铺开。</div><div class="item__src">TechCrunch</div></div>
+
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--sage">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/">Moonshot AI即将发布Kimi 3，对标Anthropic Opus 4.8</a></div><div class="item__body">中国AI初创公司Moonshot AI宣布即将推出的Kimi 3模型预计将大幅缩小与Anthropic Opus 4.8之间的差距。Kimi系列此前以长上下文窗口能力著称。据TechCrunch报道，Kimi 3在多项基准测试中表现亮眼，有望在推理和代码生成方面接近或达到业界顶级水平。该模型的上线标志着中国大模型厂商在全球AI竞赛中持续追赶。Kimi 3已同步在HackerNews上引起关注，开发者社区对其实际表现充满期待。</div><div class="item__src">TechCrunch / HackerNews</div></div>
+
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--rose">安全</span><div class="item__title"><a href="https://techcrunch.com/2026/07/16/meta-now-alerts-parents-if-their-teen-discussed-suicide-or-self-harm-with-its-ai-chatbot/">Meta推出新功能：AI检测青少年自杀和自残对话并向家长报警</a></div><div class="item__body">Meta宣布推出AI安全新功能：当青少年与Meta旗下AI聊天机器人讨论自杀或自残话题时，系统将主动向家长发送警报。该功能通过自然语言处理模型实时监测对话内容，旨在解决社交平台对青少年心理健康影响日益严峻的问题。Meta表示此举是在AI伦理和用户安全之间寻求平衡，但也面临隐私倡导者的质疑——过度监控可能侵害青少年隐私权。此前多家科技公司因未能有效保护未成年用户而遭到监管部门批评。</div><div class="item__src">TechCrunch</div></div>
+
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--gold">硬件</span><div class="item__title"><a href="https://www.japantimes.co.jp/business/2026/07/16/companies/nichirei-back-cyberattack/">日本食品巨头Nichirei遭网络攻击致肯德基断供，供应链脆弱性暴露</a></div><div class="item__body">日本冷链物流和食品分销巨头Nichirei遭网络攻击，导致旗下物流集团运营中断，肯德基日本部分门店被迫缩减菜单并暂停移动订单和配送服务。餐饮运营商Colowide出现发货延迟，永旺超市也面临库存短缺。Nichirei声明正在与外部网络安全专家合作恢复系统，计划7月17日起陆续重启运营。该公司市值约5250亿日元（32亿美元），表示将评估对业绩的影响。近年来日本企业网络攻击频发，朝日集团和江崎格力高等均曾受害。</div><div class="item__src">The Japan Times</div></div>
+
+  </section>
+
+  <section class="section" id="finance">
+    <h2 class="section-label section-label--finance a" style="--i:16"><span class="dot"></span>财经 · 市场</h2>
+
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--gold">货币政策</span><div class="item__title"><a href="https://korean-vibe.com/news/newsview.php?ncode=179552565488055">韩国央行3年半来首次加息25基点至2.75%，应对中东危机推高通胀</a></div><div class="item__body">韩国银行（BOK）7月16日宣布将基准利率从2.50%上调至2.75%，为2023年1月以来首次加息，7名委员一致支持。韩国6月CPI同比上涨3.2%，创2023年12月以来最大涨幅，5月为3.1%，燃油价格飙升24.7%。中东战争持续推高油价和供应链成本，韩元兑美元整个6月维持在1500韩元以上，6月30日一度逼近1550关口，为2009年3月来首次。但韩国6月出口创纪录达1022.5亿美元，同比增70.9%，半导体出口暴增至448.2亿美元。BOK行长申铉松表示2.6%增长预测"过低"，8月将大幅上调。</div><div class="item__src">Yonhap</div></div>
+
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--rose">能源</span><div class="item__title"><a href="https://www.nytimes.com/2026/07/16/business/diesel-prices-us-iran-war.html">美国柴油价格重回5美元/加仑，伊朗战争以来上涨33%</a></div><div class="item__body">据《纽约时报》报道，美国柴油价格已再次突破5美元/加仑，自伊朗战争爆发以来累计上涨33%。布伦特原油维持85美元/桶以上，市场担忧霍尔木兹海峡通行受阻和红海航线受也门胡塞武装威胁将进一步推高能源价格。分析师指出，霍尔木兹海峡与曼德海峡同时受阻将显著放大供应链压力，推高油轮运价和保险费率。高油价正在传导至美国消费者物价，美联储主席沃什日前在国会首秀中暗示可能推迟降息步伐。</div><div class="item__src">NYT</div></div>
+
+    <div class="item a" style="--i:19"><span class="item__tag item__tag--accent">关税</span><div class="item__title"><a href="https://finance.sina.com.cn/wm/2026-07-16/doc-inihyiyk1282083.shtml">美国对DRAM设备启动337调查，三星、谷歌、英伟达为列名被告</a></div><div class="item__body">美国国际贸易委员会7月15日投票决定对特定DRAM设备及其下游产品启动337调查（调查编码337-TA-1511）。加州Netlist公司于6月16日提出申诉，指控三星电子、三星半导体、谷歌、超微电脑、英伟达和博通侵犯其两项专利（US12,646,537和US12,650,937），请求发布有限排除令和禁止令。受此消息影响，三星电子当日股价跌8.59%。该调查将在立案后45天内确定结束期，一旦ITC发布救济令，60天后即具终局效力。</div><div class="item__src">新浪财经</div></div>
+
+    <div class="item a" style="--i:20"><span class="item__tag item__tag--sage">汽车</span><div class="item__title"><a href="https://biz.chosun.com/en/en-industry/2026/07/16/V4DVXCSIJNDEVALGQRW3532KVM/">现代汽车集团全资收购波士顿动力，加速物理AI和Atlas人形机器人商业化</a></div><div class="item__body">现代汽车集团宣布将通过行权收购日本软银持有的波士顿动力剩余股权（低于10%），实现100%控股。此前现代汽车集团会长郑义宣和HMG Global持有超90%股权。此次收购将加速人形机器人Atlas的量产进程：2028年起在metaplant America工厂从事零部件分拣验证，2030年扩展至零部件组装。现代汽车集团表示将围绕"AI机器人从实验室到生活"的愿景，推动制造业创新和全球机器人生态建设。这标志着物理AI赛道迎来又一重要玩家。</div><div class="item__src">朝鲜商业</div></div>
+
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-label section-label--projects a" style="--i:21"><span class="dot"></span>值得关注的项目</h2>
+
+    <div class="item a" style="--i:22"><span class="item__tag item__tag--teal">开源</span><div class="item__title"><a href="https://github.com/xai-org/grok-build">xai-org/grok-build — SpaceX AI编码代理，一周揽星过万</a></div><div class="item__body">xAI开源项目grok-build上线仅一周即获10526颗星，成为GitHub本周最热项目。这是一个全屏、鼠标可交互、可扩展的AI编码代理工具集（Codex CLI harness），提供TUI界面，专为加速AI驱动的软件开发流程设计。该项目由Elon Musk旗下xAI团队推出，社区反响热烈，开发者称其"重新定义了AI辅助编程的终端体验"。</div><div class="item__src">GitHub</div></div>
+
+    <div class="item a" style="--i:23"><span class="item__tag item__tag--sage">开源</span><div class="item__title"><a href="https://github.com/pixel-point/aval">pixel-point/aval — 开源互动视频格式，内置状态机和帧精确转场</a></div><div class="item__body">Aval是一种全新的开源交互式视频格式，内置状态机、帧精确转场和预乘Alpha透明度，支持在Web上创建分支叙事视频和互动内容。该项目上线即获938星，引发了前端社区和视频创作者的高度关注。与常规视频播放不同，Aval让视频内容可根据用户选择实时切换分支，类似"可播放的交互式文档"。</div><div class="item__src">GitHub</div></div>
+
+    <div class="item a" style="--i:24"><span class="item__tag item__tag--accent">职场</span><div class="item__title">字节4年美团3年，简历竟无面试机会？社区热议大厂人才困境</div><div class="item__body">一位拥有字节跳动4年和美团3年工作经验的开发者发帖称，近期求职过程中简历投递后竟无面试机会，引发V2EX社区广泛讨论。评论区观点分歧：有人认为当前互联网行业招聘收缩导致即使大厂背景也难以获得机会；也有人指出"大厂经历≠核心竞争力"，质疑该开发者是否真正做出了有影响力的项目。该讨论折射出中国互联网行业人才市场的结构性变化，"大厂光环"正在褪色。</div><div class="item__src">V2EX</div></div>
+
+  </section>
+  </section>
+
+  <footer class="foot a" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>
