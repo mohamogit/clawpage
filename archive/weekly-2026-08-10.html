@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Weekly Stock Report</title>
+<!--
+  Visual Explainer 设计系统 — 周报模板 v2
+  美学：Swiss Clean — 精确、数据密集、几何感，白底+细线条+大留白
+  配色：Slate (#475569) + Teal (#0891b2) + Emerald (#059669) + Amber (#d97706)
+  字体：DM Sans + Fira Code（友好开发者感）
+  Layout：紧凑数据行、tabular-nums、hover 高亮行、status pills、KPI 横排
+  Light-first，dark mode 为 prefers-color-scheme fallback
+  与日报模板完全不同的视觉语言
+  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+
+<style>
+  /* ============ LIGHT-FIRST THEME ============ */
+  :root {
+    --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Code', 'SF Mono', 'Cascadia Code', Consolas, monospace;
+
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface2: #f1f5f9;
+    --surface-elevated: #ffffff;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #0f172a;
+    --text-dim: #64748b;
+    --text-bright: #020617;
+
+    /* Semantic palette */
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.07);
+    --emerald: #059669;
+    --emerald-dim: rgba(5, 150, 105, 0.07);
+    --amber: #d97706;
+    --amber-dim: rgba(217, 119, 6, 0.07);
+    --rose: #e11d48;
+    --rose-dim: rgba(225, 29, 72, 0.06);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface2: #273548;
+      --surface-elevated: #243447;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e2e8f0;
+      --text-dim: #94a3b8;
+      --text-bright: #f8fafc;
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.1);
+      --emerald: #34d399;
+      --emerald-dim: rgba(52, 211, 153, 0.1);
+      --amber: #fbbf24;
+      --amber-dim: rgba(251, 191, 36, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 50% 0%, var(--teal-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, var(--amber-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .anim {
+    animation: fadeUp 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+  .anim-scale {
+    animation: fadeScale 0.35s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .page { max-width: 820px; margin: 0 auto; }
+
+  /* ============ HEADER — Swiss grid masthead ============ */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 32px 4px 20px;
+    border-bottom: 2px solid var(--border-bright);
+    margin-bottom: 4px;
+  }
+  .masthead h1 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+  }
+  .masthead .date-line {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section { padding: 20px 0 16px; }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  /* Section header — horizontal rule style */
+  .section-hdr {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--slate);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-bright);
+  }
+
+  /* ============ MARKET OVERVIEW ============ */
+  .overview-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* ============ STOCK CARD — Data-dense layout ============ */
+  .stock {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: box-shadow 0.15s ease;
+  }
+  .stock:last-child { margin-bottom: 0; }
+  .stock:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .stock__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .stock__left { display: flex; align-items: baseline; gap: 10px; }
+  .stock__ticker {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: -0.3px;
+  }
+  .stock__name {
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .stock__right { display: flex; align-items: center; gap: 10px; }
+  .stock__price {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stock__body { padding: 16px 18px; }
+
+  /* ============ KPI ROW ============ */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .kpi {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .kpi__label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    margin-bottom: 3px;
+  }
+  .kpi__val {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-bright);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ============ SUB TEXT ============ */
+  .sub-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 14px 0 6px;
+    color: var(--text-bright);
+  }
+  .body-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .callout--warn {
+    border-left: 3px solid var(--amber);
+    background: var(--amber-dim);
+  }
+  .callout--ok {
+    border-left: 3px solid var(--emerald);
+    background: var(--emerald-dim);
+  }
+  .callout__title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+  }
+  .callout--warn .callout__title { color: var(--amber); }
+  .callout--ok .callout__title { color: var(--emerald); }
+  .callout__body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  /* ============ STATUS PILLS ============ */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .pill::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .pill--buy { background: var(--emerald-dim); color: var(--emerald); }
+  .pill--watch { background: var(--amber-dim); color: var(--amber); }
+
+  /* ============ WATCH LIST — compact rows ============ */
+  .watch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.12s ease;
+  }
+  .watch-row:last-child { border-bottom: none; }
+  .watch-row:hover { background: var(--surface2); }
+  .watch-row__ticker {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-bright);
+  }
+  .watch-row__reason {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+    border-top: 2px solid var(--border-bright);
+    margin-top: 4px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    .masthead { flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px 4px 16px; }
+    .masthead h1 { font-size: 22px; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .stock__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<style>
+#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
+#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
+#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
+#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#claw-top .claw-tab:hover{background:#f0f0f0}
+#claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
+#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
+#claw-top .claw-latest:hover{color:#111}
+#claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
+#claw-drop.open{display:block}
+#claw-drop .claw-group{display:none}
+#claw-drop .claw-group.show{display:block}
+#claw-drop .claw-gtitle{font-size:12px;color:#999;margin:8px 0 4px;font-weight:600}
+#claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
+#claw-drop a:hover{background:#f5f5f5;color:#111}
+#claw-drop a.cur{background:#eee;color:#111;font-weight:600}
+@media (max-width:480px){#claw-top{margin:-8px -8px 0}}
+@media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
+</style><div id="claw-top">
+  <div class="claw-bar">
+    <span class="claw-brand">📈 Claw Weekly</span>
+    <button class="claw-tab" data-type="daily">日报 ▾</button>
+    <button class="claw-tab active" data-type="weekly">周报 ▾</button>
+    <a class="claw-latest" href="/clawpage/index.html">最新</a>
+  </div>
+  <div id="claw-drop">
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-10.html" class="cur">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
+  </div>
+</div>
+<script>
+(function(){
+  var drop = document.getElementById('claw-drop');
+  function openGroup(type){
+    var groups = drop.querySelectorAll('.claw-group');
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
+    var g = drop.querySelector('[data-group="'+type+'"]');
+    if (g) g.className += ' show';
+    drop.className = 'open';
+    var tabs = document.querySelectorAll('#claw-top .claw-tab');
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
+    var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
+    if (t) t.className += ' active';
+  }
+  document.querySelectorAll('#claw-top .claw-tab').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var type = this.dataset.type;
+      if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
+        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
+      } else {
+        openGroup(type);
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    var top = document.getElementById('claw-top');
+    if (!top.contains(e.target)) { drop.className = ''; }
+  });
+})();
+</script>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Weekly Stock Report</h1>
+    <div class="date-line">2026.08.10 · WEEKLY</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-hdr anim" style="--i:1">本周市场概览</h2>
+    <div class="overview-text anim" style="--i:2">
+      上周（8/3-8/7）美股创历史新高：标普500 收于约 7,736 点（周涨 3.58%），纳指约 26,600 点（周涨 5.19%），道指周涨 2.96%，科技与半导体领涨。7 月 FOMC 会议维持利率不变（9:3 投票，3 位委员主张加息 25bp），鲍威尔表态偏中性；7 月非农就业弱于预期，市场目前定价 9 月加息概率约 44%（来源：Yahoo Finance，2026-08-07）。7 月 PCE 同比回落至 3.7%，核心 PCE 同步走低；本周三（8/12）将公布 7 月 CPI，市场预期环比 +0.1%、同比 3.4%（来源：Econoday/多方汇总）。30 年期美债收益率升至 2007 年以来高位，油价因霍尔木兹海峡紧张局势上行，能源板块表现居前。JPMorgan 将标普 500 年底目标从 7,800 上调至 8,000，称盈利增速持续扩散（来源：JPMorgan 策略团队，2026-08）。Q2 财报季已披露公司中 78% 超预期（FactSet 口径）。整体环境：流动性宽松预期 + AI 资本开支周期仍在扩张，但通胀粘性与利率上行是悬顶风险。
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-hdr anim" style="--i:3">深度调研</h2>
+
+    <div class="stock anim" style="--i:4">
+      <div class="stock__head">
+        <div class="stock__left">
+          <span class="stock__ticker">MU</span>
+          <span class="stock__name">Micron Technology · 美光科技</span>
+          <span class="pill pill--buy">BUY</span>
+        </div>
+        <div class="stock__right"><span class="stock__price">$878.78</span></div>
+      </div>
+      <div class="stock__body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi__label">P/E</div><div class="kpi__val">19.9</div></div>
+          <div class="kpi"><div class="kpi__label">FWD P/E</div><div class="kpi__val">5.7</div></div>
+          <div class="kpi"><div class="kpi__label">市值</div><div class="kpi__val">$992B</div></div>
+          <div class="kpi"><div class="kpi__label">营收增速</div><div class="kpi__val">+167%</div></div>
+          <div class="kpi"><div class="kpi__label">FCF</div><div class="kpi__val">$18.3B/季</div></div>
+          <div class="kpi"><div class="kpi__label">52周</div><div class="kpi__val">$112-1255</div></div>
+        </div>
+        <div class="sub-title">🏢 公司概况</div>
+        <p class="body-text">美光科技是全球第三大存储芯片厂商，总部位于爱达荷州博伊西，主营 DRAM（含 AI 核心料号 HBM 高带宽内存）、NAND 闪存与 NOR。FY2026 Q3（截至 2026/5/28）营收 414.6 亿美元，环比 +74%、同比 +346%（去年同期 93 亿美元），并指引 Q4 营收约 500 亿美元（±10 亿，环比 +20%）、毛利率约 86%（来源：美光官方新闻稿，2026-06-24）。HBM4 自 2026 年 3 月起供货 NVIDIA Vera Rubin 平台，HBM3E/HBM4 产能已售罄至 2027 年（来源：Analysis Atlas，2026-07-01）。Finviz 数据（2026-08-10）：市值 $992B，TTM P/E 19.9，Forward P/E 5.7，TTM 营收 $90.3B，毛利率 72.6%，ROE 66.6%，债务/权益仅 0.06，YTD +208%。</p>
+        <div class="sub-title">🧠 中长期看好逻辑</div>
+        <p class="body-text">第一，AI 内存超级周期具备结构性特征。HBM 是 AI 训练/推理的刚需料号，Counterpoint 数据显示 2026 Q1 SK Hynix 占 58% 份额，美光与三星并列约 21%，美光正以 HBM4 爬坡追赶（12-high HBM4 爬坡速度约为去年同期 HBM3E 的两倍）。第二，美光签下约 1,000 亿美元 take-or-pay 合同（覆盖至 2030 年，约 1/5 DRAM、1/3 NAND 产能），把相当部分订单从现货市场剥离——这是存储行业历史上第一次有厂商在周期顶部锁定多年合约，若合约成立，市场对其估值应从"周期股"切换为"签约供应商"（来源：Analysis Atlas 深度分析，2026-07-01）。第三，财务爆发力极强：Q3 单季自由现金流创纪录 183 亿美元，Q4 指引毛利率约 86%、non-GAAP EPS 约 $31/季度，FY2027 盈利预期 $154/股对应 Forward P/E 仅 5.7 倍，PEG 0.03——即使盈利见顶回落一半，当前估值仍有相当安全边际。第四，客户结构多元且锁定：NVIDIA、超大规模云厂商均为长期合同方，美光目标将 HBM 份额从 21% 提升至 mid-20s%，追平其 DRAM 总份额。BofA 目标价 $1,500（来源：Analysis Atlas 引用，2026-07）。</p>
+        <div class="callout callout--warn">
+          <div class="callout__title">⚠️ 风险提示</div>
+          <div class="callout__body">1) 存储周期风险是最大变量：86% 毛利率是短缺红利，历史上三家厂商同步扩产（美光 FY26 资本开支上调至约 $270 亿）往往意味着周期见顶，Analysis Atlas 明确提示"短缺结束可能以悬崖而非缓坡形式到来"；2) Citi 于 2026-08-07 将目标价从 $1,400 下调至 $1,150，担忧内存涨价周期放缓、明年利润率承压；3) 内部人净减持 -5.62%（Finviz Insider Trans，2026-08-10）；4) 波动率极高：beta 2.2，52 周低点 $111.67 至今已涨约 7.9 倍，YTD +208%，近一个月回调 -10.26%。</div>
+        </div>
+        <div class="callout callout--ok">
+          <div class="callout__title">🎯 投资结论</div>
+          <div class="callout__body">存储超级周期 + 千亿级 take-or-pay 合同正在改写周期股的估值逻辑，Forward P/E 5.7 倍给了足够的容错空间。适合能承受高波动的投资者作为 AI 内存敞口配置，持有 1-3 年仍具翻倍空间；核心跟踪指标：HBM 份额（目标 mid-20s%）与 Q4 财报后毛利率走势。若 SK Hynix/Samsung 7 月下旬财报显示合约价走平，需警惕周期见顶信号。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock anim" style="--i:5">
+      <div class="stock__head">
+        <div class="stock__left">
+          <span class="stock__ticker">ANET</span>
+          <span class="stock__name">Arista Networks · 阿里斯塔</span>
+          <span class="pill pill--buy">BUY</span>
+        </div>
+        <div class="stock__right"><span class="stock__price">$191.2</span></div>
+      </div>
+      <div class="stock__body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi__label">P/E</div><div class="kpi__val">60.3</div></div>
+          <div class="kpi"><div class="kpi__label">FWD P/E</div><div class="kpi__val">37.1</div></div>
+          <div class="kpi"><div class="kpi__label">市值</div><div class="kpi__val">$241B</div></div>
+          <div class="kpi"><div class="kpi__label">营收增速</div><div class="kpi__val">+37.7%</div></div>
+          <div class="kpi"><div class="kpi__label">毛利率</div><div class="kpi__val">63%</div></div>
+          <div class="kpi"><div class="kpi__label">52周</div><div class="kpi__val">$115-215</div></div>
+        </div>
+        <div class="sub-title">🏢 公司概况</div>
+        <p class="body-text">Arista Networks 是数据中心以太网交换机的全球领导者，2024 年起超越思科成为全球最大数据中心以太网交换机厂商（来源：Fierce Network，2026-07-22）。核心差异化是单一操作系统 EOS——从 1G 园区交换机到 800G/1.6T AI 平台全部跑同一套软件栈，管理运维一致性远胜对手的多产品多系统拼盘模式。Q2 2026 营收 30.36 亿美元（环比 +12.1%、同比 +37.7%，公司历史上首个单季 30 亿美元），non-GAAP EPS $1.02（同比 +39.7%），Q3 指引营收约 33 亿美元、non-GAAP 营业利润率 48-49%（来源：Arista 官方财报，2026-08-04）。微软和 Meta 各占营收 10% 以上。Finviz（2026-08-10）：市值 $241B，TTM P/E 60.3，Forward P/E 37.1，毛利率 63%，营业利润率 43%，零有息负债，YTD +46%。</p>
+        <div class="sub-title">🧠 中长期看好逻辑</div>
+        <p class="body-text">第一，AI 数据中心网络是 GPU 之外最确定的基础设施环节。Arista 将 FY26 AI 网络收入目标上调至 35 亿美元（约为去年两倍），客户正从 400G 向 800G、1.6T 平台快速迁移，超大规模云厂商 GPU 集群规模扩张直接拉动高速以太网交换机需求（来源：Fierce Network，2026-07-22）。第二，竞争壁垒深：EOS 单一软件栈 + 统一管理平台构成高转换成本，客户一旦部署 EOS 生态很难迁移；Arista 已是全球数据中心以太网交换机第一，AI 时代强者恒强。第三，财务质量顶级：毛利率 63%、营业利润率 45-50%（Q2 GAAP 45.4%/non-GAAP 49.9%）、零负债、ROE 31%，且在 AI 需求拉动下仍保持 35%+ 营收增速，Q3 指引继续环比增长，盈利能见度高。第四，标准之争的顺风：Arista 联合发起 Ultra Ethernet Consortium 与 OCP 以太网 Scale-Up 小组，押注以太网作为 AI scale-up 网络的开放替代方案，若 AMD 与自研加速器的超大规模客户选择开放以太网而非 NVIDIA 私有的 NVLink，Arista 在 2027 年后将打开第二增长曲线（来源：Fierce Network 管理层访谈，2026-07-22）。管理层明确 scale-up 市场 2027 年前财务上不相关，说明当前估值主要锚定确定性强的 scale-out 基本盘。</p>
+        <div class="callout callout--warn">
+          <div class="callout__title">⚠️ 风险提示</div>
+          <div class="callout__body">1) NVIDIA Spectrum-X 与 NVLink 正在侵蚀以太网客户，scale-up 网络仍是 NVIDIA 领地（管理层自认 2027 年前无法染指）；2) 客户集中度高：微软与 Meta 各占营收 10%+，单一大客户资本开支节奏变化会显著影响业绩；3) 供应约束：晶圆短缺、部分料件交期超 52 周，虽在改善但可能压制交付与毛利；4) 估值不便宜：Forward P/E 37 倍、P/S 22.9 倍，对增速放缓高度敏感；5) 内部人小幅净减持 -2.51%（Finviz，2026-08-10）。</div>
+        </div>
+        <div class="callout callout--ok">
+          <div class="callout__title">🎯 投资结论</div>
+          <div class="callout__body">Arista 是 AI 网络基础设施的"卖铲人"：份额第一、财务质量顶级、AI 收入翻倍增长路径清晰。37 倍 Forward P/E 对应 35%+ 增长与 50% 营业利润率，PEG 约 1.3 在高质量网络设备商中并不贵。1-3 年维度，只要超大规模客户资本开支不塌方，Arista 是确定性最高的 AI 受益标的之一，值得作为核心仓位持有。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock anim" style="--i:6">
+      <div class="stock__head">
+        <div class="stock__left">
+          <span class="stock__ticker">NU</span>
+          <span class="stock__name">Nu Holdings · 努银行</span>
+          <span class="pill pill--buy">BUY</span>
+        </div>
+        <div class="stock__right"><span class="stock__price">$13.9</span></div>
+      </div>
+      <div class="stock__body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi__label">P/E</div><div class="kpi__val">21.4</div></div>
+          <div class="kpi"><div class="kpi__label">FWD P/E</div><div class="kpi__val">12.5</div></div>
+          <div class="kpi"><div class="kpi__label">市值</div><div class="kpi__val">$67B</div></div>
+          <div class="kpi"><div class="kpi__label">营收增速</div><div class="kpi__val">+48.6%</div></div>
+          <div class="kpi"><div class="kpi__label">ROE</div><div class="kpi__val">30%</div></div>
+          <div class="kpi"><div class="kpi__label">52周</div><div class="kpi__val">$11.2-19.0</div></div>
+        </div>
+        <div class="sub-title">🏢 公司概况</div>
+        <p class="body-text">Nu Holdings（Nubank）是全球最大的数字银行平台之一，总部位于巴西圣保罗，覆盖巴西、墨西哥、哥伦比亚及美国。Q1 2026 客户总数突破 1.35 亿（单季净增约 400 万），巴西 1.15 亿客户已是该国最大私营金融机构，墨西哥 1,500 万客户成为当地第三大金融机构并于 Q1 实现盈亏平衡，哥伦比亚接近 500 万（来源：Nu 官方财报，2026-05-14）。Q1 2026 营收首次突破 50 亿美元，净利 8.71 亿美元（同比 +41%），ROE 29%，净息差 21.1%。收入结构：利息净收入 + 手续费 + 浮动收益（float）三大引擎并行，信用风险敞口约占总资产 40%。</p>
+        <div class="sub-title">🧠 中长期看好逻辑</div>
+        <p class="body-text">第一，拉美数字金融渗透率的故事远未结束：巴西可获取利润池（annual gross profit）超 1,000 亿美元，Nu 目前仅占约 7%，CEO David Vélez 的"Act III"规划——深化巴西变现（ARPU 从 $16 提至 $25+）、复制模式到墨西哥/哥伦比亚、并筹备进入美国——提供了多年增长路径（来源：Simply Wall St 分析，2026-08-05）。第二，墨西哥是当前最大的边际催化：2026 年 8 月获得墨西哥全功能银行牌照，可开展更广泛的产品线；墨西哥客户数四年增长约 7 倍、效率比改善 78 个百分点，正在复刻巴西的盈利公式（来源：Simply Wall St，2026-08-05；Nu 财报，2026-05-14）。第三，AI 是真实的成本/风控武器而非口号：自研 NuFormer 基础模型已投产巴西/墨西哥信用卡与巴西无抵押贷款业务，AI Private Banker 月活超 1,500 万，支撑信贷组合扩张同时保持风险可控（来源：Nu 财报，2026-05-14）。第四，估值处于历史低位：股价 YTD -17%，Forward P/E 仅 12.5 倍（PEG 0.36），较分析师平均目标价低约 25%，Simply Wall St 公允价值估算 $22.74、Morningstar 2026-04 首评公允价值 $15.30 并授予窄护城河评级——即便按保守口径当前价仍有上行空间。Q1 单季净利 8.71 亿美元、年化约 35 亿美元，对应 67B 市值仅约 19 倍年化盈利，而营收仍以 48%+ 速度增长。</p>
+        <div class="callout callout--warn">
+          <div class="callout__title">⚠️ 风险提示</div>
+          <div class="callout__body">1) 巴西信贷风险是核心变量：Q1 信用损失准备金环比 +33% 至 17.9 亿美元，风险调整后净息差从 10.5% 降至 9.5%，巴西利率高位下坏账压力若持续将压缩利润率；2) 估值溢价 vs 全球银行同行（P/E 21.7x vs 美国银行业 12.2x）需靠增长兑现来消化；3) 货币与政治风险：雷亚尔汇率、巴西监管环境变化；4) 2026 年计划投资 450 亿雷亚尔（约 $82 亿）于 AI 与扩张，短期压制自由现金流；5) 内部人减持 -0.03%，基本持平，无重大减持信号（Finviz，2026-08-10）。</div>
+        </div>
+        <div class="callout callout--ok">
+          <div class="callout__title">🎯 投资结论</div>
+          <div class="callout__body">NU 是本周组合中估值最有吸引力的标的：全球成长最快的规模化银行平台，营收 +48%、净利 +41%、ROE 29%，却因巴西坏账担忧与利率环境被压到 12.5 倍 Forward P/E。墨西哥牌照 + 盈亏平衡拐点是未来 1-3 年的第二增长曲线。若巴西信贷周期不恶化，当前价位具备"戴维斯双击"潜力，适合作为金融科技敞口的中长期配置。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock anim" style="--i:7">
+      <div class="stock__head">
+        <div class="stock__left">
+          <span class="stock__ticker">COHR</span>
+          <span class="stock__name">Coherent · 高意</span>
+          <span class="pill pill--buy">BUY</span>
+        </div>
+        <div class="stock__right"><span class="stock__price">$336.4</span></div>
+      </div>
+      <div class="stock__body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi__label">P/E</div><div class="kpi__val">161</div></div>
+          <div class="kpi"><div class="kpi__label">FWD P/E</div><div class="kpi__val">39.8</div></div>
+          <div class="kpi"><div class="kpi__label">市值</div><div class="kpi__val">$65.8B</div></div>
+          <div class="kpi"><div class="kpi__label">营收增速</div><div class="kpi__val">+27%</div></div>
+          <div class="kpi"><div class="kpi__label">PEG</div><div class="kpi__val">0.71</div></div>
+          <div class="kpi"><div class="kpi__label">52周</div><div class="kpi__val">$84-440</div></div>
+        </div>
+        <div class="sub-title">🏢 公司概况</div>
+        <p class="body-text">Coherent 是全球光子学/光电器件龙头，总部位于宾夕法尼亚州 Saxonburg，产品覆盖光收发模块（800G/1.6T/3.2T）、光通信系统（DCI）、激光器与材料。FY2026 Q3（截至 2026/3/31，5/6 公布）营收 18.0 亿美元（同比 +27%），non-GAAP EPS $1.41（去年同期 $0.91），毛利率 39.6%；其中数据中心与通信业务单季 13.62 亿美元、占总营收 75%，正在从 400G 向 1.6T/3.2T 快速迁移（来源：Coherent 官方财报 EX-99，2026-05-06）。Q4 FY26 指引营收 19.1-20.5 亿美元、non-GAAP EPS $1.52-1.72。公司已进入标普 500，并与 NVIDIA 合作开发面向 AI 数据中心的先进激光与光网络产品。Finviz（2026-08-10）：价格 $336.4，市值 $65.8B，Forward P/E 39.8，PEG 0.71，内部人交易 -0.31%。</p>
+        <div class="sub-title">🧠 中长期看好逻辑</div>
+        <p class="body-text">第一，AI 资本开支正从 GPU 扩散到光互联——这是当前确定性最高的"第二梯队"环节。Bailard 科技策略季度报告明确指出，AI 机会正从 GPU 扩展到光模块、光纤与高速网络设备（来源：Bailard，2026-06-30）。GPU 集群规模越大，机间/架间光互联用量越高，Coherent 是少数具备从材料（InP 磷化铟晶圆）到器件到系统的垂直整合能力的光学厂商，计划年底前将内部 InP 产能翻倍、2027 年前再翻倍以上。第二，市场规模与增速：公司估算既有业务（1.6T/3.2T/6.4T 收发模块、DCI ZR/ZR+）到 2030 年 SAM 超 500 亿美元，新增业务（光路交换机 OCS、CPO/NPO 引擎、多轨热管理）再添 200 亿+ 美元增量 SAM（来源：Coherent 投资者演示，2026-05）。第三，业绩拐点清晰：Q3 营收增速从 Q2 的 10% 附近重新加速到 27%，毛利率连续扩张（38.5%→39.6%），Q4 指引 EPS $1.52-1.72 环比继续增长；Finviz 预期下年 EPS $8.45（+54%），Forward P/E 39.8 倍、PEG 0.71，在 AI 硬件链中估值性价比突出。第四，竞争格局有利：NVIDIA 官方合作背书 + S&P 500 纳入带来的被动资金流入；公司已剥离航天防务与慕尼黑业务，聚焦高增长光电子主业，利润率有持续扩张空间。</p>
+        <div class="callout callout--warn">
+          <div class="callout__title">⚠️ 风险提示</div>
+          <div class="callout__body">1) 高波动：股价一年上涨 191%、52 周低点 $84 至今约 4 倍，YTD +82%，beta 约 1.6，当前距 52 周高点 $440 已回调 23.5%，短期波动剧烈；2) 产能执行风险：InP 扩产、800G→1.6T 量产爬坡若不及预期将直接冲击毛利率与交付；3) 竞争加剧：中际旭创等亚洲厂商在光模块份额竞争激烈，价格年降压力长期存在；4) 客户集中：超大规模云厂商占数据中心收入主体，资本开支节奏敏感；5) 周期性：光通信历史上波动大，AI 资本开支若见顶回落将显著拖累业绩。</div>
+        </div>
+        <div class="callout callout--ok">
+          <div class="callout__title">🎯 投资结论</div>
+          <div class="callout__body">Coherent 是 AI 光互联主升浪中估值最合理的核心标的：PEG 0.71、下年 EPS 增长 54%、NVIDIA 合作 + 垂直整合壁垒。1-3 年维度，只要 AI 数据中心建设周期延续，光模块需求从 800G 向 1.6T/3.2T 迭代将支撑业绩持续超预期。适合作为 AI 硬件链中进攻性配置，建议分批建仓以平滑高波动。</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h2 class="section-hdr anim" style="--i:5">观察清单</h2>
+    <div class="stock anim" style="--i:6">
+      <div class="watch-row">
+        <div class="watch-row__ticker">MOD</div>
+        <div class="watch-row__reason">数据中心液冷/热管理新贵：AI 机柜功率密度飙升带动定制化冷却需求，客户从 1 家超大规模厂商扩展到 5 家，数据中心收入预计两年内从 10 亿翻倍至 20 亿美元（来源：Osterweis，2025-12）。待观察其估值与液冷竞争格局（VRT 已涨多、Vertiv 为对手）。（2026-08）</div>
+      </div>
+      <div class="watch-row">
+        <div class="watch-row__ticker">LSCC</div>
+        <div class="watch-row__reason">小尺寸 FPGA 唯一纯玩家：每个服务器机架用 50+ 颗，Comms/Compute 业务 2026 年指引增长 20-40%，管理层目标营收从 ~$5 亿长期做到 $15-20 亿、维持 40%+ 营业利润率（来源：Osterweis，2025-12）。待观察数据中心新品放量与安森美/AMD 竞争。（2026-08）</div>
+      </div>
+      <div class="watch-row">
+        <div class="watch-row__ticker">PANW</div>
+        <div class="watch-row__reason">网络安全平台龙头，AI 代理带来安全需求新周期，Q2 2026 单季大涨 112%（来源：Bailard，2026-06-30）。但 Forward P/E 93 倍、PEG 7.1、下年 EPS 增速仅 9%，估值已透支——待回调或盈利兑现后再介入（Finviz，2026-08-10）。</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Weekly Stock · Swiss Clean Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>
