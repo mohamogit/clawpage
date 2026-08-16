@@ -4,10 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板 v2
+  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
+  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
+  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
+  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
+  Light-first，dark mode 为 prefers-color-scheme fallback
+  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+
 <style>
+  /* ============ LIGHT-FIRST THEME ============ */
   :root {
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
     --bg: #faf7f5;
     --surface: #ffffff;
     --surface2: #f3f0ec;
@@ -17,6 +29,8 @@
     --text: #292524;
     --text-dim: #78716c;
     --text-bright: #1c1917;
+
+    /* Semantic palette — terracotta & sage */
     --accent: #b45309;
     --accent-dim: rgba(180, 83, 9, 0.07);
     --sage: #65a30d;
@@ -30,6 +44,7 @@
     --slate: #475569;
     --slate-dim: rgba(71, 85, 105, 0.06);
   }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1c1917;
@@ -55,6 +70,8 @@
       --slate-dim: rgba(148, 163, 184, 0.08);
     }
   }
+
+  /* ============ RESET + BASE ============ */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: var(--bg);
@@ -67,6 +84,8 @@
     line-height: 1.7;
     min-height: 100vh;
   }
+
+  /* ============ ANIMATIONS ============ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
@@ -90,7 +109,14 @@
       transition-duration: 0.01ms !important;
     }
   }
-  .page { max-width: 740px; margin: 0 auto; }
+
+  /* ============ CONTAINER ============ */
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER — Newspaper masthead ============ */
   .masthead {
     text-align: center;
     padding: 36px 20px 28px;
@@ -119,8 +145,16 @@
     margin-top: 6px;
     letter-spacing: 0.5px;
   }
-  .section { padding: 24px 0 20px; }
-  .section + .section { border-top: 1px dashed var(--border-bright); }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 24px 0 20px;
+  }
+  .section + .section {
+    border-top: 1px dashed var(--border-bright);
+  }
+
+  /* Section labels — vary color per section */
   .section-label {
     font-family: var(--font-mono);
     font-size: 10px;
@@ -132,7 +166,9 @@
     align-items: center;
     gap: 10px;
   }
-  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
   .section-label--focus .dot { background: var(--rose); }
   .section-label--focus { color: var(--rose); }
   .section-label--global .dot { background: var(--accent); }
@@ -145,6 +181,8 @@
   .section-label--finance { color: var(--gold); }
   .section-label--projects .dot { background: var(--slate); }
   .section-label--projects { color: var(--slate); }
+
+  /* ============ NEWS ITEMS ============ */
   .item {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -158,12 +196,15 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   }
+
+  /* Hero item — focal story gets more visual weight */
   .item--hero {
     background: var(--surface-elevated);
     border-left: 3px solid var(--rose);
     padding: 20px 22px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   }
+
   .item__tag {
     font-family: var(--font-mono);
     font-size: 9px;
@@ -180,6 +221,7 @@
   .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
   .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
   .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+
   .item__title {
     font-size: 15px;
     font-weight: 700;
@@ -187,8 +229,12 @@
     margin-bottom: 8px;
     color: var(--text-bright);
   }
-  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a {
+    color: inherit;
+    text-decoration: none;
+  }
   .item__title a:hover { text-decoration: underline; }
+
   .item__body {
     font-size: 14px;
     line-height: 1.8;
@@ -196,6 +242,7 @@
   }
   .item__body a { color: var(--accent); text-decoration: none; }
   .item__body a:hover { text-decoration: underline; }
+
   .item__src {
     font-family: var(--font-mono);
     font-size: 10px;
@@ -203,6 +250,8 @@
     margin-top: 8px;
     letter-spacing: 0.2px;
   }
+
+  /* ============ FOOTER ============ */
   .foot {
     text-align: center;
     padding: 20px;
@@ -211,6 +260,8 @@
     color: var(--text-dim);
     letter-spacing: 0.3px;
   }
+
+  /* ============ RESPONSIVE ============ */
   @media (max-width: 480px) {
     body { padding: 8px; }
     .masthead h1 { font-size: 24px; }
@@ -291,44 +342,43 @@
 
   <section class="section">
     <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
-    <div class="item item--hero anim" style="--i:1"><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c5y0zz63gero">印尼东努沙登加拉7.7级强震：至少38人遇难，海啸预警一度发布</a></div><div class="item__body">当地时间8月15日，印度尼西亚东努沙登加拉省弗洛勒斯岛海域发生7.7级强震，震中位于英德（Ende）西北约68公里处。据BBC、NPR援引印尼国家灾害管理局（BNPB）消息，目前已确认至少38人遇难、多人受伤，其中芒加莱、东芒加莱、锡卡等县受灾最重，不少遇难者在睡梦中被倒塌房屋掩埋；另有54栋房屋严重损毁，5处医疗设施和6栋政府建筑受损。莫梅雷（Maumere）港口的渡轮码头在强震中大片混凝土剥落砸向候船乘客，有连廊坍塌将人抛入海中。震后发布的海啸预警约3小时后解除，当地2000余人自行撤离；北苏门答腊同日还发生6.9级强余震。震区多山地、交通不便，伤亡数字恐进一步上升。印尼地处三大板块交汇带，地震与火山活动频繁；印尼政府已调拨5万份援助物资驰援灾区。</div><div class="item__src">BBC / NPR + 第一财经（双视角）</div></div>
+    <div class="item item--hero a" style="--i:1"><span class="item__tag item__tag--rose">焦点</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c3v00w5ylw9o">印尼东努沙登加拉7.7级强震：至少47人遇难，海啸预警一度发布</a></div><div class="item__body">当地时间8月15日21时49分，印度尼西亚东努沙登加拉省弗洛勒斯岛海域发生7.7级强震，震中位于英德（Ende）西北约68公里、海底浅源。印尼国家灾害管理局（BNPB）15日晚通报，地震已造成至少47人遇难、数十人受伤，数百栋房屋倒塌，芒加莱、东芒加莱、锡卡等县受灾最重。印尼气象气候和地球物理局一度发布海啸预警，提醒沿岸居民向高处疏散，约两小时后解除。救援队伍连夜搜寻废墟中的被困者，但余震与道路中断给搜救带来困难。这次强震是今年印尼最严重的地震灾害之一，总统已指示调拨应急资金。<a href="https://www.bbc.co.uk/news/articles/c3v00w5ylw9o">BBC</a> 称快速评估仍在进行，伤亡数字可能进一步上升。</div><div class="item__src">BBC</div></div>
   </section>
 
   <section class="section">
     <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>全球热点</h2>
-    <div class="item anim" style="--i:1"><span class="item__tag item__tag--accent">国际</span><div class="item__title"><a href="https://www.thepaper.cn/newsDetail_forward_32178202">悉尼邦迪滩恐袭致16死40伤：父子枪手宣誓效忠"伊斯兰国"，6分钟103声枪响</a></div><div class="item__body">澳大利亚警方通报，悉尼邦迪滩（Bondi Beach）发生的枪击事件已造成包括一名枪手在内的16人死亡、40人受伤，两名嫌疑人为父子——萨吉德·阿克拉姆与纳维德·阿克拉姆，二人曾宣誓效忠"伊斯兰国"，作案枪支为合法持有。澳大利亚广播公司（ABC）对现场视频逐帧分析显示：不到6分钟内桥面区域响起103声枪响，父子交替射击，目标疑似一场犹太社区光明节活动。袭击中，一名从未接触过枪支的水果店主徒手扑倒并缴械其中一名枪手，被网友盛赞，特朗普也公开表扬其"非常非常勇敢"。两名枪手随后被警方击毙，一名目击者因踢踹倒地枪手引发争议。该案被视为澳大利亚近年最严重的本土恐怖袭击之一。</div><div class="item__src">澎湃（援引新华社、ABC，仅国内媒体视角）</div></div>
-    <div class="item anim" style="--i:2"><span class="item__tag item__tag--accent">国际</span><div class="item__title"><a href="https://www.thepaper.cn/newsDetail_forward_32178391">《怦然心动》导演罗伯·莱纳与妻子在洛杉矶家中遇害，疑为儿子行凶</a></div><div class="item__body">曾执导《怦然心动》《当哈利遇到莎莉》《危情十日》等经典的美国导演罗伯·莱纳（Rob Reiner）与妻子米歇尔·辛格·莱纳被发现在洛杉矶布伦特伍德区家中身亡，莱纳78岁、妻子68岁。洛杉矶消防部门接到医疗求助后到场，发现二人遗体；TMZ援引执法部门消息称两人身上有与刀具造成的伤口相符的割裂伤。洛杉矶警方已确认死者身份，由抢劫凶杀部门主导调查。《人物》杂志援引多方消息称，凶手疑为二人之子尼克·莱纳——他早年受访时自述有多年毒品成瘾史、一度流落街头——但该说法尚未获警方证实。女儿罗米最先发现父母倒在血泊中，母亲送医途中离世。案件震惊好莱坞。</div><div class="item__src">澎湃（援引TMZ、《每日野兽》、《人物》，仅国内媒体视角）</div></div>
-    <div class="item anim" style="--i:3"><span class="item__tag item__tag--rose">地缘</span><div class="item__title"><a href="https://www.zaobao.com.sg/news/world/story20260815-9522649">特朗普扬言"霍尔木兹海峡属于美国"，伊朗斥其"妄想"</a></div><div class="item__body">美国总统特朗普8月14日在纽约长岛的一场演说中宣称，"很快会宣布霍尔木兹海峡属于美国"，并称彻底击败伊朗后该海峡将成为"美国领土"。伊朗方面随即强硬回应，斥之为"妄想"，强调海峡通行权不容侵犯。近期美伊冲突持续升级：双方上周一度暂停互袭，美国财政部还预告将公布对伊朗"史无前例"的经济孤立计划。霍尔木兹海峡承载全球约五分之一的海运石油，是国际能源命脉，此番表态被普遍视为对伊朗的极限施压再升级，地区局势再度紧绷，国际油价与航运市场对此高度敏感。中英文媒体均已报道此事。</div><div class="item__src">联合早报 / 新浪 + NBC（双视角）</div></div>
-    <div class="item anim" style="--i:4"><span class="item__tag item__tag--rose">中日</span><div class="item__title">日本战败81周年：防卫大臣参拜靖国神社，中韩强烈抗议</div><div class="item__body">8月15日是日本战败投降81周年纪念日。据DW中文等媒体报道，日本防卫大臣当日参拜靖国神社，引发中国、韩国强烈抗议。中方此前多次重申，靖国神社是日本军国主义对外侵略战争的精神工具与象征；韩国外交部亦公开谴责参拜行为。同一天，微博热搜出现"汉奸石平参拜靖国神社"话题——旅日华人评论员石平公开参拜并发表言论，激起中国网友强烈愤慨。纪念日当天相关话题持续升温：中青网报道，南京大屠杀再添新证，日军士兵亲笔信记载"杀了一万多"，为这段历史再添铁证。</div><div class="item__src">DW中文 + 中新网/中青网（双视角）</div></div>
-    <div class="item anim" style="--i:5"><span class="item__tag item__tag--accent">美国</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9Bd1RmYUtvZEI4ZHkzM3N0bzVoTThPd3h1dXM4ZkMwWGZBeFgxaGJpR0pEbU80cERkRjVpcTVXOG8zVEFxVHlyRmkzN3ZZblZ5ZUZwR1lzQ3Jrdi1JX2hHZFFNcTdVQ1pGVXN0bjFxdzNhLUFDS2IzS2VXaw?oc=5">卢伊吉·曼焦内对联邦指控认罪，联合健康CEO被杀案进入量刑阶段</a></div><div class="item__body">据CNN报道，被控于2024年12月在纽约曼哈顿枪杀联合健康集团（UnitedHealthcare）CEO布莱恩·汤普森的卢伊吉·曼焦内（Luigi Mangione）已对联邦指控认罪。联邦层面指控涉及跨州谋杀共谋、跟踪等罪名（具体罪名细节待核实），此前他已因州级谋杀等指控受审。该案引发美国社会对医保行业积怨与暴力正当性的激烈争论，曼焦内在社交网络上的形象两极分化：有人视其为"英雄"，主流舆论则谴责以暴制暴。认罪后案件预计进入量刑阶段，分析人士称其可能面临数十年监禁乃至更重刑罚，庭审期间法院外多次出现支持者集会。</div><div class="item__src">CNN（仅西方媒体视角）</div></div>
-    <div class="item anim" style="--i:6"><span class="item__tag item__tag--accent">美国</span><div class="item__title"><a href="https://news.ifeng.com/c/8vbbFPzZmbF">马斯克"回头"：掷1亿美元助力共和党2026中期选举</a></div><div class="item__body">据凤凰网报道，在"苦等一年"之后，特朗普终于等到马斯克回归：特斯拉CEO马斯克计划在2026年11月的美国中期选举中继续支持共和党，投入至多1亿美元。此前两人关系一度因政策分歧及马斯克削减政府开支的立场冲突而降温，此次"和解"被视为马斯克对特朗普议程的再次押注。分析认为，这笔资金将主要投向共和党在参众两院的争夺战，尤其是摇摆州的广告投放与选民动员。报道称马斯克已释放明确信号，但具体分配方案尚未公布。消息在华盛顿引发广泛讨论，民主党方面则批评亿万富豪对选举的干预。</div><div class="item__src">凤凰网（仅国内媒体视角，细节待核实）</div></div>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">全球</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE54c0ZsdG9sOFZwaF9uQTlSSXl6R0YyTlZfZ2hKc2hKc2hK">伊朗强硬回应特朗普：霍尔木兹海峡不是美国领土</a></div><div class="item__body">美国总统特朗普8月15日在纽约长岛一场演说中宣称"很快会宣布霍尔木兹海峡属于美国"，称在彻底击败伊朗后该海峡将成为"美国领土"。伊朗外交部当日斥之为"妄想"，强调海峡通行权受国际法保护、"不容侵犯"。近期美伊冲突升温：美军林肯号航母战斗群正在阿曼湾活动，伊朗革命卫队则在海峡附近举行演练。霍尔木兹海峡承担全球约五分之一原油海运量，任何封锁企图都将冲击油价与航运。分析指出，特朗普此番表态更多是选举造势与对伊极限施压，实际法理与操作层面难以落地，但已加剧海湾紧张局势。</div><div class="item__src">Google News · WSJ/美联社</div></div>
+<div class="item a" style="--i:3"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5PUHBRRUV">智库报告：生态环境法典体现中国创新与世界贡献</a></div><div class="item__body">中国日报网8月15日刊发智库报告解读，认为正在编纂的生态环境法典是中国在环境立法领域的原创性探索，既整合了污染防治、生态修复、资源节约等分散立法，也回应了气候变化、生物多样性丧失等全球性挑战。报告指出，法典强调"绿水青山就是金山银山"的系统观念，将生态保护红线、排污许可、碳排放权交易等中国实践上升为法律制度，同时借鉴了国际经验，有望为发展中国家提供可复制的法治样本。专家认为，法典若顺利出台，将提升环境治理的统筹性与可执行性，但如何平衡发展与保护、细化追责机制仍是关键看点。</div><div class="item__src">中国日报·智库报告</div></div>
+<div class="item a" style="--i:4"><span class="item__tag item__tag--accent">中国</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE0zZjBsUnk">菲防长称中国使馆官员介入菲执法行动 中使馆驳斥为无端指责</a></div><div class="item__body">8月15日，菲律宾国防部长声称中国驻菲使馆官员"介入"菲方执法行动，暗示中方干涉内政。中国驻菲律宾使馆发言人当日驳斥该说法"毫无依据"，强调中方一贯尊重菲方主权，要求菲方停止"无端指责、制造对立"。此次风波与南海局势相关：近期菲方在南海争议海域加强巡航，中方则重申对南沙群岛的主权立场。马尼拉与北京在南海、渔业、科考等问题上分歧长期存在，此次口水战再度凸显双边互信脆弱。观察人士指出，类似指控往往在菲国内政治需要时出现，实际缺乏证据支撑。</div><div class="item__src">新京报·Google News</div></div>
+<div class="item a" style="--i:5"><span class="item__tag item__tag--accent">美国</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/15/weather/hurricane-iniki-h">夏威夷最后一次飓风如何成为电影明星</a></div><div class="item__body">《纽约时报》8月15日刊文回顾：1992年9月袭击夏威夷考艾岛的飓风"伊尼基"（Iniki）是该州有记录以来最后一次飓风登陆，当时造成6人死亡、数亿美元损失，却因被好莱坞剧组意外拍下而"成为电影明星"——斯皮尔伯格团队正在考艾岛拍摄《侏罗纪公园》，飓风过境的狂风与巨浪被镜头记录，后成为影片宣传素材。文章称，考艾岛此后33年未再遭飓风直击，但气候变暖正让太平洋飓风路径更难预测。夏威夷应急部门提醒，居民不应因"多年平静"而放松防灾，仍需备足72小时应急物资，并关注官方预警。</div><div class="item__src">NYT</div></div>
   </section>
 
   <section class="section">
     <h2 class="section-label section-label--social anim" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
-    <div class="item anim" style="--i:1"><span class="item__tag item__tag--sage">热搜</span><div class="item__title">"胖东来 刑释人员"登上微博热搜，用工包容性引热议</div><div class="item__body">微博热搜词条"胖东来 刑释人员"今日冲上榜单前列，围绕河南许昌零售标杆胖东来在用工中对刑释人员（刑满释放人员）的接纳问题引发大规模讨论。胖东来以高薪、高福利、"委屈奖"等人性化管理制度著称，创始人于东来多次强调"企业要对社会有担当"。此次热搜中，支持者认为接纳刑释人员就业体现企业社会责任，能帮助其重新融入社会；质疑者则担忧服务质量与用工风险。截至发稿，胖东来官方尚未就具体安排作出公开回应，相关细节待核实。</div><div class="item__src">微博热搜（细节待核实）</div></div>
-    <div class="item anim" style="--i:2"><span class="item__tag item__tag--sage">热搜</span><div class="item__title">奇瑞捷豹路虎首搭华为乾崑智驾，豪华合资阵营拥抱华为</div><div class="item__body">微博热搜显示，"奇瑞捷豹路虎首搭华为乾崑智驾"成为今日汽车圈热门话题。奇瑞捷豹路虎合资公司旗下车型将首次搭载华为乾崑智驾（ADS）方案，成为继问界、阿维塔、深蓝等之后又一个接入华为智能驾驶体系的品牌，也是豪华品牌合资阵营中较早"上车"华为方案的案例。分析认为，此举显示华为乾崑智驾正加速向合资与豪华品牌渗透，传统豪华车企在华智能化竞争中不得不"借力"本土供应商。具体将搭载于哪款车型、上市时间等细节尚未公布，待核实。</div><div class="item__src">微博热搜 / 爱范儿（细节待核实）</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--sage">社会</span><div class="item__title"><a href="https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E8%83%96%E4%B8%9C%E6%9D%A5">胖东来闭门店引发28个收银口排长龙热议</a></div><div class="item__body">微博热搜8月15日显示，"胖东来将闭门店28个收银口排长龙"冲上榜单前列。河南许昌零售标杆胖东来以高薪、高福利、"委屈奖"等人性化管理著称，创始人于东来多次强调企业社会责任。此次热议源于网传胖东来某门店因租约到期将关闭，闭店前打折促销引发顾客排队抢购，28个收银通道全开仍排长龙。部分网友点赞其"善始善终"的清仓方式，也有人讨论实体零售在电商冲击下的生存压力。胖东来方面尚未公布闭店补偿与员工安置细节，但表态会妥善处理会员储值与售后。<a href="https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E8%83%96%E4%B8%9C%E6%9D%A5">微博热搜</a></div><div class="item__src">微博热搜</div></div>
+<div class="item a" style="--i:7"><span class="item__tag item__tag--sage">社会</span><div class="item__title"><a href="https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E7%9F%B3%E5%B9%B3%E5%8F%82%E6%8B%9C%E9%9D%96%E5%9B%BD%E7%A5%9E%E7%A4%BE">汉奸石平参拜靖国神社登热搜 引发中日舆论强烈反弹</a></div><div class="item__body">8月15日是日本战败投降81周年纪念日，当天"汉奸石平参拜靖国神社"与"中国博主发布进入靖国神社视频"同时登上微博热搜。石平为归化日本的前中国媒体人，此次参拜靖国神社被网友斥为"背祖"，相关话题阅读量迅速破亿。同日，中国驻日本使馆发声，指日方政要参拜靖国神社"严重挑战战后国际秩序"，敦促日方正视历史。靖国神社供奉甲级战犯，历来是中韩等邻国敏感议题。此次事件再次点燃中国网络的民族情绪，也有声音呼吁理性表达、避免人身攻击。</div><div class="item__src">微博热搜·人民网</div></div>
+<div class="item a" style="--i:8"><span class="item__tag item__tag--sage">社会</span><div class="item__title"><a href="https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E6%97%BA%E6%97%BA%E6%97%A0%E7%B3%96">旺旺晒出无糖低糖新品 试探年轻市场</a></div><div class="item__body">8月15日，"旺旺晒出无糖低糖新品"登上微博热搜。前一日旺旺集团董事长刚在内部信中坦言公司面临"重大经营危机"，营收增长乏力、主打的米果与乳饮品类老化，引发市场关注。此次新品聚焦无糖、低糖的果冻、饮料与小零食，包装更简约、口味偏清淡，明显瞄准健康化与年轻化趋势。旺旺方面称，新品已在华东部分商超试销，线上渠道同步预售。网友对此看法分化：有人期待老牌焕新，也有人质疑"换汤不换药"。在消费降级与健康焦虑并存的当下，旺旺能否靠细分赛道突围，仍需市场检验。</div><div class="item__src">微博热搜·爱范儿</div></div>
   </section>
 
   <section class="section">
     <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>科技新闻</h2>
-    <div class="item anim" style="--i:1"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://www.ifanr.com/1675280">曝苹果与阿里合作，为中国市场训练自研AI模型</a></div><div class="item__body">爱范儿早报援引路透社消息：三名知情人士透露，苹果正在阿里巴巴的支持下为中国市场训练一款自研大语言模型，该模型将用于苹果智能（Apple Intelligence）在华落地。此前受监管合规与数据出境限制，苹果国行版AI功能迟迟未能上线，与多家中国厂商的谈判传闻不断。若与阿里合作坐实，通义大模型的技术底座与云计算资源将成为苹果在华AI服务的支撑，阿里的云与AI业务也将获得重量级背书。目前苹果与阿里均未官方回应，消息仍属"曝料"阶段。该合作若达成，将深刻影响中国AI应用生态的竞争格局。</div><div class="item__src">爱范儿（援引路透社，待官方证实）</div></div>
-    <div class="item anim" style="--i:2"><span class="item__tag item__tag--teal">金融科技</span><div class="item__title"><a href="https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/">PayPal出售谈判升温：潜在买家为Stripe与Advent</a></div><div class="item__body">据TechCrunch报道，支付巨头PayPal的出售谈判正在升温，潜在买家为支付公司Stripe与私募股权基金Advent International。PayPal曾是全球在线支付的开创者，但近年增长放缓、估值大幅缩水，长期承受激进投资者的施压。若交易达成，将成为金融科技史上最大规模的并购之一，彻底重塑全球支付格局：Stripe擅长开发者与在线商家生态，Advent则精于杠杆收购与整合，双方联合收购的传闻已久。目前谈判仍处早期阶段，交易价格与最终结构未定，消息称不排除其他竞购方加入。市场正密切关注支付行业的整合浪潮。</div><div class="item__src">TechCrunch（仅西方媒体视角）</div></div>
-    <div class="item anim" style="--i:3"><span class="item__tag item__tag--teal">AI监管</span><div class="item__title"><a href="https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/">Google调整AI水印策略：允许用户移除可见水印，溯源攻防战升级</a></div><div class="item__body">据TechCrunch报道，Google将允许用户从其AI生成内容中移除可见水印，引发业界对AI内容溯源与深度伪造风险的担忧。此前Google通过SynthID在AI生成图片上叠加不可见水印并保留可见标记；新政策下可见水印可被删除，但据称不可见的加密水印仍将保留以供识别。此举被认为是为提升Gemini生成内容的可用性与美观度，与竞争对手争夺创作者。与此同时，开源社区已出现可剥离多厂商AI溯源标记的工具（如GitHub上的watermarks-remover，已获9000余星），AI内容真实性验证的攻防战愈演愈烈。</div><div class="item__src">TechCrunch</div></div>
-    <div class="item anim" style="--i:4"><span class="item__tag item__tag--teal">消费电子</span><div class="item__title">追觅首台AURORA手机交付：售价20万元，24K足金镶宝石</div><div class="item__body">爱范儿早报消息：追觅科技首台AURORA手机正式交付，售价高达20万元人民币，机身采用24K足金并镶嵌宝石，主打"超高端奢华手机"定位。追觅以扫地机器人、吸尘器等清洁电器起家，近年大举跨界——此前已布局人形机器人、具身智能等领域，此次杀入奢华手机市场引发热议：有人认为是品牌营销噱头，也有人视其为消费电子"奢侈品化"的又一案例。20万元的定价远超传统奢华手机品牌，具体配置与销量目标尚未公布，交付量预计极为有限。</div><div class="item__src">爱范儿（细节待核实）</div></div>
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/">女子称继父用Grok将童年照转成不雅图片 AI滥用再引争议</a></div><div class="item__body">TechCrunch 8月15日报道，一名美国女子指控继父使用马斯克旗下xAI的聊天机器人Grok，将她童年时期的普通生活照批量转化为不雅图片。女子称这些AI生成内容"把日常生活变成了儿童性虐待"，已向警方报案并寻求法律援助。Grok此前因图像生成功能缺乏足够过滤而多次被投诉，xAI则称已加强未成年人保护与提示词拦截。事件在欧美社交媒体发酵，舆论呼吁对生成式AI的图像伦理划出更清晰红线。专家指出，技术中立不能成为免责理由，平台需对"以假乱真"的合成内容承担审核责任，立法也应跟上。<a href="https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/">TechCrunch</a></div><div class="item__src">TechCrunch</div></div>
+<div class="item a" style="--i:10"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/">Anthropic详解Claude新水印机制：可见可验证 难被轻易擦除</a></div><div class="item__body">Anthropic 8月15日披露Claude新一代水印方案更多细节：除此前公布的可见标记外，系统将在文本与图像输出中嵌入不可见的统计水印与C2PA元数据，支持第三方验证。即便用户截屏、轻度编辑或改写，水印仍可通过检测器识别，但完全重写或高强度对抗仍可能削弱信号。公司称水印对代码生成影响有限，已针对编程场景优化，避免误伤格式。此前Google宣布允许移除可见水印引发争议，Anthropic则强调"溯源与隐私需平衡"——水印不存储用户身份，仅用于区分人机内容。该方案将于下月向企业客户开放测试。<a href="https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/">TechCrunch</a></div><div class="item__src">TechCrunch</div></div>
+<div class="item a" style="--i:11"><span class="item__tag item__tag--teal">航天</span><div class="item__title"><a href="https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/">SpaceX正式完成对Cursor收购 加速AI编程布局</a></div><div class="item__body">据TechCrunch 8月15日报道，SpaceX已正式完成对热门AI编程工具Cursor的收购，交易金额未披露但被描述为"SpaceX近年最大软件收购之一"。Cursor以VS Code分支与强大的代码补全、重构能力著称，团队将整体并入SpaceX的Starship软件与星链地面系统部门。马斯克称，AI编程是"让火箭迭代速度翻倍"的关键，而Cursor的代理式编程（Agent）能力可直接用于飞行软件与发射自动化。此举也被视为SpaceX与xAI协同的信号——后者正为Grok构建代码能力。行业担忧独立开发者工具被巨头收编后，中立性与定价是否会生变。<a href="https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/">TechCrunch</a></div><div class="item__src">TechCrunch</div></div>
+<div class="item a" style="--i:12"><span class="item__tag item__tag--teal">合集</span><div class="item__title"><a href="https://www.ifanr.com/1675280">早报合集｜苹果与阿里合作训练AI模型 微信否认朋友圈二次编辑 追觅20万元奢华手机交付</a></div><div class="item__body">爱范儿8月15日早报合集一条囊括三条重磅消息，不作拆分。①曝苹果与阿里合作：三名知情人士称，苹果正与阿里巴巴合作，为中国市场训练自研大语言模型，用于Apple Intelligence国行版落地，此前因合规与数据出境限制迟迟未上线。②微信回应：针对"朋友圈二次编辑"传闻，微信官方明确表示"永不推出"该功能，强调朋友圈的"一次性表达"产品哲学。③追觅首台AURORA手机交付：售价20万元、机身镶24K足金与宝石的奢华手机正式交付，标志清洁电器起家的追觅大举跨界高端硬件。该合集发布时间为2026-08-15 08:40，爱范儿原文含完整三段，本文仅作合集引用，不另拆条目。<a href="https://www.ifanr.com/1675280">爱范儿</a></div><div class="item__src">爱范儿</div></div>
   </section>
 
   <section class="section">
     <h2 class="section-label section-label--finance anim" style="--i:5"><span class="dot"></span>财经要闻</h2>
-    <div class="item anim" style="--i:1"><span class="item__tag item__tag--gold">经济</span><div class="item__title">国铁集团：1至7月全国铁路发送旅客28亿人次，再创新高</div><div class="item__body">据21财经报道，国铁集团发布数据：今年1至7月全国铁路发送旅客28亿人次，再创历史同期新高。今年以来铁路客流持续高位运行，春运、清明、五一、暑运等假期屡破纪录，中长途出行与旅游客流成为主要增长引擎；全国铁路网不断加密、高铁占比提升，是运量增长的直接支撑。数据显示，暑运期间铁路单日客流量多次突破2000万人次。铁路客运量的高增长也被视为消费活力与人员流动活跃度的晴雨表。具体同比增幅等详细数据待核实。</div><div class="item__src">21财经 / 央广网</div></div>
-    <div class="item anim" style="--i:2"><span class="item__tag item__tag--gold">金融创新</span><div class="item__title">广州推出"Token贷"：按算力合同与Token消耗额度授信</div><div class="item__body">爱范儿早报消息：广州推出面向AI企业的"Token贷"创新融资产品，金融机构按企业的算力合同和Token消耗额度进行授信，而非依赖传统抵押物。这意味着大模型创业公司可凭"用多少算力、烧多少Token"的实打实经营数据获得贷款，被视为地方支持AI产业、破解"轻资产难融资"难题的新尝试。此前多地已推出"算力券""数据资产入表"等政策，广州此举进一步把AI企业的日常运营开销纳入信贷评估体系。业内认为，此类金融创新有助于缓解AI初创企业现金流压力，但也需防范过度授信与算力泡沫风险。</div><div class="item__src">爱范儿（细节待核实）</div></div>
-    <div class="item anim" style="--i:3"><span class="item__tag item__tag--gold">公司</span><div class="item__title">旺旺董事长发内部信：公司面临"重大经营危机"</div><div class="item__body">爱范儿早报消息：旺旺集团董事长向员工发出内部信，直言公司正面临"重大经营危机"。旺旺曾是休闲食品龙头，米果、乳饮等品类家喻户晓，但近年营收增长乏力、新品突围困难，多元化尝试成效不一，叠加消费环境变化，经营压力持续显现。内部信曝光后引发市场关注，旺旺系股价及舆论反应有待观察；截至发稿，公司尚未对外披露具体危机细节与应对方案。分析认为，传统快消巨头在"新消费"冲击下的转型阵痛具有普遍性。</div><div class="item__src">爱范儿（细节待核实）</div></div>
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--gold">并购</span><div class="item__title"><a href="https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/">PayPal出售谈判升温 潜在买家为Stripe与Advent</a></div><div class="item__body">TechCrunch 8月14日报道，支付巨头PayPal的出售谈判正在升温，潜在买家包括支付新贵Stripe与私募股权基金Advent International。PayPal曾是全球在线支付开创者，但近年增长放缓、股价较峰值跌去约七成，长期承受激进投资者压力。Stripe若接手，将整合双方商户网络与风控技术，形成对Adyen等的更大竞争压力；Advent则看重其现金流与分拆价值。消息人士称谈判仍处早期，估值与监管仍是障碍。受传闻推动，PayPal股价14日盘后上涨约3%。分析认为，无论是否成交，PayPal已走到战略十字路口。<a href="https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/">TechCrunch</a></div><div class="item__src">TechCrunch</div></div>
+<div class="item a" style="--i:14"><span class="item__tag item__tag--gold">能源</span><div class="item__title"><a href="https://techcrunch.com/2026/08/15/every-fusion-startup-that-has-raised-over-100m/">融资超1亿美元的聚变创业公司全梳理：谁在烧钱追逐太阳</a></div><div class="item__body">TechCrunch 8月15日盘点，全球已有十余家聚变创业公司融资超过1亿美元，包括Commonwealth Fusion Systems、Helion、TAE Technologies等，合计吸金超80亿美元。文章梳理，聚变赛道正从实验室走向工程化，磁约束与惯性约束两条路线竞争激烈，但商业化发电仍需突破材料、氚循环与成本难关。投资人看中的不仅是能源革命叙事，更是AI数据中心对稳定清洁电力的渴求——多家公司已与科技巨头签订未来购电协议。尽管"点火"里程碑频现，专家提醒聚变仍是长周期、高风险赛道，短期难见回报。<a href="https://techcrunch.com/2026/08/15/every-fusion-startup-that-has-raised-over-100m/">TechCrunch</a></div><div class="item__src">TechCrunch</div></div>
   </section>
 
   <section class="section">
     <h2 class="section-label section-label--projects anim" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
-    <div class="item anim" style="--i:1"><span class="item__tag item__tag--slate">开源工具</span><div class="item__title"><a href="https://github.com/guillaumemeyer/watermarks-remover">watermarks-remover ⭐9156：剥离多厂商AI溯源标记的开源工具</a></div><div class="item__body">开源工具watermarks-remover近日在GitHub斩获超9100星，可剥离多家厂商的AI内容溯源标记：包括Unicode文本清洗、统计重写钩子，以及从PNG/JPEG/SVG/PDF等格式中移除C2PA元数据。随着Google等厂商调整可见水印策略、各国推动AI内容标识立法，围绕"AI水印能否真正防伪"的攻防战成为热点——监管要求标识AI生成内容，反溯源工具却层出不穷。该项目引发关于AI内容监管有效性的激烈讨论：水印到底"防君子还是防小人"？项目方强调工具仅用于研究合规用途。</div><div class="item__src">GitHub Trending</div></div>
-    <div class="item anim" style="--i:2"><span class="item__tag item__tag--slate">AI工程</span><div class="item__title"><a href="https://github.com/antirez/h3.c">h3.c ⭐1878：Redis之父antirez为Mac打造MiniMax H3推理引擎</a></div><div class="item__body">Redis创始人antirez（萨尔瓦托雷·桑菲利波）发布新项目h3.c：一个为Mac电脑设计的MiniMax H3模型推理引擎，发布数日即获近1900星。antirez近年频繁探索AI领域，此前曾发布过本地模型推理实验项目；此次选择用C语言实现H3架构的本地推理，主打轻量、无依赖，可在普通Mac上运行。在云端大模型盛行的当下，antirez持续押注"本地AI"路线，其极简工程风格吸引大量开发者围观学习。项目尚处早期，主要面向对模型推理实现细节感兴趣的开发者。</div><div class="item__src">GitHub Trending</div></div>
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--slate">项目</span><div class="item__title"><a href="https://github.com/xiaobright/dsh-anchored-standard">dsh-anchored-standard ⭐2253：DeepSeek Harness两阶段锚定预设</a></div><div class="item__body">由xiaobright于8月14日发布的dsh-anchored-standard，为DeepSeek Harness生态打造的两阶段锚定预设：最小对齐启动与可复用工作流，发布一日即获2253星。项目提供开箱即用的系统提示词与路由配置，帮助开发者在Harness的插件化架构中快速拉起最小可用代理，降低冷启动成本。作者称该预设已在多个内部客服与代码助手场景验证，适合作为二次开发基线。<a href="https://github.com/xiaobright/dsh-anchored-standard">GitHub</a></div><div class="item__src">GitHub</div></div>
+<div class="item a" style="--i:16"><span class="item__tag item__tag--slate">项目</span><div class="item__title"><a href="https://github.com/yjh051108/dsh-routing-suite">dsh-routing-suite ⭐1806：Harness注入器与路由标准套件</a></div><div class="item__body">yjh051108于8月14日开源的dsh-routing-suite，包含注入器与路由标准 kit，发布两日内斩获1806星。套件为DeepSeek Harness的插件路由提供统一标准，支持按意图、权限与成本自动分发请求，并提供可视化调试面板。README强调与dsh-anchored-standard互补，可一键接入现有Harness桌面端与Web UI，适合构建多代理协作系统。<a href="https://github.com/yjh051108/dsh-routing-suite">GitHub</a></div><div class="item__src">GitHub</div></div>
+<div class="item a" style="--i:17"><span class="item__tag item__tag--slate">项目</span><div class="item__title"><a href="https://github.com/alchaincyf/deepseek-harness-orange-book">deepseek-harness-orange-book ⭐781：Harness橙皮书与原始会话日志</a></div><div class="item__body">alchaincyf于8月14日发布的deepseek-harness-orange-book，号称"橙皮书"：完整系统提示词、129行启动清单与三份原始会话日志，获781星。项目试图复刻并解读DeepSeek Harness从开机到拆开的全过程，对官方文档未公开的细节作补充，被社区视为"逆向学习"的参考资料。作者提醒内容仅供研究，生产环境应以官方实现为准。<a href="https://github.com/alchaincyf/deepseek-harness-orange-book">GitHub</a></div><div class="item__src">GitHub</div></div>
   </section>
 
   <footer class="foot anim" style="--i:7">
