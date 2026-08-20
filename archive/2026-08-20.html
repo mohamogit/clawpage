@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News</title>
+<!--
+  Visual Explainer 设计系统 — 日报模板 v2
+  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
+  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
+  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
+  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
+  Light-first，dark mode 为 prefers-color-scheme fallback
+  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
+-->
+
+<style>
+  /* ============ LIGHT-FIRST THEME ============ */
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06);
+    --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+
+    /* Semantic palette — terracotta & sage */
+    --accent: #b45309;
+    --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917;
+      --surface: #292524;
+      --surface2: #3a3530;
+      --surface-elevated: #332e29;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-bright: rgba(255, 255, 255, 0.12);
+      --text: #e7e5e4;
+      --text-dim: #a8a29e;
+      --text-bright: #fafaf9;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.1);
+      --sage: #a3e635;
+      --sage-dim: rgba(163, 230, 53, 0.1);
+      --rose: #fb7185;
+      --rose-dim: rgba(251, 113, 133, 0.1);
+      --teal: #22d3ee;
+      --teal-dim: rgba(34, 211, 238, 0.08);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.1);
+      --slate: #94a3b8;
+      --slate-dim: rgba(148, 163, 184, 0.08);
+    }
+  }
+
+  /* ============ RESET + BASE ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 12px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .anim {
+    animation: fadeUp 0.45s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.04s);
+  }
+  .anim-scale {
+    animation: fadeScale 0.4s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.05s);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ============ CONTAINER ============ */
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ============ HEADER — Newspaper masthead ============ */
+  .masthead {
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+  }
+  .masthead::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+  .masthead h1 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-bright);
+  }
+  .masthead .date-line {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 24px 0 20px;
+  }
+  .section + .section {
+    border-top: 1px dashed var(--border-bright);
+  }
+
+  /* Section labels — vary color per section */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .section-label--focus .dot { background: var(--rose); }
+  .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); }
+  .section-label--global { color: var(--accent); }
+  .section-label--social .dot { background: var(--sage); }
+  .section-label--social { color: var(--sage); }
+  .section-label--tech .dot { background: var(--teal); }
+  .section-label--tech { color: var(--teal); }
+  .section-label--finance .dot { background: var(--gold); }
+  .section-label--finance { color: var(--gold); }
+  .section-label--projects .dot { background: var(--slate); }
+  .section-label--projects { color: var(--slate); }
+
+  /* ============ NEWS ITEMS ============ */
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hero item — focal story gets more visual weight */
+  .item--hero {
+    background: var(--surface-elevated);
+    border-left: 3px solid var(--rose);
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .item__tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+
+  .item__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text-bright);
+  }
+  .item__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .item__title a:hover { text-decoration: underline; }
+
+  .item__body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+
+  .item__src {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .masthead h1 { font-size: 24px; }
+    .masthead { padding: 24px 12px 20px; }
+    .item { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<style>
+#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
+#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
+#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
+#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#claw-top .claw-tab:hover{background:#f0f0f0}
+#claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
+#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
+#claw-top .claw-latest:hover{color:#111}
+#claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
+#claw-drop.open{display:block}
+#claw-drop .claw-group{display:none}
+#claw-drop .claw-group.show{display:block}
+#claw-drop .claw-gtitle{font-size:12px;color:#999;margin:8px 0 4px;font-weight:600}
+#claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
+#claw-drop a:hover{background:#f5f5f5;color:#111}
+#claw-drop a.cur{background:#eee;color:#111;font-weight:600}
+@media (max-width:480px){#claw-top{margin:-8px -8px 0}}
+@media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
+</style><div id="claw-top">
+  <div class="claw-bar">
+    <span class="claw-brand">📰 Claw Daily</span>
+    <button class="claw-tab active" data-type="daily">日报 ▾</button>
+    <button class="claw-tab" data-type="weekly">周报 ▾</button>
+    <a class="claw-latest" href="/clawpage/index.html">最新</a>
+  </div>
+  <div id="claw-drop">
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-20.html" class="cur">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
+  </div>
+</div>
+<script>
+(function(){
+  var drop = document.getElementById('claw-drop');
+  function openGroup(type){
+    var groups = drop.querySelectorAll('.claw-group');
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
+    var g = drop.querySelector('[data-group="'+type+'"]');
+    if (g) g.className += ' show';
+    drop.className = 'open';
+    var tabs = document.querySelectorAll('#claw-top .claw-tab');
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
+    var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
+    if (t) t.className += ' active';
+  }
+  document.querySelectorAll('#claw-top .claw-tab').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var type = this.dataset.type;
+      if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
+        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
+      } else {
+        openGroup(type);
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    var top = document.getElementById('claw-top');
+    if (!top.contains(e.target)) { drop.className = ''; }
+  });
+})();
+</script>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年8月20日 星期四 · Claw 每日中文日报</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
+    <div class="item item--hero a" style="--i:1"><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/business/evergrande-founder-life-prison.html">许家印一审被判无期：恒大集团罚88.2亿、恒大地产罚70亿，没收个人全部财产</a></div><div class="item__body">8月20日上午，广东省深圳市中级人民法院对恒大集团、恒大地产及许家印案进行一审公开宣判：许家印数罪并罚被判处无期徒刑，剥夺政治权利终身，并处没收个人全部财产；恒大集团被判处罚金88.2亿元，恒大地产被判处罚金70亿元；违法所得继续追缴，不足部分责令退赔。法院经审理查明，2016年至2021年间，许家印作为恒大集团实际控制人全面负责集团运营，管理、控制恒大地产及恒大财富等多家企业，投资地产、物业、金融等领域，期间恒大系企业长期违法违规融资。除许家印外，甄立涛、柯鹏、许腾鹤、许智健、杜亮、梁栋等56名涉案人员被判处有期徒刑十八年至一年十个月不等，并处罚金或没收财产。NYT评论称，这家房地产巨头的崩盘曾把中国金融体系推向崩溃边缘，此案宣判为"中国地产第一案"画上阶段性句号，也标志对地产时代疯狂加杠杆模式的清算进入终局。</div><div class="item__src">深圳市中级人民法院+纽约时报NYT（双视角）</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>全球热点</h2>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--rose">国际</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/business/iran-war-oil-bonds.html">特朗普宣布对伊朗发动"经济D-Day"：布伦特油价突破92美元</a></div><div class="item__body">特朗普8月19日通过Truth Social宣布启动针对伊朗的"史上最严厉经济行动"，目标覆盖石油走私、现金通道等伊朗经济命脉，美伊战事已持续近六个月，冲突重心正从军事对抗转向经济绞杀。伊朗方面对此嗤之以鼻，称这是"加倍下注"，"只会带来进一步的失败"。市场反应剧烈：布伦特原油价格升至每桶92美元上方，过去四个交易日累计上涨逾5%，连续第五个交易日走高，通胀担忧随之升温，全球风险资产承压。双方围绕霍尔木兹海峡的控制权之争仍无缓和迹象。</div><div class="item__src">CBS+NYT（仅西方视角，信息可能不完整）</div></div>
+<div class="item a" style="--i:3"><span class="item__tag item__tag--gold">地缘</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxORVdsZHA4UEJGQk91VHU5TURyME9mbHRfN0RmdE5menhRTmdCaE45ZGtNSlVVakFSazlhLXpna25HaWJrSm1oVzU0cmZweUhQN2JGYXM1X0ltbFVkMkVvQnFQcmh2QkdPTXMxUGpUWVdTc1RUUDV6SzczSWtYOXlPaGFzN21wWEJiMkZ3ZjVpM1RzUlhqTG9rU3BocHBBNWRLZUZvS3ViU0ZOb1JteWFkdjFHNy1HZ1I4QUFYSXpYRDFkMEk?oc=5">朝鲜发射约10枚短程弹道导弹：直指特朗普削减美韩军演</a></div><div class="item__body">韩国联合参谋本部称，朝鲜8月20日傍晚向东部海域（日本海）发射约10枚短程弹道导弹，日本政府与海保同步监测到发射。此次发射距离特朗普宣布大幅缩减美韩联合军演、并放话期待与金正恩重启会谈仅数小时，朝鲜以密集试射作出强硬回应，被解读为对"美韩同盟缩水"的直接反击。美日韩正在评估导弹型号与落点参数，半岛局势在军演调整后不降反升。此前特朗普缩减军演曾被专家警告可能向平壤释放错误信号，此次发射印证了相关担忧。</div><div class="item__src">路透+卫报+韩联社（仅西方视角）</div></div>
+<div class="item a" style="--i:4"><span class="item__tag item__tag--slate">非洲</span><div class="item__title"><a href="https://www.guancha.cn">赞比亚安全部队突袭反对派领袖住所：前部长卡夫瓦亚被击毙</a></div><div class="item__body">赞比亚警方8月19日证实，前内阁部长、伦特选区议员穆托特韦·卡夫瓦亚（Mutotwe Kafwaya）在上周一次安全行动中，于反对派领袖布赖恩·蒙杜比莱（Brian Mundubile）关联的一处住所内被击毙。警方称行动中缴获军用版乌兹冲锋枪及5支AK-47步枪，并指控该住所藏匿非法武器。联合国人权高专办对赞比亚反对派官员被捕表示关切；反对派指责政府借"反恐"之名打压异己，政府则坚称行动依法进行。事件加剧了这个铜矿出口国的政治紧张。</div><div class="item__src">观察者网（转引外媒）</div></div>
+<div class="item a" style="--i:5"><span class="item__tag item__tag--teal">外交</span><div class="item__title"><a href="https://www.chinanews.com.cn">韩方称中方积极考虑安排中韩领导人在APEC会议期间会晤 中方作出回应</a></div><div class="item__body">据中新网、东方财富8月20日报道，韩国外交部表示，中方正积极考虑安排中韩领导人在今年APEC会议期间举行会晤，中国外交部当日就此作出回应。在特朗普大幅压缩美韩联合军演、半岛局势波动的背景下，中韩高层互动动向备受关注：韩国一方面面对美韩同盟"缩水"，另一方面寻求稳定对华关系。具体会晤时间与形式有待两国官方进一步公布。</div><div class="item__src">中新网/东方财富</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--social anim" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">热搜</span><div class="item__title"><a href="http://finance.ce.cn/stock/gsgdbd/202608/t20260820_3158982.shtml">小米扫拖机器人5 Pro避障失灵：上海用户百万进口家具受损，维修报价37.5万</a></div><div class="item__body">上海的邸女士因一台小米扫拖机器人5 Pro要跟商家打官司：该机器人存在避障故障，"横冲直撞"反复撞击家具，贴边清洁时又持续剐蹭，导致其价值上百万元的进口家具多处受损，家具供应商给出的维修报价高达37.5万元。案件已由上海市静安区人民法院立案，计划9月15日开庭。据信网8月20日报道，此事在微博登上热搜，扫地机器人避障能力与售后责任划分再成舆论焦点。</div><div class="item__src">信网/中国经济网（微博热搜）</div></div>
+<div class="item a" style="--i:7"><span class="item__tag item__tag--rose">公司</span><div class="item__title"><a href="https://news.china.com/socialgd/10000169/20260820/49688670.html">海威华芯公告：公司印章被上市公司海特高新"百人撬保险柜"抢走</a></div><div class="item__body">8月19日，半导体代工企业海威华芯发布公告称，公司印章被上市公司海特高新（其第一大股东）人员抢走，据称涉事方出动上百人撬开保险柜取走印章及证照，直接影响公司正常经营。8月20日"抢公章"话题登上微博热搜，引发广泛关注。海威华芯表示已通过法律途径维权，海特高新截至发稿未作公开回应。上市公司大股东与子公司之间上演"抢公章"戏码，折射出控制权争夺的白热化。</div><div class="item__src">中华网（微博热搜）</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>科技新闻</h2>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--sage">手机</span><div class="item__title"><a href="https://www.ifanr.com/1675859">华为Pura X View亮相：把折叠屏"掰直"的阔直板手机</a></div><div class="item__body">爱范儿报道，华为新机Pura X View即日起开启预约，预计9月新品发布会上正式亮相。这款"阔直板"手机取消了折叠结构，却延续Pura X系列的宽屏理念：屏幕分辨率2232×1320、比例接近17:10，显示面积达114.27平方厘米，比6.9英寸传统长屏旗舰还多出约2.4%。华为称其为"为内容而生"——横看视频接近16:9，竖看文档更舒展，此前为阔折叠适配的应用生态可直接沿用。从Pura X折叠到Pura X View直板，华为试图用"更宽的直屏"开辟第三条产品路线。</div><div class="item__src">爱范儿</div></div>
+<div class="item a" style="--i:9"><span class="item__tag item__tag--gold">汽车</span><div class="item__title"><a href="https://www.ifanr.com/1675815">享界G9上市42.98万元起：鸿蒙智行首款科技豪华硬派SUV</a></div><div class="item__body">8月20日，华为与北汽合作的鸿蒙智行旗下首款"科技豪华硬派SUV"享界G9正式上市：提供增程、纯电两种动力和大五座、享六座布局，Max+、Ultra、Ultra+三档共10个车款，售价42.98万—54.98万元（入门款Max+增程大五座42.98万元，顶配Ultra+增程享六座54.98万元）。享界G9搭载鸿蒙智能座舱与华为高阶智驾系统，被视为华为系冲击硬派越野与豪华SUV市场的关键一子，与问界、智界构成鸿蒙智行完整产品矩阵。</div><div class="item__src">爱范儿/董车会</div></div>
+<div class="item a" style="--i:10"><span class="item__tag item__tag--teal">自动驾驶</span><div class="item__title"><a href="https://techcrunch.com/2026/08/19/waymos-cheaper-next-gen-robotaxi-is-now-open-to-all-riders-in-these-three-cities/">Waymo新一代Robotaxi"Ojai"全面开放：极氪代工，成本大降</a></div><div class="item__body">Waymo宣布下一代Robotaxi"Ojai"（读作oh-hi）已向洛杉矶、凤凰城、旧金山三城所有乘客开放叫车，目前商业车队约有300辆，年内还将扩展至丹佛、拉斯维加斯和圣迭戈。Ojai由吉利旗下极氪基于SEA-M平台代工生产，搭载Waymo第六代自动驾驶系统，并首次引入谷歌Gemini AI车载助手。相比旧款捷豹I-Pace Robotaxi，Ojai在制造、运营与维护成本上显著降低，被视为Waymo从烧钱试点走向规模化盈利的关键一步。</div><div class="item__src">TechCrunch</div></div>
+<div class="item a" style="--i:11"><span class="item__tag item__tag--slate">隐私</span><div class="item__title"><a href="https://blog.laserphile.com/2026/08/aliexpress-webpage-keeping-multipoint.html">研究者曝光：AliExpress网页静默运行WebAudio指纹追踪，还干扰蓝牙耳机</a></div><div class="item__body">安全研究者laserphile发现，打开阿里巴巴旗下购物网站AliExpress首页，会让支持多点连接的蓝牙耳机自动断开手机音频。排查显示：页面上并无任何可见的音频、视频或广告播放，而是在闲置数秒后静默创建AudioContext，利用WebAudio API进行浏览器指纹采集。研究者指出，这种静默指纹可用于跨会话识别用户，且其音频处理会干扰蓝牙多点切换机制；尚不清楚该指纹是否被阿里巴巴其他产品复用。发现登上Hacker News热榜，再次引发对电商巨头隐私实践的质疑。</div><div class="item__src">Hacker News/独立博客</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--finance anim" style="--i:5"><span class="dot"></span>财经要闻</h2>
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--rose">宏观</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/19/business/economy/us-debt-40-trillion.html">美国国债突破40万亿美元：十年翻倍，每秒新增约9万美元</a></div><div class="item__body">美国财政部数据显示，美国国债总额8月19日突破40万亿美元，精确数字达40,047,425,768,420美元，相当于每秒新增约9万美元债务，过去十年翻了一番。NYT与BBC均指出，在特朗普政府减税、军费与福利开支叠加下，借贷规模持续飙升；美债收益率同步走高，融资成本压力正向财政传导，市场对美国财政可持续性的担忧明显升温。该数字公布之际，白宫与美联储就债务管理与利率路径的分歧亦在加剧。</div><div class="item__src">NYT+BBC（双视角）</div></div>
+<div class="item a" style="--i:13"><span class="item__tag item__tag--sage">贸易</span><div class="item__title"><a href="https://www.xinhuanet.com/20260820/5ec6ecb424b64e91b162fe2093252e66/c.html">商务部：中国已成厄瓜多尔第二大贸易伙伴，上半年双边贸易98.3亿美元</a></div><div class="item__body">商务部新闻发言人何亚东8月20日在例行新闻发布会上介绍，中厄自贸协定生效两年多来，双边贸易额快速增长，2026年上半年达98.3亿美元，同比增速超过20%，中国已成为厄瓜多尔第二大贸易伙伴。8月18日，在两国元首共同见证下，中国商务部与厄瓜多尔经济生产发展部签署了《中国—厄瓜多尔经贸合作路线图》和《关于支持自由贸易和多边主义的谅解备忘录》。作为中国在拉美的重要经贸伙伴，厄瓜多尔的香蕉、虾等农产品对华出口持续放量，自贸红利加速释放。</div><div class="item__src">新华社</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--teal">开源</span><div class="item__title"><a href="https://github.com/cinderline/northcinder">cinderline/northcinder ⭐1197：买家自营、无广告的购物Agent MCP</a></div><div class="item__body">一个"买家主导"的购物智能体MCP软件：由买家自己运行购物代理，通过确定性排序（deterministic ranking）与签名交易机制，让AI代购远离广告干扰和暗箱排序，主打"无广告、可审计"的消费决策。在电商平台算法推荐与竞价排名饱受诟病的背景下，这类反算法、买方可控的代理购物方案正快速获得开发者关注。</div><div class="item__src">GitHub</div></div>
+<div class="item a" style="--i:15"><span class="item__tag item__tag--sage">开源</span><div class="item__title"><a href="https://github.com/CopilotKit/openbot">CopilotKit/openbot ⭐1098：给每个AI同事配一台"电脑"</a></div><div class="item__body">CopilotKit推出的开源"AI同事"框架：每个AI代理拥有自己独立的浏览器、文件系统和工具环境，可以像真实员工一样操作电脑完成任务，同时保持沙箱隔离与权限边界。项目定位是让多代理协作更像真实团队分工，每个代理各司其职、互不干扰，适合复杂工作流编排场景。</div><div class="item__src">GitHub</div></div>
+<div class="item a" style="--i:16"><span class="item__tag item__tag--gold">开源</span><div class="item__title"><a href="https://github.com/SigmanticAI/apex-inference-chip">SigmanticAI/apex-inference-chip ⭐617：FPGA上跑通Qwen2.5-0.5B的推理芯片设计</a></div><div class="item__body">一个开源的AI推理芯片设计项目：在FPGA上实现单个transformer解码器，真实运行通义千问Qwen2.5-0.5B大模型。项目以RTL代码形式开源，展示了一条低成本、可定制、可验证的端侧AI芯片实现路径。对于硬件工程师和AI研究者来说，它是理解"大模型如何落到芯片上"的直观参考样例，也为高校与创业团队提供了芯片教学与原型验证素材。</div><div class="item__src">GitHub</div></div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
+</div>
+</body>
+</html>
