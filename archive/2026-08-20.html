@@ -1,389 +1,179 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claw Daily News</title>
-<!--
-  Visual Explainer 设计系统 — 日报模板 v2
-  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
-  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
-  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
-  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
-  Light-first，dark mode 为 prefers-color-scheme fallback
-  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
--->
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Claw Daily News 2026-08-20</title><style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;margin:0;padding:16px;background:#f5f5f5;color:#333}
+.container{max-width:780px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}
+.header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:28px 24px;text-align:center}
+.header h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.5px}
+.header .date{margin-top:6px;opacity:.85;font-size:13px;font-weight:400}
+.section{padding:20px 24px;border-bottom:1px solid #f0f0f0}
+.section:last-child{border-bottom:none}
+.section-title{font-size:17px;font-weight:700;margin:0 0 16px;color:#1a1a2e;position:relative;padding-left:14px}
+.section-title::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:2px;background:linear-gradient(180deg,#667eea,#764ba2)}
+.news-item{margin-bottom:16px;padding:16px 18px;background:#fafbfc;border-radius:8px;border:1px solid #eef0f2;transition:background .2s}
+.news-item:hover{background:#f5f6f8}
+.news-title{font-weight:600;color:#1a1a2e;margin:0 0 10px;font-size:15px;line-height:1.5}
+.news-title a{color:#667eea;text-decoration:none}
+.news-title a:hover{text-decoration:underline}
+.news-content{margin:0;color:#444;font-size:14px;line-height:1.8}
+.news-content a{color:#667eea;text-decoration:none}
+.news-source{margin:10px 0 0;font-size:12px;color:#999;font-style:italic}
+.news-source a{color:#667eea;text-decoration:none}
+.highlight-box{background:linear-gradient(135deg,#fff9e6,#fff3cd);border-left:4px solid #f0ad4e;padding:16px 18px;border-radius:0 8px 8px 0;margin-bottom:16px}
+.highlight-box .news-title{color:#856404}
+@media (prefers-color-scheme: dark){
+  body{background:#0f1115;color:#e6e6e6}
+  .container{background:#1a1d23;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+  .section{border-bottom-color:#2a2f3a}
+  .section-title{color:#f0f0f0}
+  .news-item{background:#21262f;border-color:#2a2f3a}
+  .news-item:hover{background:#262d38}
+  .news-title{color:#f0f0f0}
+  .news-title a{color:#8aa0ff}
+  .news-content{color:#c2c8d0}
+  .news-content a{color:#8aa0ff}
+  .news-source{color:#8a909a}
+  .news-source a{color:#8aa0ff}
+  .highlight-box{background:linear-gradient(135deg,#2a2410,#332d0f);border-left-color:#d49b1a}
+  .highlight-box .news-title{color:#f5d78a}
+  .highlight-box .news-content{color:#e0d4b0}
+}
+</style></head><body><div class="container"><div class="header"><h1>📰 Claw Daily News</h1><div class="date">2026年08月20日 星期四 · America/Los_Angeles</div></div>
 
-<style>
-  /* ============ LIGHT-FIRST THEME ============ */
-  :root {
-    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+<div class="section">
+<h2 class="section-title">🎯 头条重点</h2>
 
-    --bg: #faf7f5;
-    --surface: #ffffff;
-    --surface2: #f3f0ec;
-    --surface-elevated: #fffdfb;
-    --border: rgba(0, 0, 0, 0.06);
-    --border-bright: rgba(0, 0, 0, 0.12);
-    --text: #292524;
-    --text-dim: #78716c;
-    --text-bright: #1c1917;
-
-    /* Semantic palette — terracotta & sage */
-    --accent: #b45309;
-    --accent-dim: rgba(180, 83, 9, 0.07);
-    --sage: #65a30d;
-    --sage-dim: rgba(101, 163, 13, 0.07);
-    --rose: #be123c;
-    --rose-dim: rgba(190, 18, 60, 0.06);
-    --teal: #0891b2;
-    --teal-dim: rgba(8, 145, 178, 0.06);
-    --gold: #d97706;
-    --gold-dim: rgba(217, 119, 6, 0.07);
-    --slate: #475569;
-    --slate-dim: rgba(71, 85, 105, 0.06);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1c1917;
-      --surface: #292524;
-      --surface2: #3a3530;
-      --surface-elevated: #332e29;
-      --border: rgba(255, 255, 255, 0.06);
-      --border-bright: rgba(255, 255, 255, 0.12);
-      --text: #e7e5e4;
-      --text-dim: #a8a29e;
-      --text-bright: #fafaf9;
-      --accent: #f59e0b;
-      --accent-dim: rgba(245, 158, 11, 0.1);
-      --sage: #a3e635;
-      --sage-dim: rgba(163, 230, 53, 0.1);
-      --rose: #fb7185;
-      --rose-dim: rgba(251, 113, 133, 0.1);
-      --teal: #22d3ee;
-      --teal-dim: rgba(34, 211, 238, 0.08);
-      --gold: #fbbf24;
-      --gold-dim: rgba(251, 191, 36, 0.1);
-      --slate: #94a3b8;
-      --slate-dim: rgba(148, 163, 184, 0.08);
-    }
-  }
-
-  /* ============ RESET + BASE ============ */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    background-image:
-      radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);
-    color: var(--text);
-    font-family: var(--font-body);
-    padding: 12px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-
-  /* ============ ANIMATIONS ============ */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeScale {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .anim {
-    animation: fadeUp 0.45s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.04s);
-  }
-  .anim-scale {
-    animation: fadeScale 0.4s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.05s);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-delay: 0ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* ============ CONTAINER ============ */
-  .page {
-    max-width: 740px;
-    margin: 0 auto;
-  }
-
-  /* ============ HEADER — Newspaper masthead ============ */
-  .masthead {
-    text-align: center;
-    padding: 36px 20px 28px;
-    position: relative;
-  }
-  .masthead::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 20px auto 0;
-    border-radius: 2px;
-  }
-  .masthead h1 {
-    font-family: var(--font-body);
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-bright);
-  }
-  .masthead .date-line {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ============ SECTIONS ============ */
-  .section {
-    padding: 24px 0 20px;
-  }
-  .section + .section {
-    border-top: 1px dashed var(--border-bright);
-  }
-
-  /* Section labels — vary color per section */
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-  }
-  .section-label--focus .dot { background: var(--rose); }
-  .section-label--focus { color: var(--rose); }
-  .section-label--global .dot { background: var(--accent); }
-  .section-label--global { color: var(--accent); }
-  .section-label--social .dot { background: var(--sage); }
-  .section-label--social { color: var(--sage); }
-  .section-label--tech .dot { background: var(--teal); }
-  .section-label--tech { color: var(--teal); }
-  .section-label--finance .dot { background: var(--gold); }
-  .section-label--finance { color: var(--gold); }
-  .section-label--projects .dot { background: var(--slate); }
-  .section-label--projects { color: var(--slate); }
-
-  /* ============ NEWS ITEMS ============ */
-  .item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .item:last-child { margin-bottom: 0; }
-  .item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Hero item — focal story gets more visual weight */
-  .item--hero {
-    background: var(--surface-elevated);
-    border-left: 3px solid var(--rose);
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  }
-
-  .item__tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
-  }
-  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
-  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
-  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
-  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
-  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
-  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
-
-  .item__title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    color: var(--text-bright);
-  }
-  .item__title a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .item__title a:hover { text-decoration: underline; }
-
-  .item__body {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-  }
-  .item__body a { color: var(--accent); text-decoration: none; }
-  .item__body a:hover { text-decoration: underline; }
-
-  .item__src {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    margin-top: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  /* ============ FOOTER ============ */
-  .foot {
-    text-align: center;
-    padding: 20px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.3px;
-  }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 480px) {
-    body { padding: 8px; }
-    .masthead h1 { font-size: 24px; }
-    .masthead { padding: 24px 12px 20px; }
-    .item { padding: 12px 14px; }
-  }
-</style>
-</head>
-<body>
-<style>
-#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
-#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
-#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
-#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
-#claw-top .claw-tab:hover{background:#f0f0f0}
-#claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
-#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
-#claw-top .claw-latest:hover{color:#111}
-#claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
-#claw-drop.open{display:block}
-#claw-drop .claw-group{display:none}
-#claw-drop .claw-group.show{display:block}
-#claw-drop .claw-gtitle{font-size:12px;color:#999;margin:8px 0 4px;font-weight:600}
-#claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
-#claw-drop a:hover{background:#f5f5f5;color:#111}
-#claw-drop a.cur{background:#eee;color:#111;font-weight:600}
-@media (max-width:480px){#claw-top{margin:-8px -8px 0}}
-@media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
-</style><div id="claw-top">
-  <div class="claw-bar">
-    <span class="claw-brand">📰 Claw Daily</span>
-    <button class="claw-tab active" data-type="daily">日报 ▾</button>
-    <button class="claw-tab" data-type="weekly">周报 ▾</button>
-    <a class="claw-latest" href="/clawpage/index.html">最新</a>
-  </div>
-  <div id="claw-drop">
-    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-20.html" class="cur">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
-    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
-  </div>
+<div class="highlight-box">
+<div class="news-item" style="background:transparent;border:none;padding:0;margin:0">
+<h3 class="news-title"><a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">深圳中院一审宣判：许家印获无期徒刑，恒大集团罚88.2亿、恒大地产罚70亿</a></h3>
+<p class="news-content">8月20日上午，广东省深圳市中级人民法院对恒大集团、恒大地产及许家印案一审公开宣判：对<a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">恒大集团判处罚金88.2亿元</a>、<a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">恒大地产70亿元</a>，对<a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">许家印数罪并罚判处无期徒刑、剥夺政治权利终身并处没收个人全部财产</a>。法院查明2016至2021年间，以持续性大规模财务造假虚增资产、隐瞒负债，实施非法吸收公众存款、集资诈骗、欺诈发行证券等，并通过行贿控制金融机构套取信贷保险资金；许家印还以分红名义职务侵占。同日对甄立涛、柯鹏等<a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">56人判处1年10个月至18年不等</a>有期徒刑。案件被定性为“数额特别巨大、情节特别恶劣”。</p>
+<div class="news-source">来源: <a href="https://www.163.com/dy/article/L4P9TVJ50514R9OJ.html">网易/环球网/央视新闻</a> · <a href="https://www.nytimes.com/2026/08/20/business/evergrande-founder-life-prison.html">The New York Times</a></div>
 </div>
-<script>
-(function(){
-  var drop = document.getElementById('claw-drop');
-  function openGroup(type){
-    var groups = drop.querySelectorAll('.claw-group');
-    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
-    var g = drop.querySelector('[data-group="'+type+'"]');
-    if (g) g.className += ' show';
-    drop.className = 'open';
-    var tabs = document.querySelectorAll('#claw-top .claw-tab');
-    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
-    var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
-    if (t) t.className += ' active';
-  }
-  document.querySelectorAll('#claw-top .claw-tab').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var type = this.dataset.type;
-      if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
-        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
-      } else {
-        openGroup(type);
-      }
-    });
-  });
-  document.addEventListener('click', function(e){
-    var top = document.getElementById('claw-top');
-    if (!top.contains(e.target)) { drop.className = ''; }
-  });
-})();
-</script>
-<div class="page">
+</div>
 
-  <header class="masthead anim" style="--i:0">
-    <h1>Claw Daily News</h1>
-    <div class="date-line">2026年8月20日 星期四 · Claw 每日中文日报</div>
-  </header>
-
-  <section class="section">
-    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
-    <div class="item item--hero a" style="--i:1"><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/business/evergrande-founder-life-prison.html">许家印一审被判无期：恒大集团罚88.2亿、恒大地产罚70亿，没收个人全部财产</a></div><div class="item__body">8月20日上午，广东省深圳市中级人民法院对恒大集团、恒大地产及许家印案进行一审公开宣判：许家印数罪并罚被判处无期徒刑，剥夺政治权利终身，并处没收个人全部财产；恒大集团被判处罚金88.2亿元，恒大地产被判处罚金70亿元；违法所得继续追缴，不足部分责令退赔。法院经审理查明，2016年至2021年间，许家印作为恒大集团实际控制人全面负责集团运营，管理、控制恒大地产及恒大财富等多家企业，投资地产、物业、金融等领域，期间恒大系企业长期违法违规融资。除许家印外，甄立涛、柯鹏、许腾鹤、许智健、杜亮、梁栋等56名涉案人员被判处有期徒刑十八年至一年十个月不等，并处罚金或没收财产。NYT评论称，这家房地产巨头的崩盘曾把中国金融体系推向崩溃边缘，此案宣判为"中国地产第一案"画上阶段性句号，也标志对地产时代疯狂加杠杆模式的清算进入终局。</div><div class="item__src">深圳市中级人民法院+纽约时报NYT（双视角）</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>全球热点</h2>
-    <div class="item a" style="--i:2"><span class="item__tag item__tag--rose">国际</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/business/iran-war-oil-bonds.html">特朗普宣布对伊朗发动"经济D-Day"：布伦特油价突破92美元</a></div><div class="item__body">特朗普8月19日通过Truth Social宣布启动针对伊朗的"史上最严厉经济行动"，目标覆盖石油走私、现金通道等伊朗经济命脉，美伊战事已持续近六个月，冲突重心正从军事对抗转向经济绞杀。伊朗方面对此嗤之以鼻，称这是"加倍下注"，"只会带来进一步的失败"。市场反应剧烈：布伦特原油价格升至每桶92美元上方，过去四个交易日累计上涨逾5%，连续第五个交易日走高，通胀担忧随之升温，全球风险资产承压。双方围绕霍尔木兹海峡的控制权之争仍无缓和迹象。</div><div class="item__src">CBS+NYT（仅西方视角，信息可能不完整）</div></div>
-<div class="item a" style="--i:3"><span class="item__tag item__tag--gold">地缘</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxORVdsZHA4UEJGQk91VHU5TURyME9mbHRfN0RmdE5menhRTmdCaE45ZGtNSlVVakFSazlhLXpna25HaWJrSm1oVzU0cmZweUhQN2JGYXM1X0ltbFVkMkVvQnFQcmh2QkdPTXMxUGpUWVdTc1RUUDV6SzczSWtYOXlPaGFzN21wWEJiMkZ3ZjVpM1RzUlhqTG9rU3BocHBBNWRLZUZvS3ViU0ZOb1JteWFkdjFHNy1HZ1I4QUFYSXpYRDFkMEk?oc=5">朝鲜发射约10枚短程弹道导弹：直指特朗普削减美韩军演</a></div><div class="item__body">韩国联合参谋本部称，朝鲜8月20日傍晚向东部海域（日本海）发射约10枚短程弹道导弹，日本政府与海保同步监测到发射。此次发射距离特朗普宣布大幅缩减美韩联合军演、并放话期待与金正恩重启会谈仅数小时，朝鲜以密集试射作出强硬回应，被解读为对"美韩同盟缩水"的直接反击。美日韩正在评估导弹型号与落点参数，半岛局势在军演调整后不降反升。此前特朗普缩减军演曾被专家警告可能向平壤释放错误信号，此次发射印证了相关担忧。</div><div class="item__src">路透+卫报+韩联社（仅西方视角）</div></div>
-<div class="item a" style="--i:4"><span class="item__tag item__tag--slate">非洲</span><div class="item__title"><a href="https://www.guancha.cn">赞比亚安全部队突袭反对派领袖住所：前部长卡夫瓦亚被击毙</a></div><div class="item__body">赞比亚警方8月19日证实，前内阁部长、伦特选区议员穆托特韦·卡夫瓦亚（Mutotwe Kafwaya）在上周一次安全行动中，于反对派领袖布赖恩·蒙杜比莱（Brian Mundubile）关联的一处住所内被击毙。警方称行动中缴获军用版乌兹冲锋枪及5支AK-47步枪，并指控该住所藏匿非法武器。联合国人权高专办对赞比亚反对派官员被捕表示关切；反对派指责政府借"反恐"之名打压异己，政府则坚称行动依法进行。事件加剧了这个铜矿出口国的政治紧张。</div><div class="item__src">观察者网（转引外媒）</div></div>
-<div class="item a" style="--i:5"><span class="item__tag item__tag--teal">外交</span><div class="item__title"><a href="https://www.chinanews.com.cn">韩方称中方积极考虑安排中韩领导人在APEC会议期间会晤 中方作出回应</a></div><div class="item__body">据中新网、东方财富8月20日报道，韩国外交部表示，中方正积极考虑安排中韩领导人在今年APEC会议期间举行会晤，中国外交部当日就此作出回应。在特朗普大幅压缩美韩联合军演、半岛局势波动的背景下，中韩高层互动动向备受关注：韩国一方面面对美韩同盟"缩水"，另一方面寻求稳定对华关系。具体会晤时间与形式有待两国官方进一步公布。</div><div class="item__src">中新网/东方财富</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--social anim" style="--i:3"><span class="dot"></span>微博 / 热搜话题</h2>
-    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">热搜</span><div class="item__title"><a href="http://finance.ce.cn/stock/gsgdbd/202608/t20260820_3158982.shtml">小米扫拖机器人5 Pro避障失灵：上海用户百万进口家具受损，维修报价37.5万</a></div><div class="item__body">上海的邸女士因一台小米扫拖机器人5 Pro要跟商家打官司：该机器人存在避障故障，"横冲直撞"反复撞击家具，贴边清洁时又持续剐蹭，导致其价值上百万元的进口家具多处受损，家具供应商给出的维修报价高达37.5万元。案件已由上海市静安区人民法院立案，计划9月15日开庭。据信网8月20日报道，此事在微博登上热搜，扫地机器人避障能力与售后责任划分再成舆论焦点。</div><div class="item__src">信网/中国经济网（微博热搜）</div></div>
-<div class="item a" style="--i:7"><span class="item__tag item__tag--rose">公司</span><div class="item__title"><a href="https://news.china.com/socialgd/10000169/20260820/49688670.html">海威华芯公告：公司印章被上市公司海特高新"百人撬保险柜"抢走</a></div><div class="item__body">8月19日，半导体代工企业海威华芯发布公告称，公司印章被上市公司海特高新（其第一大股东）人员抢走，据称涉事方出动上百人撬开保险柜取走印章及证照，直接影响公司正常经营。8月20日"抢公章"话题登上微博热搜，引发广泛关注。海威华芯表示已通过法律途径维权，海特高新截至发稿未作公开回应。上市公司大股东与子公司之间上演"抢公章"戏码，折射出控制权争夺的白热化。</div><div class="item__src">中华网（微博热搜）</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>科技新闻</h2>
-    <div class="item a" style="--i:8"><span class="item__tag item__tag--sage">手机</span><div class="item__title"><a href="https://www.ifanr.com/1675859">华为Pura X View亮相：把折叠屏"掰直"的阔直板手机</a></div><div class="item__body">爱范儿报道，华为新机Pura X View即日起开启预约，预计9月新品发布会上正式亮相。这款"阔直板"手机取消了折叠结构，却延续Pura X系列的宽屏理念：屏幕分辨率2232×1320、比例接近17:10，显示面积达114.27平方厘米，比6.9英寸传统长屏旗舰还多出约2.4%。华为称其为"为内容而生"——横看视频接近16:9，竖看文档更舒展，此前为阔折叠适配的应用生态可直接沿用。从Pura X折叠到Pura X View直板，华为试图用"更宽的直屏"开辟第三条产品路线。</div><div class="item__src">爱范儿</div></div>
-<div class="item a" style="--i:9"><span class="item__tag item__tag--gold">汽车</span><div class="item__title"><a href="https://www.ifanr.com/1675815">享界G9上市42.98万元起：鸿蒙智行首款科技豪华硬派SUV</a></div><div class="item__body">8月20日，华为与北汽合作的鸿蒙智行旗下首款"科技豪华硬派SUV"享界G9正式上市：提供增程、纯电两种动力和大五座、享六座布局，Max+、Ultra、Ultra+三档共10个车款，售价42.98万—54.98万元（入门款Max+增程大五座42.98万元，顶配Ultra+增程享六座54.98万元）。享界G9搭载鸿蒙智能座舱与华为高阶智驾系统，被视为华为系冲击硬派越野与豪华SUV市场的关键一子，与问界、智界构成鸿蒙智行完整产品矩阵。</div><div class="item__src">爱范儿/董车会</div></div>
-<div class="item a" style="--i:10"><span class="item__tag item__tag--teal">自动驾驶</span><div class="item__title"><a href="https://techcrunch.com/2026/08/19/waymos-cheaper-next-gen-robotaxi-is-now-open-to-all-riders-in-these-three-cities/">Waymo新一代Robotaxi"Ojai"全面开放：极氪代工，成本大降</a></div><div class="item__body">Waymo宣布下一代Robotaxi"Ojai"（读作oh-hi）已向洛杉矶、凤凰城、旧金山三城所有乘客开放叫车，目前商业车队约有300辆，年内还将扩展至丹佛、拉斯维加斯和圣迭戈。Ojai由吉利旗下极氪基于SEA-M平台代工生产，搭载Waymo第六代自动驾驶系统，并首次引入谷歌Gemini AI车载助手。相比旧款捷豹I-Pace Robotaxi，Ojai在制造、运营与维护成本上显著降低，被视为Waymo从烧钱试点走向规模化盈利的关键一步。</div><div class="item__src">TechCrunch</div></div>
-<div class="item a" style="--i:11"><span class="item__tag item__tag--slate">隐私</span><div class="item__title"><a href="https://blog.laserphile.com/2026/08/aliexpress-webpage-keeping-multipoint.html">研究者曝光：AliExpress网页静默运行WebAudio指纹追踪，还干扰蓝牙耳机</a></div><div class="item__body">安全研究者laserphile发现，打开阿里巴巴旗下购物网站AliExpress首页，会让支持多点连接的蓝牙耳机自动断开手机音频。排查显示：页面上并无任何可见的音频、视频或广告播放，而是在闲置数秒后静默创建AudioContext，利用WebAudio API进行浏览器指纹采集。研究者指出，这种静默指纹可用于跨会话识别用户，且其音频处理会干扰蓝牙多点切换机制；尚不清楚该指纹是否被阿里巴巴其他产品复用。发现登上Hacker News热榜，再次引发对电商巨头隐私实践的质疑。</div><div class="item__src">Hacker News/独立博客</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--finance anim" style="--i:5"><span class="dot"></span>财经要闻</h2>
-    <div class="item a" style="--i:12"><span class="item__tag item__tag--rose">宏观</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/19/business/economy/us-debt-40-trillion.html">美国国债突破40万亿美元：十年翻倍，每秒新增约9万美元</a></div><div class="item__body">美国财政部数据显示，美国国债总额8月19日突破40万亿美元，精确数字达40,047,425,768,420美元，相当于每秒新增约9万美元债务，过去十年翻了一番。NYT与BBC均指出，在特朗普政府减税、军费与福利开支叠加下，借贷规模持续飙升；美债收益率同步走高，融资成本压力正向财政传导，市场对美国财政可持续性的担忧明显升温。该数字公布之际，白宫与美联储就债务管理与利率路径的分歧亦在加剧。</div><div class="item__src">NYT+BBC（双视角）</div></div>
-<div class="item a" style="--i:13"><span class="item__tag item__tag--sage">贸易</span><div class="item__title"><a href="https://www.xinhuanet.com/20260820/5ec6ecb424b64e91b162fe2093252e66/c.html">商务部：中国已成厄瓜多尔第二大贸易伙伴，上半年双边贸易98.3亿美元</a></div><div class="item__body">商务部新闻发言人何亚东8月20日在例行新闻发布会上介绍，中厄自贸协定生效两年多来，双边贸易额快速增长，2026年上半年达98.3亿美元，同比增速超过20%，中国已成为厄瓜多尔第二大贸易伙伴。8月18日，在两国元首共同见证下，中国商务部与厄瓜多尔经济生产发展部签署了《中国—厄瓜多尔经贸合作路线图》和《关于支持自由贸易和多边主义的谅解备忘录》。作为中国在拉美的重要经贸伙伴，厄瓜多尔的香蕉、虾等农产品对华出口持续放量，自贸红利加速释放。</div><div class="item__src">新华社</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--projects anim" style="--i:6"><span class="dot"></span>值得关注的项目</h2>
-    <div class="item a" style="--i:14"><span class="item__tag item__tag--teal">开源</span><div class="item__title"><a href="https://github.com/cinderline/northcinder">cinderline/northcinder ⭐1197：买家自营、无广告的购物Agent MCP</a></div><div class="item__body">一个"买家主导"的购物智能体MCP软件：由买家自己运行购物代理，通过确定性排序（deterministic ranking）与签名交易机制，让AI代购远离广告干扰和暗箱排序，主打"无广告、可审计"的消费决策。在电商平台算法推荐与竞价排名饱受诟病的背景下，这类反算法、买方可控的代理购物方案正快速获得开发者关注。</div><div class="item__src">GitHub</div></div>
-<div class="item a" style="--i:15"><span class="item__tag item__tag--sage">开源</span><div class="item__title"><a href="https://github.com/CopilotKit/openbot">CopilotKit/openbot ⭐1098：给每个AI同事配一台"电脑"</a></div><div class="item__body">CopilotKit推出的开源"AI同事"框架：每个AI代理拥有自己独立的浏览器、文件系统和工具环境，可以像真实员工一样操作电脑完成任务，同时保持沙箱隔离与权限边界。项目定位是让多代理协作更像真实团队分工，每个代理各司其职、互不干扰，适合复杂工作流编排场景。</div><div class="item__src">GitHub</div></div>
-<div class="item a" style="--i:16"><span class="item__tag item__tag--gold">开源</span><div class="item__title"><a href="https://github.com/SigmanticAI/apex-inference-chip">SigmanticAI/apex-inference-chip ⭐617：FPGA上跑通Qwen2.5-0.5B的推理芯片设计</a></div><div class="item__body">一个开源的AI推理芯片设计项目：在FPGA上实现单个transformer解码器，真实运行通义千问Qwen2.5-0.5B大模型。项目以RTL代码形式开源，展示了一条低成本、可定制、可验证的端侧AI芯片实现路径。对于硬件工程师和AI研究者来说，它是理解"大模型如何落到芯片上"的直观参考样例，也为高校与创业团队提供了芯片教学与原型验证素材。</div><div class="item__src">GitHub</div></div>
-  </section>
-
-  <footer class="foot anim" style="--i:7">
-    Claw Daily News · Paper/Ink Aesthetic
-  </footer>
+<div class="highlight-box">
+<div class="news-item" style="background:transparent;border:none;padding:0;margin:0">
+<h3 class="news-title"><a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">俄彻夜大规模空袭基辅致14死逾40伤，医院学校铁路同遭打击</a></h3>
+<p class="news-content"><a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">Euromaidan Press</a>8月20日报道，俄军以<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">锆石、伊斯坎德尔-M、S-400</a>等弹道与巡航导弹配合<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">168架沙赫德无人机</a>彻夜袭击基辅及周边，已致<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">14人死亡、逾40人受伤</a>，其中基辅市内13人遇难。索洛米扬斯基区一栋九层住宅楼上两层被摧毁，斯维亚托申等3区出现火情，约<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">20栋住宅楼、1所学校、1家儿童医院及幼儿园</a>严重受损，仓储过火面积达<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">500至1000平方米</a>。逾<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">600名救援与警方</a>投入清障，市长克利奇科宣布<a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">8月21日为哀悼日</a>。</p>
+<div class="news-source">来源: <a href="https://euromaidanpress.com/2026/08/20/russia-unleashes-massive-overnight-barrage-on-kyiv/">Euromaidan Press</a> · <a href="https://www.aljazeera.com/news/2026/8/20/russian-strike-kills-3-in-ukraine-as-zelenskyy-faces-pressure-at-home">Al Jazeera</a></div>
+</div>
+</div>
 
 </div>
-</body>
-</html>
+
+<div class="section">
+<h2 class="section-title">🌍 国际</h2>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">特朗普下令“大幅削减”美韩军演，称对朝释放善意、向首尔追讨伊朗战费</a></h3>
+<p class="news-content"><a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">BBC</a>报道，特朗普在Truth Social称将“大幅削减”原定8月17至27日的<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">11天“乙支自由之盾”</a>演习，军演已提前至<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">周五结束</a>，理由是“向金正恩释放不恰当敌意信号”且“成本多由美国承担”。他还将决定与韩国拒绝参与对伊“去核”战挂钩，称“我们有<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">3.9万士兵</a>为你挡住邻居”。首尔表示意外、仍在评估，专家警告此举损害联合作战准备与同盟可信度——今年韩方参演约<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">1.8万人</a>、美在韩驻军约<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">2.85万人</a>，而朝鲜援俄部队正获实战经验。</p>
+<div class="news-source">来源: <a href="https://www.bbc.com/news/articles/cx2lll7zvn0o">BBC</a> · <a href="https://www.cnbc.com/2026/08/20/trump-south-korea-military-drills-cuts-.html">CNBC</a> · <a href="https://apnews.com/article/trump-south-korea-drills-north-kim-ea0ab19e6565b1b5ce22143c5b4e9f9d">AP News</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">美债首破40万亿美元，十年翻番，30年期收益率创近20年新高</a></h3>
+<p class="news-content"><a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">BBC</a>8月19日更新：美国财政部数据显示国债截至8月18日达<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">40.05万亿美元（约29.4万亿英镑）</a>，较2016年不足<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">20万亿翻番</a>，快于国会预算办公室此前预测的<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">2026财年末39.6万亿</a>，并逼近<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">41.1万亿债务上限</a>，CBO预计2036年将至<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">约64万亿</a>。<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">30年期收益率19日触及5.34%</a>为近20年高位，财政部宣布9月9日至11月4日将回购操作至少翻倍至<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">20亿至40亿美元</a>后回落至<a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">5.18%</a>，但分析师称难长期缓解供给与油价通胀压力。</p>
+<div class="news-source">来源: <a href="https://www.bbc.co.uk/news/articles/c70gp8252ejo">BBC</a> · <a href="https://www.nytimes.com/2026/08/19/business/economy/us-debt-40-trillion.html">The New York Times</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">乌无人机夜袭俄最大炼厂之一TANECO，初步12死并波及多处能源设施</a></h3>
+<p class="news-content"><a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">RBC-Ukraine</a>8月20日07:35报道，乌无人机夜间击中鞑靼斯坦下卡姆斯克的<a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">TANECO炼厂</a>，OSINT渠道称初步<a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">12人死亡</a>、或含外籍专家，现场可见<a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">铠甲-S1</a>拦截画面。同夜克拉斯诺达尔的<a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">塔曼石油码头与500千伏变电站</a>亦遭袭。乌方称近期对俄炼化与军事物流打击已成俄民众第二大关切，单日出动架次创纪录。</p>
+<div class="news-source">来源: <a href="https://newsukraine.rbc.ua/news/drones-strike-one-of-russia-s-largest-oil-1787200434.html">RBC-Ukraine</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">西班牙180度转弯：允许滞留休达的500名移民儿童转往本土</a></h3>
+<p class="news-content"><a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">《卫报》</a>报道，西班牙政府改口允许约<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">500名滞留休达的无人陪伴移民儿童</a>迁往本土。此前马德里称非法入境者将被遣返，但7月30日约<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">7万人涌入这块北非飞地</a>后多数已返回摩洛哥，按西法律国家对未成年人负有照护至<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">18岁的监护义务</a>，政府此前在公共停车场搭帐篷安置引发争议。</p>
+<div class="news-source">来源: <a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">The Guardian</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">津巴布韦卡里巴湖渡轮倾覆：再捞22具遗体，总遇难升至68人含18名儿童</a></h3>
+<p class="news-content"><a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">《卫报》</a>8月16日援引警方：周二在赞比亚边境<a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">卡里巴湖</a>倾覆的渡轮再打捞<a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">22具遗体</a>，死亡人数升至<a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">68人</a>，其中<a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">18名为儿童</a>。初步调查指船只超载，救援与辨认工作在卡里巴医院太平间持续进行。</p>
+<div class="news-source">来源: <a href="https://www.theguardian.com/world/2026/aug/15/more-bodies-recovered-after-zimbabwe-boat-accident">The Guardian</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">币安上线Agent OS：超3亿用户可授权AI代理自主交易，风控交给子账户</a></h3>
+<p class="news-content"><a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">TechCrunch</a>8月20日02:30报道，全球最大加密交易所<a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">币安（超3亿注册用户）</a>推出<a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">Agent OS</a>，允许开发者通过<a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">MCP、API、钱包Agentic Hub及x402支付验证</a>接入<a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">ChatGPT、Claude Code、Cursor</a>等代理，实现行情分析与下单。产品副总裁Jeff Li称风控核心是<a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">子账户隔离、默认禁止提现</a>，用户可设逐单审批或全自主，转账至子账户的金额即为交易上限；但代理推理在外部完成，平台无法洞察是否被提示词注入操纵。</p>
+<div class="news-source">来源: <a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">TechCrunch</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">Meta发布Mac版Meta AI：系统级听写+Muse Spark看屏问答</a></h3>
+<p class="news-content"><a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">TechCrunch</a>8月20日05:11报道，Meta推出Mac版<a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">Meta AI</a>，搭载<a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">Muse Spark</a>的系统级听写与看屏问答，类似Wispr Flow等工具，紧随Google Gemini Mac更新。商户可连接<a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">Instagram、Facebook、Google Workspace</a>获取投放与受众洞察、竞品情报，并生成提案与表格。扎克伯格在Q2财报称向企业售卖代理是重要机会。</p>
+<div class="news-source">来源: <a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">TechCrunch</a></div>
+</div>
+
+</div>
+
+<div class="section">
+<h2 class="section-title">🇨🇳 国内</h2>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">司法部认定欧盟对京东调查构成不当域外管辖，要求不得执行或协助</a></h3>
+<p class="news-content">8月19日19:42，司法部会同商务部发布公告，认定欧盟依据<a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">《外国补贴条例》</a>对<a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">京东</a>跨境索取“广泛、非必要的境内信息”构成<a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">不当域外管辖</a>，适用<a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">《反外国不当域外管辖条例》第三条、第六条</a>，要求<a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">任何组织个人不得执行或协助执行</a>，敦促欧方停止滥用调查工具，否则将依法反制。</p>
+<div class="news-source">来源: <a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawr9373432.shtml">新浪财经/21世纪经济报道</a> · <a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">新华网</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/340.htm">启境GX7内饰官图：首搭华为鸿蒙座舱HarmonySpace 6，一车十屏、四零重力座椅</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/340.htm">IT之家</a>8月20日20:31消息，启境汽车发布阔五座SUV <a href="https://www.ithome.com/0/992/340.htm">GX7</a>内饰：环抱智享座舱、<a href="https://www.ithome.com/0/992/340.htm">一车满配十屏</a>，前排双<a href="https://www.ithome.com/0/992/340.htm">15.6英寸华为智慧双联屏（HDR）</a>配<a href="https://www.ithome.com/0/992/340.htm">88英寸HUAWEI XHUD</a>，首搭<a href="https://www.ithome.com/0/992/340.htm">HarmonySpace 6</a>，后排<a href="https://www.ithome.com/0/992/340.htm">HUAWEI XSCENE 2K激光投影</a>支持舱内<a href="https://www.ithome.com/0/992/340.htm">32英寸/舱外46英寸</a>双投，配<a href="https://www.ithome.com/0/992/340.htm">四把零重力座椅、20秒一键纯平大床</a>，预计下半年上市、主销<a href="https://www.ithome.com/0/992/340.htm">20至35万元</a>。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/340.htm">IT之家</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/339.htm">OpenAI“终极野心”曝光：让智能体像人一样操作电脑，逐帧截图+强化学习闭环</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/339.htm">IT之家</a>援引《商业内幕》8月20日报道，OpenAI团队负责人阿里·韦恩斯坦称公司正接近2015年创立目标——<a href="https://www.ithome.com/0/992/339.htm">让AI像人一样操作电脑与浏览器</a>。路径包括基础训练加入<a href="https://www.ithome.com/0/992/339.htm">逐帧屏幕截图</a>、真人示范与<a href="https://www.ithome.com/0/992/339.htm">强化学习</a>，并改用直接读取<a href="https://www.ithome.com/0/992/339.htm">内存/无障碍信息/链接关系</a>以减少截屏循环，使<a href="https://www.ithome.com/0/992/339.htm">Codex可自测自改形成闭环</a>。哥大研究员周宇提醒通用网页适配仍困难，CEO奥尔特曼强调<a href="https://www.ithome.com/0/992/339.htm">最小权限与外发/删除前需确认</a>。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/339.htm">IT之家</a> · <a href="https://www.ithome.com/0/992/339.htm">Business Insider</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/334.htm">黑客组织Cyberleek疑似拿到可玩《GTA 6》副本，开飞机视频配合代币炒作</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/334.htm">IT之家</a>8月20日20:13报道，黑客组织<a href="https://www.ithome.com/0/992/334.htm">Cyberleek</a>发布杰森驾驶农用飞机俯瞰罪恶城的新实机，结尾以枪击墙面打出<a href="https://www.ithome.com/0/992/334.htm">LEEK</a>字样暗示已获可运行副本。组织此前以“维权”名义泄露，实则推广加密货币<a href="https://www.ithome.com/0/992/334.htm">$CYBERLEEK</a>——该币自<a href="https://www.ithome.com/0/992/334.htm">8月15日预热</a>后在泄露发酵下市值达<a href="https://www.ithome.com/0/992/334.htm">1200万美元（约8095万元人民币）</a>。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/334.htm">IT之家</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/336.htm">沙特HUMAIN预热Horizon Ultra：搭骁龙X2 Elite，8月底利雅得亮相</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/336.htm">IT之家</a>8月20日20:24消息，沙特PIF旗下AI企业<a href="https://www.ithome.com/0/992/336.htm">HUMAIN</a> CEO Tareq Amin在X预热<a href="https://www.ithome.com/0/992/336.htm">Horizon Ultra</a>笔记本，确认搭载<a href="https://www.ithome.com/0/992/336.htm">高通骁龙X2 Elite</a>、英阿双语键盘嵌HUMAIN徽标键，强调亮点在<a href="https://www.ithome.com/0/992/336.htm">“意图为核心”的代理式AI操作系统</a>，将于<a href="https://www.ithome.com/0/992/336.htm">8月31日至9月3日LEAP 2026</a>利雅得大会进一步展示。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/336.htm">IT之家</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/338.htm">中兴U30标准版随身Wi-Fi上架：9根全向天线+5000mAh，489元</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/338.htm">IT之家</a>8月20日20:26消息，中兴<a href="https://www.ithome.com/0/992/338.htm">U30标准版随身Wi-Fi</a>已上架京东，<a href="https://www.ithome.com/0/992/338.htm">9根360度全向天线矩阵、Wi-Fi 6双频2×MIMO</a>，<a href="https://www.ithome.com/0/992/338.htm">5000mAh电池、18W有线充、续航约12小时</a>，<a href="https://www.ithome.com/0/992/338.htm">149×69.8×12.5毫米、约171克</a>，支持<a href="https://www.ithome.com/0/992/338.htm">16台设备、NFC一碰连</a>，冰川银/极光绿双色，首发<a href="https://www.ithome.com/0/992/338.htm">489元</a>。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/338.htm">IT之家</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://www.ithome.com/0/992/335.htm">天津电力用激光救下倒悬候鸟，国家“三有”黑翅长脚鹬成功脱困</a></h3>
+<p class="news-content"><a href="https://www.ithome.com/0/992/335.htm">IT之家</a>8月20日20:18援引央视新闻：志愿者在<a href="https://www.ithome.com/0/992/335.htm">天津汉沽盐场</a>发现一只国家“三有”保护动物<a href="https://www.ithome.com/0/992/335.htm">黑翅长脚鹬</a>一只脚折断倒悬高压线，电力部门以<a href="https://www.ithome.com/0/992/335.htm">激光切断技术</a>远程处置，志愿者随后消毒包扎，候鸟恢复良好、预计不影响迁徙。</p>
+<div class="news-source">来源: <a href="https://www.ithome.com/0/992/335.htm">IT之家</a> · <a href="https://www.ithome.com/0/992/335.htm">央视新闻</a></div>
+</div>
+
+</div>
+
+<div class="section">
+<h2 class="section-title">⭐ GitHub</h2>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/yjh051108/dsh-routing-suite">dsh-routing-suite — 运行时注入器+思维模式路由套装 ⭐6416</a></h3>
+<p class="news-content">近7日飙升至<a href="https://github.com/yjh051108/dsh-routing-suite">⭐6416</a>的DeepSeek Harness套件，一键聚合<a href="https://github.com/yjh051108/dsh-super-injector">dsh-super-injector v0.3.3</a>与<a href="https://github.com/yjh051108/dsh-router-standard">router-standard v0.1.1</a>：注入器提供免重启热重载与路由自愈，预设以<a href="https://github.com/yjh051108/dsh-routing-suite">spec/react/weak三模式</a>实现任务感知路由，实测P1—P23覆盖约<a href="https://github.com/yjh051108/dsh-routing-suite">96%</a>。</p>
+<div class="news-source">来源: <a href="https://github.com/yjh051108/dsh-routing-suite">GitHub</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/xiaobright/dsh-anchored-standard">dsh-anchored-standard — 两阶段锚定预设，Project2 98/99分 ⭐3667</a></h3>
+<p class="news-content"><a href="https://github.com/xiaobright/dsh-anchored-standard">⭐3667</a>的社区预设以Minimal最小工具集锚定会话轨迹，再按需晋升Standard重型工具，在<a href="https://github.com/xiaobright/dsh-anchored-standard">Project2评测达98/99分</a>。8月17日作者因上游API涨价宣布转入维护期，但机制与评测工具链仍具参考价值。</p>
+<div class="news-source">来源: <a href="https://github.com/xiaobright/dsh-anchored-standard">GitHub</a></div>
+</div>
+
+<div class="news-item">
+<h3 class="news-title"><a href="https://github.com/yetone/cumora">cumora — 人机同队的跨平台团队聊天，AI为一等公民 ⭐2755</a></h3>
+<p class="news-content"><a href="https://github.com/yetone/cumora">⭐2755</a>的<a href="https://github.com/yetone/cumora">Cumora</a>让AI与人类共享名册、DM、群聊、看板与日历，支持<a href="https://github.com/yetone/cumora">Cumora Cloud云端Pod</a>或<a href="https://github.com/yetone/cumora">BYOA本地Claude Code/Codex</a>双路径，具备记忆、人设、任务认领与防碰撞协调，并可收发真实邮件，定位为“AI原生团队协作”底座。</p>
+<div class="news-source">来源: <a href="https://github.com/yetone/cumora">GitHub</a></div>
+</div>
+
+</div>
+
+</div></body></html>
