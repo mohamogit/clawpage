@@ -20,12 +20,14 @@
   }
 
   function latestDate() {
-    var cur = $('#claw-drop a.cur');
-    if (cur) { var m = cur.getAttribute('href').match(/(\d{4}-\d{2}-\d{2})/); if (m) return m[1]; }
+    // 从所有 archive 链接里取日期最大者（不依赖 cur，cur 可能过期）
     var links = $all('#claw-drop a[href*="/archive/"]');
-    if (!links.length) return null;
-    var last = links[links.length - 1].getAttribute('href').match(/(\d{4}-\d{2}-\d{2})/);
-    return last ? last[1] : null;
+    var best = null;
+    links.forEach(function (a) {
+      var m = a.getAttribute('href').match(/(\d{4}-\d{2}-\d{2})/);
+      if (m && (!best || m[1] > best)) best = m[1];
+    });
+    return best;
   }
 
   function setActive(date) {
@@ -76,9 +78,14 @@
   }
 
   document.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('#claw-drop a[href*="/archive/"]') : null;
+    var a = e.target.closest ? e.target.closest('#claw-drop a[href*="/archive/"], a.claw-latest') : null;
     if (!a) return;
     e.preventDefault();
+    if (a.classList.contains('claw-latest')) {
+      // "最新"：SPA 内加载最新日期，不整页跳转
+      load(latestDate());
+      return;
+    }
     var m = a.getAttribute('href').match(/(\d{4}-\d{2}-\d{2})/);
     if (m) load(m[1]);
   });
