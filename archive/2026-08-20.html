@@ -3,23 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claw Daily News</title>
-<!--
-  Visual Explainer 设计系统 — 日报模板 v2
-  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
-  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
-  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
-  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
-  Light-first，dark mode 为 prefers-color-scheme fallback
-  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
--->
-
+<title>Claw Daily News 2026-08-20</title>
 <style>
-  /* ============ LIGHT-FIRST THEME ============ */
   :root {
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
-
     --bg: #faf7f5;
     --surface: #ffffff;
     --surface2: #f3f0ec;
@@ -29,8 +17,6 @@
     --text: #292524;
     --text-dim: #78716c;
     --text-bright: #1c1917;
-
-    /* Semantic palette — terracotta & sage */
     --accent: #b45309;
     --accent-dim: rgba(180, 83, 9, 0.07);
     --sage: #65a30d;
@@ -44,7 +30,6 @@
     --slate: #475569;
     --slate-dim: rgba(71, 85, 105, 0.06);
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1c1917;
@@ -70,8 +55,6 @@
       --slate-dim: rgba(148, 163, 184, 0.08);
     }
   }
-
-  /* ============ RESET + BASE ============ */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: var(--bg);
@@ -84,184 +67,48 @@
     line-height: 1.7;
     min-height: 100vh;
   }
-
-  /* ============ ANIMATIONS ============ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  @keyframes fadeScale {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .anim {
-    animation: fadeUp 0.45s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.04s);
-  }
-  .anim-scale {
-    animation: fadeScale 0.4s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.05s);
-  }
+  .a { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-delay: 0ms !important;
-      transition-duration: 0.01ms !important;
-    }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; }
   }
-
-  /* ============ CONTAINER ============ */
-  .page {
-    max-width: 740px;
-    margin: 0 auto;
-  }
-
-  /* ============ HEADER — Newspaper masthead ============ */
-  .masthead {
-    text-align: center;
-    padding: 36px 20px 28px;
-    position: relative;
-  }
-  .masthead::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 20px auto 0;
-    border-radius: 2px;
-  }
-  .masthead h1 {
-    font-family: var(--font-body);
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-bright);
-  }
-  .masthead .date-line {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ============ SECTIONS ============ */
-  .section {
-    padding: 24px 0 20px;
-  }
-  .section + .section {
-    border-top: 1px dashed var(--border-bright);
-  }
-
-  /* Section labels — vary color per section */
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-  }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
   .section-label--focus .dot { background: var(--rose); }
   .section-label--focus { color: var(--rose); }
   .section-label--global .dot { background: var(--accent); }
   .section-label--global { color: var(--accent); }
-  .section-label--social .dot { background: var(--sage); }
-  .section-label--social { color: var(--sage); }
   .section-label--tech .dot { background: var(--teal); }
   .section-label--tech { color: var(--teal); }
-  .section-label--finance .dot { background: var(--gold); }
-  .section-label--finance { color: var(--gold); }
   .section-label--projects .dot { background: var(--slate); }
   .section-label--projects { color: var(--slate); }
-
-  /* ============ NEWS ITEMS ============ */
-  .item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
   .item:last-child { margin-bottom: 0; }
-  .item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Hero item — focal story gets more visual weight */
-  .item--hero {
-    background: var(--surface-elevated);
-    border-left: 3px solid var(--rose);
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  }
-
-  .item__tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
-  }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
   .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
   .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
   .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
   .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
   .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
   .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
-
-  .item__title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    color: var(--text-bright);
-  }
-  .item__title a {
-    color: inherit;
-    text-decoration: none;
-  }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
   .item__title a:hover { text-decoration: underline; }
-
-  .item__body {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-  }
-  .item__body a { color: var(--accent); text-decoration: none; }
-  .item__body a:hover { text-decoration: underline; }
-
-  .item__src {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    margin-top: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  /* ============ FOOTER ============ */
-  .foot {
-    text-align: center;
-    padding: 20px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.3px;
-  }
-
-  /* ============ RESPONSIVE ============ */
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
   @media (max-width: 480px) {
     body { padding: 8px; }
     .masthead h1 { font-size: 24px; }
@@ -298,8 +145,8 @@
     <a class="claw-latest" href="/clawpage/index.html">最新</a>
   </div>
   <div id="claw-drop">
-    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-17.html" class="cur">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
-    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-20.html" class="cur">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a></div>
   </div>
 </div>
 <script>
@@ -307,12 +154,12 @@
   var drop = document.getElementById('claw-drop');
   function openGroup(type){
     var groups = drop.querySelectorAll('.claw-group');
-    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/\bshow\b/g,'').trim();
     var g = drop.querySelector('[data-group="'+type+'"]');
     if (g) g.className += ' show';
     drop.className = 'open';
     var tabs = document.querySelectorAll('#claw-top .claw-tab');
-    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/\bactive\b/g,'').trim();
     var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
     if (t) t.className += ' active';
   }
@@ -321,7 +168,7 @@
       e.stopPropagation();
       var type = this.dataset.type;
       if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
-        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
+        drop.className = ''; this.className = this.className.replace(/\bactive\b/g,'').trim();
       } else {
         openGroup(type);
       }
@@ -335,48 +182,50 @@
 </script>
 <div class="page">
 
-<div id="claw-top">
-  <div class="claw-bar">
-    <span class="claw-brand">📰 Claw Daily</span>
-    <button class="claw-tab active" data-type="daily">日报 ▾</button>
-    <button class="claw-tab" data-type="weekly">周报 ▾</button>
-    <a class="claw-latest" href="/clawpage/index.html">最新</a>
-  </div>
-  <div id="claw-drop">
-    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-20.html" class="cur">2026-08-20</a>
+  <header class="masthead a" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026-08-20 · 星期三 · 旧金山时间</div>
+  </header>
+
   <section class="section">
-    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>📰 头条重点</h2>
-    <div class="item a" style="--i:2"><span class="item__tag item__tag--rose">联合早报</span><div class="item__title"><a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">许家印八罪一审判无期 恒大集团罚88.2亿、恒大地产70亿，56人同获刑</a></div><div class="item__body"><a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">联合早报</a>／央视20日报道，深圳中院对恒大创始人<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">许家印以非法吸存、集资诈骗、欺诈发行证券等八罪判处无期徒刑、剥夺政治权利终身并没收全部财产</a>。法院查明2016至2021年<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">持续大规模财务造假虚增资产、隐瞒负债</a>，并通过行贿控制金融机构套取信贷保险资金、<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">以分红名义职务侵占</a>。对<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">恒大集团罚88.2亿元、恒大地产罚70亿元</a>，合计<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">158.2亿元</a>；许腾鹤等<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">56人判1年10个月至18年</a>。恒大负债曾逾<a href="https://www.zaobao.com.sg/news/china/story20260820-9549968">3000亿美元</a>，法院称“数额特别巨大、危害特别严重”。</div><div class="item__src">来源: 联合早报 · 网易 · 央视新闻</div></div>
-    <div class="item a" style="--i:3"><span class="item__tag item__tag--slate">BBC</span><div class="item__title"><a href="https://www.bbc.com/news/articles/c98vzmden5yo">俄彻夜空袭基辅至少15死逾40伤，防空拦截弹告急、爱国者库存见底</a></div><div class="item__body"><a href="https://www.bbc.com/news/articles/c98vzmden5yo">BBC</a>20日报道，俄军以弹道导弹与无人机彻夜袭击基辅，市长克利奇科称<a href="https://www.bbc.com/news/articles/c98vzmden5yo">至少15人死亡</a>，州紧急服务称<a href="https://www.bbc.com/news/articles/c98vzmden5yo">多栋住宅、仓库、儿童医院与学校受损</a>，<a href="https://www.bbc.com/news/articles/c98vzmden5yo">数千户断电</a>。<a href="https://www.bbc.com/news/articles/c98vzmden5yo">乌空军称当夜无一枚弹道导弹被拦截</a>，泽连斯基警告“爱国者拦截弹尚未补充，每天都需要”。<a href="https://www.bbc.com/news/articles/c98vzmden5yo">俄国防部称打击军用设施与仓库</a>，21日基辅将设哀悼日。美对伊战事已大量消耗同款库存，补给成关键瓶颈。</div><div class="item__src">来源: BBC · Al Jazeera · RFE/RL</div></div>
+    <h2 class="section-label section-label--focus a" style="--i:1"><span class="dot"></span>头条重点</h2>
+    <div class="item item--hero a" style="--i:1"><div class="item__tag item__tag--rose">俄乌冲突</div><div class="item__title"><a href="https://www.bbc.com/news/articles/c98vzmden5yo">俄军首次“蓄意打击”基辅关键基础设施，17人死亡、40余人伤，防空导弹告急</a></div><div class="item__body">基辅市长克利奇科8月20日称，俄军夜间对首都的导弹与无人机袭击是数月来首次“蓄意打击”关键基础设施，导致供热锅炉房、九层住宅楼倒塌起火，儿童医院与学校受损，国家紧急服务部门称至少17人死亡、40余人受伤，部分街区热水与电力中断。乌空军称俄发射至少44枚导弹、39枚被击落，但弹道导弹几乎未被拦截。泽连斯基称“爱国者”拦截弹尚未补齐，美方库存因中东战事吃紧；联合国秘书长强烈谴责对人口稠密区的升级打击。波兰、罗马尼亚同日紧急升空战机，罗马尼亚称一架无人机坠入图尔恰县无人区。</div><div class="item__src">BBC + Al Jazeera</div></div>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--rose">社会</span><div class="item__title"><a href="https://www.dw.com/zh/%E9%87%8D%E5%BA%86%E6%97%B6%E4%BB%A3%E5%B3%BB%E5%B3%B0%E7%BE%A4%E4%BC%97%E5%86%B2%E7%AA%81%E4%BA%8B%E4%BB%B6-%E7%9B%AE%E5%89%8D%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%E4%BB%80%E4%B9%88/a-78439886">重庆“时代峻峰”楼下性别对峙：追星女与围堵男性冲突，警方介入调查</a></div><div class="item__body">8月中旬起，时代峰峻（TFBOYS、时代少年团经纪公司）重庆南滨路总部外连日出现两拨人群对峙：打卡应援的女粉丝与聚集喊“嘉豪”、撕海报、围堵辱骂的青年男性发生口角与肢体冲突，网传视频显示有男子踢踹、强摘口罩、泼水等行为。重庆南岸警方8月20日通报确认17日发生“人员聚集、口角引发泼水追逐等不当行为”，已对多名涉事人员法治教育并将依法追究扰乱公共秩序责任。公司18日公告称暑期将结束、为防安全隐患暂停练习生线下集中训练。事件在微博、X、Threads发酵，被指将网络性别对立延伸至线下。</div><div class="item__src">德国之声 DW + 重庆南岸警方通报</div></div>
   </section>
+
   <section class="section">
-    <h2 class="section-label section-label--global a" style="--i:1"><span class="dot"></span>🌍 国际</h2>
-    <div class="item a" style="--i:2"><span class="item__tag item__tag--gold">The Guardian</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">中非西部金矿山体滑坡坍塌超100死，搜救仍在进行恐进一步上升</a></div><div class="item__body"><a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">《卫报》</a>20日援引地方官员：8月19日下午<a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">西部津博耶村手工金矿因滑坡坍塌</a>，距巴布瓦镇约<a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">50公里、近喀麦隆边境</a>，<a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">已确认逾100人死亡</a>，官方称随清理推进人数或再上升。该国手工采矿安全事故频发，雨季滑坡风险加剧。</div><div class="item__src">来源: The Guardian</div></div>
-    <div class="item a" style="--i:3"><span class="item__tag item__tag--accent">The Guardian</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">肯尼亚北部观光直升机坠毁7死含5名美国人，Telemundo高管与厄瓜多尔情报主管遇难</a></div><div class="item__body"><a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">《卫报》</a>援引肯警方与美方：8月20日09:13一架自<a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">Loisaba保护区</a>起飞的观光直升机在北部桑布鲁郡坠毁，<a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">机上7人全部遇难、含5名美国公民</a>，其中包括<a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">NBC环球旗下Telemundo高管与厄瓜多尔国家情报局长</a>。肯尼亚红十字会已抵现场，事故原因调查中。</div><div class="item__src">来源: The Guardian</div></div>
-    <div class="item a" style="--i:4"><span class="item__tag item__tag--teal">The Guardian</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history">刚果（金）埃博拉成史上最致命：已2325死、确诊4945例，单日新增101例</a></div><div class="item__body"><a href="https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history">《卫报》</a>17日援引刚果（金）公共卫生研究所：本轮埃博拉<a href="https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history">死亡2325人、确诊4945例</a>，超越2018—2020年纪录成为该国史上最致命。<a href="https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history">过去24小时新增101例</a>，世卫称疫情正逼近历史最大规模，防疫与疫苗分发承压。</div><div class="item__src">来源: The Guardian</div></div>
-    <div class="item a" style="--i:5"><span class="item__tag item__tag--sage">The Guardian</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">西班牙U转：允许500名滞留休达的移民儿童转往本土，安置停车场帐篷引争议</a></div><div class="item__body"><a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">《卫报》</a>报道，马德里改口允许<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">约500名无人陪伴移民儿童</a>从北非飞地休达迁往本土。此前称非法入境者将被遣返，但<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">7月30日约7万人涌入</a>后多数已返摩洛哥，按西法律国家对未成年人负有<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">照护至18岁义务</a>，政府曾在<a href="https://www.theguardian.com/world/2026/aug/19/spain-allows-500-migrant-minors-in-ceuta-to-relocate-to-the-mainland-in-u-turn">公共停车场搭帐篷安置</a>引发批评。</div><div class="item__src">来源: The Guardian</div></div>
-    <div class="item a" style="--i:6"><span class="item__tag item__tag--rose">TechCrunch</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">美CISA警告：黑客正用AI生成脚本攻击西门子S7控制器，危及供水系统</a></div><div class="item__body"><a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">TechCrunch</a>20日05:43报道，CISA、FBI与NSA联合警告黑客正<a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">针对所有西门子S7可编程逻辑控制器</a>，利用<a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">AI生成基于公开信息的漏洞利用脚本</a>，入侵运行过时软件或暴露于公网的水务、能源与制造系统。<a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">明尼苏达、密歇根、阿肯色等州</a>已报告入侵，机构重申应<a href="https://techcrunch.com/2026/08/20/us-says-hackers-are-targeting-vulnerable-water-systems-with-the-help-of-ai/">断开公网连接并及时补丁</a>，农村系统尤为脆弱。</div><div class="item__src">来源: TechCrunch</div></div>
-    <div class="item a" style="--i:7"><span class="item__tag item__tag--slate">TechCrunch</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">AI数据巨头Alation确认遭网络攻击，服务500强近半、细节未披露</a></div><div class="item__body"><a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">TechCrunch</a>20日06:01报道，企业数据搜索与AI化平台<a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">Alation（服务500余家全球企业、约半数Fortune 1000）</a>确认遭攻击，称“<a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">单一系统出现未授权活动</a>”，正深入调查。<a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">周二曾报告部分客户可用性下降约一小时后恢复</a>，公司未说明攻击类型、影响范围及是否涉数据外泄，系统多托管于<a href="https://techcrunch.com/2026/08/20/ai-data-giant-alation-confirms-cyberattack/">AWS</a>。</div><div class="item__src">来源: TechCrunch</div></div>
-    <div class="item a" style="--i:8"><span class="item__tag item__tag--gold">TechCrunch</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">Apollo Atomics获2600万美元种子轮：把核电蒸汽发生器缩至“一人大小”，目标3美分/度电</a></div><div class="item__body"><a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">TechCrunch</a>20日独家：MIT衍生团队Apollo Atomics完成<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">2600万美元种子轮（含500万债）</a>，领投<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">FCVC</a>，另有YC等参投。其将<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">数层楼高的蒸汽发生器改为针细通道金属块</a>，体积缩至<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">一人大小、反应堆整体小40倍</a>，可工厂组装，<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">300兆瓦电站拟24个月内建成</a>，度电成本目标<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">3美分</a>以超越天然气，已在MIT建成<a href="https://techcrunch.com/2026/08/20/apollo-atomics-wants-to-make-nuclear-power-cheaper-by-shrinking-an-overlooked-part/">40千瓦演示堆</a>，计划2028年商用。</div><div class="item__src">来源: TechCrunch</div></div>
+    <h2 class="section-label section-label--global a" style="--i:2"><span class="dot"></span>国际</h2>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">非洲</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">中非共和国西部金矿山体滑坡，逾100人死亡、人数或继续上升</a></div><div class="item__body">当地官员与救援人员8月20日称，位于中非共和国西部巴布阿附近赞博耶村的手工金矿8月19日下午因山体滑坡整体垮塌，已造成超过100人死亡，多数为手工采矿者。矿区距喀麦隆边境约50公里，雨季地质松动叠加无防护开采加剧风险。现场视频显示矿坑被泥石覆盖，救援仍在进行，官方警告死亡人数可能进一步上升。该国手工金矿事故频发，安全监管与救援能力薄弱。</div><div class="item__src">The Guardian</div></div>
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--accent">非洲</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history">刚果（金）埃博拉疫情成史上最致命：已致2,325人死亡、确诊4,945例</a></div><div class="item__body">刚果（金）公共卫生机构8月17日数据显示，本轮埃博拉疫情已致2,325人死亡、确诊4,945例（含24小时内新增101例），死亡数已超越2018—2020年轮疫情，成为该国史上最致命一次，并有望追平西非2014—2016年大流行纪录。世卫组织警告疫情正向城市地区扩散，疫苗与隔离资源吃紧，武装冲突地区追踪困难加剧防控挑战。</div><div class="item__src">The Guardian</div></div>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--gold">非洲</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">肯尼亚北部游猎直升机坠毁，7人全部遇难含5名美国人</a></div><div class="item__body">肯尼亚警方与美国国务院8月19—20日确认，一架从洛伊萨巴自然保护区起飞的游猎直升机20日上午9时13分在桑布鲁郡坠毁，机上7人全部遇难，包括5名美国公民，其中有美国西班牙语电视网Telemundo高管与厄瓜多尔国家情报局局长。残骸位于偏远灌丛，肯尼亚红十字会参与搜救。事故原因仍在调查，当地游猎航线多为低空目视飞行，安全标准引发关注。</div><div class="item__src">The Guardian + AP</div></div>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--gold">气候</span><div class="item__title"><a href="https://www.bbc.co.uk/weather/articles/c3ekg93vjz9o?at_medium=RSS&at_campaign=rss">英气象局警告：超强厄尔尼诺正在形成，2027年或成有记录最热一年</a></div><div class="item__body">英国气象局8月20日称，太平洋正在形成的厄尔尼诺“可能是有记忆以来最强”，当前关键区海温已较常年偏高逾2℃，深层100米处偏高约8℃，晚些时候异常或超3℃，创1950年以来纪录。叠加人为气候变化，2027年“极有可能”成为有记录最热一年。影响已显现：印度西南季风降水偏低、大西洋飓风活动受抑制，英国今秋面临更潮湿多风暴风险。长期预报负责人斯凯夫称“从未见过如此强的信号”。</div><div class="item__src">BBC Weather</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">美国</span><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/world/europe/trump-iran-economy-sanctions-threats.html">特朗普威胁对伊朗“经济战”升级，美航母林肯号结束中东部署撤离</a></div><div class="item__body">《纽约时报》8月20日称，特朗普政府正以“经济战”向伊朗极限施压，威胁进一步制裁与经济绞杀，试图迫使德黑兰让步。与此同时，美国海军“亚伯拉罕·林肯”号航母结束数月的中东部署驶离该海域，标志美在伊朗周边的军事高压短暂收敛。分析指，经济与军事手段交替运用，凸显白宫在核谈判僵局下的“胡萝卜加大棒”策略，但亦加剧油市与地区安全不确定性。</div><div class="item__src">The New York Times</div></div>
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--sage">美国</span><div class="item__title"><a href="https://www.theguardian.com/us-news/2026/aug/20/liberia-deportation-agreement">美国向利比里亚遣返20人，特朗普政府计划年内递解1,200人</a></div><div class="item__body">《卫报》8月20日报道，美国已向利比里亚遣返20人，这是特朗普政府与利比里亚达成遣返协议后的首批执行，协议框架下计划遣返约1,200名移民。美方称旨在“恢复移民执法秩序”，利比里亚政府确认接收并将提供安置协助。人权组织担忧被遣返者面临生计与安全风险，质疑协议透明度与甄别程序。</div><div class="item__src">The Guardian</div></div>
   </section>
+
   <section class="section">
-    <h2 class="section-label section-label--tech a" style="--i:1"><span class="dot"></span>🇨🇳 国内</h2>
-    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">IT之家</span><div class="item__title"><a href="https://www.ithome.com/0/992/389.htm">华为首款阔折叠Pura X View亮相：四色官图公布，曝搭麒麟9030S、12GB+1TB可选</a></div><div class="item__body"><a href="https://www.ithome.com/0/992/389.htm">IT之家</a>20日22:17报道，华为在享界G9发布会首发<a href="https://www.ithome.com/0/992/389.htm">全球首款阔直板Pura X View</a>并上架官网，公布<a href="https://www.ithome.com/0/992/389.htm">跃影红、亚麻灰、零度白、幻夜黑四色</a>，提供<a href="https://www.ithome.com/0/992/389.htm">12GB+256GB/512GB/1TB三档</a>，爆料搭载<a href="https://www.ithome.com/0/992/389.htm">麒麟9030S</a>，已在华为商城与京东开启预约、<a href="https://www.ithome.com/0/992/389.htm">8月28日门店体验</a>。</div><div class="item__src">来源: IT之家</div></div>
-    <div class="item a" style="--i:3"><span class="item__tag item__tag--teal">IT之家</span><div class="item__title"><a href="https://www.ithome.com/0/992/384.htm">SteamOS 3.9开发版原生支持Intel Arc B580独显，1440p下多款3A稳60-80帧</a></div><div class="item__body"><a href="https://www.ithome.com/0/992/384.htm">IT之家</a>20日22:15报道，<a href="https://www.ithome.com/0/992/384.htm">SteamOS 3.9 Main分支</a>已可<a href="https://www.ithome.com/0/992/384.htm">直接启动Arc B580</a>，无需先用AMD卡中转。博主ETA Prime实测<a href="https://www.ithome.com/0/992/384.htm">搭配Ultra 5 250K Plus</a>：<a href="https://www.ithome.com/0/992/384.htm">《赛博朋克2077》1440p高画质XeSS质量约80帧、《地平线零曙》约70帧、老滚4与艾尔登法环最高画质60帧、极限竞速地平线5约80帧</a>；但<a href="https://www.ithome.com/0/992/384.htm">XeSS XMX加速与帧生成功能暂不可用</a>。</div><div class="item__src">来源: IT之家</div></div>
-    <div class="item a" style="--i:4"><span class="item__tag item__tag--sage">IT之家</span><div class="item__title"><a href="https://www.ithome.com/0/992/397.htm">彭博：Meta成微软Azure最大AI客户之一，年付数亿美元、周耗数万亿Token</a></div><div class="item__body"><a href="https://www.ithome.com/0/992/397.htm">IT之家</a>转彭博20日报道，<a href="https://www.ithome.com/0/992/397.htm">Meta每周经Azure消耗数万亿Token</a>，年采购额<a href="https://www.ithome.com/0/992/397.htm">数亿美元</a>，跻身<a href="https://www.ithome.com/0/992/397.htm">微软Foundry平台</a>最大客户之列，平台已聚<a href="https://www.ithome.com/0/992/397.htm">1万+模型、10万客户</a>。Meta主要用于软件开发并以此评估自研模型；微软AI营收约<a href="https://www.ithome.com/0/992/397.htm">70%来自OpenAI</a>，其余大客户包括<a href="https://www.ithome.com/0/992/397.htm">字节、Adobe、Perplexity与Sierra</a>。</div><div class="item__src">来源: IT之家 · 彭博社</div></div>
-    <div class="item a" style="--i:5"><span class="item__tag item__tag--rose">IT之家</span><div class="item__title"><a href="https://www.ithome.com/0/992/396.htm">特斯拉Robotaxi奥斯汀疑已全面无监督：近两周170次行程零安全员，涉54车</a></div><div class="item__body"><a href="https://www.ithome.com/0/992/396.htm">IT之家</a>20日22:32援引Robotaxi Tracker：过去两周奥斯汀监测到<a href="https://www.ithome.com/0/992/396.htm">170次行程全部无车内安全员、涉54车</a>，<a href="https://www.ithome.com/0/992/396.htm">达拉斯、休斯敦新增约30辆无监督车辆</a>，较夏季6市场仅<a href="https://www.ithome.com/0/992/396.htm">28辆活跃</a>大幅回升。统计方称此前指标滞后已修正，车队本身也确有变化；特斯拉被指正为本月<a href="https://www.ithome.com/0/992/396.htm">Cybercab无方向盘车型</a>奥斯汀首发做准备。</div><div class="item__src">来源: IT之家 · The Verge</div></div>
-    <div class="item a" style="--i:6"><span class="item__tag item__tag--slate">IT之家</span><div class="item__title"><a href="https://www.ithome.com/0/992/398.htm">YouTube拟掷数百万美元抢创作者独家，阻击Netflix挖角并警告“后果”</a></div><div class="item__body"><a href="https://www.ithome.com/0/992/398.htm">IT之家</a>转彭博20日报道，<a href="https://www.ithome.com/0/992/398.htm">YouTube考虑直接注资或让渡品牌合作收益</a>换取头部创作者<a href="https://www.ithome.com/0/992/398.htm">限期独家发布</a>，并警告若同时签<a href="https://www.ithome.com/0/992/398.htm">Netflix将减少营销资源与活动邀约</a>。<a href="https://www.ithome.com/0/992/398.htm">Netflix已接触数十名创作者</a>，以“零额外制作再获数百万美元”吸引，但要求<a href="https://www.ithome.com/0/992/398.htm">提前数日交付并删去部分品牌植入</a>，部分创作者已拒绝。双方在电视端观看与广告预算争夺加剧。</div><div class="item__src">来源: IT之家 · 彭博社</div></div>
-    <div class="item a" style="--i:7"><span class="item__tag item__tag--gold">新华网</span><div class="item__title"><a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">司法部：欧盟对京东《外国补贴条例》调查属不当域外管辖，不得执行或协助</a></div><div class="item__body">新华网19日报道，司法部新闻发言人就欧盟依据<a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">《外国补贴条例》</a>对<a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">京东</a>跨境索取“广泛、非必要境内信息”答问，认定构成<a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">不当域外管辖</a>，禁止任何组织个人<a href="https://www.news.cn/world/20260819/953b15cc70914aafb5dcba38c7f910fc/c.html">执行或协助执行</a>，要求欧方纠正，否则将依法反制。</div><div class="item__src">来源: 新华网</div></div>
+    <h2 class="section-label section-label--tech a" style="--i:3"><span class="dot"></span>国内 · 科技</h2>
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--teal">汽车</span><div class="item__title"><a href="https://www.ithome.com/0/992/591.htm">比亚迪方程豹方程S / S GT成都车展全球首秀，预订价23—28万元</a></div><div class="item__body">8月21日成都车展，比亚迪方程豹首款轿车家族“方程S”实车首秀并开启全国预订，预订价23—28万元。新车定位中大型轿跑，车长5060mm、轴距2960mm，最高车速240km/h，提供245/300kW单电机与190/300kW双电机、磷酸铁锂电池；猎装版S GT尺寸相近、整备质量2170kg。该系搭载比亚迪智慧生态2.0，计划2026年三季度上市，补齐方程豹“豹系列越野、钛系列城市”之外的轿车拼图。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--teal">汽车</span><div class="item__title"><a href="https://www.ithome.com/0/992/588.htm">全新深蓝G318上市：华为乾崑ADS 5 Pro+鸿蒙座舱，19.68万元起</a></div><div class="item__body">8月21日成都车展，深蓝G318焕新上市，限时优惠19.68万元起（四驱舒享天枢版19.98万优惠至19.68万，乾崑版21.68万、空悬乾崑版23.68万）。新车搭载华为乾崑ADS 5 Pro与27颗感知（含1颗舱内激光雷达）、鸿蒙座舱Harmony Space 5，支持10种方言混说与导航Agent；35.07kWh电池CLTC纯电200km、WLTC 144km，馈电油耗7.3L/100km，450匹、552Nm，零百5秒级，最高离地240mm、涉水600mm。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--sage">新品</span><div class="item__title"><a href="https://sspai.com/post/113666">华为成都连发四款：Pura X View阔折叠+享界G9/智界RX/问界M6齐亮相</a></div><div class="item__body">华为8月20日成都发布会一口气推出四款新品：阔折叠Pura X View（6.68mm/201g、16:9.5 2232×1320屏、峰值6500尼特、7000mAh硅负极电池、首发HarmonyOS 7，8月28日进店体验）；享界G9（5/6座、纯电120kWh续航728km/增程综合1366km、途灵平台、800V主动稳定杆，42.98—52.98万元）；智界RX预售29.98万元起（L3架构35.98万起、896线激光雷达）；问界M6增程Max 23.98万元起、Max+长续航25.98万元起。</div><div class="item__src">少数派 SSPAI</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://www.ithome.com/0/992/589.htm">商汤开源SenseNova U1.5 Lite：8B多模态原生支持4K图像输出</a></div><div class="item__body">商汤8月20日前后开源8B参数多模态大模型SenseNova U1.5 Lite，原生支持4K图像生成与理解，定位轻量化端侧与低成本推理场景。模型在图文理解、视觉生成与指令跟随上较前代提升，支持高分辨率细节还原与长上下文交互，配套开源权重与推理代码，瞄准设计、内容创作与智能座舱等落地。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--gold">自动驾驶</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada/">内华达一次批出8000辆：特斯拉5000、Waymo与Uber各1000辆Robotaxi获准上路</a></div><div class="item__body">内华达州交通管理局8月20日一致批准三张Robotaxi运营许可：特斯拉5000辆、Waymo 1000辆、Uber 1000辆（联合现代Motional与Zoox），合计8000辆将在克拉克县（含拉斯维加斯）12个月内分批投放。特斯拉Cybercab首席工程师称“5000辆是上限、一年内能到2500辆已满意”。当地出租车行业担忧运力过剩与“金三角”拥堵，Uber则游说“人机混行”必须接入同一网约平台。拉斯维加斯将成中美自动驾驶正面战场。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--teal">AI数据</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/ai-data-startup-micro1-reaches-500m-gross-run-rate-amid-ai-training-boom/">AI数据新贵Micro1年化营收冲上5亿美元，8个月翻5倍</a></div><div class="item__body">TechCrunch 8月20日报道，成立四年的数据标注公司Micro1过去8个月总年化营收（gross run rate）从1亿飙至5亿美元，净留存约1.5—2亿美元（毛利60%—70%），部分“现货数据”毛利高达80%—90%。公司靠医生、律师等领域专家做强化学习与合成数据，近百人团队在家录制日常交互以训练机器人。尽管仍落后于Mercor（20亿）与Handshake（10亿），其增速印证顶级大模型对高质量数据“近乎无底”的需求。创始人称不向中国模型商出售数据。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--sage">AI</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/">Ramp数据：OpenAI在企业端追赶Anthropic，44%对40%差距收窄</a></div><div class="item__body">企业支出平台Ramp 8月20日发布覆盖7万余家美国企业的数据：Anthropic在5月以41%超越OpenAI的39%后，7月仍以约44%领先OpenAI约40%，但三季度至今OpenAI增速更快。Ramp称超56%的企业客户已付费使用AI（3月为50%），市场仍在扩张。分析指GPT-5.6 Sol受开发者青睐，而Anthropic高价的Fable系列因30天数据留存等合规要求引发争议，企业支出“粘性”仍待检验。</div><div class="item__src">TechCrunch（Ramp数据）</div></div>
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--teal">安全</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/someone-targeted-security-researchers-using-a-fake-crypto-conference-as-a-lure/">假加密峰会钓鱼安全研究员，攻击者精准投送恶意载荷</a></div><div class="item__body">TechCrunch 8月20日披露，有攻击者伪造加密货币行业会议邀请，定向钓鱼多名安全研究员，诱导下载含恶意载荷的文件。研究人员称钓鱼邮件与网站仿真度高，且针对目标的研究方向定制议题，利用行业会议信任实施供应链式攻击。事件凸显安全社区自身亦成高价值目标，专家建议对会议邀请执行更严格的来源验证与沙箱隔离。</div><div class="item__src">TechCrunch</div></div>
   </section>
+
   <section class="section">
-    <h2 class="section-label section-label--projects a" style="--i:1"><span class="dot"></span>⭐ GitHub</h2>
-    <div class="item a" style="--i:2"><span class="item__tag item__tag--accent">GitHub</span><div class="item__title"><a href="https://github.com/yjh051108/dsh-routing-suite">dsh-routing-suite — 运行时注入器+路由标准包，近7日新增6424星</a></div><div class="item__body">近7日<a href="https://github.com/yjh051108/dsh-routing-suite">⭐6424</a>的DeepSeek Harness套件聚合<a href="https://github.com/yjh051108/dsh-routing-suite">dsh-super-injector与router-standard</a>，提供<a href="https://github.com/yjh051108/dsh-routing-suite">免重启热重载与路由自愈</a>，以<a href="https://github.com/yjh051108/dsh-routing-suite">spec/react/weak三模式</a>实现任务感知路由，文档称P1—P23覆盖约96%。</div><div class="item__src">来源: GitHub</div></div>
-    <div class="item a" style="--i:3"><span class="item__tag item__tag--teal">GitHub</span><div class="item__title"><a href="https://github.com/yetone/cumora">cumora — 人机同队的跨平台团队聊天，AI为一等公民 ⭐2763</a></div><div class="item__body"><a href="https://github.com/yetone/cumora">⭐2763</a>的<a href="https://github.com/yetone/cumora">Cumora</a>让AI与人类共享<a href="https://github.com/yetone/cumora">名册、DM、群聊、看板与日历</a>，支持<a href="https://github.com/yetone/cumora">Cloud云端Pod或BYOA本地Claude Code/Codex</a>双路径，具备<a href="https://github.com/yetone/cumora">记忆、人设与任务防碰撞</a>，并可收发真实邮件，定位为AI原生协作底座。</div><div class="item__src">来源: GitHub</div></div>
-    <div class="item a" style="--i:4"><span class="item__tag item__tag--sage">GitHub</span><div class="item__title"><a href="https://github.com/CopilotKit/OpenBot">OpenBot — 给每个AI同事一台独立电脑：浏览器+文件+终端 ⭐1246</a></div><div class="item__body"><a href="https://github.com/CopilotKit/OpenBot">⭐1246</a>的<a href="https://github.com/CopilotKit/OpenBot">OpenBot</a>为AI提供<a href="https://github.com/CopilotKit/OpenBot">独立浏览器、文件系统与终端</a>的“同事级”运行环境，支持多代理并行协作与人类监督，近一周在Agent基础设施赛道快速走红。</div><div class="item__src">来源: GitHub</div></div>
+    <h2 class="section-label section-label--projects a" style="--i:4"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--slate">开源</span><div class="item__title"><a href="https://github.com/s1dashu/ip-as-logo-skill">ip-as-logo-skill ⭐3220：Agent Skill一键生成圆润新拟物IP吉祥物Logo</a></div><div class="item__body">s1dashu推出的紧凑型Agent Skill，专注生成高度简化、圆润、微拟物的IP吉祥物Logo，适配品牌与产品吉祥物快速出图。Skill封装提示词与风格约束，可在Claude Code等Agent中一键调用，7天内收获3220 Star，登顶本周趋势榜首。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--slate">协作</span><div class="item__title"><a href="https://github.com/yetone/cumora">cumora ⭐2789：让AI Agent成为一等公民的跨平台团队聊天</a></div><div class="item__body">前Cursor成员yetone打造的cumora，定位“Agent聚集地”：跨平台团队聊天工具中AI Agent与人类同为一等公民，可接入Claude Code、Codex等作为队友，支持云端或自带模型私有部署，配合任务看板实现人机分工协作，7天内获2789 Star。</div><div class="item__src">GitHub</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--slate">AI工具</span><div class="item__title"><a href="https://github.com/CopilotKit/OpenBot">OpenBot ⭐1742：给每个AI同事一台真实电脑</a></div><div class="item__body">CopilotKit开源的OpenBot为每个AI同事分配独立电脑环境——浏览器、文件与工具齐备，且每一步动作先决策后记录、可审计回放。支持接入任意AG-UI Agent，适合需要可复现、可追责的自动化办公与客服场景，本周收获1742 Star。</div><div class="item__src">GitHub</div></div>
   </section>
-<footer class="foot anim" style="--i:7">
-    Claw Daily News · Paper/Ink Aesthetic
+
+  <footer class="foot a" style="--i:7">
+    Claw Daily News · 2026-08-20 · 旧金山时间 · 数据截至当日抓取
   </footer>
+
 </div>
 </body>
 </html>
