@@ -3,23 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claw Daily News</title>
-<!--
-  Visual Explainer 设计系统 — 日报模板 v2
-  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
-  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
-  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
-  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
-  Light-first，dark mode 为 prefers-color-scheme fallback
-  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
--->
-
+<title>Claw Daily News — 2026-08-21</title>
 <style>
-  /* ============ LIGHT-FIRST THEME ============ */
   :root {
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
-
     --bg: #faf7f5;
     --surface: #ffffff;
     --surface2: #f3f0ec;
@@ -29,8 +17,6 @@
     --text: #292524;
     --text-dim: #78716c;
     --text-bright: #1c1917;
-
-    /* Semantic palette — terracotta & sage */
     --accent: #b45309;
     --accent-dim: rgba(180, 83, 9, 0.07);
     --sage: #65a30d;
@@ -44,7 +30,6 @@
     --slate: #475569;
     --slate-dim: rgba(71, 85, 105, 0.06);
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1c1917;
@@ -70,8 +55,6 @@
       --slate-dim: rgba(148, 163, 184, 0.08);
     }
   }
-
-  /* ============ RESET + BASE ============ */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: var(--bg);
@@ -84,193 +67,43 @@
     line-height: 1.7;
     min-height: 100vh;
   }
-
-  /* ============ ANIMATIONS ============ */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeScale {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .anim {
-    animation: fadeUp 0.45s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.04s);
-  }
-  .anim-scale {
-    animation: fadeScale 0.4s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.05s);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-delay: 0ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* ============ CONTAINER ============ */
-  .page {
-    max-width: 740px;
-    margin: 0 auto;
-  }
-
-  /* ============ HEADER — Newspaper masthead ============ */
-  .masthead {
-    text-align: center;
-    padding: 36px 20px 28px;
-    position: relative;
-  }
-  .masthead::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 20px auto 0;
-    border-radius: 2px;
-  }
-  .masthead h1 {
-    font-family: var(--font-body);
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-bright);
-  }
-  .masthead .date-line {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ============ SECTIONS ============ */
-  .section {
-    padding: 24px 0 20px;
-  }
-  .section + .section {
-    border-top: 1px dashed var(--border-bright);
-  }
-
-  /* Section labels — vary color per section */
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-  }
-  .section-label--focus .dot { background: var(--rose); }
-  .section-label--focus { color: var(--rose); }
-  .section-label--global .dot { background: var(--accent); }
-  .section-label--global { color: var(--accent); }
-  .section-label--social .dot { background: var(--sage); }
-  .section-label--social { color: var(--sage); }
-  .section-label--tech .dot { background: var(--teal); }
-  .section-label--tech { color: var(--teal); }
-  .section-label--finance .dot { background: var(--gold); }
-  .section-label--finance { color: var(--gold); }
-  .section-label--projects .dot { background: var(--slate); }
-  .section-label--projects { color: var(--slate); }
-
-  /* ============ NEWS ITEMS ============ */
-  .item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .anim { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; } }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); } .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); } .section-label--global { color: var(--accent); }
+  .section-label--tech .dot { background: var(--teal); } .section-label--tech { color: var(--teal); }
+  .section-label--projects .dot { background: var(--slate); } .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
   .item:last-child { margin-bottom: 0; }
-  .item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Hero item — focal story gets more visual weight */
-  .item--hero {
-    background: var(--surface-elevated);
-    border-left: 3px solid var(--rose);
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  }
-
-  .item__tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
-  }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
   .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
   .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
   .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
   .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
   .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
   .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
-
-  .item__title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    color: var(--text-bright);
-  }
-  .item__title a {
-    color: inherit;
-    text-decoration: none;
-  }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
   .item__title a:hover { text-decoration: underline; }
-
-  .item__body {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-  }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
   .item__body a { color: var(--accent); text-decoration: none; }
   .item__body a:hover { text-decoration: underline; }
-
-  .item__src {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    margin-top: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  /* ============ FOOTER ============ */
-  .foot {
-    text-align: center;
-    padding: 20px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.3px;
-  }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 480px) {
-    body { padding: 8px; }
-    .masthead h1 { font-size: 24px; }
-    .masthead { padding: 24px 12px 20px; }
-    .item { padding: 12px 14px; }
-  }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
 </style>
-</head>
-<body>
 <style>
 #claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
 #claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
@@ -290,7 +123,10 @@
 #claw-drop a.cur{background:#eee;color:#111;font-weight:600}
 @media (max-width:480px){#claw-top{margin:-8px -8px 0}}
 @media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
-</style><div id="claw-top">
+</style>
+</head>
+<body>
+<div id="claw-top">
   <div class="claw-bar">
     <span class="claw-brand">📰 Claw Daily</span>
     <button class="claw-tab active" data-type="daily">日报 ▾</button>
@@ -298,8 +134,8 @@
     <a class="claw-latest" href="/clawpage/index.html">最新</a>
   </div>
   <div id="claw-drop">
-    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-21.html" class="cur">2026-08-21</a><a href="/clawpage/archive/2026-08-20.html" class="link">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
-    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div></div></div>
   </div>
 </div>
 <script>
@@ -322,9 +158,7 @@
       var type = this.dataset.type;
       if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
         drop.className = ''; this.className = this.className.replace(/\bactive\b/g,'').trim();
-      } else {
-        openGroup(type);
-      }
+      } else { openGroup(type); }
     });
   });
   document.addEventListener('click', function(e){
@@ -333,61 +167,138 @@
   });
 })();
 </script>
-
-
 <div class="page">
+<main id="content">
 
   <header class="masthead anim" style="--i:0">
     <h1>Claw Daily News</h1>
-    <div class="date-line">2026年8月21日 星期五 · 全球每日要闻</div>
+    <div class="date-line">2026年8月21日 · 星期五 · 旧金山 08:00</div>
   </header>
 
   <section class="section">
-    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>焦点事件</h2>
-    <div class="item item--hero a" style="--i:2"><div class="item__title"><a href="https://www.nytimes.com/2026/08/20/world/europe/trump-iran-economy-sanctions-threats.html">伊朗誓言对美国"史上最严厉经济打击"做出"毁灭性"回应，油价金价同步飙升</a></div><div class="item__body">美伊对抗在24小时内急剧升级。8月20日，美国总统特朗普宣布对伊朗发动"史上最严厉的经济打击"（外媒称"经济D-Day"），布伦特原油一度突破92美元/桶；8月21日，据中新社报道，伊朗方面强硬表态，誓言对美国做出"毁灭性"回应；伊朗高级官员（据《纽约时报》）同日称，伊朗必须规划如何克服美国"不公正"的制裁。NYT刊文分析，此次制裁的真正焦点是伊朗的贸易伙伴——包括中国等主要买家——并指出波斯湾"黑暗油轮"（逃避制裁的暗船）数量激增，已推高大规模漏油事故风险。市场层面，避险资金涌入，国际金价站上4600美元/盎司。双方表态均无缓和迹象，油价与地缘风险短期难降温。<br>注：本事件为中美媒体双视角（中新社+NYT）；NYT全文因访问受限，细节以标题级信息为准。</div><div class="item__src">中新社 + NYT（双视角）</div></div>
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>头条重点</h2>
+    <div class="item item--hero anim" style="--i:1">
+      <span class="item__tag item__tag--rose">焦点</span>
+      <div class="item__title"><a href="https://apnews.com/article/flooding-indiana-severe-weather-aa3624a3ff1a0d241f62ec980a23e856">美国印第安纳州历史性洪水已致7死：White River 破1913年纪录，州长宣布紧急状态</a></div>
+      <div class="item__body">美联社8月20—21日报道，印第安纳州连日暴雨引发创纪录洪水，已造成至少7人死亡。州首府印第安纳波利斯的 White River 水位打破1913年以来的历史纪录，摩根县堤坝决口、公路中断、大量民宅进水深达60厘米，州长已宣布进入紧急状态。随着洪水退去，居民开始清理被淹的住宅与作坊，气象部门仍维持洪水预警——这被当地官员称为“数十年一遇”的灾害。<a href="https://www.cbsnews.com/news/indiana-white-river-flooding-record-emergency/">CBS</a> 与 <a href="https://www.indystar.com/story/weather/2026/08/17/how-high-did-indiana-rivers-get-see-new-records-during-floods/91337753007/">IndyStar</a> 亦确认水位纪录被刷新。</div>
+      <div class="item__src">AP · CBS · IndyStar</div>
+    </div>
+    <div class="item item--hero anim" style="--i:2">
+      <span class="item__tag item__tag--rose">公共卫生</span>
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/8/21/ebola-outbreak-growing-faster-%E2%81%A0%E2%81%A0wider-as-drc-death-toll-passes-2500-un">刚果（金）埃博拉疫情“更快更广”扩散：死亡超2500例，联合国警告资金数周内耗尽</a></div>
+      <div class="item__body">联合国高级协调员8月21日警告，刚果（金）埃博拉疫情正呈指数级扩散，已造成超过2500人死亡，超过非洲疾控中心与世卫组织此前通报的3973例确诊/1801例死亡（截至8月4日）。<a href="https://news.un.org/zh/story/2026/08/1142593">联合国新闻</a>称，5个省51个卫生区出现病例，密切接触者追踪率仅75%（目标95%），北基伍治疗中心床位使用率达139%。世卫与非洲疾控呼吁扩大社区主导防控，若资金补给不及时，现有经费将在数周内耗尽。</div>
+      <div class="item__src">Al Jazeera · 联合国新闻 · WHO</div>
+    </div>
   </section>
 
   <section class="section">
-    <h2 class="section-label section-label--global anim" style="--i:3"><span class="dot"></span>全球热点</h2>
-    <div class="item a" style="--i:4"><span class="item__tag item__tag--accent">中国·经贸</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQdFNFWTNlY3hkUHNhM19kWEZweXFveS16N19uREFUR2JUSC1FOUV1YUxQQWpqcUh4anJEVFVtTFhBVkF2bVo4QkNpcmRxNHhwZk4zRndPdFVOa2JHSEwtSXV3M0pRbzdnMWxGV05RVzg4d21wYmN2cDRtUGd1SWZGYWo4ZHphcDJueXI3Vg?oc=5">中瑞自贸协定升级谈判完成：99.8%瑞士对华出口商品将零关税</a></div><div class="item__body">8月20日，商务部部长王文涛与瑞士联邦主席兼经济、教研部长帕姆兰（Guy Parmelin）在伯尔尼会见，共同宣布完成中国—瑞士自由贸易协定升级谈判并签署谅解备忘录。升级后，99.8%的现有瑞士对华出口商品将享受零关税待遇，瑞士投资者也将获得更好的中国市场准入。现行协定于2013年签署、2014年生效，是中国与欧洲大陆国家签署的第一个自贸协定；此前瑞士出口中国的商品中仅约一半享受零关税，而中国出口瑞士的商品几乎已全部免税。在中国与欧盟经贸摩擦持续的背景下，非欧盟成员国瑞士率先完成升级，被视为观察中欧经贸关系走向的风向标。</div><div class="item__src">新华社 / 21财经</div></div>
-    <div class="item a" style="--i:5"><span class="item__tag item__tag--slate">美国</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5QMWpRVXlwM3BCSldIekxzaUFudkI0Qlh6d1RoV29EbmNGeEE5cGFsYUp0V0pRZXlPWVBhZDJISms5Q1ZtUDFJSkZXdE1mTWR1UkJvZ2hWa1hMdw?oc=5">美国阿拉斯加偏远军事雷达站坠机：包机8人全部遇难</a></div><div class="item__body">美国空军8月20日（周四）证实，一架载有8人的包机当日在阿拉斯加西部一处偏远的军事雷达站坠毁，机上8人全部遇难。事发地点为美军部署在阿拉斯加的远程预警雷达站点——该州地处北极航线要冲，是北美防空司令部导弹预警体系的关键节点。目前具体机型与乘客身份尚未公布，事故原因正在调查中。这是阿拉斯加地区近年来最严重的涉及军方的航空事故之一，美国空军已就坠机事件启动调查程序。</div><div class="item__src">BBC（含AP细节）</div></div>
-    <div class="item a" style="--i:6"><span class="item__tag item__tag--accent">中东</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo">以色列重开2005年撤离的卡迪姆定居点，30个"先驱家庭"重返约旦河西岸</a></div><div class="item__body">时隔约20年，以色列政府推翻了2005年对北部撒马利亚（杰宁周边）的犹太定居禁令：8月20日，首批30个"先驱家庭"在部分军警护送下重返卡迪姆（Kadim）定居点，这是2005年撤离的4个定居点中最后一个重新开放的。极右翼财政部长斯莫特里赫出席仪式，称这是"纠正21年前的驱逐错误"。自2022年底本届政府上台以来，约旦河西岸已获批新建超过100个定居点；以色列近日推进的"E1区"定居点项目也遭到欧洲多国与调解方谴责。联合国与国际法均视以色列定居点非法，巴勒斯坦居民对局势蔓延深感恐惧。</div><div class="item__src">BBC</div></div>
-    <div class="item a" style="--i:7"><span class="item__tag item__tag--rose">俄乌</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOTmFKZzlzbWdnb0hOdzdVV3NqVU5YVWdtT3d3OFZUcUVGQXFmdTNVWkNLX0o5ZEI4WmY4NzNDODRGbnpCWEQ1SDZlQkJMUmpvYlVZOHk2S1Y1NEpHZXBBdXprTXRvX2JXbHZnV2lGcmJ1OFpPbTZ1VU5CZjlHcnZueWQ2S04xdw?oc=5">基辅遭俄军大规模空袭，死亡人数升至15人、39人受伤</a></div><div class="item__body">基辅市长克利奇科8月20日下午确认，俄军19日深夜至20日凌晨对基辅发动的大规模导弹与无人机空袭，致死人数已升至15人，另有39人受伤。乌克兰空军此前表示，俄军袭击的主要目标就是首都基辅。这是俄乌冲突2026年以来基辅遭遇的又一轮高强度打击——此前乌方曾以数百架无人机大规模反击莫斯科。目前救援与伤亡统计仍在进行，数字可能进一步更新。<br>注：本条仅获取到中文视角信源（新华社），信息可能不完整。</div><div class="item__src">新华社（记者李东旭）</div></div>
-    <div class="item a" style="--i:8"><span class="item__tag item__tag--teal">汽车</span><div class="item__title"><a href="https://www.ifanr.com/1676069">捷尼赛思GV90正式发布：无B柱对开门量产，配全球首创车顶安全气囊</a></div><div class="item__body">韩国现代旗下豪华品牌捷尼赛思8月19日发布首款全尺寸纯电旗舰SUV GV90，由2024年Neolun概念车发展而来。最受关注的是GV90 Neolun版保留了无固定B柱的对开门设计（官方命名"Neolun Arch Gate"，自称全球首套可独立开闭的隐藏B柱对开门系统），配合双动作后门铰链实现前后门互不干涉。为弥补缺失B柱，车内布置高强度双钢梁与防滚框架，并搭载全球首创的车顶安全气囊（全车共12气囊）。GV90车长5285mm、轴距3245mm，配24英寸车轮，前两排座椅可旋转180度组成"车内会客厅"。价格与中国上市时间尚未公布。</div><div class="item__src">爱范儿</div></div>
+    <h2 class="section-label section-label--global anim" style="--i:3"><span class="dot"></span>国际</h2>
+    <div class="item anim" style="--i:3">
+      <span class="item__tag item__tag--accent">中东</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo">以色列重建西岸 Kadim 定居点：推翻20年禁令，30户先锋家庭在军方护送下入住</a></div>
+      <div class="item__body">BBC 8月21日报道，以色列政府推翻2005年以来的禁令，重启约旦河西岸杰宁附近的 Kadim 定居点，30个“先锋家庭”8月21日在军方护送下携家具、建材入住，车上飘扬以色列国旗。巴勒斯坦居民对新一轮扩张表示恐惧。报道强调，所有约旦河西岸定居点在国际法下均属非法，前哨定居点在以色列国内法下亦非法，但常获默许。</div>
+      <div class="item__src">BBC</div>
+    </div>
+    <div class="item anim" style="--i:4">
+      <span class="item__tag item__tag--accent">移民</span>
+      <div class="item__title"><a href="https://www.theguardian.com/us-news/2026/aug/20/liberia-deportation-agreement">美国向利比里亚遣送首批20人：1200人第三国协议落地，特朗普移民收紧再升级</a></div>
+      <div class="item__body">《卫报》8月20日报道，首批20名被遣送者8月21日抵达利比里亚首都蒙罗维亚外的罗伯茨国际机场，这是美利新协议的首班——根据协议，利比里亚最多将接收1200名第三国移民。英媒称这是特朗普第二任期移民打击中最具规模的第三国遣送协议之一，相关航班与接收安排已正式启动。</div>
+      <div class="item__src">The Guardian</div>
+    </div>
+    <div class="item anim" style="--i:5">
+      <span class="item__tag item__tag--gold">非洲</span>
+      <div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic">中非共和国西部金矿坍塌超100人死亡：滑坡致手工矿场整体垮塌，死亡人数或继续上升</a></div>
+      <div class="item__body">《卫报》8月20日报道，中非共和国西部靠近喀麦隆边境的 Zomboye 村一处手工金矿8月19日下午因滑坡整体垮塌，造成超过100人死亡，当地官员与救援人员称遇难者多为手工采矿者，搜救仍在进行，死亡人数可能进一步上升。事故暴露了该国西部手工采矿监管与安全短板。</div>
+      <div class="item__src">The Guardian · AP</div>
+    </div>
+    <div class="item anim" style="--i:6">
+      <span class="item__tag item__tag--sage">空难</span>
+      <div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/19/kenya-helicopter-safari-crash">肯尼亚北部观光直升机坠毁7人遇难：含5名美国人，Telemundo 高管与厄瓜多尔情报首长在列</a></div>
+      <div class="item__body">《卫报》8月19—20日报道，一架从 Loisaba 保护区起飞的观光直升机8月20日上午在肯尼亚北部桑布鲁郡坠毁，机上7人全部遇难，其中包括5名美国人。遇难者中有一名美国西语电视网 Telemundo 高管及厄瓜多尔国家情报局局长，肯尼亚红十字与警方已在偏远坠机点展开救援与善后。</div>
+      <div class="item__src">The Guardian · Kenya Red Cross</div>
+    </div>
+    <div class="item anim" style="--i:7">
+      <span class="item__tag item__tag--rose">欧洲</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/weather/articles/c3ekg93vjz9o">气象局警告：新一轮厄尔尼诺或成“有记录以来最强”，英国发布沙门氏菌鸡蛋警示</a></div>
+      <div class="item__body">BBC 8月21日两条英国民生预警：英国气象局警告正在形成的厄尔尼诺可能成为“有记录以来最强”的一次，将加剧全球极端天气；与此同时，卫生部门提醒5岁以下儿童与孕妇外出就餐应避免食用溏心蛋，以防范沙门氏菌风险。两项提示均与气候与公共卫生风险相关。</div>
+      <div class="item__src">BBC</div>
+    </div>
   </section>
 
   <section class="section">
-    <h2 class="section-label section-label--social anim" style="--i:9"><span class="dot"></span>微博 / 热搜话题</h2>
-    <div class="item a" style="--i:10"><span class="item__tag item__tag--sage">消费</span><div class="item__title"><a href="https://www.sohu.com/a/1065443975_122014422">LV将彻底退出贵州市场：贵阳门店8月31日停业，西南门店腰斩过半</a></div><div class="item__body">法国奢侈品牌路易威登（LV）贵阳荔星中心门店宣布将于8月31日起停止运营，意味着LV将彻底退出贵州市场。据《贵圈》统计，近一年LV在华门店网络持续"修剪"：今年2月28日昆明金格百货店（运营15年）关闭，6月13日成都天府店关闭，西南五省门店数量已腰斩过半、仅剩3家正常运营，北京首都机场店也已宣布关闭。与此同时，LV在华掀起商标维权风暴。分析认为，奢侈品在华增长放缓与消费分级，正推动头部品牌收缩低线城市门店、将资源聚焦于核心商圈与高净值客群。</div><div class="item__src">微博热搜 / 搜狐财经</div></div>
-    <div class="item a" style="--i:11"><span class="item__tag item__tag--sage">社会</span><div class="item__title">影院午睡2.5小时仅1元多 登上热搜：影院变"午休圣地"</div><div class="item__body">"影院午睡2.5小时仅1元多"登上微博热搜。据网友分享，部分影院在非放映时段推出"午睡场"，2.5小时仅需1元多的体验价，观众可在影厅内吹空调、躺座椅休息，被网友戏称为打工人的"新型午休圣地"。话题走红的背后，是影院行业在票房承压背景下开始盘活非黄金时段闲置影厅：午睡、自习、游戏包场等"共享空间"副业模式正在业内扩散。该话题来自微博热搜，具体门店与活动规则以官方信息为准。</div><div class="item__src">微博热搜</div></div>
+    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>国内</h2>
+    <div class="item anim" style="--i:8">
+      <span class="item__tag item__tag--teal">汽车</span>
+      <div class="item__title"><a href="https://finance.sina.com.cn/roll/2026-08-21/doc-inipavkm8048625.shtml">11家车企集中召回超427万辆：应急机械拉手难识别，特斯拉占297.6万辆居首</a></div>
+      <div class="item__body">国家市场监管总局8月21日发布召回公告：一汽、北汽蓝谷、东风、奇瑞新能源、吉利、小鹏、零跑、特斯拉、小米等11家车企因“车内应急机械拉手与内饰颜色接近、不易识别”存在逃生隐患，合计召回超427万辆。特斯拉自9月25日起召回约297.6万辆国产 Model 3/Y 及进口车型，方案为加贴警示标识并通过 OTA 增加事故后降窗策略；零跑、小鹏、小米、吉利等分别召回37.1万、26.5万、39.0万、9.3万辆不等。另有特斯拉274万辆因智驾注意力监测不足、吉利9.3万辆因激光雷达电源IC风险同步召回。</div>
+      <div class="item__src">新浪财经 · 市场监管总局</div>
+    </div>
+    <div class="item anim" style="--i:9">
+      <span class="item__tag item__tag--accent">香港</span>
+      <div class="item__title"><a href="https://www.bbc.com/zhongwen/articles/cvgvrpy7pjro/simp">香港支联会煽颠案宣判：李卓人、邹幸彤、何俊仁罪成，8月28日求情</a></div>
+      <div class="item__body">BBC 中文8月21日报道，香港高等法院裁定已解散的支联会及李卓人、邹幸彤、何俊仁“煽动颠覆国家政权”罪名成立，3人最高可判10年。案件2021年9月起诉，支联会同月解散结束32年历史。当庭未即时量刑，定于8月28日听取求情；法官派发206页判决书，李卓人向旁听席比心致意。</div>
+      <div class="item__src">BBC News 中文</div>
+    </div>
+    <div class="item anim" style="--i:10">
+      <span class="item__tag item__tag--teal">科技</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/992/874.htm">微信灰度“按住转文字”：长按输入框直转文字引热议，iOS/安卓先行、鸿蒙待上线</a></div>
+      <div class="item__body">IT之家8月21日报道，微信灰度测试“按住转文字”——将麦克风按钮整合进输入框，长按即录音并实时转文字，松手发送，支持编辑与上滑取消。功能随 iOS 8.0.76 灰度上线，话题登上微博热搜，网友评价两极：有人称对打字慢与中老年群体友好，也有人吐槽易误触、无法关闭、识别率不如先录音后转写。腾讯客服称目前仅 iOS/安卓小范围灰度，鸿蒙版仍在开发。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+    <div class="item anim" style="--i:11">
+      <span class="item__tag item__tag--gold">并购</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/992/872.htm">同程旅行完成对嘀嗒出行要约收购：持股88.74%，14.24亿港元保持独立运营</a></div>
+      <div class="item__body">IT之家8月21日报道，同程旅行公告已完成对嘀嗒出行的要约收购，获91075万股有效接纳，占总股本88.74%，交易价每股1.3875港元、总金额约14.24亿港元（约12.24亿元人民币），溢价12.8%。嘀嗒覆盖366城、注册用户4.15亿、认证车主2100万，2025年收入5.02亿元同比降36.2%。收购后嘀嗒保持品牌与运营独立，拟维持港股上市地位，但公众持股降至11.26%需在2028年2月20日前恢复至25%合规线。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+    <div class="item anim" style="--i:12">
+      <span class="item__tag item__tag--gold">存储</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/992/868.htm">30TB 企业级 SSD 飙至22600美元：与 HDD 价差18.6倍创纪录，AI 存储成本承压</a></div>
+      <div class="item__body">IT之家援引 Tom's Hardware 与 VDURA 8月指数报道，30TB TLC 企业级 SSD 从2025年Q3的3460美元一路涨至2026年Q3的22600美元（约15.2万元人民币），一年涨6.5倍；同容量 HDD 仅1216美元，SSD 单 TB 价格是 HDD 的18.6倍，价差创纪录。以25PB AI 存储模型测算，全闪存3年总成本约5160万美元，混合存储仅1286万美元，凸显存储架构选型对 AI 基建成本的关键影响。</div>
+      <div class="item__src">IT之家 · VDURA · Tom's Hardware</div>
+    </div>
+    <div class="item anim" style="--i:13">
+      <span class="item__tag item__tag--teal">安全</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/992/877.htm">电商“仅退款”漏洞倒卖13万元被刑拘：收货地址直填二手买家，平台风控敲警钟</a></div>
+      <div class="item__body">IT之家8月21日报道，某女子利用电商“仅退款”漏洞倒卖商品，将收货地址直接填写为二手买家地址，非法获利近13万元后被刑拘。案件暴露“仅退款”机制在风控与举证环节的短板，平台与商家需加强交易链路核验与异常订单拦截。</div>
+      <div class="item__src">IT之家</div>
+    </div>
   </section>
 
   <section class="section">
-    <h2 class="section-label section-label--tech anim" style="--i:12"><span class="dot"></span>科技新闻</h2>
-    <div class="item a" style="--i:13"><span class="item__tag item__tag--teal">AI</span><div class="item__title"><a href="https://www.ifanr.com/1676067">DeepSeek多模态模型上新：deepseek-v4-flash-vision-exp上线，为Agent"开天眼"</a></div><div class="item__body">8月21日，DeepSeek推出面向Agent时代的多模态实验模型 deepseek-v4-flash-vision-exp，已上线DeepSeek API平台（model=deepseek-v4-flash-vision-exp）。该模型在保持V4-Flash文本、推理与Agent能力的基础上新增视觉理解，可处理图片输入；官方称其在多模态Agent基准测试中表现明显提升，接近Opus-4.8等高端模型。同日发布的DeepSeek Harness 0.1.1加入原生支持，开发者可直接将图像理解能力接入现有Agent工作流。这标志着DeepSeek多模态能力正从"看图问答"走向读文件、识图、调工具的复杂任务执行场景。</div><div class="item__src">爱范儿</div></div>
-    <div class="item a" style="--i:14"><span class="item__tag item__tag--teal">苹果</span><div class="item__title"><a href="https://www.ifanr.com/1675978">苹果VR部门再裁60人：Vision Pro团队被解散，头显路线基本放弃？</a></div><div class="item__body">8月20日，据AppleInsider爆料，苹果裁掉了整支专门做VR开发的团队，至少60名员工受影响，涉及Apple Vision Group及类似岗位，官方未确认也未回应。过去一年多，苹果的Vision Products Group（VPG）已被拆散，原负责人Mike Rockwell被调离，产品被"搁置"。分析认为，苹果已不想再赌头显路线，下一台"Vision"设备更可能是一副能每天戴出门的AI眼镜。Vision Pro自2024年上市以来销量远不及预期，此轮裁员是苹果空间计算战略收缩的最新、也是力度最大的信号。</div><div class="item__src">爱范儿 / AppleInsider</div></div>
-    <div class="item a" style="--i:15"><span class="item__tag item__tag--teal">自动驾驶</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada/">特斯拉、Uber、Waymo获准在内华达州运营最多8000辆Robotaxi</a></div><div class="item__body">8月20日，内华达州交通管理局一致批准特斯拉、Uber、Waymo三份商业Robotaxi运营许可：未来12个月在克拉克县（拉斯维加斯所在县）合计最多可部署8000辆——特斯拉上限5000辆、Waymo和Uber各1000辆（Uber通过与现代旗下Motional及Zoox合作运营）。不过特斯拉Cybercab首席工程师Eric Early坦言，一年内实际可能只做到2500辆左右，"5000辆一直是上限而非目标"。当地出租车行业协会反对称审批"太快太多"，担心冲击司机就业与加剧拥堵。拉斯维加斯正成为三大玩家正面交锋的Robotaxi主战场。</div><div class="item__src">TechCrunch</div></div>
-    <div class="item a" style="--i:16"><span class="item__tag item__tag--teal">AI商业</span><div class="item__title"><a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/">Ramp数据：Anthropic美国企业用户份额44%对40%领先OpenAI，但后者增速更快</a></div><div class="item__body">企业信用卡与费用管理公司Ramp发布的最新数据显示：在美国企业付费用户中，Anthropic已连续数月领先OpenAI——5月Anthropic市占率41%对OpenAI 39%，7月进一步扩大至约44%对40%。数据覆盖通过Ramp支付系统消费的7万多家美国企业。不过Ramp经济学家Ara Kharazian指出，三季度至今OpenAI在该群体中增速更快，局面仍可能逆转。两家公司均临近IPO，外界正借助第三方数据窥探其商业表现；Ramp数据不含使用American Express等工具的头部大企业，并非全市场度量。</div><div class="item__src">TechCrunch</div></div>
+    <h2 class="section-label section-label--projects anim" style="--i:5"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item anim" style="--i:14">
+      <span class="item__tag item__tag--slate">开源</span>
+      <div class="item__title"><a href="https://github.com/s1dashu/ip-as-logo-skill">s1dashu/ip-as-logo-skill ⭐3430：极简圆润拟物风 IP 萌系 Logo 生成技能</a></div>
+      <div class="item__body">本周 GitHub 榜首：为 Agent 设计的 Logo 生成技能，主打高度简化、圆润、微拟物风的 IP 吉祥物 Logo，适合为产品快速产出可爱的品牌标识。项目本周新增 star 超千，说明“AI 辅助品牌设计”需求仍在高位。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+    <div class="item anim" style="--i:15">
+      <span class="item__tag item__tag--slate">协作</span>
+      <div class="item__title"><a href="https://github.com/yetone/cumora">yetone/cumora ⭐2844：Agent 优先的跨平台团队聊天室</a></div>
+      <div class="item__body">把 AI Agent 作为“一等公民”的团队聊天工具，支持云端或自带 Claude Code / Codex 大脑，定位为“Agent 们聚集地”。在多 Agent 协作与人机混排场景下提供更原生的交互模型，本周热度仅次于榜首。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+    <div class="item anim" style="--i:16">
+      <span class="item__tag item__tag--slate">AI 基础设施</span>
+      <div class="item__title"><a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot ⭐1997：给每个 AI 同事一台独立电脑</a></div>
+      <div class="item__body">开源 AI 同事框架：每个 Agent 拥有一台独立的“电脑”——含浏览器、文件与工具，且每一步先决策后记录、可审计。兼容任意 AG-UI Agent，适合需要可追溯、可复现的自动化办公与 RPA 场景。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+    <div class="item anim" style="--i:17">
+      <span class="item__tag item__tag--slate">安全</span>
+      <div class="item__title"><a href="https://github.com/Leutenegger/watermarks-remover">watermarks-remover ⭐929：多厂商 AI 水印一键清理工具箱</a></div>
+      <div class="item__body">支持 PNG/JPEG/SVG/PDF/DOCX/HTML/MD 等格式的 AI 溯源痕迹清理：含 Unicode 洗净、统计改写与 C2PA 元数据剥离三件套。工具面向合规研究与隐私清理场景，作者提示需遵守平台使用条款。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2 class="section-label section-label--finance anim" style="--i:17"><span class="dot"></span>财经要闻</h2>
-    <div class="item a" style="--i:18"><span class="item__tag item__tag--gold">大宗商品</span><div class="item__title"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE96VkJvd2VoNzBxQkVNVGhWMmhNeW1uTmVRWmVEWEdhNmVUU2ZSUWNiWi11dFFNSHFQYmU2bTB5SVBVNm1QX3RQMTJ3TlNPeFMtTlY0QjNRYWtqVDZHd3FXag?oc=5">国际金价站上4600美元/盎司，创5月以来新高，黄金概念股大涨</a></div><div class="item__body">8月21日，现货黄金站上4600美元/盎司，最高触及4602美元，为5月15日以来首次；纽约期金一度突破4650美元。自6月30日金价下探4000美元下方后，黄金8月走出强劲反弹，8月首周录得年内最大周度涨幅，8月19日单日大涨4.36%创阶段新高。驱动因素包括：美国7月CPI基本符合预期令美元与美债收益率走弱，美财政部扩大国债回购提振债市，以及美伊冲突升级带来的避险买盘。A股黄金概念股同步大涨，紫金黄金国际单日涨13.28%、老铺黄金涨10.22%，黄金股ETF强势上涨逾5%。</div><div class="item__src">澎湃新闻 / 搜狐财经</div></div>
-    <div class="item a" style="--i:19"><span class="item__tag item__tag--gold">汽车</span><div class="item__title"><a href="https://www.ifanr.com/1675982">比亚迪"大汉"EV预售价24.99万起：1008公里续航、D级车身，冲击25万级</a></div><div class="item__body">成都车展上，比亚迪王朝网发布旗舰轿车"大汉"EV，预售价24.99万—29.99万元（后驱尊享24.99万/后驱旗舰26.99万/四驱旗舰29.99万），第三代唐同步亮相。大汉车长5256mm、轴距3130mm，进入D级大型轿车范畴；后驱版CLTC续航1008公里、四驱版880公里，3.3秒破百，全系标配后轮转向与云辇-A双腔空悬，风阻系数仅0.197Cd，搭载第二代刀片电池，官方称2026年底全国闪充站将达2万座。第三代唐回归大五座，采用35.4英寸星环屏+30英寸全景屏，最高续航850公里。背景：本届成都车展近20个豪华品牌集体缺席，自主品牌成绝对主角。</div><div class="item__src">爱范儿</div></div>
-    <div class="item a" style="--i:20"><span class="item__tag item__tag--gold">金融创新</span><div class="item__title"><a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininwawm7038873.shtml">消耗Token就能换银行贷款？多家银行试水"Token贷"：算力成授信"硬通货"</a></div><div class="item__body">"词元经济"正进入银行信贷体系。农业银行温州分行以"算力Token产出消耗"为核心评价依据，向浙江城安大数据有限公司发放200万元首笔信用贷款；随后农行"Token贷"在上海落地，中国银行、中信银行、广州银行集中在广州推出同类产品——广东省首个词元经济专项金融产品8月14日由广州海珠区发布，面向算力中小微企业。与此同时，银行日均Token消耗量成为数智化转型的"第二张成绩单"：招行日均约330亿、微众银行7月超200亿（2025年底仅50亿）。受访人士提醒，需建立动态监测与提前预警机制，防止创新工具沦为风险盲区。</div><div class="item__src">金融界 / 新浪财经</div></div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-label section-label--projects anim" style="--i:21"><span class="dot"></span>值得关注的项目</h2>
-    <div class="item a" style="--i:22"><span class="item__tag item__tag--slate">Agent Skill</span><div class="item__title"><a href="https://github.com/s1dashu/ip-as-logo-skill">s1dashu/ip-as-logo-skill ⭐3387：让AI Agent一键生成IP吉祥物Logo</a></div><div class="item__body">一个精简的Agent Skill，用于生成高度简化、圆润、略带新拟物（neo-skeuomorphic）风格的IP吉祥物Logo。8月18日创建，3天即冲上3387星，标签覆盖codex-skill、图像生成与吉祥物设计，主打编码Agent（Codex/Claude等）直接调用出图。在"AI Agent+设计"赛道中属于典型的轻量高热度项目，适合快速生成品牌吉祥物与App图标。</div><div class="item__src">GitHub Trending</div></div>
-    <div class="item a" style="--i:23"><span class="item__tag item__tag--slate">多Agent协作</span><div class="item__title"><a href="https://github.com/yetone/cumora">yetone/cumora ⭐2833：AI Agent的"团队聊天室"，跨平台让Agent成为一等公民</a></div><div class="item__body">跨平台团队聊天工具，让多个AI Agent作为"一等公民"入驻同一个聊天空间，支持云端大脑或自带Claude Code/Codex大脑（BYO Brains），TypeScript编写。8月17日创建，一周获2833星。定位"Where agent teams gather"，瞄准多Agent协作与调度场景：开发者可以像拉群一样把不同模型、不同工具的Agent拉进一个会话协同完成任务。</div><div class="item__src">GitHub Trending</div></div>
-    <div class="item a" style="--i:24"><span class="item__tag item__tag--slate">DeepSeek生态</span><div class="item__title"><a href="https://github.com/Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report">DeepSeek-V4-J-Space能力实现报告 ⭐1037：基准证明J-Space降低能力实现损失</a></div><div class="item__body">一份"DeepSeek V4 × J-Space"能力实现报告，用基准测试证据表明J-Space能显著降低DeepSeek V4（Flash/Pro）上的能力实现损失，属于DeepSeek生态的社区实证研究。8月16日创建，4天收获1037星，与今日DeepSeek多模态模型上新形成呼应，反映出社区对DeepSeek模型能力上限与中间层优化的高度关注。</div><div class="item__src">GitHub Trending</div></div>
-  </section>
-
-  <footer class="foot anim" style="--i:25">
-    Claw Daily News · Paper/Ink Aesthetic
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper/Ink Aesthetic · 2026-08-21 08:00 America/Los_Angeles
   </footer>
 
+</main>
 </div>
+  <script src="/clawpage/assets/app.js"></script>
 </body>
 </html>
