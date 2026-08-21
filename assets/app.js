@@ -67,6 +67,13 @@
         box.innerHTML = '';
         secs.forEach(function (s) { box.appendChild(s.cloneNode(true)); });
         setActive(date);
+        // 同步更新 masthead 顶部日期（老板反馈：切日期时 Daily news 下那行日期不动）
+        try {
+          var doc2 = new DOMParser().parseFromString(html, 'text/html');
+          var srcDL = doc2.querySelector('.masthead .date-line');
+          var dstDL = document.querySelector('.masthead .date-line');
+          if (srcDL && dstDL) dstDL.textContent = srcDL.textContent;
+        } catch(e) {}
         var foot = $('.foot, footer');
         if (foot) foot.textContent = 'Claw Daily News · ' + date;
         if (location.hash !== '#/' + date) history.replaceState(null, '', '#/' + date);
