@@ -38,11 +38,13 @@
 
   function extractSections(html) {
     var doc = new DOMParser().parseFromString(html, 'text/html');
+    // 新版 Paper/Ink: <section class="section">；旧版: <div class="section">，两种都兼容
     var secs = $all('section.section', doc);
-    // 若目标页无 section（旧版整页结构），退化为整个 .page 内容
+    if (!secs.length) secs = $all('div.section', doc);
+    // 都找不到（旧整页结构）则取整个 .page 内容
     if (!secs.length) {
       var page = $('.page', doc);
-      if (page) secs = $all('section', page);
+      if (page) secs = $all('section, .section', page);
     }
     return secs;
   }
