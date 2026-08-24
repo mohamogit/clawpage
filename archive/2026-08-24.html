@@ -3,23 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claw Daily News</title>
-<!--
-  Visual Explainer 设计系统 — 日报模板 v2
-  美学：Paper / Ink — 暖色报纸质感，温暖奶油底色，赭红/鼠尾草点缀
-  配色：Warm cream (#faf7f5) + Terracotta (#b45309) + Sage (#65a30d)
-  字体：Plus Jakarta Sans + Azeret Mono（圆润亲和）
-  Layout：报纸分栏感，不均匀视觉权重，焦点事件大面积突出，次要信息紧凑
-  Light-first，dark mode 为 prefers-color-scheme fallback
-  禁止：indigo/violet、Inter/Roboto、扁平纯色背景、脉冲发光动画
--->
-
+<title>Claw Daily News · 2026-08-24</title>
 <style>
-  /* ============ LIGHT-FIRST THEME ============ */
   :root {
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
-
     --bg: #faf7f5;
     --surface: #ffffff;
     --surface2: #f3f0ec;
@@ -29,8 +17,6 @@
     --text: #292524;
     --text-dim: #78716c;
     --text-bright: #1c1917;
-
-    /* Semantic palette — terracotta & sage */
     --accent: #b45309;
     --accent-dim: rgba(180, 83, 9, 0.07);
     --sage: #65a30d;
@@ -44,7 +30,6 @@
     --slate: #475569;
     --slate-dim: rgba(71, 85, 105, 0.06);
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #1c1917;
@@ -70,8 +55,6 @@
       --slate-dim: rgba(148, 163, 184, 0.08);
     }
   }
-
-  /* ============ RESET + BASE ============ */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: var(--bg);
@@ -84,190 +67,39 @@
     line-height: 1.7;
     min-height: 100vh;
   }
-
-  /* ============ ANIMATIONS ============ */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeScale {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .anim {
-    animation: fadeUp 0.45s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.04s);
-  }
-  .anim-scale {
-    animation: fadeScale 0.4s ease-out both;
-    animation-delay: calc(var(--i, 0) * 0.05s);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-delay: 0ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* ============ CONTAINER ============ */
-  .page {
-    max-width: 740px;
-    margin: 0 auto;
-  }
-
-  /* ============ HEADER — Newspaper masthead ============ */
-  .masthead {
-    text-align: center;
-    padding: 36px 20px 28px;
-    position: relative;
-  }
-  .masthead::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 20px auto 0;
-    border-radius: 2px;
-  }
-  .masthead h1 {
-    font-family: var(--font-body);
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-bright);
-  }
-  .masthead .date-line {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ============ SECTIONS ============ */
-  .section {
-    padding: 24px 0 20px;
-  }
-  .section + .section {
-    border-top: 1px dashed var(--border-bright);
-  }
-
-  /* Section labels — vary color per section */
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-  }
-  .section-label--focus .dot { background: var(--rose); }
-  .section-label--focus { color: var(--rose); }
-  .section-label--global .dot { background: var(--accent); }
-  .section-label--global { color: var(--accent); }
-  .section-label--social .dot { background: var(--sage); }
-  .section-label--social { color: var(--sage); }
-  .section-label--tech .dot { background: var(--teal); }
-  .section-label--tech { color: var(--teal); }
-  .section-label--finance .dot { background: var(--gold); }
-  .section-label--finance { color: var(--gold); }
-  .section-label--projects .dot { background: var(--slate); }
-  .section-label--projects { color: var(--slate); }
-
-  /* ============ NEWS ITEMS ============ */
-  .item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .anim { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; } }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); } .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); } .section-label--global { color: var(--accent); }
+  .section-label--tech .dot { background: var(--teal); } .section-label--tech { color: var(--teal); }
+  .section-label--projects .dot { background: var(--slate); } .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
   .item:last-child { margin-bottom: 0; }
-  .item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Hero item — focal story gets more visual weight */
-  .item--hero {
-    background: var(--surface-elevated);
-    border-left: 3px solid var(--rose);
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  }
-
-  .item__tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
-  }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
   .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
   .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
   .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
   .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
   .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
   .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
-
-  .item__title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    color: var(--text-bright);
-  }
-  .item__title a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .item__title a:hover { text-decoration: underline; }
-
-  .item__body {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-  }
-  .item__body a { color: var(--accent); text-decoration: none; }
-  .item__body a:hover { text-decoration: underline; }
-
-  .item__src {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    margin-top: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  /* ============ FOOTER ============ */
-  .foot {
-    text-align: center;
-    padding: 20px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.3px;
-  }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 480px) {
-    body { padding: 8px; }
-    .masthead h1 { font-size: 24px; }
-    .masthead { padding: 24px 12px 20px; }
-    .item { padding: 12px 14px; }
-  }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; } .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); } .item__body a { color: var(--accent); text-decoration: none; } .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
 </style>
 <style>
 #claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
@@ -300,7 +132,7 @@
   </div>
   <div id="claw-drop">
     <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-24.html" class="cur">2026-08-24</a><a href="/clawpage/archive/2026-08-22.html" class="link">2026-08-22</a><a href="/clawpage/archive/2026-08-21.html" class="link">2026-08-21</a><a href="/clawpage/archive/2026-08-20.html" class="link">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
-    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
   </div>
 </div>
 <script>
@@ -333,12 +165,13 @@
 })();
 </script>
 <div class="page">
-<header class="masthead anim" style="--i:0">
+
+  <header class="masthead anim" style="--i:0">
     <h1>Claw Daily News</h1>
     <div class="date-line">2026年8月24日 · 星期日 · 内华达山火9万人撤离与甲醛白菜食安风暴双焦点</div>
   </header>
-<main id="content">
-<section class="section">
+
+  <section class="section">
     <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>头条重点</h2>
     <div class="item item--hero anim" style="--i:1">
       <span class="item__tag item__tag--rose">焦点 · 美国山火</span>
@@ -354,7 +187,7 @@
     </div>
   </section>
 
-<section class="section">
+  <section class="section">
     <h2 class="section-label section-label--global anim" style="--i:3"><span class="dot"></span>国际</h2>
     <div class="item anim" style="--i:3">
       <span class="item__tag item__tag--accent">非洲 · 尼日利亚</span>
@@ -394,7 +227,7 @@
     </div>
   </section>
 
-<section class="section">
+  <section class="section">
     <h2 class="section-label section-label--tech anim" style="--i:9"><span class="dot"></span>国内</h2>
     <div class="item anim" style="--i:9">
       <span class="item__tag item__tag--accent">主权 · 南海</span>
@@ -440,7 +273,7 @@
     </div>
   </section>
 
-<section class="section">
+  <section class="section">
     <h2 class="section-label section-label--projects anim" style="--i:17"><span class="dot"></span>GitHub</h2>
     <div class="item anim" style="--i:17">
       <span class="item__tag item__tag--slate">⭐ 2.7k · Agent Skill</span>
@@ -461,9 +294,13 @@
       <div class="item__src">GitHub · MeteorNOX</div>
     </div>
   </section>
-</main>
-<footer class="foot a">Claw Daily News</footer>
+
+  <footer class="foot anim" style="--i:20">
+    Claw Daily News · 2026-08-24 · Paper/Ink · 18条精选 · 事实核查已完成
+  </footer>
+
+
+
 </div>
-<script src="/clawpage/assets/app.js"></script>
 </body>
 </html>
