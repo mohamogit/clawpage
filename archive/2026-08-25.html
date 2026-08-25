@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News — 2026年8月25日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', monospace;
+    --bg: #faf7f5;
+    --surface: #ffffff;
+    --surface2: #f3f0ec;
+    --border: rgba(0,0,0,0.06);
+    --border-bright: rgba(0,0,0,0.12);
+    --text: #292524;
+    --text-dim: #78716c;
+    --text-bright: #1c1917;
+    --accent: #b45309;
+    --accent-dim: rgba(180,83,9,0.07);
+    --sage: #65a30d;
+    --sage-dim: rgba(101,163,13,0.07);
+    --rose: #be123c;
+    --rose-dim: rgba(190,18,60,0.06);
+    --teal: #0891b2;
+    --teal-dim: rgba(8,145,178,0.06);
+    --gold: #d97706;
+    --gold-dim: rgba(217,119,6,0.07);
+    --slate: #475569;
+    --slate-dim: rgba(71,85,105,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1917; --surface: #292524; --surface2: #3a3530;
+      --border: rgba(255,255,255,0.06); --border-bright: rgba(255,255,255,0.12);
+      --text: #e7e5e4; --text-dim: #a8a29e; --text-bright: #fafaf9;
+      --accent: #f59e0b; --sage: #a3e635; --rose: #fb7185; --teal: #22d3ee; --gold: #fbbf24; --slate: #94a3b8;
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);background-image:radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%);color:var(--text);font-family:var(--font-body);padding:12px;line-height:1.7;min-height:100vh}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .anim{animation:fadeUp 0.45s ease-out both;animation-delay:calc(var(--i,0)*0.04s)}
+  .page{max-width:740px;margin:0 auto}
+  .masthead{text-align:center;padding:36px 20px 28px;position:relative}
+  .masthead::after{content:'';display:block;width:60px;height:3px;background:var(--accent);margin:20px auto 0;border-radius:2px}
+  .masthead h1{font-family:var(--font-body);font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--text-bright)}
+  .masthead .date-line{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);margin-top:6px;letter-spacing:0.5px}
+  .masthead .sub{font-size:12px;color:var(--text-dim);margin-top:8px}
+  .section{padding:24px 0 20px}
+  .section+.section{border-top:1px dashed var(--border-bright)}
+  .section-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .section-label .dot{width:6px;height:6px;border-radius:50%}
+  .section-label--focus .dot{background:var(--rose)} .section-label--focus{color:var(--rose)}
+  .section-label--global .dot{background:var(--accent)} .section-label--global{color:var(--accent)}
+  .section-label--tech .dot{background:var(--teal)} .section-label--tech{color:var(--teal)}
+  .section-label--projects .dot{background:var(--slate)} .section-label--projects{color:var(--slate)}
+  .item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:12px;transition:transform 0.15s ease,box-shadow 0.15s ease}
+  .item:last-child{margin-bottom:0}
+  .item:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.05)}
+  .item--hero{border-left:3px solid var(--rose);padding:20px 22px}
+  .item__tag{display:inline-block;font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-bottom:8px}
+  .item__tag--rose{background:var(--rose-dim);color:var(--rose);border:1px solid rgba(190,18,60,0.12)}
+  .item__tag--accent{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(180,83,9,0.1)}
+  .item__tag--teal{background:var(--teal-dim);color:var(--teal);border:1px solid rgba(8,145,178,0.1)}
+  .item__tag--sage{background:var(--sage-dim);color:var(--sage);border:1px solid rgba(101,163,13,0.1)}
+  .item__tag--gold{background:var(--gold-dim);color:var(--gold);border:1px solid rgba(217,119,6,0.1)}
+  .item__tag--slate{background:var(--slate-dim);color:var(--slate);border:1px solid rgba(71,85,105,0.1)}
+  .item__title{font-size:15px;font-weight:700;line-height:1.5;margin-bottom:8px;color:var(--text-bright)}
+  .item__title a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+  .item__title a:hover{border-bottom-color:currentColor}
+  .item--hero .item__title{font-size:18px;line-height:1.45}
+  .item__body{font-size:13px;line-height:1.75;color:var(--text);opacity:0.92}
+  .item__src{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);margin-top:10px;letter-spacing:0.3px}
+  .foot{text-align:center;padding:24px 0 8px;font-family:var(--font-mono);font-size:10px;color:var(--text-dim);letter-spacing:0.6px}
+  a{word-break:break-word}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年8月25日 · 星期二 · PDT 08:01 · America/Los_Angeles</div>
+    <div class="sub">Paper / Ink · 每日精选 18 条 · 头条 2 / 国际 5 / 国内·科技 8 / 开源 3</div>
+  </header>
+
+  <!-- ===== 头条重点 ===== -->
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>头条重点</h2>
+
+    <div class="item item--hero anim" style="--i:1">
+      <span class="item__tag item__tag--rose">头条</span>
+      <div class="item__title"><a href="https://www.reuters.com/business/autos-transportation/trump-says-he-will-raise-tariffs-all-cars-trucks-50-amid-canada-trade-spat-2026-08-24/">特朗普威胁对加拿大汽车加征至50%关税，明年1月1日生效：美加贸易谈判全面破裂</a></div>
+      <div class="item__body">路透社8月24日报道，美国总统特朗普威胁将把所有来自加拿大的汽车与卡车关税提高至50%，并定于2027年1月1日起生效，以回应美加贸易争端升级。据披露，已破裂的原定协议本可大幅削减加拿大汽车关税，但谈判在上周彻底崩盘。纽约时报同日分析称，美加自贸谈判已演变为“全面贸易战”，加方企业面临被挤出美国市场的风险、数千岗位受威胁。加拿大总理卡尼此前表示愿谈但“不会以主权为代价”。市场担忧北美汽车供应链再度承压，底特律三大车企股价盘后承压。</div>
+      <div class="item__src">Reuters + NYT</div>
+    </div>
+
+    <div class="item anim" style="--i:2">
+      <span class="item__tag item__tag--rose">台风</span>
+      <div class="item__title"><a href="https://news.southcn.com/node_33c38983bf/74ca6e12e0.shtml">今年第9号台风“马鞍”10:30登陆广东电白，风力12级：4省区风大雨急、局地特大暴雨250-300毫米</a></div>
+      <div class="item__body">南方网消息，今年第9号台风“马鞍”于8月25日10时30分前后在广东电白沿海登陆，登陆时中心风力33米/秒（12级）、气压975百帕。中央气象台首席预报员许映龙指出，“马鞍”移速高达30-35公里/小时、结构不对称（大风在东侧、降水在西侧）。受其影响，24-26日广东、广西、海南、云南将有大到暴雨，广东西南沿海、广西南部、海南北部有大暴雨、局地特大暴雨250-300毫米，南海北部等海域阵风13-14级。截至今年，“暹芭”“木兰”“马鞍”三台风均直扑广东，副高偏西偏强是主因。今年广西已因台风“紫檀”致10条河流15站超警、8087人紧急转移安置。</div>
+      <div class="item__src">南方网 + 中央气象台 + 央视新闻</div>
+    </div>
+  </section>
+
+  <!-- ===== 国际 ===== -->
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>国际</h2>
+
+    <div class="item anim" style="--i:3">
+      <span class="item__tag item__tag--accent">制裁</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/clyl8965j5go">中国批美新一轮对伊朗“非法单边制裁”：商务部称将采取一切必要措施，外长林剑强调不容干涉</a></div>
+      <div class="item__body">BBC 8月25日报道，中国外交部发言人林剑回应美国财政部长贝森特宣布的“史上最大规模金融围堵”时，谴责美方扩大对伊朗及其贸易伙伴的制裁为“非法单边制裁”，中方将“采取一切必要措施”维护权益，并称中伊合作始终在国际法框架内。贝森特警告任何与伊朗保持金融往来的国家将被孤立，直言“没有人能凌驾于制裁之上”，并称特朗普将致电多国领导人要求切断与伊朗联系。伊朗财长称已备好两年应对计划。分析人士质疑新制裁对伊朗能源收入的实质冲击有限。</div>
+      <div class="item__src">BBC</div>
+    </div>
+
+    <div class="item anim" style="--i:4">
+      <span class="item__tag item__tag--accent">伊朗</span>
+      <div class="item__title"><a href="https://www.nytimes.com/2026/08/25/world/middleeast/iran-us-economy-sanctions.html">美国“经济版诺曼底登陆”围堵伊朗：60实体受限、霍尔木兹海峡封锁推高油价</a></div>
+      <div class="item__body">纽约时报指出，美方将此次行动命名为“Operation Economic Outcast”，形容为对伊朗的“经济D-Day”。财政部已锁定近60个实体、个人与船只，切断其规避制裁的金融通道。伊朗自称为应对已久、拥有“两年计划”并手握反制工具。冲突已持续近半年，霍尔木兹海峡通行受阻与美方海上封锁共同推高全球油价，而上周60天停火窗口到期未获续约，外交努力再度失败。美方声称“不再是管控威胁，而是要终结威胁”。</div>
+      <div class="item__src">NYT + BBC</div>
+    </div>
+
+    <div class="item anim" style="--i:5">
+      <span class="item__tag item__tag--rose">安全</span>
+      <div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/24/video-shows-hundreds-held-captive-after-nigeria-mosque-kidnapping">尼日利亚清真寺绑架案：约600名妇女儿童被掳，武装分子森林视频曝光</a></div>
+      <div class="item__body">卫报报道，武装分子8月22日在尼日尔州德卡拉村一座清真寺发动袭击，掳走约600名妇女、儿童及老人，事后在Facebook与WhatsApp发布受害者被围困于森林的视频，背景可闻儿童哭声。尼日利亚近年来大规模绑赎案频发，中北部成为重灾区。军方已展开搜救，但受害者人数之多、作案地点之公开引发对当地安保能力的质疑。居民称被掳者多为礼拜期间的平民，家属等待赎金谈判消息。</div>
+      <div class="item__src">The Guardian</div>
+    </div>
+
+    <div class="item anim" style="--i:6">
+      <span class="item__tag item__tag--gold">灾难</span>
+      <div class="item__title"><a href="https://www.theguardian.com/world/2026/aug/23/landslide-waste-mound-conakry-guinea-kills-dozens">几内亚首都垃圾山滑坡致30死：暴雨夜崩塌埋压棚屋，政府一周前刚承诺搬迁</a></div>
+      <div class="item__body">卫报8月23日报道，几内亚首都科纳克里一处巨型垃圾场在夜间暴雨后发生滑坡，至少30人死亡，棚屋与帐篷被掩埋。讽刺的是，政府仅一周前才宣布因雨季滑坡与洪灾风险将关闭并搬迁该场地。该国每年雨季均有类似致命事故，拥挤的非正式定居点紧邻垃圾山加剧伤亡。目前搜救仍在进行，死亡人数恐进一步上升。政府称已启动调查并安置受灾居民。</div>
+      <div class="item__src">The Guardian / AFP</div>
+    </div>
+
+    <div class="item anim" style="--i:7">
+      <span class="item__tag item__tag--accent">移民</span>
+      <div class="item__title"><a href="https://www.aljazeera.com/news/2026/8/25/search-continues-in-tunisia-after-migrant-boat-sinking-sparks-protests">突尼斯移民船沉没：12具遗体已打捞、1人漂流48小时获救，搜寻2人失踪并引发全国抗议</a></div>
+      <div class="item__body">半岛电视台25日报道，一艘载有15名多为青年、拟前往意大利的移民船8月22日晚在扎尔吉斯至本盖尔丹海域沉没，距岸约14海里。截至24日已打捞12具遗体，仅1人漂流约48小时后被商船救起，2人仍失踪。近半遇难者来自同一家庭。事件在东南沿海城市本盖尔丹引发纵火、封路抗议，民众指责长期边缘化与就业匮乏迫使青年铤而走险。国际移民组织称今年地中海中部已至少821人死亡或失踪，较去年同期翻倍。</div>
+      <div class="item__src">Al Jazeera + Reuters + 突尼斯国民卫队</div>
+    </div>
+  </section>
+
+  <!-- ===== 国内·科技 ===== -->
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:4"><span class="dot"></span>国内 · 科技</h2>
+
+    <div class="item anim" style="--i:8">
+      <span class="item__tag item__tag--teal">气象</span>
+      <div class="item__title"><a href="https://news.cctv.cn/2026/08/24/ARTIkd05gohfer7zL1JIaJoY260824.shtml">广西“紫檀”影响：10条河流15个水文站超警，8087人紧急转移安置</a></div>
+      <div class="item__body">央视新闻8月24日报道，受台风“紫檀”残余环流与季风叠加影响，广西10条河流、15个水文站出现超警戒水位，多地出现城乡积涝与中小河流洪水。自治区已紧急转移安置8087人，加强水库调度与堤防巡查。气象部门提醒，“马鞍”接踵而至，珠江流域防城江、钦江等可能再现超警，需警惕次生灾害叠加。</div>
+      <div class="item__src">央视新闻</div>
+    </div>
+
+    <div class="item anim" style="--i:9">
+      <span class="item__tag item__tag--sage">食安</span>
+      <div class="item__title"><a href="https://news.cctv.cn/2026/08/24/ARTIkG0cfi0efq4DhJXCB0eb260824.shtml">三部门督办“白菜蘸甲醛”：市场监管总局等指导地方快速处置，严查保鲜剂滥用</a></div>
+      <div class="item__body">央视网“8点见”24日报道，针对网络曝光的“白菜蘸甲醛溶液保鲜”问题，市场监管总局、农业农村部、卫健委三部门已联合指导涉事地方快速处置，开展全链条排查与抽检，强调甲醛不得作为食品保鲜剂使用，违者将依法严惩。专家提醒，甲醛超标蔬菜有明显刺鼻味，消费者应通过正规渠道购买并充分清洗焯水。</div>
+      <div class="item__src">央视网</div>
+    </div>
+
+    <div class="item anim" style="--i:10">
+      <span class="item__tag item__tag--teal">AI芯片</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/994/253.htm">OpenAI携手博通发布Jalapeño推理芯片：每瓦吞吐为GB200/GB300的1.5-1.9倍，延迟仅28%-59%</a></div>
+      <div class="item__body">IT之家与TechCrunch 8月25日报道，OpenAI在Hot Chips大会公布自研推理芯片Jalapeño细节：在SemiAnalysis InferenceX基准中，对比英伟达GB200/GB300，于GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T三模型上，每瓦AI工作量提升1.5至1.9倍，端到端延迟降至28%-59%。芯片与博通联合开发，聚焦预填充与通信瓶颈，KV缓存本地化。OpenAI计划2026年底小规模部署、2027年放量，目标打造多代推理平台。</div>
+      <div class="item__src">IT之家 + TechCrunch + OpenAI Blog</div>
+    </div>
+
+    <div class="item anim" style="--i:11">
+      <span class="item__tag item__tag--teal">芯片</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/08/25/apple-debuts-its-most-powerful-chip-ever-in-m5-ultra-and-m6/">苹果发布M5 Ultra与M6：M5 Ultra为首款四芯片融合、36核CPU+80核GPU、1.2TB/s带宽</a></div>
+      <div class="item__body">TechCrunch 8月25日报道，苹果推出两款自研芯片：M5 Ultra由两颗M5 Max双芯片融合而成，是苹果首款四芯片（quad-die）设计，36核CPU、80核GPU，统一内存带宽1.2TB/s、较M3 Ultra提升50%，面向影视特效与本地大模型；M6采用2nm工艺，12核CPU（较M5多2核），峰值GPU算力提升约30%，集成双16核神经网络引擎，强化端侧LLM提示处理。新款Mac mini（M6）与Mac Studio（M5 Ultra）已开启预订，分别将于9月22日后发货。</div>
+      <div class="item__src">TechCrunch + Apple Newsroom</div>
+    </div>
+
+    <div class="item anim" style="--i:12">
+      <span class="item__tag item__tag--accent">硬件</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/994/248.htm">新款Mac mini首支持Genlock：USB-C直连显示器与iPhone 17 Pro实现帧级同步</a></div>
+      <div class="item__body">IT之家8月25日报道，搭载M6的Mac mini售价6999元起（教育6199元）、M5 Pro版12999元起，首次支持Genlock同步锁相，可通过USB-C让显示器、摄像头（含iPhone 17 Pro）实现帧级精准同步，助力多机位与虚拟制作、子弹时间特效。苹果营销副总裁Joswiak称可省去逐帧手动对齐。多款Mac此前因新品传闻出现缺货，供应链称最长等待达84天。</div>
+      <div class="item__src">IT之家 + Apple</div>
+    </div>
+
+    <div class="item anim" style="--i:13">
+      <span class="item__tag item__tag--sage">大模型</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/994/252.htm">阿里Qwen3.8-Flash-Next明晚23:00开源：基于下一代Qwen4架构的多模态MoE</a></div>
+      <div class="item__body">IT之家8月25日报道，魔搭社区显示，阿里千问将于8月26日23:00开源Qwen3.8-Flash-Next及FP8版本。该模型基于下一代Qwen4架构的多模态MoE设计，官方称提前放出架构改进以便社区为完整Qwen4家族做准备。此前Qwen3.8系列已在编程与办公场景超越Qwen3.7-Plus，2.4T参数MoE版本激活95B、支持256K上下文。本次Flash-Next被视为Qwen4正式发布前的“先行版”。</div>
+      <div class="item__src">IT之家 + ModelScope</div>
+    </div>
+
+    <div class="item anim" style="--i:14">
+      <span class="item__tag item__tag--teal">健康</span>
+      <div class="item__title"><a href="https://www.nytimes.com/2026/08/25/us/nfl-cte-brain-disease.html">重磅研究：至少四分之一NFL球员患CTE，脑损伤与橄榄球强关联再被证实</a></div>
+      <div class="item__body">纽约时报25日报道，一项覆盖现役与退役球员的大型研究发现，至少25%的NFL球员罹患慢性创伤性脑病（CTE），显著高于普通人群。研究团队呼吁职业安全机构介入，并为青少年橄榄球家长提供风险最小化指南。同期，《头条》播客与多家媒体讨论各州为“买雨水”支付数百万美元与CTE议题的交集，凸显运动安全与公共投入的平衡难题。NFL方面尚未正式回应，专家建议限制头部撞击训练频次。</div>
+      <div class="item__src">NYT</div>
+    </div>
+
+    <div class="item anim" style="--i:15">
+      <span class="item__tag item__tag--accent">财经</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/994/254.htm">小米调整手机售后规则：删除“二手产品不属三包”表述，售后边界更清晰</a></div>
+      <div class="item__body">IT之家8月25日最新消息，小米对手机售后规则进行再调整，删除此前关于“二手产品/商品不属于三包范围”的相关表述，进一步明确三包适用边界。此举被解读为回应消费者对二手交易与官方保修衔接的关切，有望提升二手市场流通信心。具体细则以小米官网公示为准。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+  </section>
+
+  <!-- ===== GitHub ===== -->
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:5"><span class="dot"></span>值得关注的项目</h2>
+
+    <div class="item anim" style="--i:16">
+      <span class="item__tag item__tag--slate">开源 ⭐3810</span>
+      <div class="item__title"><a href="https://github.com/MengTo/threeui">MengTo/threeui：开源ThreeUI社区组件目录，实时可交互</a></div>
+      <div class="item__body">一周内获3810星的ThreeUI组件目录，提供基于Three.js的实时可交互组件与示例，涵盖材质、光照、动效与布局，支持在线预览与一键复用。适合前端与创意开发者快速搭建3D界面，原型效率显著提升。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+
+    <div class="item anim" style="--i:17">
+      <span class="item__tag item__tag--slate">开源 ⭐2371</span>
+      <div class="item__title"><a href="https://github.com/b-nnett/grok-bot-0.18-reconstructed">b-nnett/grok-bot-0.18-reconstructed：Grok Bot 0.18非官方源码重构与扩展</a></div>
+      <div class="item__body">获2371星的非官方重构项目，面向Grok Bot 0.18.0进行源码级还原与功能扩展，提供可自托管的机器人框架与插件机制，支持多平台接入与对话编排。项目强调可复现性与可审计性，适合研究对话系统与自动化运营的开发者。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+
+    <div class="item anim" style="--i:18">
+      <span class="item__tag item__tag--slate">工具 ⭐1427</span>
+      <div class="item__title"><a href="https://github.com/tobi/walgit">tobi/walgit：把Git仓库“上链”存证的轻量工具</a></div>
+      <div class="item__body">一周内斩获1427星的walgit，将Git提交与WAL（Write-Ahead Log）思想结合，提供不可篡改的存证与时间戳能力，适合对代码溯源与合规审计有需求的团队。CLI简洁，可与现有Git工作流无缝集成。</div>
+      <div class="item__src">GitHub Trending</div>
+    </div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper / Ink · 数据截至 2026-08-25 08:01 PDT · 条目 18 条已去重
+  </footer>
+</div>
+</body>
+</html>
