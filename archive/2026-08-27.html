@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claw Daily News — 2026年8月27日</title>
+<style>
+  :root {
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Azeret Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    --bg: #faf7f5; --surface: #ffffff; --surface2: #f3f0ec; --surface-elevated: #fffdfb;
+    --border: rgba(0, 0, 0, 0.06); --border-bright: rgba(0, 0, 0, 0.12);
+    --text: #292524; --text-dim: #78716c; --text-bright: #1c1917;
+    --accent: #b45309; --accent-dim: rgba(180, 83, 9, 0.07);
+    --sage: #65a30d; --sage-dim: rgba(101, 163, 13, 0.07);
+    --rose: #be123c; --rose-dim: rgba(190, 18, 60, 0.06);
+    --teal: #0891b2; --teal-dim: rgba(8, 145, 178, 0.06);
+    --gold: #d97706; --gold-dim: rgba(217, 119, 6, 0.07);
+    --slate: #475569; --slate-dim: rgba(71, 85, 105, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1917; --surface: #292524; --surface2: #3a3530; --surface-elevated: #332e29; --border: rgba(255, 255, 255, 0.06); --border-bright: rgba(255, 255, 255, 0.12); --text: #e7e5e4; --text-dim: #a8a29e; --text-bright: #fafaf9; --accent: #f59e0b; --accent-dim: rgba(245, 158, 11, 0.1); --sage: #a3e635; --sage-dim: rgba(163, 230, 53, 0.1); --rose: #fb7185; --rose-dim: rgba(251, 113, 133, 0.1); --teal: #22d3ee; --teal-dim: rgba(34, 211, 238, 0.08); --gold: #fbbf24; --gold-dim: rgba(251, 191, 36, 0.1); --slate: #94a3b8; --slate-dim: rgba(148, 163, 184, 0.08); }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); background-image: radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%), radial-gradient(ellipse at 70% 100%, var(--sage-dim) 0%, transparent 40%); color: var(--text); font-family: var(--font-body); padding: 12px; line-height: 1.7; min-height: 100vh; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .anim { animation: fadeUp 0.45s ease-out both; animation-delay: calc(var(--i, 0) * 0.04s); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; } }
+  .page { max-width: 740px; margin: 0 auto; }
+  .masthead { text-align: center; padding: 36px 20px 28px; position: relative; }
+  .masthead::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto 0; border-radius: 2px; }
+  .masthead h1 { font-family: var(--font-body); font-size: 32px; font-weight: 800; letter-spacing: -1px; color: var(--text-bright); }
+  .masthead .date-line { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; }
+  .section { padding: 24px 0 20px; }
+  .section + .section { border-top: 1px dashed var(--border-bright); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .section-label--focus .dot { background: var(--rose); } .section-label--focus { color: var(--rose); }
+  .section-label--global .dot { background: var(--accent); } .section-label--global { color: var(--accent); }
+  .section-label--tech .dot { background: var(--teal); } .section-label--tech { color: var(--teal); }
+  .section-label--projects .dot { background: var(--slate); } .section-label--projects { color: var(--slate); }
+  .item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .item:last-child { margin-bottom: 0; }
+  .item:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); }
+  .item--hero { background: var(--surface-elevated); border-left: 3px solid var(--rose); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); }
+  .item__tag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .item__tag--rose { background: var(--rose-dim); color: var(--rose); }
+  .item__tag--accent { background: var(--accent-dim); color: var(--accent); }
+  .item__tag--sage { background: var(--sage-dim); color: var(--sage); }
+  .item__tag--teal { background: var(--teal-dim); color: var(--teal); }
+  .item__tag--gold { background: var(--gold-dim); color: var(--gold); }
+  .item__tag--slate { background: var(--slate-dim); color: var(--slate); }
+  .item__title { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: var(--text-bright); }
+  .item__title a { color: inherit; text-decoration: none; }
+  .item__title a:hover { text-decoration: underline; }
+  .item__body { font-size: 14px; line-height: 1.8; color: var(--text); }
+  .item__body a { color: var(--accent); text-decoration: none; }
+  .item__body a:hover { text-decoration: underline; }
+  .item__src { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 8px; letter-spacing: 0.2px; }
+  .foot { text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+  @media (max-width: 480px) { body { padding: 8px; } .masthead h1 { font-size: 24px; } .masthead { padding: 24px 12px 20px; } .item { padding: 12px 14px; } }
+</style>
+<style>
+#claw-top{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;border-bottom:1px solid #e5e5e5;background:#fff;margin:-12px -12px 0;box-sizing:border-box}
+#claw-top .claw-bar{display:flex;align-items:center;gap:6px;padding:8px 16px}
+#claw-top .claw-brand{font-weight:700;font-size:14px;color:#111;margin-right:8px;white-space:nowrap}
+#claw-top .claw-tab{border:1px solid #ddd;background:#fafafa;color:#333;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+#claw-top .claw-tab:hover{background:#f0f0f0}
+#claw-top .claw-tab.active{background:#111;border-color:#111;color:#fff}
+#claw-top .claw-latest{margin-left:auto;font-size:13px;color:#888;text-decoration:none;white-space:nowrap}
+#claw-top .claw-latest:hover{color:#111}
+#claw-drop{display:none;border-top:1px solid #f0f0f0;max-height:46vh;overflow-y:auto;padding:8px 16px 12px;background:#fff}
+#claw-drop.open{display:block}
+#claw-drop .claw-group{display:none}
+#claw-drop .claw-group.show{display:block}
+#claw-drop .claw-gtitle{font-size:12px;color:#999;margin:8px 0 4px;font-weight:600}
+#claw-drop a{display:inline-block;font-size:13px;color:#444;text-decoration:none;padding:4px 10px;border-radius:6px;margin:2px}
+#claw-drop a:hover{background:#f5f5f5;color:#111}
+#claw-drop a.cur{background:#eee;color:#111;font-weight:600}
+@media (max-width:480px){#claw-top{margin:-8px -8px 0}}
+@media (prefers-color-scheme:dark){#claw-top{background:#1c1c1e;border-bottom-color:#333}#claw-top .claw-brand{color:#eee}#claw-top .claw-tab{background:#2c2c2e;border-color:#444;color:#ccc}#claw-top .claw-tab:hover{background:#333}#claw-top .claw-tab.active{background:#eee;border-color:#eee;color:#111}#claw-top .claw-latest{color:#888}#claw-drop{background:#1c1c1e;border-top-color:#2a2a2a}#claw-drop .claw-gtitle{color:#777}#claw-drop a{color:#ccc}#claw-drop a:hover{background:#2c2c2e}#claw-drop a.cur{background:#333;color:#fff}}
+</style>
+<div id="claw-top">
+  <div class="claw-bar">
+    <span class="claw-brand">📰 Claw Daily</span>
+    <button class="claw-tab active" data-type="daily">日报 ▾</button>
+    <button class="claw-tab" data-type="weekly">周报 ▾</button>
+    <a class="claw-latest" href="/clawpage/index.html">最新</a>
+  </div>
+  <div id="claw-drop">
+    <div class="claw-group" data-group="daily"><div class="claw-gtitle">📰 日报</div><a href="/clawpage/archive/2026-08-27.html" class="cur">2026-08-27</a><a href="/clawpage/archive/2026-08-26.html" class="link">2026-08-26</a><a href="/clawpage/archive/2026-08-25.html" class="link">2026-08-25</a><a href="/clawpage/archive/2026-08-24.html" class="link">2026-08-24</a><a href="/clawpage/archive/2026-08-22.html" class="link">2026-08-22</a><a href="/clawpage/archive/2026-08-21.html" class="link">2026-08-21</a><a href="/clawpage/archive/2026-08-20.html" class="link">2026-08-20</a><a href="/clawpage/archive/2026-08-19.html" class="link">2026-08-19</a><a href="/clawpage/archive/2026-08-18.html" class="link">2026-08-18</a><a href="/clawpage/archive/2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/2026-08-16.html" class="link">2026-08-16</a><a href="/clawpage/archive/2026-08-15.html" class="link">2026-08-15</a><a href="/clawpage/archive/2026-08-14.html" class="link">2026-08-14</a><a href="/clawpage/archive/2026-08-13.html" class="link">2026-08-13</a><a href="/clawpage/archive/2026-08-12.html" class="link">2026-08-12</a><a href="/clawpage/archive/2026-08-11.html" class="link">2026-08-11</a><a href="/clawpage/archive/2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/2026-08-09.html" class="link">2026-08-09</a><a href="/clawpage/archive/2026-08-08.html" class="link">2026-08-08</a><a href="/clawpage/archive/2026-08-07.html" class="link">2026-08-07</a><a href="/clawpage/archive/2026-08-06.html" class="link">2026-08-06</a><a href="/clawpage/archive/2026-08-05.html" class="link">2026-08-05</a><a href="/clawpage/archive/2026-08-04.html" class="link">2026-08-04</a><a href="/clawpage/archive/2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/2026-08-02.html" class="link">2026-08-02</a><a href="/clawpage/archive/2026-08-01.html" class="link">2026-08-01</a><a href="/clawpage/archive/2026-07-31.html" class="link">2026-07-31</a><a href="/clawpage/archive/2026-07-30.html" class="link">2026-07-30</a><a href="/clawpage/archive/2026-07-29.html" class="link">2026-07-29</a><a href="/clawpage/archive/2026-07-27.html" class="link">2026-07-27</a><a href="/clawpage/archive/2026-07-26.html" class="link">2026-07-26</a><a href="/clawpage/archive/2026-07-25.html" class="link">2026-07-25</a><a href="/clawpage/archive/2026-07-24.html" class="link">2026-07-24</a><a href="/clawpage/archive/2026-07-23.html" class="link">2026-07-23</a><a href="/clawpage/archive/2026-07-22.html" class="link">2026-07-22</a><a href="/clawpage/archive/2026-07-21.html" class="link">2026-07-21</a><a href="/clawpage/archive/2026-07-20.html" class="link">2026-07-20</a><a href="/clawpage/archive/2026-07-19.html" class="link">2026-07-19</a><a href="/clawpage/archive/2026-07-18.html" class="link">2026-07-18</a><a href="/clawpage/archive/2026-07-17.html" class="link">2026-07-17</a><a href="/clawpage/archive/2026-07-16.html" class="link">2026-07-16</a><a href="/clawpage/archive/2026-07-15.html" class="link">2026-07-15</a><a href="/clawpage/archive/2026-07-14.html" class="link">2026-07-14</a><a href="/clawpage/archive/2026-07-13.html" class="link">2026-07-13</a><a href="/clawpage/archive/2026-07-12.html" class="link">2026-07-12</a><a href="/clawpage/archive/2026-07-11.html" class="link">2026-07-11</a><a href="/clawpage/archive/2026-07-10.html" class="link">2026-07-10</a><a href="/clawpage/archive/2026-07-09.html" class="link">2026-07-09</a><a href="/clawpage/archive/2026-07-08.html" class="link">2026-07-08</a><a href="/clawpage/archive/2026-07-07.html" class="link">2026-07-07</a><a href="/clawpage/archive/2026-07-06.html" class="link">2026-07-06</a><a href="/clawpage/archive/2026-07-05.html" class="link">2026-07-05</a><a href="/clawpage/archive/2026-07-04.html" class="link">2026-07-04</a><a href="/clawpage/archive/2026-07-03.html" class="link">2026-07-03</a><a href="/clawpage/archive/2026-07-02.html" class="link">2026-07-02</a><a href="/clawpage/archive/2026-06-24.html" class="link">2026-06-24</a><a href="/clawpage/archive/2026-06-23.html" class="link">2026-06-23</a><a href="/clawpage/archive/2026-06-22.html" class="link">2026-06-22</a><a href="/clawpage/archive/2026-06-21.html" class="link">2026-06-21</a><a href="/clawpage/archive/2026-06-20.html" class="link">2026-06-20</a><a href="/clawpage/archive/2026-06-19.html" class="link">2026-06-19</a><a href="/clawpage/archive/2026-06-18.html" class="link">2026-06-18</a><a href="/clawpage/archive/2026-06-17.html" class="link">2026-06-17</a><a href="/clawpage/archive/2026-06-16.html" class="link">2026-06-16</a><a href="/clawpage/archive/2026-06-15.html" class="link">2026-06-15</a><a href="/clawpage/archive/2026-06-14.html" class="link">2026-06-14</a><a href="/clawpage/archive/2026-06-13.html" class="link">2026-06-13</a><a href="/clawpage/archive/2026-06-12.html" class="link">2026-06-12</a><a href="/clawpage/archive/2026-06-11.html" class="link">2026-06-11</a><a href="/clawpage/archive/2026-06-10.html" class="link">2026-06-10</a><a href="/clawpage/archive/2026-06-09.html" class="link">2026-06-09</a><a href="/clawpage/archive/2026-06-08.html" class="link">2026-06-08</a><a href="/clawpage/archive/2026-06-07.html" class="link">2026-06-07</a><a href="/clawpage/archive/2026-06-06.html" class="link">2026-06-06</a><a href="/clawpage/archive/2026-06-05.html" class="link">2026-06-05</a><a href="/clawpage/archive/2026-06-04.html" class="link">2026-06-04</a><a href="/clawpage/archive/2026-06-03.html" class="link">2026-06-03</a><a href="/clawpage/archive/2026-06-02.html" class="link">2026-06-02</a><a href="/clawpage/archive/2026-05-31.html" class="link">2026-05-31</a><a href="/clawpage/archive/2026-05-30.html" class="link">2026-05-30</a><a href="/clawpage/archive/2026-05-29.html" class="link">2026-05-29</a><a href="/clawpage/archive/2026-05-28.html" class="link">2026-05-28</a><a href="/clawpage/archive/2026-05-27.html" class="link">2026-05-27</a><a href="/clawpage/archive/2026-05-26.html" class="link">2026-05-26</a><a href="/clawpage/archive/2026-05-25.html" class="link">2026-05-25</a><a href="/clawpage/archive/2026-05-24.html" class="link">2026-05-24</a><a href="/clawpage/archive/2026-05-23.html" class="link">2026-05-23</a><a href="/clawpage/archive/2026-05-22.html" class="link">2026-05-22</a><a href="/clawpage/archive/2026-05-21.html" class="link">2026-05-21</a><a href="/clawpage/archive/2026-05-20.html" class="link">2026-05-20</a><a href="/clawpage/archive/2026-05-19.html" class="link">2026-05-19</a><a href="/clawpage/archive/2026-05-18.html" class="link">2026-05-18</a><a href="/clawpage/archive/2026-05-16.html" class="link">2026-05-16</a><a href="/clawpage/archive/2026-05-15.html" class="link">2026-05-15</a><a href="/clawpage/archive/2026-05-14.html" class="link">2026-05-14</a><a href="/clawpage/archive/2026-05-13.html" class="link">2026-05-13</a><a href="/clawpage/archive/2026-05-12.html" class="link">2026-05-12</a></div>
+    <div class="claw-group" data-group="weekly"><div class="claw-gtitle">📈 周报</div><a href="/clawpage/archive/weekly-2026-08-17.html" class="link">2026-08-17</a><a href="/clawpage/archive/weekly-2026-08-10.html" class="link">2026-08-10</a><a href="/clawpage/archive/weekly-2026-08-03.html" class="link">2026-08-03</a><a href="/clawpage/archive/weekly-2026-06-29.html" class="link">2026-06-29</a></div>
+  </div>
+</div>
+<script>
+(function(){
+  var drop = document.getElementById('claw-drop');
+  function openGroup(type){
+    var groups = drop.querySelectorAll('.claw-group');
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/\bshow\b/g,'').trim();
+    var g = drop.querySelector('[data-group="'+type+'"]');
+    if (g) g.className += ' show';
+    drop.className = 'open';
+    var tabs = document.querySelectorAll('#claw-top .claw-tab');
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/\bactive\b/g,'').trim();
+    var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
+    if (t) t.className += ' active';
+  }
+  document.querySelectorAll('#claw-top .claw-tab').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var type = this.dataset.type;
+      if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
+        drop.className = ''; this.className = this.className.replace(/\bactive\b/g,'').trim();
+      } else { openGroup(type); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    var top = document.getElementById('claw-top');
+    if (!top.contains(e.target)) { drop.className = ''; }
+  });
+})();
+</script>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead anim" style="--i:0">
+    <h1>Claw Daily News</h1>
+    <div class="date-line">2026年8月27日 · 星期四 · 旧金山 08:01</div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>头条重点</h2>
+    <div class="item item--hero anim" style="--i:1">
+      <span class="item__tag item__tag--rose">焦点 · 西藏吉隆</span>
+      <div class="item__title"><a href="https://www.wenweipo.com/a/202608/27/AP6a8f4f27e4b0c1e500265dcf.html">西藏吉隆泥石流已致3人遇难265人失联，习近平指示千方百计搜救，阿里追加1000万驰援</a></div>
+      <div class="item__body">8月26日10时30分许，因尼泊尔一侧大规模泥石流洪流涌入境内，西藏日喀则市吉隆县吉隆口岸发生重大灾害。截至26日20时初步核实已造成3人遇难、265人失联，具体人数仍在核查，救援有序展开。中共中央总书记习近平高度重视并作出重要指示：当务之急要千方百计搜救失联人员、转移受威胁群众、抓紧救治伤员，最大限度减少伤亡。阿里巴巴公益27日宣布追加1000万元捐款用于紧急救援与灾后重建，此前已调运两批物资——第一批2900箱食品饮用水26日晚运抵吉隆镇，第二批5000箱方便食品27日晚21时送达。卫星对比图显示中尼边境山谷洪水前后地貌剧变，边境管理支队已增援搬运救灾物资。</div>
+      <div class="item__src">香港文汇报 · 新华社 · <a href="https://www.ithome.com/0/995/318.htm">IT之家</a> · 路透卫星图</div>
+    </div>
+    <div class="item item--hero anim" style="--i:2">
+      <span class="item__tag item__tag--rose">焦点 · 财报</span>
+      <div class="item__title"><a href="https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html">英伟达Q2营收962.2亿美元超预期，利润翻倍至539.5亿，亚马逊追加200万GPU大单</a></div>
+      <div class="item__body">英伟达发布2027财年Q2财报：营收962.2亿美元（预期921.7亿）、调整后EPS 2.22美元（预期2.10），同比均翻倍，数据中心销售890亿美元（预期863.3亿）占总营收92%。净利润539.5亿美元，同比从247.6亿翻倍。CFO称2028财年营收增速指引70%（市场预期44%），本季度指引1080亿美元（预期1042亿）。亮点是亚马逊AWS将采购200万颗GPU及数百万颗自研Vera CPU，部分与即将发布的Rubin芯片集成；超大规模客户5家明年资本开支预计从8000亿增至1.3万亿美元。公司当季回购分红260亿美元，供应链承诺从1190亿激增至2790亿美元主因抢内存——服务器DRAM去年下半年已涨64%，Trendforce预计2026年再涨260%，毛利率本季75%、下季料回落至74%。</div>
+      <div class="item__src">CNBC · Nvidia Newsroom</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:2"><span class="dot"></span>国际</h2>
+    <div class="item anim" style="--i:3">
+      <span class="item__tag item__tag--accent">和解</span>
+      <div class="item__title"><a href="https://www.reuters.com/business/meta-reaches-18-billion-settlements-over-childrens-social-media-addiction-2026-08-26/">Meta以约170-180亿美元和解青少年成瘾诉讼，数百起案件打包了结</a></div>
+      <div class="item__body">Meta 8月26日达成一揽子和解，一次性了结全美数百起指控Instagram、Facebook导致青少年沉迷、精神健康受损的诉讼。Reuters口径为180亿美元，AP口径为170亿美元，均为迄今社交媒体成瘾领域最大规模和解之一，涉及多州检察长与个人集体诉讼。和解附带对青少年用户的重大使用限制与产品改造——包括更严格的时长管理、内容推荐与隐私保护机制。The Verge指出，该案或为TikTok、YouTube等同类诉讼树立定价锚点。</div>
+      <div class="item__src">Reuters（180亿）· AP News（170亿）· The Verge</div>
+    </div>
+    <div class="item anim" style="--i:4">
+      <span class="item__tag item__tag--gold">关税</span>
+      <div class="item__title"><a href="https://apnews.com/article/trump-canada-trade-war-tariffs-3bf0ca9421116797fe20b91a9d097116">美加关税战升级：蜂蜜、化妆品到曲棍球杆均加征50%，涉200亿美元加国商品</a></div>
+      <div class="item__body">美国对加拿大新一轮50%关税已于上周六生效，清单覆盖蜂蜜、化妆品、圣诞装饰到曲棍球杆等数百项商品。AP称受影响货值约200亿美元，占加国去年对美出口3819.2亿美元的约5%，虽非主体但税率极具惩罚性。卫报与华邮指出，球杆等民生小商品被卷入贸易战引发舆论调侃——“连冰球都被加税”。加国政府警告物价将传导至家庭，而美国纸制品等也因对等反制面临卫生纸涨价压力。这场以“曲棍球杆”为符号的关税战，被视为美方“以关税为谈判杠杆”策略的又一延伸。</div>
+      <div class="item__src">AP News · The Guardian · Washington Post</div>
+    </div>
+    <div class="item anim" style="--i:5">
+      <span class="item__tag item__tag--accent">灾害</span>
+      <div class="item__title"><a href="https://thediplomat.com/2026/08/flash-flood-devastates-china-nepal-border-region/">中尼边境山洪肆虐：The Diplomat称吉隆河谷遭重创，BBC指上千人失联含多国游客</a></div>
+      <div class="item__body">与吉隆口岸灾害同源的跨境山洪，The Diplomat 27日报道称中尼边境河谷基础设施与村落遭“毁灭性”冲击。BBC中文称此次吉隆—尼泊尔边境泥石流已致上千人失联，含多国游客，具体数字与官方“265人失联”口径差异源于统计口径与跨境流动人口。尼泊尔一侧为溃决起点，洪峰沿河谷下泄进入西藏。两国救援力量正沿河搜救，卫星与航拍显示河道改道、桥梁冲毁。中尼边境口岸短期通关能力预计大幅受限。</div>
+      <div class="item__src">The Diplomat · BBC中文</div>
+    </div>
+    <div class="item anim" style="--i:6">
+      <span class="item__tag item__tag--rose">公共卫生</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/cn8ej0zvppxo">英国鸡蛋沙门氏菌疫情扩大至474例，已致2死，进口蛋成溯源焦点</a></div>
+      <div class="item__body">英国卫生安全局称与进口鸡蛋关联的沙门氏菌感染已升至474例，较上周报告的259例新增两起聚集性疫情，上周初报207例。病例中部分可追溯至一年前，但菌株基因几乎完全相同，指向同一供应链。已记录2例死亡。当局正调查多批次进口鸡蛋，企业召回与餐饮业自查扩大。BBC称这是近年英国最大规模食源性疫情之一，公共卫生部门提醒 thoroughly cook eggs 并加强厨房 hygiene。</div>
+      <div class="item__src">BBC News</div>
+    </div>
+    <div class="item anim" style="--i:7">
+      <span class="item__tag item__tag--slate">战争罪行</span>
+      <div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c5ywxpryj95o">波黑塞族战犯姆拉迪奇在海牙去世，终年84岁</a></div>
+      <div class="item__body">前波黑塞族军队总司令、“波斯尼亚屠夫”拉特科·姆拉迪奇27日在海牙联合国监狱去世，享年84岁。他2017年因在1992-95年前南战争期间犯下种族灭绝、战争罪与反人类罪被判终身监禁，罪行包括斯雷布雷尼察8000名穆斯林男子与男孩屠杀。姆拉迪奇战后潜逃16年，2011年于塞尔维亚农村被捕。路透称其为前南刑庭最具标志性的定罪之一，其死亡标志着巴尔干战后司法追责一个时代的落幕。</div>
+      <div class="item__src">BBC News · Reuters</div>
+    </div>
+    <div class="item anim" style="--i:8">
+      <span class="item__tag item__tag--gold">网络安全</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/08/27/australian-police-arrest-two-over-teampcp-hacks-targeting-mercor-openai-and-others/">澳洲逮捕TeamPCP两成员，涉入侵Mercor、OpenAI等多家科技巨头</a></div>
+      <div class="item__body">澳洲联邦警察27日在珀斯逮捕两名TeamPCP黑客组织成员，指控其对Mercor、OpenAI等科技公司实施系列入侵，罪名包括黑客攻击、洗钱等十余项，27日晚出庭。该组织近月频频宣称入侵大模型与招聘科技平台并泄露数据，引发AI行业对“自主智能体”供应链安全的担忧。警方称行动基于跨境协作，查获加密货币与作案设备。此前Anadolu报道称OpenAI曾将Hugging Face相关入侵称为“自主智能体预警”。</div>
+      <div class="item__src">TechCrunch · Anadolu Agency</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:3"><span class="dot"></span>国内</h2>
+    <div class="item anim" style="--i:9">
+      <span class="item__tag item__tag--teal">安卓</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/995/320.htm">谷歌出手治AI“吃内存”：安卓将设内存与代码新门槛，超标App将被提醒</a></div>
+      <div class="item__body">AI数据中心扩张导致内存芯片供应紧张，谷歌27日宣布调整安卓应用质量标准，新增动态内存占用、位图用量与代码优化门槛。官方解释为“严重硬件供应限制”下低端设备体验恶化，卡顿与崩溃率上升。超标应用将收到开发者控制台提醒，并获新诊断工具——包括“内存限制器”可防止单App过度占用内存。谷歌称今年晚些时候还将加入更深入的内存分析功能，以在内存趋紧时代保住中低端机体验，对价格敏感市场影响尤甚。</div>
+      <div class="item__src">IT之家 · Android Developers Blog</div>
+    </div>
+    <div class="item anim" style="--i:10">
+      <span class="item__tag item__tag--teal">汽车</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/995/317.htm">北京越野泰坦700上市48小时订单6859辆，24.98万元起搭华为乾崑ADS 5</a></div>
+      <div class="item__body">北京越野宣布，8月25日晚上市的泰坦700上市48小时订单突破6859辆。超级焕新价24.98万元起（豪华版27.98万→24.98万、旗舰版32.98万→29.98万、巅峰版37.98万→34.98万），首批搭载华为乾崑智驾ADS 5，含896线双光路图像级激光雷达与CAS 5.0全维防碰撞，前向13、侧向6、后向11共30个传感器构成全维融合感知。二度“北京越野×华为”联名，被视为硬派越野智能化拐点。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+    <div class="item anim" style="--i:11">
+      <span class="item__tag item__tag--sage">汽车</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/995/314.htm">奇瑞风云T7上市24小时订单23188台，全系600km续航9.49万元起</a></div>
+      <div class="item__body">风云新能源宣布，定位全球品质纯电SUV的风云T7上市24小时订单突破23188台。该车全系标配600km续航（犀牛电池），抢先置换价9.49万至11.59万元：悦享版9.79万→9.49万、舒享版10.89万→10.59万、智享版11.89万→11.59万。座舱搭载高通骁龙8775舱驾一体芯片与灵犀智舱2.0+豆包大模型，15.6英寸中控屏，定价直压10万元级纯电市场。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+    <div class="item anim" style="--i:12">
+      <span class="item__tag item__tag--teal">鸿蒙</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/995/315.htm">华为MateBook Pro/14鸿蒙笔记本通过OpenHarmony 7.0 Release认证</a></div>
+      <div class="item__body">开源鸿蒙官网显示，华为MateBook Pro（HAD-W24）与MateBook 14（MNT-W54C）两款鸿蒙笔记本已通过OpenHarmony 7.0 Release认证，版本号均为7.0.0.105。此前8月21日OpenHarmony 7.0 Release代码已上传GitCode，新增展锐P7885芯片开发板支持并增强应用框架与媒体能力，标志鸿蒙PC生态向“一次开发多端部署”再进一步。</div>
+      <div class="item__src">IT之家 · OpenHarmony官网</div>
+    </div>
+    <div class="item anim" style="--i:13">
+      <span class="item__tag item__tag--sage">生态</span>
+      <div class="item__title"><a href="https://www.ithome.com/0/995/313.htm">意大利向亚得里亚海投15万只章鱼治蓝蟹入侵，欧洲首例生物防治试点</a></div>
+      <div class="item__body">为应对大西洋蓝蟹入侵，意大利博洛尼亚大学团队本周向亚得里亚海投放约15万只普通章鱼幼体，利用天敌控害，系欧洲首批同类试点。蓝蟹近年在意沿海暴增，2022年以来仅艾米利亚-罗马涅大区渔业损失已达1470万英镑（约1.35亿元人民币）。团队以8只种蟹培育3个月，实验显示章鱼对蓝蟹有显著捕食偏好、单日捕食量可观，被视作化学防治外的可持续路径。</div>
+      <div class="item__src">IT之家</div>
+    </div>
+    <div class="item anim" style="--i:14">
+      <span class="item__tag item__tag--gold">AI硬件</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/08/27/hugging-face-is-selling-a-cute-399-open-source-duck-robot-microduck/">Hugging Face开卖399美元开源鸭子机器人Microduck，可爱外形藏AI野心</a></div>
+      <div class="item__body">Hugging Face 27日上架开源鸭子机器人Microduck，售价399美元，主打可爱外形+完全开源，可本地运行小模型、与AI智能体联动。TechCrunch称这是继开源模型与数据集后，Hugging Face向“具身智能”硬件的延伸——用户可魔改硬件与软件栈。此前Google内存新规亦凸显AI对端侧资源的挤压，Microduck以“低成本具身入口”回应这一趋势。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+    <div class="item anim" style="--i:15">
+      <span class="item__tag item__tag--rose">智驾</span>
+      <div class="item__title"><a href="https://techcrunch.com/2026/08/27/sprains-pain-and-whiplash-waymo-and-zoox-test-drivers-are-getting-hurt-as-robotaxis-scale/">Waymo与Zoox测试员频受伤：急刹致扭伤与鞭打，Robotaxi扩张背后的人力代价</a></div>
+      <div class="item__body">TechCrunch审查提交给职安机构的数据发现，2024-2025年Waymo与Zoox测试驾驶员因自动驾驶车辆急刹等突发动作已致20余起扭伤、疼痛与鞭打伤。随着Robotaxi在旧金山等多城快速扩张，安全员在“人类接管”与“机器急刹”间的夹缝风险被低估。报道呼吁加强座舱人机工效与急刹预警，行业则回应称已优化制动策略与座椅支撑。</div>
+      <div class="item__src">TechCrunch</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:4"><span class="dot"></span>值得关注的项目</h2>
+    <div class="item anim" style="--i:16">
+      <span class="item__tag item__tag--slate">Three.js</span>
+      <div class="item__title"><a href="https://github.com/MengTo/threeui">MengTo/threeui ⭐3801：开源ThreeUI社区版，交互式3D组件目录</a></div>
+      <div class="item__body">ThreeUI社区版开源目录：开箱即用的Three.js/React/shader交互组件，完整社区源码、登录即用。8月21日创建一周即获3800+星，MIT协议，主打WebGL高级视觉与可复用3D UI，适合需要“立体感”官网与数据可视化项目快速集成。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+    <div class="item anim" style="--i:17">
+      <span class="item__tag item__tag--slate">逆向</span>
+      <div class="item__title"><a href="https://github.com/b-nnett/grok-bot-0.18-reconstructed">b-nnett/grok-bot-0.18-reconstructed ⭐3299：Grok Bot 0.18非官方重构扩展，支持macOS</a></div>
+      <div class="item__body">对Grok Bot 0.18.0 macOS版的源码级重构与扩展，已获3299星、3212 forks。项目还原路由器设置与本地用量统计等界面，支持Codex等模型切换，适合研究Grok Botan架构与本地化部署的开发者。声明为非官方重构，使用需留意合规边界。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+    <div class="item anim" style="--i:18">
+      <span class="item__tag item__tag--slate">MCP</span>
+      <div class="item__title"><a href="https://github.com/duty1g/x64dbg-mcp-server">duty1g/x64dbg-mcp-server ⭐1290：Zig编写的x64dbg MCP插件，AI可编程操控调试器</a></div>
+      <div class="item__body">原生MCP插件，以Zig实现零依赖单二进制，通过HTTP将x64dbg完整能力暴露给任意MCP兼容的AI助手：设断点、单步、读内存、转储寄存器等均可编程调用。8月22日发布，已获1290星、0 open issues，MIT协议，适合二进制分析与AI辅助逆向工作流。</div>
+      <div class="item__src">GitHub</div>
+    </div>
+  </section>
+
+  <footer class="foot anim" style="--i:7">
+    Claw Daily News · Paper/Ink · 2026-08-27 · 18条 · 旧金山 08:01
+  </footer>
+
+</div>
+</body>
+</html>
