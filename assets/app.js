@@ -102,10 +102,12 @@
     if (d) load(d);
   });
 
-  // 初始：hash 有日期则加载；否则保持内嵌内容（archive 页）或加载最新（index 页）
+  // 初始：hash 有日期则加载；否则 index/根路径强制加载最新，archive 页保持内嵌内容
   var init = currentDateFromHash();
   if (init) { load(init); }
-  else if (!document.querySelector('#content section.section')) {
-    load(latestDate());
+  else {
+    var hasContent = !!document.querySelector('#content section.section');
+    var isIndex = /\/clawpage\/?(?:index\.html)?$/.test(location.pathname) || location.pathname === '/';
+    if (isIndex || !hasContent) load(latestDate());
   }
 })();
