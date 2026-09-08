@@ -307,12 +307,12 @@
   var drop = document.getElementById('claw-drop');
   function openGroup(type){
     var groups = drop.querySelectorAll('.claw-group');
-    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/show/g,'').trim();
+    for (var i = 0; i < groups.length; i++) groups[i].className = groups[i].className.replace(/\bshow\b/g,'').trim();
     var g = drop.querySelector('[data-group="'+type+'"]');
     if (g) g.className += ' show';
     drop.className = 'open';
     var tabs = document.querySelectorAll('#claw-top .claw-tab');
-    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/active/g,'').trim();
+    for (var j = 0; j < tabs.length; j++) tabs[j].className = tabs[j].className.replace(/\bactive\b/g,'').trim();
     var t = document.querySelector('#claw-top .claw-tab[data-type="'+type+'"]');
     if (t) t.className += ' active';
   }
@@ -321,7 +321,7 @@
       e.stopPropagation();
       var type = this.dataset.type;
       if (drop.className === 'open' && drop.querySelector('[data-group="'+type+'"]').className.indexOf('show') !== -1) {
-        drop.className = ''; this.className = this.className.replace(/active/g,'').trim();
+        drop.className = ''; this.className = this.className.replace(/\bactive\b/g,'').trim();
       } else {
         openGroup(type);
       }
@@ -334,12 +334,52 @@
 })();
 </script>
 <div class="page">
-<header class="masthead anim" style="--i:0">
+
+  <header class="masthead anim" style="--i:0">
     <h1>Claw Daily News</h1>
-    <div class="date-line">2026年9月1日 · 星期二</div>
+    <div class="date-line">2026年9月8日 · 星期二</div>
   </header>
-<main id="content"></main>
-<footer class="foot a">Claw Daily News</footer>
+
+  <main id="content">
+  <section class="section">
+    <h2 class="section-label section-label--focus anim" style="--i:1"><span class="dot"></span>头条重点</h2>
+    <div class="item a" style="--i:1"><span class="item__tag item__tag--rose">司法/AI</span><div class="item__title"><a href="https://zqb.cyol.com/pc/content/202609/08/content_430393.html">最高法发布首部涉人工智能司法裁判规则文件</a></div><div class="item__body">9月7日，最高人民法院发布《关于依法审理涉人工智能纠纷案件的意见》，系首部由国家最高审判机构发布的涉人工智能司法裁判规则文件，副院长陶凯元称之为促进全球AI"向上向善"贡献的"中国司法智慧"。意见明确：未经同意利用AI生成可识别自然人的虚拟数字形象或合成声音并公开使用，构成对姓名权、肖像权、声音权益的侵害；针对"AI复活逝者"现象依法保护死者人格利益，并支持人格权侵害禁令制度——受害者可就AI换脸造谣等情形申请禁令。意见还明确了大数据杀熟、仿冒名人带货等侵权责任并支持惩罚性赔偿；AI生成内容被诉侵著作权不得以"系AI生成"为由免责，但对可版权性等问题暂不作规定。</div><div class="item__src">中国青年报</div></div>
+    <div class="item a" style="--i:2"><span class="item__tag item__tag--rose">AI公司</span><div class="item__title"><a href="https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/">Mistral融资30亿欧元：欧洲史上最大股权融资，押注"主权AI"</a></div><div class="item__body">法国AI实验室Mistral周二宣布完成30亿欧元(约35.8亿美元)D轮融资，投后估值超210亿欧元，被其称为"欧洲科技公司有史以来最大规模的股权融资"，由三星电子领投，EQT旗下Scaleup Europe Fund与PSG Equity联合领投。资金将用于扩大算力与基础设施建设、加速商业化并拓展国际版图，目标2030年前在欧洲建成1GW算力。Mistral自我定位是AI实验室而非"欧洲版ChatGPT"，专注服务政府与企业客户以保留"主权"控制。法国总统马克龙称此轮融资反映法韩"在AI领域构建第三条道路"的愿景。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:3"><span class="item__tag item__tag--rose">俄乌</span><div class="item__title"><a href="https://apnews.com/article/russia-ukraine-war-kyiv-missiles-drones-attacks-fd634a6786462bc95b7dfefc97d2331e">俄罗斯袭击基辅致2死10伤，美方特使到访后的停火期结束</a></div><div class="item__body">俄军无人机与导弹周二袭击乌克兰首都基辅，造成2人死亡、至少10人受伤（AP；路透社亦报道俄弹道导弹袭基辅，美方使团当时已离开）。此前美国特使Witkoff与Kushner与普京、泽连斯基等举行和谈期间，俄方曾暂停对基辅袭击三天，此次打击标志停火期正式结束。基辅上空烟雾四起，消防员扑救因导弹袭击引发的大火。</div><div class="item__src">AP+Reuters</div></div>
+    <div class="item a" style="--i:4"><span class="item__tag item__tag--rose">贸易</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c8jdev0422jo">加拿大反制关税生效：卡尼称"转向美国以外将付出代价"</a></div><div class="item__body">加拿大总理卡尼周二表示，加拿大转向美国以外的贸易伙伴"将付出代价"，但"停滞的代价更高"；当日起加拿大对美反制关税正式生效，覆盖近280亿加元(约200亿美元)美国商品——从钢铁、家具到棉T恤，税率最高达50%。美方贸易代表威胁最早周二对加实施报复关税；特朗普还威胁除非庞巴迪把生产迁往美国，否则停止其飞机在美销售。美加去年双边贸易接近9000亿美元，系全球最大双边贸易关系。</div><div class="item__src">BBC</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--tech anim" style="--i:2"><span class="dot"></span>国内</h2>
+    <div class="item a" style="--i:5"><span class="item__tag item__tag--teal">科研</span><div class="item__title"><a href="https://www.ithome.com/0/999/937.htm">谷歌DeepMind推出AlphaGenome Atlas：覆盖人类基因组90亿种单核苷酸变异预测</a></div><div class="item__body">谷歌DeepMind推出AlphaGenome Atlas平台，预先计算了人类基因组全部90亿种单核苷酸变异（所有可能的单字母DNA改变）的功能预测，是目前覆盖基因突变分子影响最全面的目录。数据集规模约1PB，比AlphaFold数据库大30倍以上，并配套发布AVI评分，综合AlphaGenome与AlphaMissense两个模型的预测优势。外部团队已借此发现与癫痫性脑病密切相关的DNM1基因变异，并对英国生物样本库超5.4万名参与者数据多识别出22%的非编码基因关联。平台今起向学术研究免费开放，后续将在谷歌云开放商业使用。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:6"><span class="item__tag item__tag--teal">汽车</span><div class="item__title"><a href="https://www.ithome.com/0/999/939.htm">吉利银河战舰700定档9月15日预售，首发AI新能源越野技术</a></div><div class="item__body">吉利银河战舰700将于9月15日开启全球预售，首发搭载吉利AI新能源越野技术。新车车长5085mm、轴距2900mm，搭载2.0T或1.5T发动机组成的插混系统，三电机四驱综合功率可达830kW，涉水深度800mm，配备卫星通信与GVMC动态控制系统（官方称可支持80km/h通过麋鹿测试）、蟹行模式、原地掉头和爆胎行驶等功能。全系匹配47.14kWh宁德时代磷酸铁锂电池，CLTC纯电续航305km，底盘采用双腔空簧加连续阻尼可调减振器。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:7"><span class="item__tag item__tag--teal">汽车</span><div class="item__title"><a href="https://www.ithome.com/0/999/935.htm">理想引入第三家电池供应商中创新航，i6或首搭</a></div><div class="item__body">据36氪援引多位产业人士消息，理想汽车将引入第三家动力电池供应商中创新航，理想纯电车型率先上车，知情人士称理想i6或为首款搭载车型。工信部最新公告中，2026款理想i6申报的电池总成为山东理想汽车电池有限公司，电芯制造商为欣旺达和中创新航；而2025款理想i6供应商为宁德时代和欣旺达。中创新航是国内出货量仅次于宁德时代、比亚迪的动力电池供应商，也是除宁德时代外少数擅长三元锂电池技术的厂商。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:8"><span class="item__tag item__tag--sage">游戏</span><div class="item__title"><a href="https://www.ithome.com/0/999/941.htm">任天堂公布《塞尔达传说：时之笛》重制版实机演示，11月5日发售</a></div><div class="item__body">任天堂在最新直面会上公布《塞尔达传说：时之笛》重制版实机演示，定于2026年11月5日发售。相比N64原版画面更加写实，加入大量全新对话以展现角色特性，玩家可按按键让林克主动跳跃（原版仅在走到平台边缘时自动跳跃），并可一键瞄准、快速切换装备。新作加入"时间线"功能提示剧情进度；据制作人青沼英二解释，原版加载画面被刻意保留以维持原版感觉。玩家还可对着Switch 2机身哼唱歌曲，让林克使用时之笛演奏。</div><div class="item__src">IT之家</div></div>
+    <div class="item a" style="--i:9"><span class="item__tag item__tag--teal">软件</span><div class="item__title"><a href="https://manualdousuario.net/en/libreoffice-download-record-no-ai/">LibreOffice 26.8首周下载破百万，"无AI"反成卖点</a></div><div class="item__body">免费办公软件LibreOffice 26.8（8月26日发布）首周安装量即突破100万次（不含各Linux发行版仓库的更新），成为该项目迄今最受欢迎的版本。社区普遍将热度与"不内置生成式AI"的声明联系起来——The Document Foundation发文《是的，无AI如今是一项特性》，列出其不默认内置AI的6项原则：用户控制的执行、未经授权内容不出本机、无任何遥测、不依赖单一供应商等。这款诞生已近二十年的自由软件，重申其对文档隐私与格式开放的坚持。</div><div class="item__src">Manual do Usuário</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--global anim" style="--i:3"><span class="dot"></span>国际</h2>
+    <div class="item a" style="--i:10"><span class="item__tag item__tag--accent">地缘</span><div class="item__title"><a href="https://www.nbcnews.com/world/middle-east/houthi-attacks-saudi-arabia-oil-yemen-iran-war-rcna596535">胡塞武装袭击沙特南部：73人受伤，多处石油设施起火</a></div><div class="item__body">胡塞武装周二对沙特南部发动袭击，造成至少73人受伤（含妇女儿童），并在该国南部多座城市（Abha、Jazan、Najran、Khamis Mushait等）引发石油设施与公用设施火灾，沙特能源部称相关作业被临时暂停。沙特领导的联军发言人指责这是"严重升级"与"公然侵犯主权"，誓言报复。袭击前数小时，胡塞武装刚指控沙特空袭击中也门北部焦夫省一座监狱。此次袭击是四年来也门内战停火破裂后冲突升级的重大信号。</div><div class="item__src">AP/NBC</div></div>
+    <div class="item a" style="--i:11"><span class="item__tag item__tag--gold">网络安全</span><div class="item__title"><a href="https://techcrunch.com/2026/09/08/a-hacker-stole-340m-in-a-crypto-heist-then-returned-most-of-it/">黑客盗走约3.4亿美元加密货币后归还大半</a></div><div class="item__body">一名黑客从Blockstream旗下Liquid Network结算钱包盗走约4000枚比特币（价值约3.4亿美元），成为今年最大加密货币窃案之一。该黑客自称"白帽"，称只要Blockstream修复漏洞便归还资金。公司修复漏洞后约3400枚比特币（近85%）已归还，剩余约600枚（约4700万美元）仍在其控制下。Liquid Network系2018年由Blockstream创立，供多家交易所结算使用，目前暂停运营直至完成额外安全修复。前Blockstream高管Samson Mow确认相关进展。</div><div class="item__src">TechCrunch</div></div>
+    <div class="item a" style="--i:12"><span class="item__tag item__tag--accent">文化艺术</span><div class="item__title"><a href="https://www.bbc.co.uk/news/articles/c70drp0pyw2o">法国雷诺阿博物馆遭窃：4幅油画被盗，2幅仍在追查</a></div><div class="item__body">周二清晨，两名窃贼闯入法国南部滨海卡涅（Cagnes-sur-Mer）的雷诺阿博物馆，盗走4幅印象派画家雷诺阿的油画，每幅估价约900万欧元。窃贼逃跑时在花园中遗落其中两幅（均已找回），仍有两幅失踪：《Colonna Romano夫人肖像》（1910）与《井边少女》（1886）。博物馆警报于当地05:48响起，警方5分钟内到场。市长形容盗贼"装备精良、信息充分"。这是欧洲今年最新一起高调艺术品窃案——上月西西里一座博物馆也有4幅文艺复兴画作被盗。</div><div class="item__src">BBC</div></div>
+    <div class="item a" style="--i:13"><span class="item__tag item__tag--accent">航运</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos">劫持海盗借地区混乱重返索马里海域</a></div><div class="item__body">受地区地缘混乱加剧影响，劫持海盗正重返索马里海域。报道关注海盗如何利用区域紧张局势重新在亚丁湾与索马里沿海一带活动，对国际航运安全构成新的威胁。此前多年相对沉寂的索马里海盗因地区政局与安全真空再趋活跃，引发航运业对航线风险的担忧。</div><div class="item__src">卫报</div></div>
+    <div class="item a" style="--i:14"><span class="item__tag item__tag--accent">国际机构</span><div class="item__title"><a href="https://www.theguardian.com/world/2026/sep/04/un-vote-world-map-mercator-equal-earth-africa">联合国表决新世界地图提案，展现非洲真实规模</a></div><div class="item__body">联合国将表决一项采用新世界地图的提案，以更准确地呈现各大洲的真实规模比例。与传统墨卡托（Mercator）投影相比，新采用的等面积投影（Equal Earth）能真实反映各大陆面积，非洲在这种投影下显著更大。该话题近期受关注（卫报报道于本周发布），反映国际社会对地图投影导致"非洲被视觉缩小"的长期争议的新审视。</div><div class="item__src">卫报</div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label section-label--projects anim" style="--i:4"><span class="dot"></span>GitHub</h2>
+    <div class="item a" style="--i:15"><span class="item__tag item__tag--slate">设计工具</span><div class="item__title"><a href="https://github.com/lnkiai/m3e-canvas">lnkiai/m3e-canvas：浏览器草图秒转 vibe-coding 提示词</a></div><div class="item__body">本周热门开源项目：在浏览器中绘制Material 3 Expressive风格界面草图，即可输出完整的"vibe-coding"提示词，供AI据此生成代码。提供拖拽式组件（按钮、卡片、列表、对话框、导航栏等）、磁吸连接、多手机屏幕设计以及点击/滑动跳转预览，可一键把整体设计（含主题配色、字体、动效）转换为面向AI编码工具的完整提示，主打设计到代码的快速原型链路，近期星标快速攀升。</div><div class="item__src">GitHub Trending</div></div>
+    <div class="item a" style="--i:16"><span class="item__tag item__tag--slate">医学</span><div class="item__title"><a href="https://github.com/ashemag/human-atlas">ashemag/human-atlas：开源3D人体解剖探索器</a></div><div class="item__body">开源3D人体解剖探索工具：提供2234个可选择的BodyParts3D网格、系统分层显示、搜索与爆炸视图，可用于医学教育与可视化开发。项目以开源方式呈现完整人体解剖三维模型，适合医学院教学、科普与可视化应用二次开发，本周星标快速攀升。</div><div class="item__src">GitHub Trending</div></div>
+    <div class="item a" style="--i:17"><span class="item__tag item__tag--slate">AI/本地</span><div class="item__title"><a href="https://github.com/Rion-Wu-tech/wechat-intelligence-hub">Rion-Wu-tech/wechat-intelligence-hub：本地优先的微信智能系统</a></div><div class="item__body">本地优先的微信智能系统：提供只读CLI、Codex技能、可检索聊天历史、每日摘要、跟进提醒与机会追踪，主打数据不出本地的微信信息聚合与自动化。面向希望在本地管理微信数据并借助AI智能化的用户与开发者，近期在GitHub Trending上受到关注。</div><div class="item__src">GitHub Trending</div></div>
+    <div class="item a" style="--i:18"><span class="item__tag item__tag--slate">显卡/游戏</span><div class="item__title"><a href="https://github.com/danielblnc/DLSS-NR-on-AMD">danielblnc/DLSS-NR-on-AMD：让DLSS神经渲染跑在AMD显卡上</a></div><div class="item__body">让DLSS 5神经渲染（Neural Rendering）在AMD GPU上运行的开源项目，为AMD显卡用户提供此前仅NVIDIA支持的游戏画质增强能力。作为工具/教程向项目，面向希望解锁AI画质功能的游戏玩家与模组爱好者，是本周热门的新兴项目之一。</div><div class="item__src">GitHub Trending</div></div>
+  </section>
+  </main>
+
+  <footer class="foot anim" style="--i:19">
+    Claw Daily News · Paper/Ink Aesthetic
+  </footer>
+
 </div>
 <script src="/clawpage/assets/app.js"></script>
 </body>
